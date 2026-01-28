@@ -1,0 +1,1171 @@
+
+% heart symbols
+\newcommand{\heart}{\ensuremath{\heartsuit}} % outline-like
+\newcommand{\heartinv}{\rotatebox[origin=c]{180}{\heart}}
+
+\newcommand{\help}{\mathbin{\heart}}
+\newcommand{\harm}{\mathbin{\heartinv}}
+
+\newcommand{\NFP}{\mathbf{NFP}}
+\newcommand{\NF}{\mathbf{NFP}}
+\newcommand{\PU}{\functor{PU}}
+% \newcommand{\putaway}[1]{}
+
+
+\newcommand{\atllogic}{\ensuremath{\mathsf{ATL}}\xspace}
+\newcommand{\AGT}{\mathbb{AGT}}%set of agents
+\newcommand{\atlop}[1]{\langle\!\langle  #1 \rangle\!\rangle }%alt operator
+\newcommand{\Coalition}{C}%coaltion
+\newcommand{\Next} {\mathsf{X}}
+\newcommand{\Always}{\mathsf{G}}
+\newcommand{\X}{\mathsf{X}}%
+\newcommand{\U} {\mathsf{U}}
+\newcommand{\G} {\mathsf{G}}
+\newcommand{\dual}{\mathit{dual}}
+\newcommand{\history}{\lambda}
+\renewcommand{\P}{\mathsf{P}}
+\newcommand{\atlphhlogic}{\ensuremath{\mathsf{PHH-ATL}\xspace}}
+\newcommand{\atlBDlogic}{\ensuremath{\mathsf{CA{-}ATL}\xspace}}
+\newcommand{\atlSBDlogic}{\ensuremath{\mathsf{SCA-ATL}\xspace}}
+\newcommand{\clBDlogic}{\ensuremath{\mathsf{CA{-}CL}\xspace}}
+\newcommand{\clSBDlogic}{ \ensuremath{\Lambda_1\xspace}}
+\newcommand{\clNFSBDlogic}{\ensuremath{\Lambda_2\xspace}}
+\newcommand{\Best}{\mathit{Best}}
+\newcommand{\Worst}{\mathit{Worst}}
+\newcommand{\strong}{\mathtt{s}}
+\newcommand{\weak}{\mathtt{w}}
+\newcommand{\si}{\mathtt{si}}
+\newcommand{\wi}{\mathtt{wi}}
+\newcommand{\clphhlogic}{\ensuremath{\mathsf{PHH-CL}\xspace}}
+\newcommand{\clsphhlogic}{\ensuremath{\mathsf{SPHH-CL}\xspace}}
+\newcommand{\clwphhlogic}{\ensuremath{\mathsf{WPHH-CL}\xspace}}
+\newcommand{\clsiphhlogic}{\ensuremath{\mathsf{SIPHH-CL}\xspace}}
+\newcommand{\clwiphhlogic}{\ensuremath{\mathsf{WIPHH-CL}\xspace}}
+
+\newcommand{\NI}{\mathbb{X}}
+\newcommand{\nindex}{x}
+\newcommand{\PI}{\mathbb{Y}}
+\newcommand{\pindex}{y}
+
+%Complexity classes (added by Munyque)
+\protected\def\Ptime{\ifmmode \mbox{\sc Ptime} \else {\sc Ptime}\xspace\fi}
+\protected\def\Pspace{\ifmmode \mbox{\sc Pspace} \else {\sc Pspace}\xspace\fi}
+\protected\def\Exptime{\ifmmode \mbox{\sc Exptime} \else {\sc Exptime}\xspace\fi}
+\protected\def\DExptime{\ifmmode \mbox{\sc 2Exptime} \else {\sc 2Exptime}\xspace\fi}
+
+
+%\newcommand{\path}{\lambda}
+\newcommand{\Path}{\mathit{Path}}
+\newcommand{\Comp}{\mathit{Comp}}
+\newcommand{\FPath}{\mathit{FPath}}
+\newcommand{\PPath}{\mathit{PPath}}
+\newcommand{\PropPath}{\mathit{PropPath}}
+\newcommand{\PropPPath}{\mathit{PropPath}}
+\newcommand{\nPropPath}{\mathit{nPropPath}}
+\newcommand{\length}{\mathsf{len}}%domian
+\newcommand{\len}{\mathsf{len}}
+\newcommand{\prefix}{\mathsf{prefix}}
+\newcommand{\END}{\mathsf{END}}
+\newcommand{\last}{\mathsf{last}}
+\newcommand{\Edom}{\mathsf{Edom}}
+\newcommand{\ChP}{\mathsf{ChP}}
+\newcommand{\ChF}{\mathsf{ChF}}
+\newcommand{\Future}{\mathsf{Future}}
+\newcommand{\Selector}{\mathit{H}}
+\newcommand{\selector}{\mathit{h}}
+
+\newcommand{\ACT}{\mathbb{ACT}}
+\newcommand{\CMV}{\mathbb{CMV}}
+\newcommand{\ja}{\delta}
+\newcommand{\cm}{\sigma}
+\newcommand{\js}{\functor{F}}
+\newcommand{\Js}{\mathit{Str}}
+\newcommand{\JsSB}{\mathit{StrSB}}
+\newcommand{\JsSH}{\mathit{StrSH}}
+\newcommand{\JsWB}{\mathit{StrWB}}
+\newcommand{\JsWH}{\mathit{StrWH}}
+
+\newcommand{\MlJs}{\mathit{MlStr}}
+\newcommand{\ML}{\mathtt{ML}}
+\newcommand{\PR}{\mathtt{PR}}
+\newcommand{\cs}{\functor{G}}
+\newcommand{\Cs}{\mathit{CoStr}}
+\newcommand{\MlCs}{\mathit{MlCoStr}}
+\newcommand{\LFP}{\functor{LFP}}
+\newcommand{\GFP}{\functor{GFP}}
+\newcommand{\MATL}{\ensuremath{\mathsf{MATL}}}
+\newcommand{\SATL}{\ensuremath{\mathsf{SATL}}}
+\newcommand{\IATL}{\ensuremath{\mathsf{IATL}}}
+\newcommand{\DATL}{\ensuremath{\mathsf{DATL}}}
+\newcommand{\SIATL}{\ensuremath{\mathsf{SIATL}}}
+\newcommand{\SDATL}{\ensuremath{\mathsf{SDATL}}}
+\newcommand{\IDATL}{\ensuremath{\mathsf{IDATL}}}
+\newcommand{\SIDATL}{\ensuremath{\mathsf{SIDATL}}}
+\newcommand{\Se}{\ensuremath{\mathtt{S}}}
+\newcommand{\I}{\ensuremath{\mathtt{I}}}
+\newcommand{\D}{\ensuremath{\mathtt{D}}}
+\newcommand{\ATL}{\ensuremath{\mathsf{ATL}}}
+
+\newcommand{\T}{\mathfrak{T}}
+\newcommand{\la}{\mathbf{l}}
+\newcommand{\grow}{\mathbf{gr}}
+
+
+\newcommand{\langchange}{\mathcal{L}^{\mathit{dyn}}}
+\newcommand{\langprop}{\textbf{L}^{\mathit{prop}}}
+\newcommand{\IFF}{\Longleftrightarrow}
+%
+\newcommand{\SigmaW}{\Sigma {:} {\scriptstyle W} }
+\newcommand{\SigmaB}{\Sigma{:} {\scriptstyle B} }
+\newcommand{\SigmaC}{\Sigma{:} {\scriptstyle C} }
+\newcommand{\SigmaX}{\Sigma {:} {\scriptstyle X} }
+
+\newcommand{\anyprogram}{\mathbf{any}  }
+
+\newcommand{\CGSclass}{\mathbf{CGS}}
+\newcommand{\nondetCGSclass}{\mathbf{ND}{-}\mathbf{CGS}}
+
+\newcommand{\BTACclass}{\mathbf{BT} {+}\mathbf{AC} }
+
+
+\newcommand{\classcgs}{\mathbf{C}}
+\newcommand{\classcgsp}{\mathbf{CP}}
+\newcommand{\classcgspstable}{\mathbf{CP}_{\mathit{sp}}}
+
+\newcommand{\classcgspvar}[1]{\classcgsp^{ #1 } }
+\newcommand{\classcgspstablevar}[1]{\classcgspstable^{ #1 } }
+
+
+\newcommand{\BTAC}{\mathit{BT} {+}\mathit{AC} }
+\newcommand{\BT}{\mathit{BT}  }
+\newcommand{\ACF}{\mathit{AC} }
+\newcommand{\bassignbel}{\mathit{BASG}_{B}}
+\newcommand{\bassigngoal}{\mathit{BASG}_{C}}
+\newcommand{\bassignworld}{\mathit{BASG}_{W}}
+\newcommand{\annset}{\mathit{ANN}}
+\newcommand{\AND}{\mbox{   \textsc{and}   }}
+\newcommand{\OR}{\mbox{   \textsc{or}   }}
+\newcommand{\IF}{\mbox{\textsc{if}   }}
+\newcommand{\THEN}{\mbox{   \textsc{then}   }}
+\newcommand{\THENATT}{\mbox{\textsc{then}   }}
+
+\newcommand{\existpath } {  \Diamond  }%
+\newcommand{\allpath } {  \Box  }%
+\newcommand{\henceforth} {  \mathsf{G}  }%
+\newcommand{\eventually} {  \mathsf{F}  }%
+\newcommand{\nexttime} {  \mathsf{X}  }%
+\newcommand{\illatom} {  \mathsf{Illeg}  }%
+\newcommand{\latom} {  \mathsf{perm}  }%
+\newcommand{\violatom} {  \mathsf{viol}  }%
+\newcommand{\until}[2]{#1 \ \mathsf{U} \ #2}%
+
+\newcommand{\weakuntil}[2]{#1 \ \mathsf{W} \ #2}%
+\newcommand{\release}[2]{#1 \ \mathsf{R} \ #2}%
+
+\newcommand{\cstit}[1]{ [#1] }
+
+\newcommand{\pcstit}[1]{ \langle #1 \rangle }
+
+\newcommand{\before}[2]{#1 \ \mathcal{B} \  #2}%
+
+\newcommand{\vct}[1]{\overrightarrow{#1}}         %vectors
+\newcommand{\cmp}{.}
+\newcommand{\AL}{\textbf{L}}%
+
+\newcommand{\ALlite}{\textbf{AL}}%
+
+\newcommand{  \logic}{\ensuremath{\mathsf{L-ALT} }\xspace}
+\newcommand{  \logicext}{\ensuremath{\mathsf{L-KALT} }\xspace}
+\newcommand{  \logicextminus}{\ensuremath{\mathsf{EL} }\xspace}
+
+\newcommand{  \opdllogic}{\ensuremath{\mathsf{OPDL} }\xspace}
+\newcommand{  \logiclts}{\ensuremath{\mathsf{OPDL} }\xspace^{\mathit{lts}}}
+
+\newcommand{  \tstitlogic}{\ensuremath{\mathsf{TSTIT} }\xspace}
+
+\newcommand{  \etstitlogic}{\ensuremath{\mathsf{E-TSTIT} }\xspace}
+
+\newcommand{  \dlpalogic}{\ensuremath{\mathsf{DL-PA} }\xspace}
+\newcommand{  \clpclogic}{\ensuremath{\mathsf{CL-PC} }\xspace}
+
+\newcommand{  \dlplogic}{\ensuremath{\mathsf{DLP} }\xspace}
+\newcommand{  \dlpologic}{\ensuremath{\mathsf{DLP+O} }\xspace}
+\newcommand{  \ddllogic}{\ensuremath{\mathsf{DDL} }\xspace}
+\newcommand{\nxt}{\mathsf{X}}
+\newcommand{\future}{\mathsf{G}}
+\newcommand{\past}{\mathsf{H}}
+\newcommand{\dpast}{\mathsf{P}}
+\newcommand{\always}{\mathsf{A}}
+\newcommand{\relTimeNxt}{\functor{R}}
+\newcommand{\succfunction}{\functor{Q}}
+
+\newcommand{\relTimeFuture}{\functor{F}}
+\newcommand{\relTimePast}{\functor{P}}
+\newcommand{\relD}{\functor{R}_{\Box}}
+\newcommand{  \pdllogic}{\ensuremath{\mathsf{PDL} }\xspace}
+\newcommand{  \dlalogic}{\ensuremath{\mathsf{DLA} }\xspace}
+
+\newcommand{  \ddlalogic}{\ensuremath{\mathsf{DDLA} }\xspace}
+
+\newcommand{  \nishlogic}{\ensuremath{\mathsf{NL} }\xspace}
+
+\newcommand{  \mapdllogic}{\ensuremath{\mathsf{MA-PDL} }\xspace}
+
+\newcommand{  \flowtime}{\mathcal{F}}
+\newcommand{  \modeltime }{\mathcal{M}}
+
+
+\newcommand{  \processlogic}{\ensuremath{\mathsf{PL} }\xspace}
+\newcommand{  \gdllogic}{\ensuremath{\mathsf{GDL} }\xspace}
+\newcommand{  \ltllogic}{\ensuremath{\mathsf{LTL} }\xspace}
+\newcommand{  \atllogiccxt}{\ensuremath{\mathsf{ATL}_{\mathit{sc}} }\xspace}
+\newcommand{  \ctllogic}{\ensuremath{\mathsf{CTL} }\xspace}
+\newcommand{  \strategylogic}{\ensuremath{\mathsf{SL} }\xspace}
+\newcommand{  \tenselogic}{\ensuremath{\mathsf{BTL} }\xspace}
+\newcommand{  \histneclogic}{\ensuremath{\mathsf{HNL} }\xspace}
+\newcommand{  \atlratlogic}{\ensuremath{\mathsf{R-ATL} }\xspace}
+
+
+\newcommand{  \ctlpluslogic}{\ensuremath{\mathsf{CTL}^* }\xspace}
+\newcommand{  \actlpluslogic}{\ensuremath{\mathsf{ACTL}^* }\xspace}
+\newcommand{  \bctlpluslogic}{\ensuremath{\mathsf{BCTL}^* }\xspace}
+\newcommand{  \cllogic}{\ensuremath{\mathsf{CL} }\xspace}
+\newcommand{  \stitlogic}{\ensuremath{\mathsf{STIT} }\xspace}
+\newcommand{  \biatlogic}{\ensuremath{\mathsf{BIAT} }\xspace}
+\newcommand{  \clratlogic}{\ensuremath{\mathsf{R-CL} }\xspace}
+
+
+\newcommand{  \logicplus}{\ensuremath{\mathsf{OPDL-Ag}}\xspace}
+
+\newcommand{\transPDL}[1]{\mathit{tr }_{1} (#1)}
+\newcommand{\transPDLprog}[1]{\mathit{tr }_{2} (#1)}
+
+\newcommand{\transPDLarg}{\mathit{tr }_{1} }
+\newcommand{\transPDLprogarg}{\mathit{tr }_{2} }
+
+\newcommand{\transCTL}[1]{\mathit{tr }_{3} (#1)}
+
+\newcommand{\transCTLarg}{\mathit{tr }_{3}  }
+
+\newcommand{\transDLP}[1]{\mathit{tr }_{4} (#1)}
+
+\newcommand{\transDLParg}{\mathit{tr }_{4} }
+
+\newcommand{\transDLPprog}[1]{\mathit{tr }_{5} (#1)}
+
+\newcommand{\transDLPprogarg}{\mathit{tr }_{5} }
+
+\newcommand{\transDLPprogtwo}[1]{\mathit{tr }_{6} (#1)}
+
+\newcommand{\transDLPtwoprogarg}{\mathit{tr }_{6} }
+
+\newcommand{\transDLPoblig}[1]{\mathit{tr }_{7} (#1)}
+
+\newcommand{\transDLPobligarg}{\mathit{tr }_{7} }
+
+
+\newcommand{\Lan}{\mathcal{L}}
+\newcommand{  \logicstat}{\ensuremath{\mathsf{IGAL} }\xspace}
+
+\newcommand{\logicminus}{\textbf{BG}}
+
+
+\newcommand{\logicminusminus}{\textbf{B}}
+
+
+\newcommand{\finalsub}[1]{\mathit{maxfsub}(#1) }
+
+
+\newcommand{\ia}{i{:}\alpha}
+\newcommand{\Fml}{\mathit{Fml} }
+\newcommand{\AEvt}{\mathit{Evt}^- }
+\newcommand{\Evt}{\mathit{Evt}}
+\newcommand{\ActAtm}{\mathit{AtAct} }
+
+\newcommand{\SeqAct}{\mathit{Seq} }
+
+%PDL construncts
+
+
+\newcommand{\coalition}{C }
+\newcommand{\C}{C}
+\newcommand{\Group}{G}
+\newcommand{\GroupB}{B}
+\newcommand{\GroupH}{H}
+\newcommand{\Groupb}{C_1 }
+\newcommand{\Groupc}{C_2 }
+
+
+\newcommand{\act}{  \pi }
+\newcommand{\actb}{\pi' }
+
+\newcommand{\actrestr}{  \alpha }
+
+\newcommand{\actatm}{\sigma}
+\newcommand{\actatma}{ a }
+\newcommand{\actatmb}{ b }
+\newcommand{\actatmc}{ c }
+\newcommand{\actatmd}{ d }
+\newcommand{\actatmsp}{ x }
+
+\newcommand{\jactatm}{\delta}
+
+
+\newcommand{\skipact}{\mathit{skip} }
+\newcommand{\compseq}[2]{#1 ; #2}
+\newcommand{\choice}[2]{#1 \cup #2}
+\newcommand{\iter}[1]{ #1^*}
+\newcommand{\test}[1]{ #1   ?}
+
+
+\newcommand{\unc}[1] {\mathrm{{\bf Db}}_{#1}}                        %assert%
+
+\newcommand{\acc}[1]{ \mathit{acc}_{#1} }
+\newcommand{\Agt}     { \mathbb{AGT} }
+\newcommand{\AgtOf}[1]{ \Agt_{#1} }
+
+\newcommand{\annOp}[1]{\ldia{\ann{#1}}}
+\newcommand{\assgn}[2]{ #2 #1 }
+
+\newcommand{\atmact}{ \pi }
+
+\newcommand{\acttype}{ \pi }
+\newcommand{\acttypeb}{ \beta }
+
+\newcommand{\atmactb}{ \pi' }
+\newcommand{\putaway}[1]{}
+\newcommand{\ijcaiputaway}[1]{}
+\newcommand{\assgnagt}[3]{ #1 {:} #3 #2 }
+
+  %\newcommand{\assgn}[2]{ #1 {\leftarrow} #2 }
+  %\newcommand{\assgn}[2]{ #1 \coloneqq #2 }
+\newcommand{\assgnOp}[2]{\ldia{ \assgn{#1}{#2} } }
+\newcommand{\assgnVal}[1]{\assgn{#1}{} }
+\newcommand{\assgnValOp}[1]{\ldia{ \assgn{#1}{} } }
+\newcommand{\AuthOp}[3]{\ldia{ #3 {:}  \PrbLoss{#1}{#2} } }
+%\newcommand{\bigparal}{\parallel}
+%  %\newcommand{\bigparal}{\int}
+%
+%\newcommand{\iassgn}[3]{#2 { \stackrel{#1}{ \leftarrow     } } #3}  % \issgn{i}{q}{\top}
+\newcommand{\writemsg}[2]{ +_{ #2}(#1)}  % \issgn{i}{q}{\top}
+\newcommand{\cancelmsg}[2]{ -_{ #2}(#1)}  % \issgn{i}{q}{\top}
+
+\newcommand{\msg}[3]{ \mathit{msg}_{ #1{,}#2 } (#3) }
+\newcommand{\happens}[1]{ \mathsf{occ}_{ #1}}
+\newcommand{\ability}[1]{ \mathsf{able}_{ #1}}
+
+\newcommand{\after}[2]{ \mathsf{after}_{ #1|#2}}
+
+\newcommand{\nil} { \mathit{nil}}
+\newcommand{\cause}[2]{ #1 \Rightarrow #2 }
+\newcommand{\valuebel}[2]{\mathsf{exc}_{ #1 {, } #2} }
+\newcommand{\valuegoal}[2]{\mathsf{des}_{ #1 {, } #2}   }
+
+\newcommand{\ordinal}{\mathsf{h} }
+
+\newcommand{\intensity}[2]{\mathit{merge}( #1{, }#2) }
+\newcommand{\intensityfunct}{\mathit{merge} }
+
+\newcommand{\firmness}{\mathsf{f} }
+\newcommand{\ordinalb}{\mathsf{k} }
+\newcommand{\ordinalc}{\mathsf{l} }
+\newcommand{\ordinald}{\mathsf{i} }
+\newcommand{\ordinale}{\mathsf{j} }
+\newcommand{\goalform}[2]{\mathsf{goal}(#1,#2) }
+
+\newcommand{\maxvalue}{\mathsf{max} }
+
+\newcommand{\plausfunct}{\kappa_{\mathsf{exc}  }}
+\newcommand{\goalfunct}{\kappa_{\mathsf{des} }}
+
+\newcommand{\plausfunctdual}{\kappa_{\mathsf{plaus} }}
+\newcommand{\goalfunctdual}{\kappa_{\mathsf{undes}}}
+
+\newcommand{\causalrel}{\functor{C}}
+\newcommand{\ablerel}{\functor{A}}
+
+\newcommand{\seqrel}{\functor{Q}}
+\newcommand{\precrel}{\functor{P}}
+
+\newcommand{\transrel}{\functor{Z}}
+
+\newcommand{\labelfunct}{\functor{L}}
+
+\newcommand{\norm }{\mathit{I}}
+
+\newcommand{\does}[2]{ \mathsf{does}_{ #1}( #2) }
+
+\newcommand{\limp}{\rightarrow}
+
+\newcommand{\instit}{x}
+\newcommand{\agt}{i}
+\newcommand{\institb}{y}
+\newcommand{\ldia}[1]{{\langle #1 \rangle}}
+\newcommand{\langgoal}{\mathit{CASG}_{C} }
+\newcommand{\langbel}{\mathit{CASG}_{B}}
+\newcommand{\langworld}{\mathit{CASG}_{W}}
+
+\newcommand{\langnullgoal}{\mathit{EASG}_{C}}
+\newcommand{\langnullbel}{\mathit{EASG}_{B}}
+\newcommand{\langnullworld}{\mathit{EASG}_{W}}
+
+\newcommand{\langdyn}{\mathit{ASG}}
+
+
+
+%\newcommand{\express}[3]{\mathit{tell}_{#1{,}#2}\hspace{1mm}#3 }
+\newcommand{\express}[3] {\mathit{express}(#1{,}#2{,}#3)}                        %assert%
+
+%
+%\newcommand{\request}[3] {\mathit{request}(#1{,}#2{,}#3)}                        %assert%
+%\newcommand{\order}[3] {\mathit{order}(#1{,}#2{,}#3)}                        %assert%
+%
+%\newcommand{\intendSay}[3]{\mathit{CInt}_{#1{,}#2}\hspace{1mm}#3 }
+%
+%
+%
+%\newcommand{\quest}[3]{\mathit{ask}_{#1{,}#2}\hspace{1mm}#3 }
+%\newcommand{\answer}[3]{\mathit{aswer}_{#1{,}#2}\hspace{1mm}#3 }
+
+
+
+\newcommand{\stype}[3] { #1{,}#2 {,}  #3      }
+
+\newcommand{\ILL}{   \mathit{Ill}        }
+
+\newcommand{\request}[3] { #1{,}#2 {,}  \mathit{request}(#3)        }
+\newcommand{\promise}[3] { #1{,}#2 {,}  \mathit{promise}(#3)        }
+\newcommand{\assert}[3] { #1{,}#2 {,}  \mathit{assert}(#3)        }
+\newcommand{\inform}[3] { #1{,}#2 {,}  \mathit{inform}(#3)        }
+\newcommand{\confirm}[3] { #1{,}#2 {,}  \mathit{confirm}(#3)        }
+\newcommand{\disconfirm}[3] { #1{,}#2 {,}  \mathit{disconfirm}(#3)        }
+\newcommand{\accept}[3] { #1{,}#2 {,}  \mathit{accept}(#3)        }
+\newcommand{\refuse}[3] { #1{,}#2 {,}  \mathit{refuse}(#3)        }
+\newcommand{\cancel}[3] { #1{,}#2 {,}  \mathit{cancel}(#3)        }
+\newcommand{\ask}[3] { #1{,}#2 {,}  \mathit{ask}(#3)        }
+
+\newcommand{\requestI}[1] {  \mathit{request}(#1)        }
+\newcommand{\promiseI}[1] {   \mathit{promise}(#1)        }
+\newcommand{\assertI}[1] {  \mathit{assert}(#1)        }
+\newcommand{\informI}[1] {   \mathit{inform}(#1)        }
+\newcommand{\confirmI}[1] {   \mathit{confirm}(#1)        }
+\newcommand{\disconfirmI}[1] {   \mathit{disconfirm}(#1)        }
+\newcommand{\acceptI}[1] {   \mathit{accept}(#1)        }
+\newcommand{\refuseI}[1] {   \mathit{refuse}(#1)        }
+\newcommand{\cancelI}[1] {   \mathit{cancel}(#1)        }
+\newcommand{\askI}[1] {  \mathit{ask}(#1)        }
+
+\newcommand{  \Green  }{    \mathit{GT}      }
+\newcommand{  \PossSeq  }{   \mathit{  PA}       }
+\newcommand{  \MaxPossSeq  }{     \mathit{MPA}        }
+\newcommand{  \PossInd  }{     \mathit{IN   }     }
+\newcommand{  \PossGreen  }{    \mathit{PGT }     }
+\newcommand{  \MaxPossGreen  }{     \mathit{MGT}        }
+
+\newcommand{\scond} {\mathcal{SC}}                        %assert%
+\newcommand{\pcond} {\mathcal{PC}}                        %assert%
+
+\newcommand{\suchthat}{ : }
+\newcommand{\functor}[1]{\mathcal{#1}}
+\newcommand{\tagLabel}[2]{\tag{\textbf{#1}}\label{#2}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\alphaf}{\alpha_F}
+\newcommand{\alphap}{\alpha_P}
+\newcommand{\betaf}{\beta_F}
+\newcommand{\betap}{\beta_P}
+\newcommand{\hist}[2]{w_{#1}{,}\ldots{,}w_{#2}}
+\newcommand{\negalpha}{\sim\! \alpha}
+\newcommand{\tuple}[1]{\langle#1\rangle}
+\newcommand{\defin}{~\stackrel{\mbox{\scriptsize def}}{=}~} % =def
+\newcommand{\actnec}[2]{\after_{{#1}{:}{#2}}}                      %necessary action
+\newcommand{\union}{\cup } % union
+\newcommand{\diff}{\neq }  % different /=
+\newcommand{\inclus}{\subset} % inclusion stricte
+\newcommand{\incluse}{\subseteq} % inclusion large
+\newcommand{\mimp}{\imp} % meta implique =>
+\newcommand{\meqv}{\Leftrightarrow} % meta equivalent <=>
+\newcommand{\cons}{\vdash_{\mathcal{L}}} % consequence |-
+\newcommand{\lcons}{\models} % consequence logique |=
+\newcommand{\infr}{|\!\!\approx} % consequence logique tordue |~
+\newcommand{\et}{\wedge}
+\newcommand{\ou}{\vee}
+\newcommand{\non}{\neg}
+\newcommand{\imp}{\rightarrow} % implique ->
+\newcommand{\impg}{\leftarrow} % implique a gauche <-
+\newcommand{\eqv}{\leftrightarrow} % equivalent <->
+\newcommand{\qq}{\forall} % quelque soit
+\newcommand{\ex}{\exists} % existe
+\newcommand{\n}{\alpha} % Necessaire
+%\newcommand{\p}{\Diamond} % Possible
+
+\newcommand{\ga}{\Gamma}
+\newcommand{\da}{\Delta}
+\newcommand{\deb}{\lhd -}
+\newcommand{\fin}{- \lhd}
+\newcommand{\app}{\approx} % double ~
+\newcommand{\ov}{\overline} % double ~
+\newcommand{\ent}{\gg} % implication de roles ~
+\newcommand{\isa}{\preceq} % sous role ~
+\newcommand{\inc}{\prec \succ} % incomp de roles ~
+
+
+\newcommand{\PACT}{2^{ \mathit{Atm  }*  } }
+
+\newcommand{\PRG}{\mathit{Prg}}
+
+\newcommand{\REP}{\mathit{Act}}
+
+\newcommand{\succfunct}{\mathit{succ}}
+
+\newcommand{\ASSGN}{\mathit{Ass}}
+
+\newcommand{\sincere}[3]{\mathit{Sinc}(#1{,}#2{,}#3) }
+\newcommand{\intend}[1]{\mathsf{ Int}_{#1}}
+
+\newcommand{\expect}[2]{\mathsf{ Expect}_{#1}^{#2} }
+\newcommand{\hope}[2]{\mathsf{ Hope}_{#1}^{#2} }
+
+\newcommand{\shope}[2]{\mathsf{ ActHope}_{#1}^{#2} }
+\newcommand{\sfear}[2]{\mathsf{ ActFear}_{#1}^{#2} }
+
+
+\newcommand{\fear}[2]{\mathsf{ Fear}_{#1}^{#2} }
+\newcommand{\happy}[2]{\mathsf{ Happiness}_{#1}^{#2} }
+\newcommand{\sad}[2]{\mathsf{ Sadness}_{#1}^{#2} }
+\newcommand{\surprise}[2]{\mathsf{ Surprise}_{#1}^{#2} }
+\newcommand{\disappointmentLA}[2]{\mathsf{ DisappointmentLossAverse }_{#1}^{#2} }
+\newcommand{\reliefLA}[2]{\mathsf{ ReliefLossAverse}_{#1}^{#2} }
+\newcommand{\disappointment}[2]{\mathsf{ Disappointment }_{#1}^{#2} }
+\newcommand{\relief}[2]{\mathsf{ Relief}_{#1}^{#2} }
+
+\newcommand{\SPEECHACT}{\mathit{IllForces}}
+\newcommand{\DIRECTIVE}{\mathit{Direct}}
+\newcommand{\COMMISSIVE}{\mathit{Commiss}}
+\newcommand{\ASSERTIVE}{\mathit{Assert}}
+
+\newcommand{\INT}{\mathit{INT}}
+\newcommand{\AT}{\mathit{AT}}
+\newcommand{\poss}{\mathit{Bel}}
+
+%\newcommand{\after}{\mathtt{After}}
+\newcommand{\lbox}[1]{[#1]}
+
+\newcommand{\ldiamond}[1]{\langle #1 \rangle }
+
+\newcommand{\lboxsucc}[1]{[\![#1]\!]}
+\newcommand{\actop}[1]{  \langle\!\langle #1 \rangle\! \rangle  }
+
+\newcommand{\actopdual}[1]{  [\![ #1 ]\! ]  }
+
+%\newcommand{\updbel}[2]{{#1}!^{#2}}
+
+\newcommand{\world}{\mathit{W}}
+\newcommand{\agent}{\mathit{S}}
+
+\newcommand{\ann}[1]{#1!}
+
+\newcommand{\param}{\mathit{ \Delta} }
+
+\newcommand{\cutmax}{\mathit{ Cut}_\maxvalue }
+
+\newcommand{\belchange}[1]{  *#1           }
+\newcommand{\belchangetrue}[1]{*_{t} #1           }
+\newcommand{\goalchange}[2]{#2 { :} #1 \bullet    }
+
+\newcommand{\permweak}[2]{  \mathrm{Perm}( #1 ) #2     }
+\newcommand{\permstrong}[2]{  \mathrm{FreePerm}( #1 ) #2      }
+\newcommand{\obligation}[1]{  \mathrm{Obl}( #1)   }
+
+
+\newcommand{\annsucc}[1]{#1!_{t}}
+
+\newcommand{\updgoal}[2]{#1    \stackrel{C}{ \rightsquigarrow }       #2}
+\newcommand{\updbel}[2]{ #1       \stackrel{B}{ \rightsquigarrow}     #2}
+\newcommand{\updworld}[2]{#1      \stackrel{W}{\rightsquigarrow }     #2}
+
+
+
+
+\newcommand{\eventgoal}{\sigma_{C}}
+\newcommand{\eventbel}{\sigma_{B}}
+\newcommand{\eventworld}{\sigma_{W}}
+
+\newcommand{\events}{\mathit{EVT}}
+
+\newcommand{\nullworld}{\epsilon_{W}}
+\newcommand{\nullgoal}{\epsilon_{C}}
+\newcommand{\nullbel}{\epsilon_{B}}
+
+
+
+
+\newcommand{\actpref}{\mathtt{Pref}}
+\newcommand{\henceforthplus} {  \mathsf{G}^*  }
+\newcommand{\eventuallyplus} {  \mathsf{F}^*  }
+
+%\newcommand{\henceforth}{\mathtt{\Box  }}
+%\newcommand{\eventually}{\mathtt{\Diamond}}
+\newcommand{\can}{\mathtt{Capable}}
+\newcommand{\power}{\mathtt{Power}}
+\newcommand{\INFO}{\mathit{INFO}}
+
+
+\renewcommand{\phi}{\varphi}
+
+
+\newcommand{\eqdef}{\ \stackrel{\mathtt{def}}{=} \ }     %definitional equation
+
+%\newcommand{\xstate}  {[\mathtt]}
+
+\newcommand{\speechact}[2] {[\alpha_{#1{,}#2}]}                        %assert%
+
+
+\newcommand{\abstr}[2] {[\alpha_{#1{,}#2}]}                        %assert%
+
+\newcommand{\allow}[2] {[\mathrm{allow}_{#1{,}#2}]}                        %assert%
+\newcommand{\oblig}[3] {\mathrm{{\bf O}}_{#1{:}#2{:}#3}}                        %assert%
+\newcommand{\commit}[3] {\mathrm{{\bf C}}_{#1{:}#2{:}#3}}                        %assert%
+\newcommand{\function} {\mathit{Cxt}}                        %assert%
+
+\newcommand{\wone} {w_{\textbf{c}}}                        %assert%
+\newcommand{\wtwo} {w_{\textbf{u}}}                        %assert%
+\newcommand{\wthree} {w_{{ \not \subseteq}}}                 %assert%
+
+\newcommand{\vone} {v_{\textbf{c}}}                        %assert%
+\newcommand{\vtwo} {v_{\textbf{u}}}                        %assert%
+\newcommand{\vthree} {w_{{ \not \subseteq}}}                           %assert%
+
+\newcommand{\uone} {u_{\textbf{c}}}                        %assert%
+\newcommand{\utwo} {u_{\textbf{u}}}                        %assert%
+\newcommand{\uthree} {u_{{ \not \subseteq}}}                       %assert%
+
+
+
+
+\newcommand{\createop}[5]{[#1{:}#2{:}#3{+}(#4,#5)]}                        %assert%
+\newcommand{\cancelop}[5]{[#1{:}#2{:}#3{-}(#4,#5)]}                        %assert%
+
+\newcommand{\createopO}[5]{[#1{:}#2{:}#3{+}(#4,#5){,}\textbf{o}]}                        %assert%
+\newcommand{\cancelopN}[5]{[#1{:}#2{:}#3{-}(#4,#5){,}{ \subseteq}]}                        %assert%
+\newcommand{\createopN}[5]{[#1{:}#2{:}#3{+}(#4,#5){,}{ \subseteq}]}                        %assert%
+\newcommand{\cancelopO}[5]{[#1{:}#2{:}#3{-}(#4,#5){,}\textbf{o}]}                        %assert%
+
+\newcommand{\createopS}[5]{[#1{:}#2{:}#3{+}(#4,#5){,} { \not \subseteq} ]}                        %assert%
+\newcommand{\cancelopS}[5]{[#1{:}#2{:}#3{-}(#4,#5){,}{ \not \subseteq}]}                        %assert%
+
+\newcommand{\createopX}[5]{[#1{:}#2{:}#3{+}(#4,#5){,}\textbf{x}]}                        %assert%
+\newcommand{\cancelopX}[5]{[#1{:}#2{:}#3{-}(#4,#5){,}\textbf{x}]}                        %assert%
+
+
+
+
+\newcommand{\pcreateop}[5]{\langle  #1{:}#2{:}#3{+}(#4,#5) \rangle}                        %assert%
+\newcommand{\pcancelop}[5]{ \langle  #1{:}#2{:}#3{-}(#4,#5) \rangle}                        %assert%
+
+\newcommand{\pcreateopO}[5]{\langle  #1{:}#2{:}#3{+}(#4,#5){,}\textbf{o} \rangle}                        %assert%
+\newcommand{\pcancelopO}[5]{ \langle  #1{:}#2{:}#3{-}(#4,#5) {,}\textbf{o}\rangle}                        %assert%
+
+\newcommand{\pcreateopN}[5]{\langle  #1{:}#2{:}#3{+}(#4,#5){,}{ \subseteq} \rangle}                        %assert%
+\newcommand{\pcancelopN}[5]{ \langle  #1{:}#2{:}#3{-}(#4,#5) {,}{ \subseteq} \rangle}                        %assert%
+
+\newcommand{\pcreateopS}[5]{\langle  #1{:}#2{:}#3{+}(#4,#5){,}{ \not \subseteq} \rangle}                        %assert%
+\newcommand{\pcancelopS}[5]{ \langle  #1{:}#2{:}#3{-}(#4,#5) {,}{ \not \subseteq} \rangle}                        %assert%
+
+
+\newcommand{\stit}[1] {\mathrm{{\bf Stit}}_{#1}}                        %assert%
+
+\newcommand{\say}[3] {\mathrm{{\bf Tell}}_{#1{,}#2{,}#3}}                        %assert%
+
+                     %assert%
+
+\newcommand{\sayvide} {\mathrm{{\bf Tell}}}                        %assert%
+\newcommand{\saypublic}[2]{\mathrm{{\bf Tell}}_{#1{,}#2 }}                        %assert%
+%\newcommand{\goal}[1] {\mathrm{{\bf Goal}}_{#1}}                        %assert%
+\newcommand{\agoal}[1] {\mathrm{{\bf AGoal}}_{#1}}                        %assert%
+
+\newcommand{\know}[1]  {\mathrm{\bf K}_{#1}\, }
+\newcommand{\cknow}[1] { \mathsf{ CK}_{#1}   }
+\newcommand{\cbel}[1] { \mathsf{ CB}_{#1}   }
+\newcommand{\relcknow}[3] { \mathsf{ CK}_{#1}(#2{,}#3)    }
+
+\newcommand{\stronggoal}[1] {\mathsf{ SGoal}_{#1}   }
+\newcommand{\strongbelief}[1] { \mathsf{ SBel}_{#1}   }
+
+\newcommand{\possknow}[1] {  \langle\mathsf{ K}_{#1}   \rangle}
+
+\newcommand{\goal}[1] { \mathsf{ Goal}_{#1}   }
+\newcommand{\bel}[1] {\mathsf{B}_{#1}   }
+
+\newcommand{\obgdead}[2] {\mathrm{ Obl}(#1 \ \text{before} \ #2)   }
+\newcommand{\obgcond}[2] {\mathrm{ Obl}(#1 \ \text{as soon as} \ #2)   }
+
+
+\newcommand{\realgoal}{ \mathsf{ G}^*  }
+
+\newcommand{\gradedgoal}[2] { \mathsf{ Goal}_{#1}^{#2}   }
+\newcommand{\gradedrealgoal}[2] {[ \mathsf{ *G}_{#1}^{#2}   ]}
+\newcommand{\gradedbel}[2] {\mathsf{ Bel}_{#1}^{#2}   }
+
+\newcommand{\viol} {\mathrm{V}}                        %assert%
+
+\newcommand{\pstit}[1] {\widehat{\mathrm{{\bf Stit}}}_{#1}}                        %assert%
+\newcommand{\pbel}[1] {\widehat{\mathrm{{\bf Bel}}}_{#1}}                        %assert%
+\newcommand{\pgoal}[1] {\widehat{\mathrm{{\bf Goal}}}_{#1}}                        %assert%
+\newcommand{\psay}[3] {\widehat{\mathrm{{\bf Tell}}}_{#1{,}#2{,}#3 }}                        %assert%
+
+\newcommand{\paccept}[1]{\widehat{\mathrm{ {\bf A}}}_{#1} }                        %assert%
+\newcommand{\commitcond}[5] {\mathrm{{\bf C}}_{#1{:}#2{:}#3}(#5{,}#4)}                        %assert%
+
+\newcommand{\commitoblig}[5] {\mathrm{{\bf O}}_{#1{:}#2{:}#3}(#5{,}#4)}                        %assert%
+\newcommand{\ijC} {i{:}j{:}C}                        %assert%
+\newcommand{\ijB} {i{:}j{:}B}
+
+\newcommand{\pallow}[2] {\langle\mathrm{allow}_{#1{,}#2}  \rangle}                        %assert%
+\newcommand{\passert}[2] {\langle\mathrm{assert}_{#1{,}#2}  \rangle}                        %assert%
+\newcommand{\pask}[2] {\langle\mathrm{request}_{#1{,}#2} \rangle}                        %assert%
+\newcommand{\ppromise}[2] {\langle\mathrm{promise}_{#1{,}#2} \rangle }                        %assert%
+\newcommand{\poblig}[3] {\langle\mathrm{{\bf O}}_{#1{:}#2{:}#3}\rangle}                        %assert%
+\newcommand{\pcommit}[2] {\langle\mathrm{{\bf C}}_{#1{,}#2}\rangle}                        %assert%
+
+
+
+\newcommand{\precond}  {\mathit{Pre}}                        %precond%
+\newcommand{\postcond}  {\mathit{Post}}                        %postcond%
+
+\newcommand{\able}  {\mathit{Able}}                        %precond%
+\newcommand{\perceive}  {\mathit{Perceive}}                        %precond%
+
+\newcommand{\gammaplus}{\gamma^{+} }                        %precond%
+\newcommand{\gammaminus}{\gamma^{-} }                        %precond%
+
+
+
+
+
+\newcommand{\pos} {\langle \mathtt{B} \rangle}                        %possibility%
+\newcommand{\xstatepos}  {\langle \mathtt \rangle}                        %possxstate%
+\newcommand{\gbel} {\mathtt{Public}}                %group belief%
+\newcommand{\pref}[1] {[\mathtt{C}_{#1}]}                  %goal                      %fear%
+\newcommand{\diamondpref}[1] {\langle \mathtt{C}_{#1} \rangle}                       %des
+
+
+\newcommand{\relgen}{\functor{R}}
+
+\newcommand{\relAction}{\functor{A}}
+\newcommand{\relChoice}{\functor{C}}
+
+\newcommand{\fxrole}{\functor{F}_{\mathit{play}}}
+
+\newcommand{\relAsk}[2]{\functor{R}_{#1{,}#2}}
+\newcommand{\relAllow}[2]{\functor{A}_{#1{,}#2}}
+\newcommand{\relObg}[3]{\functor{O}_{#1{:}#2{:}#3}}
+\newcommand{\relPub}[1]{\functor{P}_{#1}}
+
+\newcommand{\relAcc}[1]{\functor{A}_{#1}}
+\newcommand{\relStit}[1]{\functor{E}_{#1}}
+
+\newcommand{\RelKnow}{\functor{E}}
+\newcommand{\RelBel}{\functor{D}}
+
+\newcommand{\relAct}[1]{\functor{R}_{#1}}
+\newcommand{\relActJoint}{\mathbfcal{R}}
+
+
+\newcommand{\choiceSet}{\functor{C}}
+
+\newcommand{\relActOck}[1]{\functor{\rho}_{#1}}
+
+%\newcommand{\next}{\mathrm{X}}
+
+\newcommand{\relGoal}[1]{\functor{G}_{#1}}
+\newcommand{\relSaid}[3]{\functor{T}_{#1{,}#2{,}#3}}
+\newcommand{\relNxt}{\functor{X}}
+
+\newcommand{\relHist}{\functor{P}}
+
+\newcommand{\relPromise}[2]{\functor{P}_{#1{,}#2}}
+
+
+\newcommand{\relB}{\functor{E}}
+\newcommand{\relC}{\functor{T}}
+
+\newcommand{\relA}{\functor{B}}
+
+
+\newcommand{\relNext}{\functor}
+\newcommand{\relNextCl}{\relNext^*}
+\newcommand{\valProp}{\functor{V}}
+\newcommand{\valNom}{\functor{I}}
+\newcommand{\Moment}{\mathit{Mom}}
+\newcommand{\permRel}{\functor{G}}
+
+
+%particular sets
+\newcommand{\INSTIT}{\mathit{Inst}}
+\newcommand{\ATM}{\mathbb{P}}
+\newcommand{\PROP}{\mathbb{P}}
+\newcommand{\OBJ}{\mathit{Obj}}
+\newcommand{\LIT}{\mathit{Lit}}
+\newcommand{\Nom}{\mathit{NOM}}
+\newcommand{\TYPE}{\mathit{Type}}
+\newcommand{\objset }{\mathbb{O}}
+\newcommand{\ORD}{\mathit{Num}}
+
+\newcommand{\ROLE}{\mathit{Role}}
+\newcommand{\FACT}{\mathit{FACT}}
+\newcommand{\powerset}{ 2^}
+
+\newcommand{\PAGT}{\powerset{\mathbb{AGT}*}}
+\newcommand{\PAGTMINUS}{\powerset{\mathbb{AGT}} \setminus \emptyset}
+
+\newcommand{\PAGTTWO}{\powerset(\powerset(\mathit{AGT}))^*}
+\newcommand{\PAGTMINUSTWO}{ \powerset(\PAGT)  \setminus \emptyset}
+
+
+\newcommand{\FORCES}{\mathit{IllForces}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% gestion des abr�viations latines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\acontrario}{\emph{a contrario}\xspace}
+\newcommand{\Acontrario}{\emph{A contrario}\xspace}
+\newcommand{\adhoc}{\emph{ad hoc}\xspace}
+\newcommand{\apriori}{\emph{a priori}\xspace}
+\newcommand{\Apriori}{\emph{A priori}\xspace}
+\newcommand{\aposteriori}{\emph{a posteriori}\xspace}
+\newcommand{\Aposteriori}{\emph{A posteriori}\xspace}
+\newcommand{\defacto}{\emph{de facto}\xspace}
+\newcommand{\etc}{\emph{etc}.\@\xspace}
+\newcommand{\etal}{\emph{et al}.\@\xspace}
+\newcommand{\ie}{\emph{i.e}.\@\xspace}
+\newcommand{\viz}{\emph{viz}.\@\xspace}
+\newcommand{\cf}{\emph{cf}.\@\xspace}
+\newcommand{\Cf}{\emph{Cf}.\@\xspace}
+\newcommand{\eg}{\emph{e.g}.\@\xspace}
+\newcommand{\via}{\emph{via}\xspace}
+\newcommand{\versu}{\emph{versus}\xspace}
+\newcommand{\vs}{\emph{vs}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ATMGood}{ \ATM^{\mathit{pref}} }
+\newcommand{\ATMAct}{ \ATM^{\mathit{Act}} }
+\newcommand{\ATMFact}{ \ATM^{\mathit{Fact}} }
+\newcommand{\ATMValue}{ \ATM^{\mathit{Value}} }
+\newcommand{\good}{ \mathit{pref} }
+\newcommand{\bad}{ \mathit{bad} }
+
+\newcommand{\goodalpha}{ \good_{\alpha} }
+
+\newcommand{\goodmover}{ \good_{\mathit{moveR } } }
+\newcommand{\goodmovel}{ \good_{\mathit{moveL } } }
+
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{example}{Example}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{Scenario}{Scenario}
+%%
+%\newtheorem{definition}{Definition}%
+%\newenvironment{proof}{\medskip\noindent \textsc{Proof.}}
+%{\hspace*{\fill}\nolinebreak[2]\hspace*{\fill}$\blacksquare$\medskip}
+%%%
+%\newenvironment{remark}{\medskip\noindent \textsc{Remark.}} {\medskip}
+
+\newenvironment{proofsketch}{\medskip\noindent \textsc{Sketch of Proof.}}
+{\hspace*{\fill}\nolinebreak[2]\hspace*{\fill}$\blacksquare$\medskip}
+
+\newbox\itembox
+\def\itemlistlabel#1{#1\hfill}
+\def\itemlist#1{\setbox\itembox=\hbox{#1}%
+                \list{}{\labelwidth\wd\itembox
+                             \leftmargin\labelwidth
+                             \advance\leftmargin by\itemindent
+                             \advance\leftmargin by\labelsep
+                             \let\makelabel\itemlistlabel}}
+\let\enditemlist\endlist
+
+\newcounter{countCondition}
+\setcounter{countCondition}{0}
+\newcommand{\cond}[2]{%
+    \refstepcounter{countCondition}%
+    & \parbox{11cm}{#1}\tag{\Alph{countCondition}}\label{#2}
+}
+\newcommand{\condBIS}[2]{%
+    \refstepcounter{countCondition}%
+    & \parbox{11cm}{#1}\tag{\Alph{countCondition}$'$}\label{#2}
+}
+
+
+
+\newcommand{\pathset}{ \mathit{Path} }
+\newcommand{\finpathset}{ \mathit{FinPath} }
+\newcommand{\historyset}{ \mathit{Comp} }
+\newcommand{\infpathset}{ \mathit{FinPath} }
+
+\newcommand{\traceset}{ \mathit{Trace} }
+
+\newcommand{\choiceset}[1]{ \mathcal{C}_{ #1}  }
+
+\newcommand{\actualchoice}[1]{  \mathcal{A}_{ #1} }
+
+\newcommand{\trackset}{ \mathit{Track} }
+
+
+\newcommand{\fulltraceset}{ \mathit{FullTrace} }
+
+\newcommand{\outset}{ \mathcal{O}}
+\newcommand{\out}{ \mathcal{o}}
+\newcommand{\setcomput}{ \mathcal{O}}
+
+\newcommand{\repertoire}{ \mathit{Rep}}
+
+\newcommand{\actfunct}{ \tau_{\mathrm{tr}}}
+\newcommand{\statefunct}{ \tau_{\mathrm{st}}}
+
+\newcommand{\skipaction}{ \mathit{skip}}
+
+\newcommand{\assigntrue}[1]{ + #1  }
+\newcommand{\assignfalse}[1]{ - #1 }
+
+\newcommand{\RelK}{\mathcal{K}}
+\newcommand{\valueideal}[2]{\mathsf{idl}_{ #1 {, } #2}   }
+\newcommand{\idealfunct}{\functor{I}}
+\newcommand{\dessym} {\mathsf{OPls}  }
+\newcommand{\idealsym}{\mathsf{OIdl}   }
+\newcommand{\utilsym}{\mathsf{OUtil}   }
+
+\newcommand{\stratsetatl}{ \mathit{Str}}
+\newcommand{\dessympess} {\mathit{Pls}  }
+\newcommand{\idealsympess}{\mathsf{Idl}   }
+\newcommand{\utilsympess}{\mathsf{Util}   }
+\newcommand{\assignsetsl}{ \mathit{Asg}}
+
+\newcommand{\proplogic}{\mathsf{PL}}
+
+\newcommand{\basiclogic}{\Lambda}
+
+\newcommand{\classmodel}{\mathbf{M}}
+\newcommand{\classmodelarb}{\mathbf{X}}
+
+
+\newcommand{\inducemod}{\mathit{mk}}
+
+
+\newcommand{\classbranching}{\mathbf{BTM}}
+\newcommand{\classlinear}{\mathbf{LTM}}
+\newcommand{\classlts}{\mathbf{LTS}}
+\newcommand{\classltsserial}{\mathbf{LTS}^{\mathit{ne}}}
+
+\newcommand{\axiomatic}{\mathfrak{A}}
+
+\newcommand{\basicmlogic}{\mathsf{BML}}
+
+
+\newcommand{\Rbel}{\mathcal{B}}
+\newcommand{\el}[1]{\footnote{\textbf{EL:} #1}}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\logicchange}{\textbf{L}^{\mathit{dyn}}}
+
+\newcommand{\strategy}{ f }
+\newcommand{\strategymap}{ \mathcal{F}}
+
+\newcommand{\coalSet}{ \mathit{Groups}}
+
+\newtheorem{coherenceass}{Coherence assumption}
+
+
+\newcommand{\gradedgoalopt}[2] { \mathsf{ ODes}_{#1}^{#2}   }
+\newcommand{\gradedidealopt}[2] { \mathsf{ OVal}_{#1}^{#2}   }
+\newcommand{\gradedintendopt}[2] { \mathsf{ OPref}_{#1}^{#2}   }
+
+\newcommand{\gradedgoalpess}[2] { \mathsf{ Des}_{#1}^{#2}   }
+\newcommand{\gradedidealpess}[2] { \mathsf{ Val}_{#1}^{#2}   }
+\newcommand{\gradedintendpess}[2] { \mathsf{ Pref}_{#1}^{#2}   }
+
+\newcommand{\lboxdouble}[1]{{ [ \! [ #1 ] \! ]}}
+
+\newcommand{\ldiadouble}[1]{{ \langle \! \langle #1 \rangle \! \rangle}}
+
+\newcommand{\argmax}{\arg\!\max }
+
+
+
+\newcommand{\moralsensit}[2] {  \mathsf{moralSensit}(#1 {,} #2)  }%
+
+\newcommand{\moral}[2] {  \mathsf{moralSensit}(#1 {,} #2)  }%
+
+\newcommand{\play}[3] {  \mathsf{choose} (#2 {,} #3_{#1})  }%
+
+\newcommand{\canact}[3] {  \mathsf{able} (#2 {,} #3_{#1})  }%
+
+
+\newcommand{\playsim}[2] {  \mathsf{choose}_{  #1 {,}  #2 }  }%
+
+\newcommand{\canactsym}[2] {  \mathsf{able} ( #2_{#1})  }%
+
+\newcommand{\nullact}     { \mathsf{skip}  }
+\newcommand{\yesterday} {  \mathsf{Y}  }%
+
+
+
+
+
+\newcommand{\sdom}[2] {\mathsf{ SD}^{  #1}#2   }
+\newcommand{\wdom}[2] {\mathsf{ WD}^{  #1} #2  }
+
+
+\newcommand{\nateven} {\mathbb{N}_{\mathit{even}}    }
+\newcommand{\natodd} {\mathbb{N}_{\mathit{odd}}    }
+
+
+\newcommand{\rat}[1] {\mathsf{ ORat}_{  #1}    }
+
+\newcommand{\ratpess}[1] {\mathsf{ Rat}_{  #1}    }
+
+
+\newcommand{\languageLogicFragment}{\Lan_{\logicminus}}
+
+\newcommand{\languageLogic}{\Lan_{\logic} }
+
+\newcommand{\languageLogicFragmentExt}{\Lan_{\logicextminus}}
+
+\newcommand{\languageLogicExt}{\Lan_{\logicext} }
+
+
+
+%PDL construncts
+
+
+
+
+
+
+
+
+
+\newcommand{\caprel}{\functor{C}}
+
+
+\newcommand{\seqrelinv}{\functor{S}^{ \leftarrow}  }
+
+\newcommand{\atloprat}[1]{  \langle\!\langle  #1 \rangle\!\rangle^{\mathit{rat}} }
+
+
+\newcommand{\atlopdual}[1]{  [\![  #1 ]\! ] }
+
+
+\newcommand{\strfix}[2]{  [  #1 \mapsto #2  ] }
+
+\newcommand{\agtstr}[2]{    (#1 {,} #2)   }
+
+\newcommand{\assignfunct} {\mathcal{X}}
+
+
+
+
+
+\newcommand{\rulingfunctone}[4]{ 
+\omega_1( #1 {,}  #2{,} #3) (#4)
+}
+
+\newcommand{\rulingfuncttwo}[4]{ 
+\omega_2( #1 {,}  #2{,} #3) (#4)
+}
+
+\newcommand{\atlrelease}[1]{\cdot   \rangle    #1  \langle \cdot  }
+\newcommand{\atlcommit}[1]{  \langle \cdot  #1 \cdot \rangle  }
+
+
+
+
+\newcommand{\utilfunct}{\functor{U}}
+
+  %\newcommand{\assgn}[2]{ #1 {\leftarrow} #2 }
+  %\newcommand{\assgn}[2]{ #1 \coloneqq #2 }
+
+%\newcommand{\bigparal}{\parallel}
+%  %\newcommand{\bigparal}{\int}
+%
+%\newcommand{\iassgn}[3]{#2 { \stackrel{#1}{ \leftarrow     } } #3}  % \issgn{i}{q}{\top}
+
+
+
+\newcommand{\repact}[2]{ \mathsf{cap}( #1{,} #2  ) }
+
+
+\newcommand{\knw}[1]  {\mathsf{K}_{#1} }
+
+\newcommand{\valuegoalhg}[2]{\mathsf{des}_{ #1 {, } \geq #2}   }
+\newcommand{\valueidealhg}[2]{\mathsf{idl}_{ #1 {, }  \geq #2}   }
+
+
+\newcommand{\bestworld}[1]{\mathsf{best}_{ #1} }
+
+\newcommand{\utility }[2]{ \mathsf{util }_{ #1 {, } #2} }
+
+\newcommand{\equityidl }[2]{ \mathsf{EquityIdl } }
+\newcommand{\fairnessidl }[2]{ \mathsf{FairnessIdl }  }
+\newcommand{\utilidl }[2]{ \mathsf{ UtilIdl} }
+
+\newcommand{\utiln}{\mathsf{x} }
+\newcommand{\utilnb}{\mathsf{y} }
+
+
+\newcommand{\moralsense}{ \ordinalf }
+
+
+
+\newcommand{\moralfunct}{ \functor{S} }
+\newcommand{\moraldisp}{\mu}
+             %assert%
+
+%
+%\newcommand{\request}[3] {\mathit{request}(#1{,}#2{,}#3)}                        %assert%
+%\newcommand{\order}[3] {\mathit{order}(#1{,}#2{,}#3)}                        %assert%
+%
+%\newcommand{\intendSay}[3]{\mathit{CInt}_{#1{,}#2}\hspace{1mm}#3 }
+%
+%
+%
+%\newcommand{\quest}[3]{\mathit{ask}_{#1{,}#2}\hspace{1mm}#3 }
+%\newcommand{\answer}[3]{\mathit{aswer}_{#1{,}#2}\hspace{1mm}#3 }
+                 %assert%
+
+
+\newcommand{\HIST}{\mathit{Hist }}
+
+\newcommand{\JACT}{\mathbb{JACT}}
+
+
+
+
+%yinfeng's command
+\newcommand{\Liff}{\leftrightarrow}%
+\newcommand{\untill}{\mathsf{U}}%
+\newcommand{\redtext}[1]{{\color{red}#1}}
+\newcommand{\Va}[1]{{\valProp(#1)}}
+\newcommand{\comp}{\lambda}
+\newcommand{\defs}[1]{\textbf{#1}}
+
+\newcommand{\NIrat}{\NI^{\mathit{rat}}}
+\newcommand{\PIrat}{\PI^{\mathit{rat}}}
+\newcommand{\clist}{\mathtt{clist}}
+\newcommand{\Blist}{\mathtt{Blist}}
+\newcommand{\Hlist}{\mathtt{Hlist}}
+\newcommand{\bp}{\mathtt{bp}}
+\newcommand{\Fsupport}{\mathtt{support}}
+\newcommand{\support}[1]{\Fsupport (#1)}
+\newcommand{\Fimpeach}{\mathtt{impeach}}
+\newcommand{\impeach}[1]{{\Fimpeach(#1)}}
+\newcommand{\move}[2]{{\ja{#1}(#2)}}%#2's action under \ja{#1}
+\newcommand{\rel}{\functor{R}}
+\newcommand{\clratlogicNoIrrat}{\ensuremath{\mathsf{R/IR-CL} }\xspace}
+\newcommand{\ap}{\ATM}
+\newcommand{\ratstratsetatl}{\mathit{RStr}}
+\protected\def\Ptime{\ifmmode \mbox{\sc Ptime} \else {\sc Ptime}\xspace\fi}
+
+
+
+\newcommand{\atlbh}[3]{\atlop{#1{:}#2{,}#3 } }

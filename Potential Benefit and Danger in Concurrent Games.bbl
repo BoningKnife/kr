@@ -1,0 +1,188 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Alur, Henzinger, and Kupferman}{2002}]{alur2002alternating}
+Alur, R.; Henzinger, T.~A.; and Kupferman, O.
+\newblock 2002.
+\newblock Alternating-time temporal logic.
+\newblock {\em Journal of the {ACM}} 49(5):672--713.
+
+\bibitem[\protect\citeauthoryear{Beckers, Chockler, and Halpern}{2024}]{BeckersChocklerHalpern2024}
+Beckers, S.; Chockler, H.; and Halpern, J.~Y.
+\newblock 2024.
+\newblock A causal analysis of harm.
+\newblock {\em Minds and Machines} 34(3):1--24.
+
+\bibitem[\protect\citeauthoryear{Boudou and Lorini}{2018}]{DBLP:conf/atal/BoudouL18}
+Boudou, J., and Lorini, E.
+\newblock 2018.
+\newblock Concurrent game structures for temporal {STIT} logic.
+\newblock In {\em Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems (AAMAS 2018)},  381--389.
+\newblock IFAAMAS / {ACM}.
+
+\bibitem[\protect\citeauthoryear{Bouyer \bgroup et al\mbox.\egroup }{2023}]{bouyer2023reasoning}
+Bouyer, P.; Kupferman, O.; Markey, N.; Maubert, B.; Murano, A.; and Perelli, G.
+\newblock 2023.
+\newblock Reasoning about quality and fuzziness of strategic behaviors.
+\newblock {\em ACM Transactions on Computational Logic} 24(3):1--38.
+
+\bibitem[\protect\citeauthoryear{Bradley}{2012}]{Bradley2012DoingAwayWithHarm}
+Bradley, B.
+\newblock 2012.
+\newblock Doing away with harm.
+\newblock {\em Philosophy and Phenomenological Research} 85(2):390--412.
+
+\bibitem[\protect\citeauthoryear{Broersen, Herzig, and Troquard}{2006}]{DBLP:journals/logcom/BroersenHT06}
+Broersen, J.~M.; Herzig, A.; and Troquard, N.
+\newblock 2006.
+\newblock Embedding alternating-time temporal logic in strategic {STIT} logic of agency.
+\newblock {\em Journal of Logic and Computation} 16(5):559--578.
+
+\bibitem[\protect\citeauthoryear{Chatterjee, Henzinger, and Piterman}{2007}]{DBLP:conf/concur/ChatterjeeHP07}
+Chatterjee, K.; Henzinger, T.~A.; and Piterman, N.
+\newblock 2007.
+\newblock Strategy logic.
+\newblock In {\em Proc. of the 18th Int. Conf. on Concurrency Theory (CONCUR 2007)}, volume 4703 of {\em LNCS},  59--73.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Fassio}{2025}]{Fassio2025OnDanger}
+Fassio, D.
+\newblock 2025.
+\newblock On danger.
+\newblock {\em Philosophy and Phenomenological Research}.
+\newblock Version of Record online: 08 August 2025.
+
+\bibitem[\protect\citeauthoryear{Frederik, Loewenstein, and O'Donoghue}{2002}]{Lowewenstein2002}
+Frederik, S.; Loewenstein, G.; and O'Donoghue, T.
+\newblock 2002.
+\newblock Time discounting and time preference: A critical review.
+\newblock {\em Journal of Economic Literature} 40(2):351--401.
+
+\bibitem[\protect\citeauthoryear{Garland}{2003}]{Garland2003RiseOfRisk}
+Garland, D.
+\newblock 2003.
+\newblock The rise of risk.
+\newblock In Ericson, R.~V., and Doyle, A., eds., {\em Risk and Morality}. University of Toronto Press.
+\newblock  48--86.
+
+\bibitem[\protect\citeauthoryear{Goranko and van Drimmelen}{2006}]{GorankoDrimmelenATL}
+Goranko, V., and van Drimmelen, G.
+\newblock 2006.
+\newblock Complete axiomatization and decidability of alternating-time temporal logic.
+\newblock {\em Theoretical Computer Science} 353:93--117.
+
+\bibitem[\protect\citeauthoryear{Goranko, Jamroga, and Turrini}{2013}]{goranko_strategic_2013}
+Goranko, V.; Jamroga, W.; and Turrini, P.
+\newblock 2013.
+\newblock Strategic games and truly playable effectivity functions.
+\newblock {\em Journal of Autonomous Agents and Multi-Agent Systems} 26(2):288--314.
+
+\bibitem[\protect\citeauthoryear{Goranko}{2001}]{GorankoTARK2021}
+Goranko, V.
+\newblock 2001.
+\newblock Coalition games and alternating temporal logics.
+\newblock In {\em Proce- of the 8th Conf. on Theoretical Aspects of Rationality and Knowledge (TARK 2001)},  259–272.
+\newblock San Francisco, CA, USA: Morgan Kaufmann Publishers Inc.
+
+\bibitem[\protect\citeauthoryear{Grossi, van~der Hoek, and Kuijer}{2022}]{GrossiHK22}
+Grossi, D.; van~der Hoek, W.; and Kuijer, L.~B.
+\newblock 2022.
+\newblock Reasoning about general preference relations.
+\newblock {\em Artif. Intell.} 313:103793.
+
+\bibitem[\protect\citeauthoryear{Harman}{2009}]{Harman2009HarmingAsCausingHarm}
+Harman, E.
+\newblock 2009.
+\newblock Harming as causing harm.
+\newblock In Wasserman, D., and Roberts, M., eds., {\em Harming Future Persons: Ethics, Genetics and the Nonidentity Problem}. Springer.
+\newblock  137--154.
+
+\bibitem[\protect\citeauthoryear{Huang and Ruan}{2017}]{HuangRuan2017}
+Huang, X., and Ruan, J.
+\newblock 2017.
+\newblock Atl strategic reasoning meets correlated equilibrium.
+\newblock In {\em Proceedings of the 26th International Joint Conference on Artificial Intelligence (IJCAI 2017)},  1102--1108.
+\newblock IJCAI.
+
+\bibitem[\protect\citeauthoryear{Jamroga \bgroup et al\mbox.\egroup }{2024}]{jamroga2024playing}
+Jamroga, W.; Mittelmann, M.; Murano, A.; and Perelli, G.
+\newblock 2024.
+\newblock Playing quantitative games against an authority: On the module checking problem.
+\newblock In {\em Proc. of the 23rd Int. Conf. on Autonomous Agents and Multiagent Systems ({AAMAS} 2024)},  926--934.
+\newblock IFAAMAS.
+
+\bibitem[\protect\citeauthoryear{Jiang and Naumov}{2024}]{Jiang2024-JIAALO}
+Jiang, J., and Naumov, P.
+\newblock 2024.
+\newblock A logic of higher-order preferences.
+\newblock {\em Synthese} 203(6):1--26.
+
+\bibitem[\protect\citeauthoryear{Li, Lorini, and Mittelmann}{2025}]{DBLP:conf/ifaamas/LiLM25}
+Li, Y.; Lorini, E.; and Mittelmann, M.
+\newblock 2025.
+\newblock Rational capability in concurrent games.
+\newblock In {\em Proceedings of the 24th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2025)},  1309--1317.
+\newblock International Foundation for Autonomous Agents and Multiagent Systems / {ACM}.
+
+\bibitem[\protect\citeauthoryear{Liu \bgroup et al\mbox.\egroup }{2020}]{LiuEtAl2020}
+Liu, Z.; Xiong, L.; Liu, Y.; Lesp{\'e}rance, Y.; Xu, R.; and Shi, H.
+\newblock 2020.
+\newblock A modal logic for joint abilities under strategy commitments.
+\newblock In {\em Proceedings of the 29th International Joint Conference on Artificial Intelligence (IJCAI 2020)},  1805--1812.
+\newblock IJCAI.
+
+\bibitem[\protect\citeauthoryear{Lorini}{2021}]{Lorini21}
+Lorini, E.
+\newblock 2021.
+\newblock A qualitative theory of cognitive attitudes and their change.
+\newblock {\em Theory Pract. Log. Program.} 21(4):428--458.
+
+\bibitem[\protect\citeauthoryear{Mittelmann \bgroup et al\mbox.\egroup }{2025}]{MittelmannMMP25}
+Mittelmann, M.; Maubert, B.; Murano, A.; and Perrussel, L.
+\newblock 2025.
+\newblock Formal verification and synthesis of mechanisms for social choice.
+\newblock {\em Artif. Intell.} 339:104272.
+
+\bibitem[\protect\citeauthoryear{Mogavero \bgroup et al\mbox.\egroup }{2014}]{MogaveroMPV14}
+Mogavero, F.; Murano, A.; Perelli, G.; and Vardi, M.~Y.
+\newblock 2014.
+\newblock Reasoning about strategies: On the model-checking problem.
+\newblock {\em {ACM} Trans. Comput. Log.} 15(4):34:1--34:47.
+
+\bibitem[\protect\citeauthoryear{Naumov and Ovchinnikova}{2023}]{Naumov2023AnEL}
+Naumov, P., and Ovchinnikova, A.
+\newblock 2023.
+\newblock An epistemic logic of preferences.
+\newblock {\em Synthese} 201:1--36.
+
+\bibitem[\protect\citeauthoryear{Pauly}{2002}]{DBLP:journals/logcom/Pauly02}
+Pauly, M.
+\newblock 2002.
+\newblock A modal logic for coalitional power in games.
+\newblock {\em Journal of Logic and Computation} 12(1):149--166.
+
+\bibitem[\protect\citeauthoryear{Peschard, Benétreau-Dupin, and Wessels}{2022}]{Peschard2022PhilosophyRisk}
+Peschard, I.; Benétreau-Dupin, Y.; and Wessels, C.
+\newblock 2022.
+\newblock {\em Philosophy and Science of Risk: An Introduction}.
+\newblock New York: Routledge.
+
+\bibitem[\protect\citeauthoryear{van Benthem and Liu}{2007}]{BenthemL07}
+van Benthem, J., and Liu, F.
+\newblock 2007.
+\newblock Dynamic logic of preference upgrade.
+\newblock {\em J. Appl. Non Class. Logics} 17(2):157--182.
+
+\bibitem[\protect\citeauthoryear{van Drimmelen}{2003}]{DrimmelenLICS}
+van Drimmelen, G.
+\newblock 2003.
+\newblock Satisfiability in alternating-time temporal logic.
+\newblock In {\em Proc. of the Eighteenth Annual IEEE Symposium on Logic in Computer Science (LICS 2013)},  208--217.
+\newblock IEEE.
+
+\bibitem[\protect\citeauthoryear{Williamson}{2009}]{Williamson2009ProbabilityDanger}
+Williamson, T.
+\newblock 2009.
+\newblock Probability and danger.
+\newblock {\em Amherst Lecture in Philosophy}  1--35.
+
+\end{thebibliography}

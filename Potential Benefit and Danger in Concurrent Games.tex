@@ -1,0 +1,1463 @@
+%%%% kr-instructions.tex -- version 1.3 (11-Jan-2021)
+\newif\ifarxiv
+\arxivtrue   
+
+\typeout{KR2026 Instructions for Authors}
+
+% These are the instructions for authors for KR-26.
+
+\documentclass{article}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+
+\usepackage{kr}
+
+% Use the postscript times font!
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\urlstyle{same}
+
+
+\usepackage{subcaption}
+
+\usepackage{tikz}
+
+\usepackage{balance} % for balancing columns on the final page
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{LogicYinfeng,StrategicYinfeng}
+
+
+
+% the following package is optional:
+%\usepackage{latexsym}
+
+% See https://www.overleaf.com/learn/latex/theorems_and_proofs
+% for a nice explanation of how to define new theorems, but keep
+% in mind that the amsthm package is already included in this
+% template and that you must *not* alter the styling.
+\newtheorem{fact}{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\allowdisplaybreaks
+% Following comment is from ijcai97-submit.tex:
+% The preparation of these files was supported by Schlumberger Palo Alto
+% Research, AT\&T Bell Laboratories, and Morgan Kaufmann Publishers.
+% Shirley Jowell, of Morgan Kaufmann Publishers, and Peter F.
+% Patel-Schneider, of AT\&T Bell Laboratories collaborated on their
+% preparation.
+
+% These instructions can be modified and used in other conferences as long
+% as credit to the authors and supporting agencies is retained, this notice
+% is not changed, and further modification or reuse is not restricted.
+% Neither Shirley Jowell nor Peter F. Patel-Schneider can be listed as
+% contacts for providing assistance without their prior permission.
+
+% To use for other conferences, change references to files and the
+% conference appropriate and use other authors, contacts, publishers, and
+% organizations.
+% Also change the deadline and address for returning papers and the length and
+% page charge instructions.
+% Put where the files are available in the appropriate places.
+%PDF Info Is REQUIRED.
+\pdfinfo{
+/TemplateVersion (KR.2026.0)
+}
+
+
+
+\title{KR2026 Formatting Instructions}
+
+% Single author syntax
+\iffalse % (remove the multiple-author syntax below and \iffalse ... \fi here)
+\author{%
+    Author name
+    \affiliations
+    Affiliation
+    \emails
+    email@example.com    % email
+}
+\fi
+% Multiple author syntax
+\author{%
+Yinfeng LI$^1$\and
+Emiliano Lorini$^1$\\
+\affiliations
+$^1$IRIT, CNRS, University of Toulouse, Toulouse, France\\
+\emails
+\{yinfeng.li, emiliano.lorini\}@irit.fr
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+We extend the languages of Coalition Logic ($\cllogic$) and Alternating-time Temporal Logic ($\atllogic$) with new modalities for  beneficial  and harmful strategic capabilities, capturing the potential benefit and potential harm that a coalition can bring to another coalition through its strategic choices. 
+These languages are interpreted over concurrent games enriched with agents' preferences. 
+On the conceptual side, we use these languages to formalize the notions of  potential boon  and danger. 
+A potential boon corresponds to a coalition having the capability to confer a benefit on another coalition.
+Danger corresponds to a coalition having the capability to inflict harm on another coalition.  
+On the technical side, we present several results concerning their axiomatization, their relationships with standard $\cllogic$ and $\atllogic$, and their computational complexity.
+
+
+
+\end{abstract}
+
+ 
+
+
+ 
+
+\section{Introduction}
+
+
+Understanding how agents can influence each other’s outcomes in strategic settings is a central problem in multi-agent systems. In many practical scenarios, agents or coalitions act not only to achieve their own goals but also to affect the well-being of other agents, either positively or negatively. This motivates the study of formal notions that capture both the potential benefits and potential harms that coalitions can generate through their strategic choices.
+
+In this paper, we focus on the  concept of  \emph{danger} and its positive counterpart
+\emph{potential boon}. 
+While the general theory
+of danger assumes
+that dangerousness can be ascribed
+not only to agents but also to
+events and situations, in this paper
+we focus on the dangerousness of a coalition
+relative to another coalition. 
+Intuitively,
+a 
+\emph{danger} corresponds to 
+a
+coalition that can inflict harm on another coalition 
+by selecting a particular strategy.
+In this sense the first coalition
+is a danger for the second coalition.
+Its
+positive counterpart 
+\emph{potential boon} corresponds to 
+a coalition that can confer a benefit
+on another coalition through its strategic choices. 
+In this sense the first coalition
+is a potential boon for the second coalition.
+These notions allow us to reason explicitly about the effects of coalition strategies on others, capturing scenarios in which outcomes are not merely neutral but have qualitative significance for other agents.
+
+Our analysis aligns with two families of philosophical theories concerning harm (and benefit) and danger.  
+On the one hand, we share with the so-called \textit{non-comparative causal account of harm}~\cite{Harman2009HarmingAsCausingHarm,Bradley2012DoingAwayWithHarm} the idea that an agent or coalition harms another agent or coalition when the former brings about a bad outcome for the latter. Conversely, it is beneficial when it contributes to securing a good outcome for the latter.\footnote{The non-comparative account is traditionally contrasted with the \textit{comparative counterfactual account}, according to which an event or action is harmful to someone insofar as it makes things go worse for them, overall, than they would have been if the event or action had not occurred.}
+On the other hand, we share with the  \textit{modal non-probabilistic account of danger}~\cite{Fassio2025OnDanger,Garland2003RiseOfRisk,Peschard2022PhilosophyRisk} the idea that an  agent  or coalition constitutes a danger for another agent or coalition when the former has the  potential   to  harm the latter.%
+\footnote{The modal account is traditionally opposed to the probabilistic account, which identifies danger with risk and contrasts it with safety. Thus, while the probabilistic account conceives of danger as a high \emph{probability} of harm, the modal account focuses instead on mere \emph{possibility}.}
+In particular, we interpret \emph{potential} as the existence of a strategy available to a coalition that, if chosen, would bring harm to another coalition.\footnote{In \cite{Williamson2009ProbabilityDanger}, a counterfactual interpretation of this notion of potential or possibility is proposed. We leave for future work a comparison between our analysis and Williamson’s counterfactual theory of danger.}
+
+The notions of good and bad are central to our analysis and, more broadly, to the theory of harm, benefit, danger, and potential boon. In this work, we assume that these two notions can be defined in terms of agents’ preferences: an outcome is good (resp. bad) for an agent when it is one that the agent prefers (resp. disvalues).
+ 
+To formalize this rich conceptual framework, we build on concurrent games enriched with agents' preferences over computations, interpreted as long-term outcomes.  
+We employ this class of structures to define two novel logical languages, based on  Coalition Logic  ($\mathsf{CL}$) and  Alternating-time Temporal Logic ($\mathsf{ATL}$), which enable reasoning about the  beneficial (resp.\ harmful) strategic capabilities of coalitions. 
+We refer to these as the $\atlBDlogic$ and $\clBDlogic$ languages, denoting extensions of $\atllogic$ and $\cllogic$ with \emph{coalition-affecting capabilities}, respectively. 
+They rest on the assumption that a coalition positively (resp.\ negatively) \emph{affects} another coalition when the former brings benefit (resp.\ harm) to the latter through the choice of a particular strategy. 
+Overall, this framework provides a rigorous basis for representing and reasoning about subtle inter-coalitional relationships, capturing the potentially beneficial or harmful influence that one coalition may exert over another.
+
+
+We present several technical results concerning the axiomatizability and computational complexity of the proposed languages. 
+In particular, the main technical contributions of the paper are threefold. 
+First, we provide an axiomatization of the $\clBDlogic$ language with respect to the general class of concurrent game models with preferences, together with a notion of beneficial (resp.\ harmful) strategy, based on the idea that benefiting (resp.\ harming) a coalition means guaranteeing the best (resp.\ worst) outcome for it. 
+Second, we present a variant of this axiomatization for the subclass of models in which agents' preferences are assumed to be non-flat (i.e., it is not  the case that an agent is indifferent among all outcomes). 
+Third, we establish a polynomial embedding of the $\atlBDlogic$ language into standard $\atllogic$, under the assumption that agents' preferences remain stable over time, as well as polynomial embeddings of the $\clBDlogic$ language into standard $\cllogic$, both with and without this assumption. Thanks to these embeddings, we obtain tight complexity results for satisfiability checking.
+ 
+
+
+The paper is organized as follows. 
+Section~\ref{sec:relatedwork} discusses related work. 
+Section~\ref{sec:semantics} introduces the formal semantics. 
+In Section~\ref{sec:benharm}, we use this semantics to formalize the notions of beneficial and harmful strategies. 
+Section~\ref{sec:languages} presents the $\atlBDlogic$ and $\clBDlogic$ languages. 
+Section~\ref{sec:axiom} is devoted to the axiomatization of the $\clBDlogic$ language. 
+Section~\ref{sec: tree-like model property and embedding} establishes the polynomial embeddings of the $\atlBDlogic$ and $\clBDlogic$ languages into standard $\atllogic$ and $\cllogic$. 
+Finally, Section~\ref{conclusion} concludes the paper. Proofs are provided in a technical appendix included in the supplementary material.
+
+
+
+
+% Our contributions are threefold. First, we provide
+% an in-depth semantic analysis of
+% the notions of 
+% \emph{boon} and \emph{danger}
+
+% a formal semantics for the new modalities based on concurrent game structures with preferences, capturing both the agents’ strategic capabilities and their evaluation of outcomes. Second, we present axiomatization results, showing that the extended logics are amenable to rigorous deductive reasoning. Finally, we investigate computational properties, providing complexity results for model checking and satisfiability relative to the proposed semantics.
+
+% By introducing the notions of boon and danger into logical reasoning about coalitions, our framework allows for a precise assessment of strategic influence in multi-agent systems. This has potential applications in automated verification, strategic planning, negotiation analysis, and the study of cooperative or adversarial behavior. Moreover, it opens avenues for integrating preference reasoning with temporal and strategic logics, contributing to a deeper understanding of multi-agent interactions and their consequences.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ 
+
+\section{Related work}\label{sec:relatedwork}
+
+On the formal semantics side, our work draws on two main traditions.  
+On the one hand, it builds upon the concurrent game semantics traditionally used to interpret $\mathsf{ATL}$~\cite{alur2002alternating,GorankoDrimmelenATL}, $\mathsf{CL}$~\cite{DBLP:journals/logcom/Pauly02,GorankoTARK2021}, strategy logic ($\mathsf{SL}$)~\cite{MogaveroMPV14,DBLP:conf/concur/ChatterjeeHP07}, and $\mathsf{STIT}$ (seeing-to-it-that) logic~\cite{DBLP:journals/logcom/BroersenHT06,DBLP:conf/atal/BoudouL18}.  
+On the other hand, it follows the tradition of modal logics of preferences, including the pure logic of preferences and their dynamics~\cite{BenthemL07,GrossiHK22}, the interaction between preferences and epistemic states~\cite{Lorini21,Naumov2023AnEL}, and higher-order preferences~\cite{Jiang2024-JIAALO}.  
+However, these works do not address the strategic or temporal dimensions of preferences.
+
+
+The extension of concurrent games with preferences has recently attracted attention as a means to model agents’ rationality~\cite{DBLP:conf/ifaamas/LiLM25}, to capture the game-theoretic concept of iterated elimination of strictly dominated strategies (IESDS)~\cite{LiuEtAl2020}, and to establish connections between $\mathsf{ATL}$ strategic reasoning and correlated equilibrium~\cite{HuangRuan2017}. 
+In~\cite{DBLP:conf/ifaamas/LiLM25}, a new class of models---\emph{concurrent games with preferences}---was introduced, offering a sophisticated framework for representing agents’ preferences over outcomes in concurrent games, as well as their temporal dynamics. We adopt this class of models in the present work. 
+In contrast,~\cite{LiuEtAl2020} and~\cite{HuangRuan2017} focus on a simpler notion of dichotomous preference induced by an agent's goal, where the goal is expressed either directly at the model level~\cite{HuangRuan2017} or as a parameter of the modalities capturing the outcomes of the IESDS procedure~\cite{LiuEtAl2020}.
+A quantitative notion of goals, based on a fuzzy interpretation, has recently been incorporated into $\mathsf{ATL}$ and $\mathsf{SL}$~\cite{jamroga2024playing,bouyer2023reasoning}, and has been used to represent agents’ utilities in the context of mechanism design~\cite{MittelmannMMP25}. 
+
+In the present paper, we  use  concurrent games with preferences introduced in \cite{DBLP:conf/ifaamas/LiLM25}  to provide a novel logical investigation  of the notions of  beneficial  and  harmful  strategies, as well as the related concepts of  potential boon  and  danger, which have not previously been explored in the context of logics for multi-agent systems.
+ 
+
+ 
+
+On the conceptual side, the work most closely related to ours is~\cite{BeckersChocklerHalpern2024}, which offers a causal analysis of the concept of harm based on the semantics of structural equation models. As emphasized in the introduction, there is a close connection between the notion of harm  and the notion of  danger that we investigate in this paper.
+ 
+
+
+\section{Semantics}\label{sec:semantics}
+ 
+
+In this section, we present the semantics that will later be used to define the concepts of \emph{potential benefit} and \emph{potential harm}, and to interpret the formal languages expressing these concepts. We begin with the notion of a \emph{multi-agent transition frame}. Next, we introduce \emph{concurrent game frames}, a specific class of multi-agent transition frames that satisfy a set of semantic constraints. Finally, we extend concurrent game frames by incorporating a notion of \emph{preference over computations}. 
+The notion of a concurrent game with preferences is based on \cite{DBLP:conf/ifaamas/LiLM25}.
+
+
+
+
+\subsection{Multi-agent transition frame }
+
+Concurrent game models can be defined from a more general class of structures, which we call \emph{multi-agent transition frames} (MATFs). An MATF is parameterized by the number of agents. Let $\AGT = \{a \in \mathbb{N} \mid 0 \leq a < n\}$ denote the set of all agents.
+\begin{definition}[MATF]\label{def: MATF}
+    A multi agent transition frame (MATF) with respect to $\AGT$
+    is a tuple 
+    $\F  = (\St,  \ACT, \R)$,
+    where
+    \begin{itemize}
+    \item $\St$ is a non-empty set of states,
+    \item $\ACT$ is a set of actions,
+    \item $\R: \ACT^{\AGT}\to \powerset{\St\times \St}$ assign a transition relation on $\St$ to every action profile, where $\ACT^{\AGT}=\{\ja_{\AGT}: \AGT \to \ACT\}$ is the set of action profiles.
+    \end{itemize}
+\end{definition}
+
+Given an MATF as in Definition \ref{def: MATF}, for any coalition $C$, a \emph{joint action} of $C$ is a function $\ja_{C} : C \to \ACT$, and the set of all joint actions of $C$ is denoted by $\ACT^{C}$. Note that the empty coalition has a unique joint action, $\emptyset$ (also denoted $\ja_\emptyset$), and action profiles correspond to the joint actions of the grand coalition.
+
+For any joint action $\ja_{C}$, define
+\begin{align*}
+\R_{\ja_{C}} =& \big\{ (s,s') \in \St \times \St \mid{} \text{there exists } \ja_{\AGT} \in \ACT^{\AGT} \\
+&\text{ such that }
+\ja_{C} \subseteq \ja_{\AGT} \text{ and } (s,s') \in \R(\ja_{\AGT})\big\}.
+\end{align*}
+
+We write $(s,s') \in \relAct{\ja_{C}}$ as $s \relAct{\ja_{C}} s'$, and define
+\begin{align*}
+\relAct{\ja_{C}}(s) = \big\{ s'\in \St \mid s \relAct{\ja_{C}} s' \big\}.
+\end{align*}
+
+It can be verified that
+\begin{align*}
+&\relAct{\emptyset} = \bigcup_{\ja_{\AGT} \in \ACT^{\AGT}} \relAct{\ja_{\AGT}}. 
+% &\relAct{\emptyset}(s) = \bigcup_{\ja_{\AGT} \in \ACT^{\AGT}} \relAct{\ja_{\AGT}}(s) \quad \text{for all } s \in \St.
+\end{align*}
+
+
+The following definition
+introduces the concept
+of available joint action for a coalition.
+Intuitively, a joint action is available
+for a coalition at a given state if the coalition 
+can choose it at that state. 
+\begin{definition}[Available joint action]
+We say that a joint action $\ja_{C}$ is \emph{available} for a coalition $C$ at a state $s$ if 
+$
+\relAct{\ja_{C}}(s) \neq \emptyset$. 
+\end{definition}
+
+Two fundamental concepts in the semantics are those of \emph{path} and \emph{computation}, which are formally defined as follows.
+
+\begin{definition}[Path and computation]
+A \emph{path}  in a MATF $\F = (\St ,  \ACT,  \R)$ 
+is a sequence $\history: \Domain \to \St$ of states, where $\Domain$ is a nonempty (might infinite) initial segment of the natural numbers, such that 
+\begin{align*}
+\history(k) \relAct{\emptyset} \history(k+1) \quad \text{for all } k \in \Domain \text{ such that } k+1 \in \Domain.
+\end{align*}
+The set of all paths in $\F$ is denoted by $\Path_{\F}$. The set of all paths starting at a state $s \in \St$ is 
+\begin{align*}
+\Path_{\F,s} = \{ \history \in \Path_{\F} \mid \history(0) = s \}.
+\end{align*}
+
+A \emph{computation} (or \emph{full path}) in $\F$ is a path $\history \in \Path_{\F}$ such that there is no path $\history' \in \Path_{\F}$ for which $\history$ is a proper prefix. The set of all computations in $\F$ is denoted by $\Comp_{\F}$. The set of computations starting at a state $s \in \St$ is 
+\begin{align*}
+\Comp_{\F,s} = \{ \history \in \Comp_{\F} \mid \history(0) = s \}.
+\end{align*}
+
+
+A \emph{partial path} is a path that is not a computation. The set of all partial paths in $\F$ is denoted by $\PPath_{\F}$, and the set of partial paths starting at state $s \in \St$ is 
+\begin{align*}
+\PPath_{\F,s} = \{ \history \in \PPath_{\F} \mid \history(0) = s \}.
+\end{align*}
+\end{definition}
+
+
+For convenience, we denote the domain of a function $f$ by $\dom(f)$. 
+Given a path $\history$, we write $\history_k$ for $\history(k)$ for all $k \in \dom(\history)$, denote the cardinality of $\dom(\history)$ by $\len(\history)$, and denote the restriction of $\history$ to $\{ k' \in \N \mid k' \le k \}$ by $\history|_k$ 
+for all $k \in \dom(\history)$.  
+
+For a finite path $\history$, let $\END(\history)$ denote the greatest number in $\dom(\history)$, and write $\history(\END(\history))$ as  $\last(\history)$.
+
+The following fact  highlights an interesting property of partial paths, which is guaranteed by the fact that the last state of a partial path always has a successor.
+\begin{fact}\label{fact:one}
+$\history $ is a partial path iff 
+$\history $ is finite and $\last(\history)$ is a non-terminal state, i.e., 
+$\relAct{\emptyset}(\last(\history))\neq \emptyset $. 
+\end{fact}
+
+
+The following definition introduces the crucial notion of a \emph{joint strategy} for a coalition in a MATF. 
+We define it as a \emph{total} function from partial paths to joint actions of the coalition. 
+The reason for considering it as total  rather than partial is that,
+in the light of Fact \ref{fact:one}, 
+the last state of a  partial path always has a successor which is reachable
+through a joint action
+of any coalition.
+\begin{definition}[Joint strategy]\label{def: joint strategy}
+A \emph{joint strategy} of a coalition $C$ in a MATF $\F = (\St, \ACT, \R)$
+is a total  function $\js_C: \PPath_{\F} \rightarrow  \ACT^{C}$ such that,
+ for all $\history \in \dom(\js_C)$, 
+$\js_C(\history)$ is available at $\last(\history)$. 
+The set of all joint strategies of coalition $C$ in $\F$ is denoted by $\Js_{\F}^C$.    
+\end{definition}
+
+
+
+Given an initial state $s$ and a joint strategy for a coalition $C$, 
+we can compute the set of computations generated by this strategy starting at $s$.
+
+\begin{definition}[Generated computations]
+Let $\F = (\St, \ACT, \R)$ be a MATF, $s \in \St$, 
+and $\js_{C} \in \Js_{\F}^C$. 
+A computation $\history$ is said to be \emph{generated} by $\js_{C}$ at $s$ if and only if:
+\begin{itemize}
+    \item $\history(0) = s$,
+    \item 
+    for all $k \in \dom(\history)$, 
+    if $k+1 \in \dom(\history)$ then 
+    $\history(k) \relAct{\js_C(\history|_k)} \history(k+1)$.
+\end{itemize}
+The set of all computations generated by $\js_{C}$ at $s$ is denoted by $\outset_\F(s, \js_C)$.
+\end{definition}
+
+
+\subsection{Concurrent game frame }
+
+We define concurrent game frames (CGFs)  as a subclass of MATFs. 
+In particular, a CGF is a MATF which satisfies the three properties of
+\emph{never-ending interaction},
+\emph{independence of  choices}
+and
+\emph{collective choice  determinism}.
+
+
+% Constraint C1 captures 
+% \emph{collective choice  determinism}:
+% the outcome
+% of a collective choice of all agents is uniquely determined.
+% Constraint C2 corresponds to the
+% \emph{independence of  choices} assumption:
+% if agent $1$
+% can individually  choose action 
+% $ \jactatm(1)$, 
+% agent $2$
+% can individually  choose action 
+% $ \jactatm(2)$,...,
+% agent $n$
+% can individually  choose action 
+% $ \jactatm(n)$, 
+% then the agents can collectively choose joint action 
+% $\jactatm$. More intuitively, this means that agents can never be deprived of choices due to the choices made by other agents.
+% Constraint C3 corresponds to the 
+% \emph{neverending interaction} assumption:
+% every state in a CGF has
+%  \emph{at least one successor},
+%  where the successor of a given state
+%  is a state
+%  which is reachable
+%  from
+%  the former via
+%  a collective choice
+%  of all agents.
+
+% To analyze interactions and cooperations in games, we often use the composition of strategies of disjoint coalitions, which is defined by the union of strategies with regarding strategies as sets of tuples. However, the union of strategies of disjoint coalitions is not always a joint strategy. To keep it simple, we use concurrent game frames, which is MATFs with special proerties.
+\begin{definition}[CGF]\label{def: CGF}
+  A MATF $\F  = (\St, \ACT, \R)$ is a concurrent game frame (CGF), if  it satisfies the following three properties:
+  \begin{description}
+    \item[Never-ending interaction:] 
+    the relation $\R_{\emptyset}$
+    over $\St$ is serial.\footnote{This means
+    that $\forall s\in \St, \exists s'\in \St \text{ such that }s\R_{\emptyset} s' $. }
+    \item[Independence of choices:] for all states $s \in \St$, for all coalitions $\Coalition, \Coalition'$ such that $\Coalition \cap \Coalition' = \emptyset$, and for all joint actions $\ja_{\Coalition} \in \ACT^{\Coalition}$, $\ja_{\Coalition'} \in \ACT^{\Coalition'}$, if both $\ja_{\Coalition}$ and $\ja_{\Coalition'}$ are available at $s$, then their union $\ja_{\Coalition} \cup \ja_{\Coalition'}$ is also available at $s$.
+
+    \item[Collective choice determinism:] for all action profile $\ja_{\AGT}$,
+     the relation $\R_{\ja_{\AGT}}$
+    over $\St$ is deterministic.\footnote{This means
+    that $\forall s,s',s''\in \St$, if $s\R_{\ja_{\AGT}} s' $
+and $s\R_{\ja_{\AGT}} s'' $ then $s'=s''$. }
+  \end{description}
+\end{definition}
+\emph{Never-ending interaction} captures the fact that every state in a CGF has at least one successor. 
+According to \emph{independence of choices}, agents can never be deprived of available actions due to the choices made by other agents. 
+Finally, \emph{collective choice  determinism} ensures
+that the outcome of a joint action of all agents is uniquely determined.  In other words,
+once all agents have made their choices the next state is uniquely determined. 
+
+In a CGF, due to the property of collective choice determinism, the set of computations generated by a strategy for the grand coalition $\AGT$  at a given state is a singleton. 
+The unique computation generated by a strategy $\js_\AGT$ of the grand coalition $\AGT$ at state $s$ is denoted by $\out_\F(s, \js_\AGT)$.
+Moreover,
+due to independence of choices, 
+the union of the  strategies of two 
+disjoint coalitions is itself a strategy
+for the union of the two coalitions. 
+
+
+\subsection{Concurrent game frame with preferences }
+
+
+We now 
+extend a CGF with a  notion of preference over computations, resulting in a structure called a \emph{CGF with preferences} (CGFP). Specifically, we extend a CGF by introducing, for each agent and for each state, a preference ordering that captures the agent's preference over the computations starting from that state.  
+This notion of preference over computations can be understood as a preference over long-term outcomes, since in a CGF the long-term outcomes available to an agent from a given state coincide with the set of computations originating from that state.
+ \begin{definition}[CGFP]\label{def: CGFP}
+ A CGF with preferences (CGFP) is a tuple $\P = (\F, \preceq)$, where:
+ \begin{itemize}
+     \item $\F$ is a CGF, and 
+     \item $\preceq: \AGT \times \St \to \powerset{\historyset_{\F}\times \historyset_{\F}}$ assigns to every pair of agent $i$ and state $s$ a total preorder over $\historyset_{\F,s}$. 
+ \end{itemize}
+For any agent $i$, state $s$, and computations $\lambda, \lambda'$, we write $\lambda \preceq_{i,s} \lambda'$ for $(\lambda,\lambda') \in {\preceq\!(i,s)}$. 
+As usual, we write $\lambda \prec_{i,s} \lambda'$ if $\lambda \preceq_{i,s} \lambda'$ and $\lambda' \not\preceq_{i,s} \lambda$. 
+We respectively denote by $\succeq_{i,s}$ and $\succ_{i,s}$ the inverses of $\preceq_{i,s}$ and $\prec_{i,s}$.
+          % The class of CGFPs is denoted
+          % by $\classcgsp$.
+          
+          We say that the CGFP 
+          $(\F,\preceq)$ has stable preferences
+          if
+          the following condition holds
+          for all agents $i\in \AGT$:
+          \begin{align*}
+       (\mathbf{SP}) & \forall s,s' \in \St ,
+          \forall \lambda, \lambda' \in 
+          \historyset_{\F,s' } 
+          \text{ if } s \relAct{\emptyset }  s',
+          \\ &
+          \text{ then }
+          \big(
+        \lambda'   \preceq_{i,s'}\lambda  \text{ iff }
+        s \lambda'   \preceq_{i,s } s\lambda 
+          \big). 
+          \end{align*}
+
+          We say that the CGFP 
+          $(\F,\preceq)$ has non-flat preferences if the following condition holds
+               for all agents $i\in \AGT$:
+          \begin{align*}
+        (\NFP)\    \forall s\in \St, \exists \history ,\history' \in \historyset_{\F,s}\text{ such that } \history \prec_{i,s} \history' .
+           \end{align*}
+\end{definition}
+Property $\mathbf{SP}$, expressing \emph{stable preferences}, captures the idea that an agent's preference remains consistent over time: an agent prefers a computation $\lambda$ to a computation $\lambda'$ starting at the same state $s'$ if and only if it prefers the precursor of $\lambda$ (i.e., $s\lambda$) to the precursor of $\lambda'$ (i.e., $s\lambda'$) at every predecessor $s$ of $s'$.
+Stability of preferences is in line with the notion of \emph{time consistency} of preferences studied in economics, as opposed to \emph{time inconsistency} \cite{Lowewenstein2002}.
+Property $\mathbf{NFP}$, expressing \emph{non-flat preferences}, captures the idea that agents are not indifferent among all outcomes.
+
+
+\subsection{Concurrent game models with preferences}\label{CGMPsect}
+
+We conclude this section by moving from
+frames to models. In particular, we
+assume a set a countably infite set of atomic
+propositions $\AP$
+denoting atomic facts and supplement 
+a CGFP with a valuation function specifying for
+every state in the CGFP which propositions are true there.
+
+\begin{definition}[CGMP]\label{def: CGMP}
+  A concurrent game model with preferences (CGMP) with respect to $\AGT$ and $\AP$
+  is a tuple 
+  $\M  = (\P, \V)$,
+  where
+  \begin{itemize}
+  \item $\P$ is CGFP, and 
+  \item $\V: \St \to 2^\AP$ is a valuation function. 
+  \end{itemize}
+\end{definition}
+In Definition~\ref{def: CGFP}, we introduced two properties for CGFPs: 
+stability ($\mathbf{SP}$) and non-flatness ($\mathbf{NFP}$) of preferences. 
+These properties are inherited by CGMPs. 
+For $X \subseteq \{\mathbf{SP}, \mathbf{NFP}\}$, 
+we denote by $\classcgspvar{X}$ the class of CGMPs satisfying all properties in $X$. 
+For example, $\classcgspvar{\{\NFP\}}$ denotes the class of CGMPs with non-flat preferences, 
+while $\classcgspvar{\emptyset}$ denotes the class of all CGMPs.
+
+
+We  illustrate 
+the notion of CGMP with the help of a concrete example. 
+
+\begin{example}\label{ex1}
+We consider a scenario involving three agents, robots $0$, $1$, and $2$, operating in a small environment composed of three rooms: a left room, a middle room, and a right room. Each of the left and right rooms contains a charging station. 
+Robot~$1$ is positioned in front of the exit of the right room, guarding it to prevent entry, while robot~$2$ is stationed in front of the exit of the left room, performing the same role. 
+Initially, robot~$0$ is located in the middle room (proposition $\mathit{inM}_0$). 
+During the course of the game, it can move and change its position, 
+entering either the right room (proposition $\mathit{inR}_0$) 
+or the left room (proposition $\mathit{inL}_0$). 
+The initial configuration is shown in Figure~\ref{fig:spacefigure}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.55\linewidth]{ImageSpace.pdf}
+    \caption{Scenario}
+    \label{fig:spacefigure}
+\end{figure}
+
+Robot~$0$ can move from its current room either to the right (action $\mathit{ri}$) or to the left (action $\mathit{le}$). 
+Thus, to move from the middle room to the right room, it must perform the action $\mathit{ri}$; conversely, to move from the right room to the middle room, it must perform the action $\mathit{le}$, and so on. 
+If robot~$0$ is already in the right (resp.\ left) room and attempts to move further right (resp.\ left), it remains in place, as it encounters a wall.
+
+Robots~$1$ and~$2$ can either block (action~$\mathit{bl}$) or free (action~$\mathit{fr}$) 
+the passage of the room they are guarding. 
+Thus, robot~$1$ can block or free the passage of the right room, and robot~$2$ can do the same for the left room. 
+If robot~$1$ (resp.\ robot~$2$) blocks the passage of its respective room, then robot~$0$ cannot reach the corresponding charging station when it is in the middle room, 
+and cannot leave the room whose passage is blocked when it is located there.
+
+
+
+Robot~$0$’s goal is to reach a charging station at some point in the future, while the goal of robots~$1$ and~$2$ is to prevent it from doing so. 
+The CGMP corresponding to this scenario is shown in Figure~\ref{CGMPscenario}. 
+
+
+
+\begin{figure}[h]
+    \centering
+
+    % --- Subfigure (a): TikZ diagram ---
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \fbox{\begin{minipage}{0.9\textwidth}
+        \centering
+        \begin{tikzpicture}[
+            scale=0.8, transform shape,
+            semithick,
+            state/.style={circle, draw, minimum size=12mm, inner sep=0pt, font=\small},
+            labelbox/.style={rounded corners=2pt, inner sep=2pt, font=\scriptsize, fill=white, draw=none}
+        ]
+        % --- Nodes ---
+        \node[state,label=below:$s_2$] (L) at (0,0) {$\mathit{inL}_0$};
+        \node[state,label=below:$s_0$] (C) at (3.2,0) {$\mathit{inM}_0$};
+        \node[state,label=below:$s_1$] (R) at (6.4,0) {$\mathit{inR}_0$};
+
+        % --- Self-loops ---
+        \path[->] (C) edge[loop above]
+            node[above,labelbox] {$\delta_1,\,\delta_3,\,\delta_5,\,\delta_6$} ();
+        \path[->] (R) edge[loop above]
+            node[above,labelbox,text width=28mm,align=center]
+            {$\delta_1,\,\delta_2,\,\delta_5,\,\delta_6,\,\delta_7,\,\delta_8$} ();
+        \path[->] (L) edge[loop above]
+            node[above,labelbox,text width=28mm,align=center]
+            {$\delta_1,\,\delta_2,\,\delta_3,\,\delta_4,\,\delta_5,\,\delta_7$} ();
+
+        % --- Directed edges between states ---
+        \draw[->,bend left=12] (C) to node[midway, above,labelbox] {$\delta_7,\,\delta_8$} (R);
+        \draw[->,bend left=12] (R) to node[midway, below,labelbox] {$\delta_3,\,\delta_4$} (C);
+        \draw[->,bend left=12] (C) to node[midway, below,labelbox] {$\delta_2,\,\delta_4$} (L);
+        \draw[->,bend left=12] (L) to node[midway, above,labelbox] {$\delta_6,\,\delta_8$} (C);
+        \end{tikzpicture}
+        \end{minipage}}
+        \caption{State transition diagram.}
+    \end{subfigure}
+
+    \vspace{1em}
+
+    % --- Subfigure (b): Delta table ---
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \fbox{\begin{minipage}{0.95\textwidth}
+        \[
+        \begin{array}{ll}
+        \delta_1 = (0{:}\mathit{le}, 1{:}\mathit{bl}, 2{:}\mathit{bl}) & \delta_5 = (0{:}\mathit{ri}, 1{:}\mathit{bl}, 2{:}\mathit{bl}) \\
+        \delta_2 = (0{:}\mathit{le}, 1{:}\mathit{bl}, 2{:}\mathit{fr}) & \delta_6 = (0{:}\mathit{ri}, 1{:}\mathit{bl}, 2{:}\mathit{fr}) \\
+        \delta_3 = (0{:}\mathit{le}, 1{:}\mathit{fr}, 2{:}\mathit{bl}) & \delta_7 = (0{:}\mathit{ri}, 1{:}\mathit{fr}, 2{:}\mathit{bl}) \\
+        \delta_4 = (0{:}\mathit{le}, 1{:}\mathit{fr}, 2{:}\mathit{fr}) & \delta_8 = (0{:}\mathit{ri}, 1{:}\mathit{fr}, 2{:}\mathit{fr})
+        \end{array}
+        \]
+        \end{minipage}}
+        \caption{Action profiles $\delta_1$–$\delta_8$.}
+    \end{subfigure}
+
+    \vspace{1em}
+
+    % --- Subfigure (c): Utility definition ---
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \fbox{\begin{minipage}{0.55\textwidth}
+        \begin{align*}
+      \forall s\in\{s_0,s_1,s_2\},&
+     \forall\lambda, \lambda' \in 
+      \historyset_{\F_{\mathit{sce}},s}, 
+       \forall i \in \{0,1,2 \}, \\
+      & \lambda \preceq_{i,s } \lambda  \text{ iff } U_0(\lambda' )  \leq U_0(\lambda)
+      \text{ with}
+        \end{align*}
+        \begin{align*}
+        U_0(\lambda)=
+        \begin{cases}
+        0 & \text{if } \forall  k \geq 0, 
+   \{\mathit{inR}_0,\mathit{inL}_0\}  \cap \valProp(\lambda(k)) =  
+      \emptyset,\\
+        1 & \text{otherwise} ;
+        \end{cases}
+        \end{align*}
+                \begin{align*}
+        U_1(\lambda)=  U_2(\lambda)=
+        \begin{cases}
+        0 & \text{if } \exists   k \geq 0
+        \text{ such that }\\
+&      \{\mathit{inR}_0,\mathit{inL}_0\}  \cap \valProp(\lambda(k)) \neq 
+      \emptyset ,\\
+        1 & \text{otherwise} .
+        \end{cases}
+        \end{align*}
+        \end{minipage}}
+        \caption{Utility-induced preference structure.}
+    \end{subfigure}
+
+    \caption{CGMP for the scenario: (a) state transitions, (b) action profiles, (c) preference structure. We denote with
+    $\F_{\mathit{sce}}$ the underlying CGF. }
+    \label{CGMPscenario}
+\end{figure}
+
+
+It consists of three states, $s_0$, $s_1$, and $s_2$, with $s_0$ as the initial state, and eight possible action profiles, $\delta_1, \ldots, \delta_8$. 
+To make the example self-contained, we assume that each robot’s preferences over computations starting from a given state are induced by a dichotomous utility function: 
+this function assigns a value of~$1$ to a computation that allows the robot to achieve its goal, and a value of~$0$ otherwise. 
+
+\end{example}
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+\section{Beneficial  and harmful strategy }\label{sec:benharm}
+
+In this section, we introduce the concepts of  beneficial  and  harmful  strategies. The intuition is straightforward: the strategy of a coalition is said to be beneficial (resp. harmful) for another coalition if the choice of that strategy by the first coalition guarantees a good (resp. bad) outcome for the second coalition. We further distinguish between \emph{strongly} and \emph{weakly} beneficial (or harmful) strategies, based on two different interpretations of what constitutes a good or bad outcome for a coalition.
+A strategy is \emph{strongly beneficial} (resp.\ \emph{strongly harmful}) for a coalition if it guarantees the best (resp. worst) outcome that the agents in the coalition could obtain. Conversely, a strategy is \emph{weakly beneficial} (resp.\ \emph{weakly harmful}) for a coalition if it guarantees an outcome that is better (resp.\ worse) for the agents in the coalition than the one they could obtain if the strategy were not played.
+
+
+
+
+
+The following definition introduces the concepts
+of strongly beneficial and harmful strategy.
+\begin{definition}[Strongly beneficial and harmful strategy]\label{def: strong help and harm}
+ Given a CGFP $\P = (\F, \preceq)$. We say a strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly beneficial for coalition $\GroupB\subseteq \AGT$ at state $s$
+ iff $\outset_\F(s,\js_\Coalition)\subseteq \Best_{i,s}$ for every $i\in \GroupB $, where $\Best_{i,s} = \{\history\in \Comp_{\F,s}\mid \forall \history'\in \Comp_{\F,s} (\history\not \prec_{i,s} \history')\}$.
+
+ Similarly, we say a strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly harmful for coalition  $\GroupH\subseteq \AGT$
+ at state $s$
+ iff $\outset_\F(s,\js_\Coalition)\subseteq \Worst_{i,s}$  for every $i\in \GroupH $, where $\Worst_{i,s} = \{\history\in \Comp_{\F,s}\mid \forall \history'\in \Comp_{\F,s} (\history\not \succ_{i,s} \history')\}$.
+ 
+We denote with  $\JsSB_{\F}^C(s,\GroupB)$ and $\JsSH_{\F}^C(s,\GroupH)$
+the set of strongly beneficial
+strategies of coalition $\Coalition$
+for coalition $\GroupB$ at state $s$ and
+the set of strongly harmful 
+strategies of coalition $\Coalition$
+for coalition $\GroupH$ at state $s$, respectively.
+\end{definition}
+
+Let us now turn to the notion of \emph{weakly} beneficial and harmful strategies.
+\begin{definition}[Weakly beneficial and harmful strategy]\label{def: weak help and harm}
+ Given a CGFP $\P = (\F, \preceq)$. We say a strategy $\js_\Coalition$ of coalition $\Coalition$ is weakly beneficial for coalition $\GroupB\subseteq \AGT$ at state $s$
+ iff $\history' \not \succ_{i,s} \history$ for all $\history\in \outset_\F(s,\js_\Coalition)$, $\history'\in \Comp_{\F,s}-\outset_\F(s,\js_\Coalition)$ and $i\in \GroupB $.
+
+ Similarly, we say a strategy $\js_\Coalition$ of coalition $\Coalition$ is weakly harmful for coalition $\GroupH\subseteq \AGT$ at state $s$ iff  $\history' \not \prec_{i,s} \history$ for all $\history\in \outset_\F(s,\js_\Coalition)$, $\history'\in \Comp_{\F,s}-\outset_\F(s,\js_\Coalition)$ and $i\in \GroupH $.
+ 
+We denote with $\JsWB_{\F}^C(s,\GroupB)$ and $\JsWH_{\F}^C(s,\GroupH)$
+the set of weakly beneficial
+strategies of coalition $\Coalition$
+for coalition $\GroupB$ at state $s$ and
+the set of weakly  harmful 
+strategies of coalition $\Coalition$
+for coalition $\GroupH$ at state $s$, respectively.
+\end{definition}
+
+The intuition behind Definition \ref{def: weak help and harm} is that, for a strategy to be weakly beneficial (resp. harmful) for a coalition, the outcome of the strategy should be better (resp. worse) for each member of the coalition than any outcome they could obtain if a different strategy were played.
+% We add the condition 
+% $
+% \Comp_{\F,s} \setminus \outset_\F(s,\js_\Coalition) \neq \emptyset
+% $ 
+% in the definition to avoid situations in which a strategy could be considered both beneficial and harmful at the same time.\el{Is it right? }
+
+
+Let us return to Example~\ref{ex1} presented in Section~\ref{CGMPsect} in order to illustrate the preceding definitions.
+\begin{example}[Cont.]
+Consider the following strategy $\js_{\{1,2\}}$ for the coalition formed by robots~$1$ and~$2$:
+\begin{align*}
+ &  \js_{\{1,2\}}(\lambda)=
+(1{:}\mathit{bl}, 2{:}\mathit{bl}) 
+ \text{ for all }\lambda \in \PPath_{\F_{\mathit{sce}}}.
+\end{align*}
+This strategy corresponds to blocking the passage of  both the right and left rooms indefinitely.  
+It is straightforward to verify that
+$\js_{\{1,2\}} \in
+\JsSH_{\F_{\mathit{sce}}}^{\{1,2\}} (s_0,\{0\})$, 
+and moreover,
+$\js_{\{1,2\}} \in
+\JsSB_{\F_{\mathit{sce}}}^{\{1,2\}} (s_0,\{1\})$
+and 
+$\js_{\{1,2\}} \in
+\JsSB_{\F_{\mathit{sce}}}^{\{1,2\}} (s_0,\{2\})$.
+In words, the strategy $\js_{\{1,2\}}$ of coalition~$\{1,2\}$ 
+is strongly harmful for robot~$0$ at state~$s_0$, 
+and strongly beneficial for both robots~$1$ and~$2$ at the same state.
+
+Now consider the following strategy $\js_{\{1\}}'$ for robot~$1$:
+\begin{align*}
+ &  \js_{\{1\}}'(\lambda)=
+(1{:}\mathit{bl}) 
+ \text{ for all }\lambda \in \PPath_{\F_{\mathit{sce}}}.
+\end{align*}
+This strategy corresponds to robot~$1$ blocking the passage of the right room indefinitely.  
+It is straightforward to verify that
+$\js_{\{1\}}' \in
+\JsWH_{\F_{\mathit{sce}}}^{\{1\}} (s_0,\{0\})$, 
+and moreover,
+$\js_{\{1\}}' \notin
+\JsSH_{\F_{\mathit{sce}}}^{\{1\}} (s_0,\{0\})$. 
+In words, the strategy $\js_{\{1\}}'$ of robot~$1$ 
+is weakly harmful for robot~$0$ at state~$s_0$, 
+but not strongly harmful. 
+
+
+
+\end{example}
+
+ The following proposition 
+ highlights the connection between
+ strongly beneficial/harmful
+ and 
+  weakly beneficial/harmful. The proof is in 
+Appendix E of the supplementary material.
+
+  \begin{proposition}\label{prop:strat}
+  If 
+a strategy $\js_\Coalition$ 
+of a coalition $\Coalition $
+is strongly beneficial (resp. harmful) for a coalition at a state, then it
+is also weakly beneficial (resp. harmful).  
+  \end{proposition}
+
+ 
+
+\putaway{
+To get a notion of interactive help and harm, we extend the preferences of agents from outcomes to strategies.
+\begin{definition}[preferences on strategies]\label{def: preferences on strategies}
+ Given a CGFP $\P = (\F, \preceq)$ and two strategies $\js_C,\js_C'$ of  coalition $C$. We say a group $\Group$ \emph{weakly prefer} $\js_C$ than $\js_C'$ at state $s$, denoted by $\js_C\geq^C_{\Group,s} \js_C'$, iff for all $i\in \Group$ and $\js_{\AGT - C}\in \Js^{\AGT - C}_\F$, we have $\out_\F(s,\js_C\cup \js_{\AGT - C})\succeq_{i,s} \out_\F(s,\js_C'\cup \js_{\AGT - C})$.
+ 
+ As usual, we write 
+  write
+    $\js_C >^C_{\Group,s} \js_C'$
+    if 
+       $\js_C \geq^C_{\Group,s} \js_C'$
+       and
+          $\js_C' \not \geq ^C_{\Group,s} \js_C$, and respectively denote $\leq^C_{\Group,s}$ and $<^C_{\Group,s}$ for the reverse of $\geq^C_{\Group,s}$ and $>^C_{\Group,s}$.
+
+ We say the preference of group $\Group$ on strategies of coalition $\Coalition$ at state $s$ is strongly non-flat ($\geq^\Coalition_{\Group,s}$ is strongly non-flat) iff for all $\js_\Coalition \in \Js^\Coalition_{\F}$ there is $\js_\Coalition' \in \Js^\Coalition_{\F}$ such that $\js_\Coalition >^C_{\Group,s} \js_\Coalition'$ or $\js_\Coalition <^C_{\Group,s} \js_\Coalition'$.
+\end{definition}
+
+The preferences on strategies are pretty similar to the notion of domination on strategies. Also, the notion of interactively beneficial and harmful strategies is similar to non-dominated strategies.
+\begin{definition}[strong and interactive help and harm]\label{def: strong and interactive help and harm}
+ Given a CGFP $\P = (\F, \preceq)$. We say a strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly and interactively beneficial for group $\Group\subseteq \AGT$, denoted by $\js_C\help^\mathtt{si}_s\Group$, iff $\geq^\Coalition_{\Group,s}$ is strongly non-flat and there is no $\js_\Coalition'\in\Js^\Coalition_\P$ such that $\js_\Coalition'>^\Coalition_{\Group,s}\js_\Coalition$.
+
+ Similarly, we say a strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly and interactively harmful for group $\Group\subseteq \AGT$, denoted by $\js_C\harm^\mathtt{si}_s\Group$, iff $\geq^\Coalition_{\Group,s}$ is strongly non-flat and there is no $\js_\Coalition'\in\Js^\Coalition_\P$ such that $\js_\Coalition'<^\Coalition_{\Group,s}\js_\Coalition$.
+ 
+We denote $\Js_{\F}^C\help^\si_s\Group = \{\js_\Coalition\in \Js^C_\F\mid \js_C\help^\si_s\Group\}$ and $\Js_{\F}^C\harm^\si_s\Group = \{\js_\Coalition\in \Js^C_\F\mid \js_C\harm^\si_s\Group\}$.
+\end{definition}
+
+We can drop the condition of strong non-flatness to get a weak notion of interactively beneficial and harmful strategies.
+\begin{definition}[weak and interactive help and harm]\label{def: weak and interactive help and harm}
+ Given a CGFP $\P = (\F, \preceq)$. We say a strategy $\js_\Coalition$ of coalition $\Coalition$ is weakly and interactively beneficial for group $\Group\subseteq \AGT$, denoted by $\js_C\help^\mathtt{wi}_s\Group$, iff there is no $\js_\Coalition'\in\Js^\Coalition_\P$ such that $\js_\Coalition'>^\Coalition_{\Group,s}\js_\Coalition$.
+
+ Similarly, we say a strategy $\js_\Coalition$ of coalition $\Coalition$ is weakly and interactively harmful for group $\Group\subseteq \AGT$, denoted by $\js_C\harm^\mathtt{wi}_s\Group$, iff there is no $\js_\Coalition'\in\Js^\Coalition_\P$ such that $\js_\Coalition'<^\Coalition_{\Group,s}\js_\Coalition$.
+ 
+We denote $\Js_{\F}^C\help^\wi_s\Group = \{\js_\Coalition\in \Js^C_\F\mid \js_C\help^\wi_s\Group\}$ and $\Js_{\F}^C\harm^\wi_s\Group = \{\js_\Coalition\in \Js^C_\F\mid \js_C\harm^\wi_s\Group\}$.
+\end{definition}
+
+}
+
+
+
+
+
+\section{Languages }\label{sec:languages}
+
+
+In this section, we leverage the semantics presented above to interpret a novel language that extends the language of $\mathsf{ATL}$ with a new family of \emph{coalition-affecting strategic capability} modalities. These modalities allow us to reason about the strategic choices of one coalition that affect another coalition, under the assumption that the strategy of one coalition affects another insofar as the first coalition's strategic choice has either a positive or a negative effect on the well-being of the second coalition, by bringing it benefit or causing it harm.
+
+
+
+The $\atllogic$ language with \emph{coalition-affecting capability} modalities, denoted by $\lang_{\atlBDlogic}(\AGT, \AP)$, is defined by the following grammar:
+\begin{center}\begin{tabular}{lcl}
+State formula: &$\varphi, \psi$  & $\bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid \atlbh{\Coalition}{\GroupB}{\GroupH}\gamma $\\
+Path formula: &$\gamma $ & $\bnf \X \phi \mid 
+\henceforth  \varphi 
+ \mid 
+ (\until{\varphi}{\psi} )$
+\end{tabular}\end{center}
+where  $p$
+ranges over $\AP$,
+and $\Coalition$, $\GroupB$ and $\GroupH$ range over $\powerset{\AGT}$. 
+The other Boolean connectives
+and constructs 
+$\vee, \rightarrow, \leftrightarrow, \top, \bot $
+ are defined as abbreviations in the usual way. 
+For simplicity, we sometimes write $\lang_{\atlBDlogic}$ instead of $\lang_{\atlBDlogic}(\AGT, \AP)$.
+
+ 
+ % $\atlop{\Coalition: \help\GroupB,\harm \GroupH}$ is also written as $\atlbh{\Coalition}{\GroupB}{\GroupH}$ for readability.
+
+Formulas 
+$\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi$,
+$\atlbh{\Coalition}{\GroupB}{\GroupH} \G \varphi$,
+and 
+$\atlbh{\Coalition}{\GroupB}{\GroupH} (\until{\varphi}{\psi})$
+capture the notion of a \emph{coalition-affecting strategic capability} to guarantee a certain fact, where this fact is expressed by a temporal formula of $\mathsf{LTL}$ (Linear Temporal Logic). 
+In particular,  
+$\atlbh{\Coalition}{\GroupB}{\GroupH}
+\nexttime \varphi $
+has to be read 
+``coalition $\Coalition$ has 
+a strategy,
+which is beneficial for group $\GroupB$, 
+harmful to group $\GroupH$, and guarantees that
+$\varphi$ is going to be true in the next state'';
+$\atlbh{\Coalition}{\GroupB}{\GroupH}
+ \G\varphi $
+has to be read 
+``coalition $\Coalition$ has 
+a strategy,
+which is beneficial for group $\GroupB$, 
+harmful to group $\GroupH$, and guarantees that   
+ $\varphi$ will always be true''; 
+$\atlbh{\Coalition}{\GroupB}{\GroupH}
+ (\until{\varphi}{\psi} )$
+has to be read 
+``coalition $\Coalition$ has 
+a strategy,
+which is beneficial for group $\GroupB$, 
+harmful to group $\GroupH$, and guarantees that   
+ $\varphi$ will be true until $\psi$ is true''.
+
+
+With the help of these modalities, we can elegantly represent the notions of \emph{potential boon} and \emph{potential danger}.
+In particular, a coalition $\Coalition$ is said to be a  potential boon  for another coalition $\GroupB$, denoted $\mathit{Boon}(\Coalition, \GroupB)$, if $\Coalition$ has a strategy that is beneficial for $\GroupB$. This can be defined as an abbreviation:
+\begin{align*}
+   \mathit{Boon}(\Coalition, \GroupB) \eqdef 
+   \atlbh{\Coalition}{\GroupB}{\emptyset }
+   \nexttime \top .
+\end{align*}
+Analogously, a coalition $\Coalition$ is said to be a    danger  for another coalition $\GroupH$, denoted $\mathit{Danger}(\Coalition, \GroupH)$, if $\Coalition$ has a strategy that is harmful for $\GroupH$. Formally:
+\begin{align*}
+   \mathit{Danger}(\Coalition, \GroupH) \eqdef 
+   \atlbh{\Coalition}{\emptyset}{\GroupH }
+   \nexttime \top .
+\end{align*}
+
+  
+Notice also that standard $\mathsf{ATL}$
+modalities
+$\atlop{\Coalition }\nexttime\varphi$,
+$\atlop{\Coalition }\henceforth$ and
+$\atlop{\Coalition }(\until{\varphi}{\psi})$
+are definable
+as special cases
+of $\atlBDlogic$ modalities,
+as follows: 
+\begin{align*}
+    \atlop{\Coalition }\nexttime\varphi \eqdef&   \atlbh{\Coalition}{\emptyset}{\emptyset  } \nexttime\varphi,\\
+    \atlop{\Coalition }\henceforth\varphi  \eqdef&
+ \atlbh{\Coalition}{\emptyset}{\emptyset  }\henceforth\varphi  ,\\
+    \atlop{\Coalition }(\until{\varphi}{\psi})\eqdef& \atlbh{\Coalition}{\emptyset}{\emptyset  } (\until{\varphi}{\psi}) .   
+\end{align*}
+For notational convenience,
+we denote with
+$\lang_{\atllogic}$
+the $\atllogic$-fragment
+of the language
+$\lang_{\atlBDlogic}$
+that only includes
+modalities of type $\atlbh{\Coalition}{\emptyset}{\emptyset  }$.
+
+We can now define the semantic interpretation of formulas in 
+$\lang_{\atlBDlogic}(\AGT, \AP)$. 
+As in $\mathsf{ATL}$, formulas are interpreted with respect to 
+\emph{pointed models}. 
+In our setting, a pointed model is a pair consisting of a CGMP and one of its states. 
+In Section~\ref{sec:benharm}, we introduced two notions of beneficial and harmful strategies: 
+\emph{strong} and \emph{weak}. 
+Accordingly, two distinct semantic interpretations can be defined---one in which existential quantification ranges over 
+strongly beneficial or harmful strategies, 
+and another in which it ranges over weakly beneficial or harmful ones. 
+The first interpretation is based on what we call the 
+\emph{strong satisfaction relation}, denoted by $\models^\strong$, 
+between state formulas of $\lang_{\atlBDlogic}(\AGT, \AP)$ and pairs $(\M, s)$ called \emph{pointed CGMP}, and between path formula of $\lang_{\atlBDlogic}(\AGT, \AP)$ and pairs $(\M, \lambda)$ called \emph{path-based CGMP},
+where $\M = (\St, \ACT, \R, \preceq, \V)$ is a CGMP, $s \in \St$ and $\lambda $ is a path in $\M$. 
+(The cases for atomic propositions and Boolean connectives are omitted, 
+as they are defined in the standard way.)
+\begin{eqnarray*}
+(\M,s)  \models^\strong 
+\atlbh{\Coalition}{\GroupB}{\GroupH}\gamma 
+  &\Leftrightarrow &  
+  \exists \js_\Coalition \in  {\JsSB^\Coalition_\M(s,\GroupB)}\\
+  &&\cap {\JsSH^\Coalition_\M(s,\GroupH)}\text{ s.t. }\\
+  & &\forall \history \in \outset(s, \js_\Coalition), \big(\M, \history  \big) \models^\strong \gamma ;\\
+  %
+  (\M,\lambda) \models^\strong \X  \varphi  
+  & \Leftrightarrow  & \big( \M, \history(1) \big) \models^\strong \varphi ,\\
+  %
+  (\M,\lambda) \models^\strong \henceforth  \varphi  
+  & \Leftrightarrow  & \forall k \in \domain(\history), \text{ if }k>0\\
+&&\text{then }\big( \M, \history(k) \big) \models^\strong \varphi ,\\
+%
+(\M,\lambda)  \models^\strong   ( \varphi\U\psi    )
+     & \Leftrightarrow  & \exists k\in \domain(\history)  \text{ s.t. } k>0,\\
+     && \big(\M,\history(k) \big)  \models^\strong \psi,  \text{and }\\
+   && \forall h \in \domain(\history), \text{ if }0<h<k \\
+&&\text{then } \big(\M, \history(h)   \big) \models^\strong \varphi.
+\end{eqnarray*}
+The second interpretation is based on what we call the 
+\emph{weak satisfaction relation}, denoted by $\models^\weak$, 
+which is defined analogously to the strong one, 
+except that 
+$\JsSB^\Coalition_\M(s,\GroupB)\cap \JsSH^\Coalition_\M(s,\GroupH)$ 
+is replaced by 
+$\JsWB^\Coalition_\M(s,\GroupB)\cap \JsWH^\Coalition_\M(s,\GroupH)$.
+
+We conclude this section
+by defining a fragment:
+$$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi \mid \atlbh{\Coalition}{\GroupB}{\GroupH} \G \varphi$$
+%the coalition logic ($\mathsf{CL}$) fragment of the language $\lang_{\atlBDlogic} $.
+%In this fragment, denoted by $\lang_{\clBDlogic} $,
+%only the temporal modality \emph{next} is allowed.
+%It is defined by the following grammar:
+%\begin{center}\begin{tabular}{lcl}
+ %$\varphi, \psi$  & $\bnf$ & $p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi $
+%\end{tabular}\end{center}
+%where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range over $2^\AGT$. 
+
+ $\lang_{\atlBDlogic} $ and its $\mathsf{CL}$-fragment $\lang_{\clBDlogic} $, in combination with the satisfaction relations $\models^\strong$ and $\models^\weak$, and with the different CGMP classes defined in Section~\ref{CGMPsect}, give rise to a rich family of logics.
+In this paper, we focus on two logics from this family:
+(i) the one based on the $\mathsf{CL}$-fragment, the satisfaction relation $\models^\strong$, and the general model class $\classcgspvar{\emptyset}$, which includes all CGMPs; and
+(ii) the one based on the $\mathsf{CL}$-fragment, the satisfaction relation $\models^\strong$, and the model class $\classcgspvar{\{\NFP\}}$, which includes all CGMPs with non-flat preferences.
+We call them  logics $\clSBDlogic$ 
+and $\clNFSBDlogic$.
+$\clSBDlogic$
+is the $\mathsf{CL}$ logic with strong coalition-affecting capability, while $\clNFSBDlogic$ is the $\mathsf{CL}$ logic with strong coalition-affecting capability under non-flat preferences. 
+
+We consider two notions of validity for formulas in the language $\lang_{\clBDlogic} $. 
+A formula $\varphi \in \lang_{\clBDlogic} $ is said to be \emph{valid}, denoted by $\models \varphi$, if it is satisfied in every pointed CGMP under the $\models^\strong$ interpretation. 
+Similarly, it is said to be \emph{$\NF$-valid}, denoted by $\models^{\NF} \varphi$, if it is satisfied in every pointed CGMP with non-flat preferences under the $\models^\strong$ interpretation.
+
+
+
+
+
+ 
+
+
+
+\section{Axiomatization}
+\label{sec:axiom}
+
+In this section, we introduce the logics $\clSBDlogic$ and $\clNFSBDlogic$, and prove their completeness with respect to their corresponding semantics. 
+\subsection{Logic $\clSBDlogic$}\label{subsec: axiomatization for SCA-CL}
+
+The following definition
+introduces the logic  $\clSBDlogic$.
+\begin{definition}[Logic $\clSBDlogic$]
+\label{definition: axiomatic system for SCA-CL}
+$\clSBDlogic$ consists of the following axioms:
+\begin{align*}
+& 
+\text{All tautologies of propositional logic} \tag{$\top$} \label{ax:taut} 
+\\
+&
+\neg \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \bot \tag{$\mathtt{A}\text{-}\mathtt{NAAA}$} \label{ax:NAAA}
+\\
+&
+\atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime (\phi\wedge \psi)\to  \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi
+\tag{$\mathtt{A}\text{-}\mathtt{MG}$} \label{ax:MG}
+\\
+& 
+\atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi \to  \atlbh{\Coalition'}{\GroupB'}{\GroupH'}\nexttime \phi\text{ for }\Coalition\subseteq \Coalition', \GroupB\supseteq \GroupB', \GroupH\supseteq \GroupH'
+\tag{$\mathtt{A}\text{-}\mathtt{MC}$} \label{ax:MC}\\
+&\atlop{\Coalition: \emptyset,\emptyset}\nexttime \top \tag{$\mathtt{A}\text{-}\mathtt{Ser}$} \label{ax:Ser}
+\\
+& 
+(\atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi \wedge \atlbh{\Coalition'}{\GroupB'}{\GroupH'}\nexttime \psi)\to  \\
+& \atlbh{\Coalition\cup\Coalition'}{\GroupB\cup \GroupB'}{\GroupH\cup \GroupH'}\nexttime (\phi\wedge\psi) \text{ for }\Coalition\cap \Coalition'=\emptyset
+\tag{$\mathtt{A}\text{-}\mathtt{Sup}$} \label{ax:Sup}
+\\
+& 
+\atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime (\phi\vee \psi)\to  (\atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi \vee \atlbh{\AGT}{\GroupB}{\GroupH}\nexttime \psi)
+\tag{$\mathtt{A}\text{-}\mathtt{Cro}$} \label{ax:Cro}
+\end{align*}
+and the following rules of inference:
+\begin{align}
+& \dfrac{\;\phi, \phi \rightarrow \psi \;}
+{\;\psi \;} \tag{$\mathtt{MP}$} \label{ir:MP}
+\\
+& \dfrac{\; \phi \iff \psi \;}{\; \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi \iff \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \psi\;} 
+  \tag{$\mathtt{RE}$} \label{ir:RE}
+\end{align}
+\end{definition}
+
+The names of axioms and inference rules reflect  their intuitions. Axiom \ref{ax:NAAA} is called \textit{no absurd available action}, as its intuition is that a coalition's available joint action
+ cannot
+ensure a logically absurd result. 
+Axiom \ref{ax:MG} is called \textit{monotonicity of goals}: capabilities are monotonic with respect to goals.
+Similarly, Axiom \ref{ax:MC} captures \textit{monotonicity of coalitions}:
+capabilities are monotonic with respect to coalitions. Axiom \ref{ax:Ser} captures 
+\textit{seriality}. 
+Axiom \ref{ax:Sup} captures \textit{superadditivity}.  Axiom \ref{ax:Cro} is the so-called \textit{crown}
+axiom: it was called this way  in 
+\cite{goranko_strategic_2013}
+since it corresponds to the fact that the effectivity function of a game is a crown. The inference rules are \textit{modus ponens} (\ref{ir:MP}) and \textit{replacement of equivalences} (\ref{ir:RE}).
+
+As usual, 
+for every  $\varphi \in \lang_{\clBDlogic} $,
+we write $\vdash
+\varphi$
+to mean that $\varphi $
+is derivable  in $\clSBDlogic$,
+that is,
+there is a sequence of formulas $(\varphi_1, \ldots, \varphi_m)$
+such that:
+\begin{itemize}
+\item $\varphi_m = \varphi$, and
+\item for every $1 \leq k \leq m$, either $\varphi_k$
+is  an instance of one of the  axiom schema of  $\clSBDlogic$
+or there are formulas $\varphi_{k_1}, \ldots ,\varphi_{k_t} $
+such that $k_1 , \ldots, k_t < k$  and $\frac{\varphi_{k_1}, \ldots ,\varphi_{k_t} }{\varphi_{k} }$
+is an instance of some inference  rule of $\clSBDlogic$.
+\end{itemize}
+
+
+ We are going
+ to prove soundness
+ and completeness
+ of the logic 
+ $\clSBDlogic$ 
+ relative to the 
+notion of validity given
+at the end of Section \ref{sec:languages}.
+ % So, in the rest of this section,
+ % when talking about validity
+ % of a formula 
+ % $\varphi \in \lang_{\clBDlogic}(\AGT , \AP )$
+ % we mean validity
+ % of $\varphi $
+ % relative to the 
+ % semantics
+ % $\models^\strong$. 
+Our  completeness proof 
+% for
+% $\clSBDlogic$ 
+% is similar to the one for $\clratlogic$ from \cite{DBLP:conf/ifaamas/LiLM25}. 
+% It 
+contains four parts: an induction on the
+modal degree of formulas, the normal form (Lemma \ref{lemma: normal-form}), the downward validity (Lemma \ref{lemma: downward validity}), and the upward derivability (Lemma \ref{lemma: upward derivability}). Before giving  them, we need to introduce some preliminary notions. 
+\begin{definition}[Literal]
+A propositional literal
+is either $p$
+or $\neg p $
+ for any  $p \in \ATM $. 
+ A modal
+ $\clBDlogic$-literal
+ is a formula of type 
+ $\atlbh{\Coalition}{\GroupB}{\GroupH}\X \phi $ or $\neg \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi$,
+ for any coalition $\Coalition$, $\GroupB$, $\GroupH$, and $\phi\in \lang_{\clBDlogic} $.
+\end{definition}
+
+The following definition introduces
+the notion of
+standard $\clBDlogic$ disjunction, which equals to a disjunction of literals.
+\begin{definition}[Standard $\clBDlogic$ disjunction]
+A formula of type 
+  \begin{align*}
+     \chi \vee \big(
+  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
+  \to  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }\big)
+  \end{align*}
+is called standard $\clBDlogic$ disjunction, where $\NI $, $\PI $ are finite and pairwise disjoint sets of indices, 
+$\chi $ is a disjunction of propositional literals, 
+$\Coalition_\nindex$, $\Coalition_\pindex$, $\GroupB_\nindex$, $\GroupH_\nindex$, $\GroupB_\pindex$ and $\GroupH_\pindex$ range over $\powerset{\AGT}$ and $\psi_\nindex\in \lang_{\clBDlogic} $ for each $\nindex\in \NI \cup \PI $.
+\end{definition}
+By propositional logic, we have 
+the following normal form
+lemma for the logic $\clSBDlogic$.
+\begin{lemma}[Normal form]\label{lemma: normal-form}
+  Any  formula
+  $\varphi \in \lang_{\clBDlogic} $
+  is equivalent to a conjunction of standard $\clBDlogic$ disjunctions whose modal degrees are not higher
+  than the modal
+  degree of $\varphi$.
+  This equivalence is both valid and derivable.
+\end{lemma} 
+
+The disjoint-ness condition of Axiom \textit{superadditivity} indicates the importance of the following definition for neat sets of indices. 
+\begin{definition}[Neatness]\label{definition: neatness}
+  For any  $X\subseteq \NI$,
+  we say $X$ is neat iff for all $\nindex,\nindex'\in X$, if $\nindex\neq \nindex'$, then $\Coalition_{\nindex}\cap \Coalition_{\nindex'}= \emptyset$.  
+\end{definition}
+
+The following is our downward validity
+lemma. 
+Its proof is in Appendix A.2 of the supplementary material.
+%\cite{ArxivAAMAS26}.
+%\ref{sec: proof of completeness for SCA-CL}  
+%in the supplementary material. 
+\begin{lemma}[Downward validity for $\clSBDlogic$]\label{lemma: downward validity}
+   Fix a standard 
+    $\clBDlogic$
+    disjunction $\phi = \chi \vee \big(
+  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
+  \to  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }\big)$.
+   If $\phi$ is valid, 
+  then the following 
+validity-reduction condition is satisfied:
+\begin{itemize}
+\item either $\chi $ is valid;
+\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
+  \begin{itemize}
+  \item $X$ is neat;
+  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$ and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
+  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
+  \item and $\bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$ is valid.
+  \end{itemize}
+\end{itemize}
+\end{lemma}
+
+The following is our upward derivability 
+lemma. 
+Its proof is in Appendix A.3 of the supplementary material.
+%\cite{ArxivAAMAS26}.
+%
+
+\begin{lemma}[Upward derivability for $\clSBDlogic$]\label{lemma: upward derivability}
+  Fix a standard 
+    $\clBDlogic$
+    disjunction $\phi = \chi \vee \big(
+  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex} 
+  \to  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }\big)$. We have
+   $\vdash \phi$ if the following 
+derivability-reduction condition is satisfied:
+\begin{itemize}
+\item either $\vdash \chi $, 
+\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
+  \begin{itemize}
+  \item $X$ is neat;
+  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$ and  $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
+  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
+  \item and $\vdash\bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
+  \end{itemize}
+\end{itemize}
+\end{lemma}
+
+Observe that the derivability-reduction condition is obtained from the validity-reduction condition by replacing validity with derivability. By induction on the modal degree of formulas, the inductive hypothesis guarantees
+that whenever the validity-reduction condition of a formula holds,
+its derivability-reduction condition also holds.
+Hence, by combining Lemmas~\ref{lemma: downward validity} and~\ref{lemma: upward derivability},
+we obtain the following completeness theorem.
+
+\begin{theorem}[soundness and completeness]
+\label{thm:soundness and comleteness}
+A formula $\varphi \in \lang_{\clBDlogic} $ is  valid  if and only if $\vdash \varphi$. 
+\end{theorem}
+
+\subsection{Logic $\clNFSBDlogic$}
+The following definition introduces the logic $\clNFSBDlogic$.
+\begin{definition}[Logic $\clNFSBDlogic$]
+\label{definition: axiomatic system for NFSCA-CL}
+$\clNFSBDlogic$ extends $\clSBDlogic$ 
+of Definition \ref{definition: axiomatic system for SCA-CL}
+with the following additional axiom schema:
+\begin{align*}
+\neg \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \top\text{ for }\GroupB\cap \GroupH\neq \emptyset
+\tag{$\mathtt{A}\text{-}\mathtt{BHC}$} \label{ax:BHC} 
+\end{align*}
+\end{definition}
+The additional axiom~\ref{ax:BHC} is called the \textit{benefit–harm conflict}. 
+Its underlying intuition is that a coalition cannot simultaneously help and harm the same agent.
+
+
+The definition of derivability is analogous to the one given in 
+Section~\ref{subsec: axiomatization for SCA-CL}
+for the logic $\clSBDlogic$. 
+We use $\vdash^\NF$ to denote that $\phi $ is deducible in $\clNFSBDlogic$. 
+We now prove the soundness and completeness of the logic $\clNFSBDlogic$ with respect to the notion of $\NF$-validity defined at the end of Section~\ref{sec:languages}. 
+The proof closely follows that of the logic $\clSBDlogic$. 
+Since $\clNFSBDlogic$ is stronger than $\clSBDlogic$, we can rely on the result of Lemma~\ref{lemma: normal-form}. 
+The inductive step on the modal degree of formulas is also analogous. 
+Therefore, it remains to prove the following downward validity and upward derivability lemma for $\clNFSBDlogic$. 
+Its proof is in Appendix B.2 of the supplementary material.
+\begin{lemma}[Downward validity for $\clNFSBDlogic$]\label{lemma: downward validity for NFSCA-CL}
+  Given a standard $\clBDlogic$ disjunction 
+  $$\phi = \chi \vee (
+  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
+  \to 
+  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }).$$
+   If $\models^\NF \phi$, 
+  then the following 
+validity-reduction condition is satisfied:
+\begin{itemize}
+\item either $\models^\NF\chi $;
+\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
+  \begin{itemize}
+  \item $X$ is neat;
+  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$,  and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
+  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
+  \item and if $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$ then $\models^\NF \bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
+  \end{itemize}
+\end{itemize}
+\end{lemma}
+
+
+The following is the  upward derivability 
+lemma for $\clNFSBDlogic$. 
+Its proof is in 
+Appendix B.3 in the supplementary material.
+%\cite{ArxivAAMAS26}.
+%in the supplementary material.
+
+\begin{lemma}[Upward derivability for $\clNFSBDlogic$]\label{lemma: upward derivability for NFSCA-CL}
+  Given a standard $\clBDlogic$ disjunction 
+  $$\phi = \chi \vee (
+  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
+  \to 
+  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }).$$ We have  
+   $\vdash^\NF \phi$ if the following 
+derivability-reduction condition is satisfied: \begin{itemize}
+\item either $\vdash \chi $, 
+\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
+  \begin{itemize}
+  \item $X$ is neat;
+  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$,  and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
+  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
+  \item and if $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$ then $\vdash^\NF \bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
+  \end{itemize}
+\end{itemize}
+\end{lemma}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Tree-like  property and embedding}\label{sec: tree-like model property and embedding}
+
+In the completeness proofs for the logics $\clSBDlogic$ and $\clNFSBDlogic$, we construct a tree model for every satisfiable formula. 
+In this section, we show that satisfiability for the language $\lang_{\atlBDlogic} $ satisfies the tree-like model property. 
+Based on this result, we provide polynomial embeddings of satisfiability for the language $\lang_{\atlBDlogic} $ into $\atllogic$-satisfiability, and of satisfiability for the language $\lang_{\clBDlogic} $ into $\cllogic$-satisfiability. 
+For the first embedding, we restrict to models with stable preferences. 
+Thanks to these embeddings, we provide tight complexity results for satisfiability in our languages.
+
+
+ 
+
+ 
+
+\subsection{Tree-like model property}
+Let
+ $\R^*$, $\R^-$ and $\R^+$
+be, respectively, the reflexive and  transitive closure,
+the inverse, and the transitive closure of 
+$\R_\emptyset$.
+\begin{definition}\label{def:propertiesCGF}
+  Let $\F = ( W,  \ACT,   \R)$
+  be a CGF.
+  We say that:
+  \begin{itemize}
+    \item $M$ has a unique root iff
+          there is  a unique $ w_0 \in W$ (called the \emph{root}),
+          such that, for every $v \in W$, $w_0 \relAct{ }^* v$;
+    \item $M$ has unique predecessors iff
+          for every $v \neq w_0 $, the cardinality of $\relAct{ }^-( v)$ is at most one;
+    \item $M$ has no cycles iff $\relAct{ }^+$ is irreflexive;
+    
+    \item $M$ is tree-like iff  it has a unique root,
+ unique predecessors and no cycles.    
+  \end{itemize}
+\end{definition}
+
+The property of ``being tree-like'' defined in Definition~\ref{def:propertiesCGF}, is abbreviated as $\mathbf{TR}$. 
+This property naturally extends to CGMPs. 
+We recall the notation introduced in Section~\ref{CGMPsect}: 
+$\classcgspvar{X}$, with $X \subseteq \{\mathbf{SP}, \mathbf{NFP}, \mathbf{TR}\}$, denotes the class of CGMPs satisfying all properties in $X$. 
+The tree-like model property is stated in the following lemma, whose proof is given in Appendix~C of the supplementary material.
+
+     %\cite{ArxivAAMAS26} %in the supplementary material. 
+     % The proof is similar to the proof of tree-like model property for $\atlratlogic$ in \cite{DBLP:conf/ifaamas/LiLM25}. 
+\begin{lemma}\label{lemma: tree-like property}
+  Let $\varphi \in \lang_{\atlBDlogic} $.
+  Then,
+  \begin{itemize}
+      \item $\varphi$
+      is satisfiable 
+      for the class $\classcgspvar{\emptyset } $
+      iff  $\varphi$
+      is satisfiable 
+      for the class $\classcgspvar{\{ \mathbf{TR}  \}}$,
+
+      \item $\varphi$
+      is satisfiable 
+      for the class $\classcgspvar{\{\mathbf{SP}  \}}$
+      iff  $\varphi$
+      is satisfiable 
+      for the class $\classcgspvar{\{ \mathbf{SP},\mathbf{TR}\}}$. 
+  \end{itemize}
+\end{lemma}
+\subsection{Embedding}
+
+
+
+
+Our embeddings rely on the following translation from  $\lang_{\atlBDlogic}$ to the $\atllogic$ fragment  extended with special atomic formulas:
+\begin{align*}
+\mathit{tr}:
+\lang_{\atlBDlogic}(\AGT, \AP ) \longrightarrow
+\lang_{\atllogic}(\AGT, \AP^+ ), 
+\end{align*}
+with $\AP^+ =\AP\cup  \big\{ \help_i \suchthat
+i \in \AGT 
+\big\}\cup  \big\{ \harm_i \suchthat
+i \in \AGT 
+\big\}$:
+\begin{align*}
+  \mathit{tr}(p ) &= p,\\
+\mathit{tr}(\neg \varphi  ) &= \neg \mathit{tr}( \varphi  ),\\
+\mathit{tr}( \varphi \wedge
+\psi ) &=   \mathit{tr}( \varphi  ) \wedge \mathit{tr}( \psi   ) ,\\
+\mathit{tr}( \atlbh{\Coalition}{\GroupB}{\GroupH}
+\nexttime \varphi ) &=  \atlop{\Coalition} \nexttime \big(\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}( \varphi  ) \big) ,\\
+\mathit{tr}( \atlbh{\Coalition}{\GroupB}{\GroupH}
+\henceforth \varphi ) &=  \atlop{\Coalition}\G\big(\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}( \varphi  ) \big) ,\\
+\mathit{tr}\big( \atlbh{\Coalition}{\GroupB}{\GroupH}
+(\varphi\U\psi)  \big) &=  \atlop{\Coalition} \big ((\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}(\varphi))\U(\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}(\psi))  \big), 
+\end{align*}
+ with $\help \GroupB\eqdef \bigwedge_{i \in \GroupB} \help_i$ and $\harm \GroupH\eqdef \bigwedge_{i \in \GroupH} \harm_i$. The special atomic formula $\help_i$ is read as ``agent~$i$ is benefited,'' and $\harm_i$ as ``agent~$i$ is harmed''.  
+The idea behind the above translation is to label, at the language level, beneficial (resp.\ harmful) strategies of a coalition $\Coalition$ for another coalition $\GroupB$ (resp.\ $\GroupH$) with the special constructs $\help \GroupB$ (resp.\ $\harm \GroupH$).
+
+
+
+ 
+
+
+The key observation underlying the embedding for the full language $\lang_{\atlBDlogic}$ is that, in a tree-like model with stable preferences, whether a coalition’s strategy is beneficial or harmful for an agent depends only on whether the next state is the second element of a best (resp.\ worst) computation for that agent. 
+Stability of preferences is required to ensure that the $\help \GroupB$/$\harm \GroupH$-labeling assigned at the current state remains consistent over time. 
+For the embedding of the fragment $\lang_{\clBDlogic}$, stability of preferences is not required, since this language can refer only to the next state.
+
+
+As the following theorem shows, by using the translation $ \mathit{tr}$, satisfiability for the language $\lang_{\clBDlogic}$ with respect to the class $\classcgspvar{\{\mathbf{SP}\}}$ is reducible to $\atllogic$-satisfiability, and satisfiability for the fragment $\lang_{\clBDlogic}$ with respect to $\classcgspvar{\emptyset}$ is reducible to $\cllogic$-satisfiability.
+     Its proof 
+     is given in Appendix D of the supplementary material. %\cite{ArxivAAMAS26}. %in the supplementary material.
+ \begin{theorem}\label{theo:embedding}
+     Let $\varphi \in \lang_{\atlBDlogic} $.
+     Then, 
+     $\varphi $
+     is satisfiable for  the class 
+     $\classcgspvar{\{\mathbf{SP}\}}$
+     iff $\mathit{tr}(\varphi) $
+     is satisfiable for the class
+          $\classcgspvar{\{\mathbf{SP}\}}$.
+
+     Let $\varphi \in \lang_{\clBDlogic} $.
+     Then, 
+     $\varphi $
+     is satisfiable for  the class 
+     $\classcgspvar{\emptyset} $
+     iff $\mathit{tr}(\varphi) $
+     is satisfiable for the class
+          $\classcgspvar{\emptyset} $.
+ \end{theorem}
+
+By Theorem \ref{theo:embedding}, the fact that the size of $\mathit{tr}(\varphi) $
+is polynomial, and the fact that satisfiability checking
+for $\atllogic$
+is \Exptime-complete \cite{DrimmelenLICS}
+and
+satisfiability checking
+for $\cllogic$
+is \Pspace-complete \cite{DBLP:journals/logcom/Pauly02}, we obtain  the following tight complexity result.
+  \begin{corollary}
+Checking satisfiability of
+ formulas in $\lang_{\atlBDlogic}$
+for the  class \ $\classcgspvar{\{\mathit{SP} \}}$ 
+is  \Exptime-complete.
+It is \Pspace-complete
+for 
+both classes   
+$\classcgspvar{ } $
+and $\classcgspvar{\{\mathbf{SP} \}}$, 
+when 
+restricting to the fragment $\lang_{\clBDlogic}$. 
+  \end{corollary}
+
+%%%%%%%%%%%%%%%%
+
+
+\section{Conclusion}\label{conclusion}
+
+We have introduced novel languages based on $\mathsf{CL}$ and $\mathsf{ATL}$ that enable reasoning about beneficial  and  harmful  strategies, as well as the related notions of  potential boon  and  potential danger. Our analysis is supported by several results concerning the axiomatizability and computational complexity of the proposed languages, obtained through embeddings into $\mathsf{CL}$ and $\mathsf{ATL}$.
+
+A number of questions remain unsolved, including the axiomatizability of the full $\mathsf{ATL}$-based language $\lang_{\atlBDlogic} $ and the complexity of its satisfiability problem with respect to the class of CGMPs featuring possibly non-stable preferences. We plan to address these issues in future work.  
+We also intend to extend our analysis to a risk-based notion of danger, according to which a coalition is a danger for another coalition if it has a strategy that, if chosen, with high probability brings harm to the latter. This will require extending CGMPs with a probabilistic component.  
+Finally, we plan to combine the notion of danger investigated in this paper with a game-theoretic notion of rationality to define the concept of \emph{strong danger}: a coalition $\Coalition$ is a strong danger for another coalition $\GroupH$ if it has a \emph{rational} strategy that, if chosen, brings harm to $\GroupH$. It is called strong because it is realistic to assume that the agents in $\Coalition$ may choose the harmful strategy, provided they are rational.
+
+
+
+
+
+\bibliographystyle{kr}
+ \bibliography{bib-PHH}
+
+
+\ifarxiv
+\newpage \input{appendix}
+\fi
+\end{document}
