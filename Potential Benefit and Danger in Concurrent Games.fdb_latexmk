@@ -1,22 +1,22 @@
 # Fdb version 4
-["bibtex Potential Benefit and Danger in Concurrent Games"] 1769607758.47751 "Potential Benefit and Danger in Concurrent Games.aux" "Potential Benefit and Danger in Concurrent Games.bbl" "Potential Benefit and Danger in Concurrent Games" 1769609892.48367 0
+["bibtex Potential Benefit and Danger in Concurrent Games"] 1769613220.65937 "Potential Benefit and Danger in Concurrent Games.aux" "Potential Benefit and Danger in Concurrent Games.bbl" "Potential Benefit and Danger in Concurrent Games" 1769613225.28791 0
   "./bib-PHH.bib" 1768210839 25430 fe68b4570dcfd01f2802821fd5316541 ""
   "./kr.bst" 1768228685 21600 85ba4d3478734235c91d477394ac6631 ""
-  "Potential Benefit and Danger in Concurrent Games.aux" 1769609890 13073 883dfda80009dcd56e34db35b7e671ce "pdflatex"
+  "Potential Benefit and Danger in Concurrent Games.aux" 1769613223 13073 883dfda80009dcd56e34db35b7e671ce "pdflatex"
   (generated)
   "Potential Benefit and Danger in Concurrent Games.bbl"
   "Potential Benefit and Danger in Concurrent Games.blg"
   (rewritten before read)
-["pdflatex"] 1769609888.40264 "c:/Users/yli/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex" "Potential Benefit and Danger in Concurrent Games.pdf" "Potential Benefit and Danger in Concurrent Games" 1769609892.48437 0
+["pdflatex"] 1769613221.30963 "c:/Users/yli/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex" "Potential Benefit and Danger in Concurrent Games.pdf" "Potential Benefit and Danger in Concurrent Games" 1769613225.28861 0
   "ImageSpace.pdf" 1768210866 1191506 a8b17cb0af89b9b19921a06781e85083 ""
-  "LogicYinfeng.sty" 1765712479 606 313c00a68fc6d08f9310f95a4b19beca ""
-  "Potential Benefit and Danger in Concurrent Games.aux" 1769609890 13073 883dfda80009dcd56e34db35b7e671ce "pdflatex"
-  "Potential Benefit and Danger in Concurrent Games.bbl" 1769607759 8371 20edf93e1309463cc21250d5474c58fa "bibtex Potential Benefit and Danger in Concurrent Games"
-  "Potential Benefit and Danger in Concurrent Games.out" 1769609890 4492 694f65440533367256dcfd750f681b78 "pdflatex"
-  "Potential Benefit and Danger in Concurrent Games.tex" 1769604628 74470 78c0097f22dccac823c4f3262700156e ""
-  "StrategicYinfeng.sty" 1769597560 38639 9b2e7f5cde749756214e1daa1cff5904 ""
+  "LogicYinfeng.sty" 1769612217 649 e9749b4af30a16d41f1d9cccb03ac2fb ""
+  "Potential Benefit and Danger in Concurrent Games.aux" 1769613223 13073 883dfda80009dcd56e34db35b7e671ce "pdflatex"
+  "Potential Benefit and Danger in Concurrent Games.bbl" 1769613221 8371 20edf93e1309463cc21250d5474c58fa "bibtex Potential Benefit and Danger in Concurrent Games"
+  "Potential Benefit and Danger in Concurrent Games.out" 1769613223 4492 694f65440533367256dcfd750f681b78 "pdflatex"
+  "Potential Benefit and Danger in Concurrent Games.tex" 1769612952 74454 c9aefa52881df61fecaa4abac6007187 ""
+  "StrategicYinfeng.sty" 1769612992 38670 f4a0100febffeb8b2faee41a3881b026 ""
   "appendix.tex" 1769609887 31204 70de86c01ee60c73fe5d8959e7143305 ""
-  "c:/Users/yli/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex" 1769604628 74470 78c0097f22dccac823c4f3262700156e ""
+  "c:/Users/yli/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex" 1769612952 74454 c9aefa52881df61fecaa4abac6007187 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1715766184 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1715766488 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1715770816 2172 fd0c924230362ff848a33632ed45dc23 ""

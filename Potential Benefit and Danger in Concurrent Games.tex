@@ -940,23 +940,23 @@ Analogously, a coalition $\Coalition$ is said to be a    danger  for another coa
   
 Notice we use the temporal operator $\G$ and $\U$ referring to the strict future, i.e., starting from the next state. But the temporal operators referring to the non-strict future can be defined as usual:
 \begin{align*}
-    \atlbh{\Coalition}{B}{H}\G^\weak\varphi \eqdef&   \varphi\wedge\atlbh{\Coalition}{B}{H} \G\varphi,\\
- \atlbh{\Coalition}{B}{H}(\varphi \U^\weak \psi )\eqdef& \psi \vee (\varphi \wedge \atlbh{\Coalition}{B}{H} (\varphi \U \psi )) .   
+    \atlbh{\Coalition}{B}{H}\G^\ns\varphi \eqdef&   \varphi\wedge\atlbh{\Coalition}{B}{H} \G\varphi,\\
+ \atlbh{\Coalition}{B}{H}(\varphi \U^\ns \psi )\eqdef& \psi \vee (\varphi \wedge \atlbh{\Coalition}{B}{H} (\varphi \U \psi )) .   
 \end{align*}
 also that standard $\mathsf{ATL}$
 modalities
 $\atlop{\Coalition }\nexttime\varphi$,
-$\atlop{\Coalition }\henceforth^\weak \phi$ and
-$\atlop{\Coalition }(\varphi \U^\weak \psi )$
+$\atlop{\Coalition }\henceforth^\ns \phi$ and
+$\atlop{\Coalition }(\varphi \U^\ns \psi )$
 are definable
 as special cases
 of $\atlBDlogic$ modalities,
 as follows: 
 \begin{align*}
     \atlop{\Coalition }\nexttime\varphi \eqdef&   \atlbh{\Coalition}{\emptyset}{\emptyset  } \nexttime\varphi,\\
-    \atlop{\Coalition }\henceforth^\weak\varphi  \eqdef&
- \atlbh{\Coalition}{\emptyset}{\emptyset  }\henceforth^\weak\varphi  ,\\
-    \atlop{\Coalition }(\varphi \U^\weak \psi )\eqdef& \atlbh{\Coalition}{\emptyset}{\emptyset  } (\varphi \U^\weak \psi ) .   
+    \atlop{\Coalition }\henceforth^\ns\varphi  \eqdef&
+ \atlbh{\Coalition}{\emptyset}{\emptyset  }\henceforth^\ns\varphi  ,\\
+    \atlop{\Coalition }(\varphi \U^\ns \psi )\eqdef& \atlbh{\Coalition}{\emptyset}{\emptyset  } (\varphi \U^\ns \psi ) .   
 \end{align*}
 For notational convenience,
 we denote with
