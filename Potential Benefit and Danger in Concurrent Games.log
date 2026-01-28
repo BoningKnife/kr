@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  28 JAN 2026 10:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  28 JAN 2026 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -626,7 +626,20 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count347
 \l__pdf_internal_box=\box114
-) (./Potential Benefit and Danger in Concurrent Games.aux)
+) (./Potential Benefit and Danger in Concurrent Games.aux
+
+LaTeX Warning: Label `ir:Gen_Gw' multiply defined.
+
+
+LaTeX Warning: Label `th:GFP_G' multiply defined.
+
+
+LaTeX Warning: Label `th:GFP_Gw' multiply defined.
+
+
+LaTeX Warning: Label `ir:In_G' multiply defined.
+
+)
 \openout1 = `"Potential Benefit and Danger in Concurrent Games.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
@@ -722,7 +735,7 @@ Underfull \hbox (badness 1237) in paragraph at lines 506--513
 \OT1/ptm/m/n/10 sta-bil-ity ($[]$) and non-flatness ($[]$) of pref-er-ences.
  []
 
-<ImageSpace.pdf, id=256, 1371.39844pt x 867.85551pt>
+<ImageSpace.pdf, id=244, 1371.39844pt x 867.85551pt>
 File: ImageSpace.pdf Graphic file (type pdf)
 <use ImageSpace.pdf>
 Package pdftex.def Info: ImageSpace.pdf  used on input line 529.
@@ -788,28 +801,18 @@ Underfull \hbox (badness 1496) in paragraph at lines 855--886
  []
 
 
-Overfull \hbox (7.66612pt too wide) in alignment at lines 943--963
- [][][] []
+Underfull \hbox (badness 7433) in paragraph at lines 970--977
+[]\OT1/ptm/m/n/10 The sec-ond in-ter-pre-ta-tion is based on what we
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 963--971
-\OT1/ptm/m/n/10 The sec-ond in-ter-pre-ta-tion is based on what we call
+Underfull \hbox (badness 4096) in paragraph at lines 970--977
+\OT1/ptm/m/n/10 call the \OT1/ptm/m/it/10 weak sat-is-fac-tion re-la-tion\OT1/ptm/m/n/10 , de-noted by $\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =[]$\OT1/ptm/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 963--971
-\OT1/ptm/m/n/10 the \OT1/ptm/m/it/10 weak sat-is-fac-tion re-la-tion\OT1/ptm/m/n/10 , de-noted by $\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =[]$\OT1/ptm/m/n/10 , which
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 963--971
-\OT1/ptm/m/n/10 is de-fined anal-o-gously to the strong one, ex-cept
- []
-
-
-Underfull \hbox (badness 6477) in paragraph at lines 963--971
-\OT1/ptm/m/n/10 that $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; B\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 \ [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; H\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is re-placed by
+Underfull \hbox (badness 2443) in paragraph at lines 970--977
+\OT1/ptm/m/n/10 which is de-fined anal-o-gously to the strong one, ex-
  []
 
 [6]
@@ -830,48 +833,51 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1009.
 
 
-Overfull \hbox (20.8223pt too wide) detected at line 1040
+Overfull \hbox (20.8223pt too wide) detected at line 1052
 []
  []
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1143.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Lambda' on input line 1143.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1143.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1143.
+
 [7]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1214.
+LaTeX Warning: Reference `lemma: normal-form' on page 8 undefined on input line 1165.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1214.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1214.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1214.
-
-
-Underfull \hbox (badness 1365) in paragraph at lines 1256--1257
+Underfull \hbox (badness 1365) in paragraph at lines 1185--1186
 []\OT1/ptm/m/it/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \OT1/ptm/m/it/10 then $\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =[]
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 1283--1284
+Underfull \hbox (badness 1735) in paragraph at lines 1212--1213
 []\OT1/ptm/m/it/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \OT1/ptm/m/it/10 then $\OMS/cmsy/m/n/10 `[]
  []
 
-[8]
-Overfull \hbox (73.27934pt too wide) detected at line 1382
+
+Overfull \hbox (73.27934pt too wide) detected at line 1311
 []
  []
 
-(./Potential Benefit and Danger in Concurrent Games.bbl
+[8] (./Potential Benefit and Danger in Concurrent Games.bbl
 Underfull \hbox (badness 1043) in paragraph at lines 4--8
 \OT1/ptm/m/n/10 Alternating-time tem-po-ral logic.  \OT1/ptm/m/it/10 Jour-nal of the ACM
  []
 
-[9]) [10] (./appendix.tex
+[9]) (./appendix.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
@@ -889,229 +895,134 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
 
 
-Overfull \hbox (22.49945pt too wide) detected at line 57
-[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 fh h\OML/cmm/m/it/10 C\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ^^_ \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 
- \OMS/cmsy/m/n/10 ^^R \U/msb/m/n/10 S[]\OMS/cmsy/m/n/10 g
+Overfull \hbox (37.34137pt too wide) detected at line 27
+[]
  []
 
-[11]
-Underfull \hbox (badness 1603) in paragraph at lines 124--128
+[10]
+Underfull \hbox (badness 3557) in paragraph at lines 77--78
+\OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$\OT1/ptm/m/n/10 . Then there is an agent $\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 \
+ []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 77--78
+\OML/cmm/m/it/10 C[]$ \OT1/ptm/m/n/10 such that $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )) = \OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ^^_$ \OT1/ptm/m/n/10 and
+ []
+
+
+Underfull \hbox (badness 2680) in paragraph at lines 106--108
+\OT1/ptm/m/it/10 a for-mula $\OML/cmm/m/it/10  $\OT1/ptm/m/it/10 , de-fine the fol-low-ing struc-ture $\OT1/cmss/m/n/10 M[] \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 126--131
 \OT1/ptm/m/n/10 is con-sis-tent. We want to show $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j h h\OML/cmm/m/it/10 A\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2
  []
 
+[11]
 
-LaTeX Warning: Reference `ax:FP_G' on page 12 undefined on input line 134.
-
-
-LaTeX Warning: Reference `ax:FP_U' on page 12 undefined on input line 150.
-
-
-LaTeX Warning: Reference `ir:In_U' on page 12 undefined on input line 161.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 152.
 
 
-Underfull \hbox (badness 5490) in paragraph at lines 177--179
-[]$[] \OT1/cmr/m/n/10 : [][] \OMS/cmsy/m/n/10 ! L[]\OT1/cmr/m/n/10 (\U/msb/m/n/10 P\OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$ \OT1/ptm/m/it/10 is a
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Lambda' on input line 152.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 152.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 152.
+
+
+Overfull \hbox (58.144pt too wide) detected at line 199
+[]
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 177--179
-\OT1/ptm/m/it/10 consequence-list func-tion, where $[][] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^N \OT1/cmr/m/n/10 :
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Lambda' on input line 225.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--187
-[][]\OT1/ptm/b/n/10 Theorem 8 \OT1/ptm/m/n/10 (Re-al-iza-tion)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 Let $[] \OT1/cmr/m/n/10 =
- []
-
-
-Underfull \hbox (badness 2564) in paragraph at lines 184--187
-\OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/10 ;  []; []; []\OT1/cmr/m/n/10 )$ \OT1/ptm/m/it/10 be a blueprint and $\OML/cmm/m/it/10 ^^_$
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 225.
 
 [12]
-Overfull \hbox (38.14394pt too wide) detected at line 215
-[]
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 240.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 240.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 240.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 240.
-
-
-Underfull \hbox (badness 1668) in paragraph at lines 243--246
+Underfull \hbox (badness 1668) in paragraph at lines 228--231
 []\OT1/ptm/m/n/10 We prove its con-tra-pos-i-tive. As-sume validity-
  []
 
 
-Underfull \hbox (badness 2538) in paragraph at lines 252--255
-[]\OT1/ptm/m/n/10 We want to show $\OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ^^_ \OMS/cmsy/m/n/10 ^ [][]h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ^
- []
+LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 243.
 
 
-Overfull \hbox (28.07938pt too wide) detected at line 261
-[]
- []
-
-[13]
-Overfull \hbox (17.98248pt too wide) detected at line 281
-[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 [] j \OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 B[][]x \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g
- []
+LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 243.
 
 
-Overfull \hbox (18.7099pt too wide) detected at line 283
-[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 [] j \OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 H[][]x \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N[]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g
- []
-
-
-Underfull \hbox (badness 5008) in paragraph at lines 292--295
-\OML/cmm/m/it/10 C[]$\OT1/ptm/m/n/10 , $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 ^^S \OML/cmm/m/it/10 B[]$\OT1/ptm/m/n/10 , and
- []
-
-
-Overfull \hbox (17.99988pt too wide) detected at line 311
-[]
- []
-
-
-Overfull \hbox (31.3351pt too wide) in paragraph at lines 325--330
-[]$\OML/cmm/m/it/10 ^^N[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 ) = []$ 
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 340.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 340.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 340.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 340.
-
-
-Overfull \hbox (45.95305pt too wide) detected at line 349
-[]
- []
-
-
-LaTeX Warning: Reference `NARA' on page 14 undefined on input line 352.
-
-[14]
-Overfull \hbox (32.90724pt too wide) detected at line 370
-\OMS/cmsy/m/n/10 ` []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ! h h[] \OML/cmm/m/it/10 C[][] [] B[][] [] H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X [] \OML/cmm/m/it/10  []:
- []
-
-
-Overfull \hbox (31.77213pt too wide) detected at line 374
-\OMS/cmsy/m/n/10 ` []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ! h h[] \OML/cmm/m/it/10 C[][] [] B[][] [] H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X [] \OML/cmm/m/it/10  []:
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 385.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 385.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 385.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 385.
-
-
-Overfull \hbox (58.144pt too wide) detected at line 432
-[]
- []
-
-[15]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 458.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 458.
-
-
-Underfull \hbox (badness 1668) in paragraph at lines 461--464
-[]\OT1/ptm/m/n/10 We prove its con-tra-pos-i-tive. As-sume validity-
- []
-
-
-Underfull \hbox (badness 4205) in paragraph at lines 476--477
+Underfull \hbox (badness 4205) in paragraph at lines 243--244
 [][] \OML/cmm/m/it/10 B$\OT1/ptm/m/n/10 , $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 H$\OT1/ptm/m/n/10 , and
  []
 
 
-Overfull \hbox (11.88899pt too wide) detected at line 490
+LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 254.
+
+
+Overfull \hbox (11.88899pt too wide) detected at line 257
 \OT1/cmss/m/n/10 M\OML/cmm/m/it/10 ; s[] \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ^^_ \OMS/cmsy/m/n/10 ^ []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ^ [] :h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  []:
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 493.
+(hyperref)                removing `\Lambda' on input line 260.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 493.
+(hyperref)                removing `subscript' on input line 260.
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 502--503
+Underfull \hbox (badness 3646) in paragraph at lines 269--270
 []\OT1/ptm/m/n/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \OT1/ptm/m/n/10 then $\OMS/cmsy/m/n/10 `[]
  []
 
 
-Overfull \hbox (59.45583pt too wide) detected at line 515
+LaTeX Warning: Reference `section: proof of upward derivability' on page 13 undefined on input line 274.
+
+
+LaTeX Warning: Reference `section: proof of upward derivability' on page 13 undefined on input line 278.
+
+
+Overfull \hbox (59.45583pt too wide) detected at line 282
 \OMS/cmsy/m/n/10 `[] []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ! h h[] \OML/cmm/m/it/10 C[][] [] B[][] [] H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X [] \OML/cmm/m/it/10  []
  []
 
 
-Overfull \hbox (35.32599pt too wide) detected at line 520
+Overfull \hbox (35.32599pt too wide) detected at line 287
 \OMS/cmsy/m/n/10 `[] []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ! h h[] \OML/cmm/m/it/10 C[][] [] B[][] [] H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OMS/cmsy/m/n/10 >
  []
 
-[16]
-Underfull \hbox (badness 8132) in paragraph at lines 568--578
+
+Underfull \hbox (badness 8132) in paragraph at lines 335--345
 []\OT1/ptm/m/n/10 for all $\OML/cmm/m/it/10 ^^Y \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 S[]$\OT1/ptm/m/n/10 , for all $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 []$\OT1/ptm/m/n/10 , for
  []
 
 
-Underfull \hbox (badness 4886) in paragraph at lines 568--578
+Underfull \hbox (badness 4886) in paragraph at lines 335--345
 \OT1/ptm/m/n/10 all $\OML/cmm/m/it/10 ^^Y^^Y[]^^Y[] [] ; ^^Y^^Y[]^^Y[] [] \OMS/cmsy/m/n/10 2 [][]$\OT1/ptm/m/n/10 , we have
  []
 
 
-Overfull \hbox (8.601pt too wide) detected at line 581
+Overfull \hbox (8.601pt too wide) detected at line 348
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ) [] \OMS/cmsy/m/n/10 ^^V[] []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ) []
  []
 
-
-Overfull \hbox (8.92513pt too wide) detected at line 624
+[13]
+Overfull \hbox (8.92513pt too wide) detected at line 391
 []
  []
 
-) [17
+) [14
 
 ] (./Potential Benefit and Danger in Concurrent Games.aux)
  ***********
@@ -1122,22 +1033,25 @@ L3 programming layer <2024-04-11>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `"Potential Benefit and Danger in Concurrent Games".out' has not changed.
-(rerunfilecheck)             Checksum: F523D2C20FE1E92E8C27DB4F12F66F5B;5265.
+(rerunfilecheck)             Checksum: 694F65440533367256DCFD750F681B78;4492.
  ) 
 Here is how much of TeX's memory you used:
- 24199 strings out of 474049
- 436995 string characters out of 5746277
- 1965754 words of memory out of 5000000
- 46035 multiletter control sequences out of 15000+600000
+ 24177 strings out of 474049
+ 436567 string characters out of 5746277
+ 1963754 words of memory out of 5000000
+ 46022 multiletter control sequences out of 15000+600000
  599292 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,23n,93p,1058b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,23n,93p,896b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (17 pages, 1677514 bytes).
+Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (14 pages, 1650009 bytes).
 PDF statistics:
- 636 PDF objects out of 1000 (max. 8388607)
- 540 compressed objects within 6 object streams
- 151 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 580 PDF objects out of 1000 (max. 8388607)
+ 488 compressed objects within 5 object streams
+ 142 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

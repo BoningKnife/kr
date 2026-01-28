@@ -884,6 +884,44 @@ which is beneficial for group $\GroupB$,
 harmful to group $\GroupH$, and guarantees that   
  $\varphi$ will be true until $\psi$ is true''.
 
+ We can now define the semantic interpretation of formulas in 
+$\lang_{\atlBDlogic}(\AGT, \AP)$. 
+As in $\mathsf{ATL}$, formulas are interpreted with respect to 
+\emph{pointed models}. 
+In our setting, a pointed model is a pair consisting of a CGMP and one of its states. 
+In Section~\ref{sec:benharm}, we introduced two notions of beneficial and harmful strategies: 
+\emph{strong} and \emph{weak}. 
+Accordingly, two distinct semantic interpretations can be defined---one in which existential quantification ranges over 
+strongly beneficial or harmful strategies, 
+and another in which it ranges over weakly beneficial or harmful ones. 
+The first interpretation is based on what we call the 
+\emph{strong satisfaction relation}, denoted by $\models$, 
+between state formulas of $\lang_{\atlBDlogic}(\AGT, \AP)$ and pairs $(\M, s)$ called \emph{pointed CGMP}, and between path formula of $\lang_{\atlBDlogic}(\AGT, \AP)$ and pairs $(\M, \lambda)$ called \emph{path-based CGMP},
+where $\M = (\St, \ACT, \R, \preceq, \V)$ is a CGMP, $s \in \St$ and $\lambda $ is a path in $\M$. 
+(The cases for atomic propositions and Boolean connectives are omitted, 
+as they are defined in the standard way.)
+\begin{eqnarray*}
+(\M,s)  \models 
+\atlbh{\Coalition}{\GroupB}{\GroupH}\gamma 
+  &\Leftrightarrow &  
+  \exists \js_\Coalition \in  {\JsSB^\Coalition_\M(s,\GroupB)}\\
+  &&\cap {\JsSH^\Coalition_\M(s,\GroupH)}\text{ s.t. }\\
+  & &\forall \history \in \outset(s, \js_\Coalition), \big(\M, \history  \big) \models \gamma ;\\
+  %
+  (\M,\lambda) \models \X  \varphi  
+  & \Leftrightarrow  & \big( \M, \history(1) \big) \models \varphi ,\\
+  %
+  (\M,\lambda) \models \henceforth  \varphi  
+  & \Leftrightarrow  & \forall k \in \domain(\history), \text{ if }k>0\\
+&&\text{then }\big( \M, \history(k) \big) \models \varphi ,\\
+%
+(\M,\lambda)  \models   ( \varphi\U\psi    )
+     & \Leftrightarrow  & \exists k\in \domain(\history)  \text{ s.t. } k>0,\\
+     && \big(\M,\history(k) \big)  \models \psi,  \text{and }\\
+   && \forall h \in \domain(\history), \text{ if }0<h<k \\
+&&\text{then } \big(\M, \history(h)   \big) \models \varphi.
+\end{eqnarray*}
+
 
 With the help of these modalities, we can elegantly represent the notions of \emph{potential boon} and \emph{potential danger}.
 In particular, a coalition $\Coalition$ is said to be a  potential boon  for another coalition $\GroupB$, denoted $\mathit{Boon}(\Coalition, \GroupB)$, if $\Coalition$ has a strategy that is beneficial for $\GroupB$. This can be defined as an abbreviation:
@@ -900,20 +938,25 @@ Analogously, a coalition $\Coalition$ is said to be a    danger  for another coa
 \end{align*}
 
   
-Notice also that standard $\mathsf{ATL}$
+Notice we use the temporal operator $\G$ and $\U$ referring to the strict future, i.e., starting from the next state. But the temporal operators referring to the non-strict future can be defined as usual:
+\begin{align*}
+    \atlbh{\Coalition}{B}{H}\G^\weak\varphi \eqdef&   \varphi\wedge\atlbh{\Coalition}{B}{H} \G\varphi,\\
+ \atlbh{\Coalition}{B}{H}(\varphi \U^\weak \psi )\eqdef& \psi \vee (\varphi \wedge \atlbh{\Coalition}{B}{H} (\varphi \U \psi )) .   
+\end{align*}
+also that standard $\mathsf{ATL}$
 modalities
 $\atlop{\Coalition }\nexttime\varphi$,
-$\atlop{\Coalition }\henceforth$ and
-$\atlop{\Coalition }(\until{\varphi}{\psi})$
+$\atlop{\Coalition }\henceforth^\weak \phi$ and
+$\atlop{\Coalition }(\varphi \U^\weak \psi )$
 are definable
 as special cases
 of $\atlBDlogic$ modalities,
 as follows: 
 \begin{align*}
     \atlop{\Coalition }\nexttime\varphi \eqdef&   \atlbh{\Coalition}{\emptyset}{\emptyset  } \nexttime\varphi,\\
-    \atlop{\Coalition }\henceforth\varphi  \eqdef&
- \atlbh{\Coalition}{\emptyset}{\emptyset  }\henceforth\varphi  ,\\
-    \atlop{\Coalition }(\until{\varphi}{\psi})\eqdef& \atlbh{\Coalition}{\emptyset}{\emptyset  } (\until{\varphi}{\psi}) .   
+    \atlop{\Coalition }\henceforth^\weak\varphi  \eqdef&
+ \atlbh{\Coalition}{\emptyset}{\emptyset  }\henceforth^\weak\varphi  ,\\
+    \atlop{\Coalition }(\varphi \U^\weak \psi )\eqdef& \atlbh{\Coalition}{\emptyset}{\emptyset  } (\varphi \U^\weak \psi ) .   
 \end{align*}
 For notational convenience,
 we denote with
@@ -924,43 +967,6 @@ $\lang_{\atlBDlogic}$
 that only includes
 modalities of type $\atlbh{\Coalition}{\emptyset}{\emptyset  }$.
 
-We can now define the semantic interpretation of formulas in 
-$\lang_{\atlBDlogic}(\AGT, \AP)$. 
-As in $\mathsf{ATL}$, formulas are interpreted with respect to 
-\emph{pointed models}. 
-In our setting, a pointed model is a pair consisting of a CGMP and one of its states. 
-In Section~\ref{sec:benharm}, we introduced two notions of beneficial and harmful strategies: 
-\emph{strong} and \emph{weak}. 
-Accordingly, two distinct semantic interpretations can be defined---one in which existential quantification ranges over 
-strongly beneficial or harmful strategies, 
-and another in which it ranges over weakly beneficial or harmful ones. 
-The first interpretation is based on what we call the 
-\emph{strong satisfaction relation}, denoted by $\models^\strong$, 
-between state formulas of $\lang_{\atlBDlogic}(\AGT, \AP)$ and pairs $(\M, s)$ called \emph{pointed CGMP}, and between path formula of $\lang_{\atlBDlogic}(\AGT, \AP)$ and pairs $(\M, \lambda)$ called \emph{path-based CGMP},
-where $\M = (\St, \ACT, \R, \preceq, \V)$ is a CGMP, $s \in \St$ and $\lambda $ is a path in $\M$. 
-(The cases for atomic propositions and Boolean connectives are omitted, 
-as they are defined in the standard way.)
-\begin{eqnarray*}
-(\M,s)  \models^\strong 
-\atlbh{\Coalition}{\GroupB}{\GroupH}\gamma 
-  &\Leftrightarrow &  
-  \exists \js_\Coalition \in  {\JsSB^\Coalition_\M(s,\GroupB)}\\
-  &&\cap {\JsSH^\Coalition_\M(s,\GroupH)}\text{ s.t. }\\
-  & &\forall \history \in \outset(s, \js_\Coalition), \big(\M, \history  \big) \models^\strong \gamma ;\\
-  %
-  (\M,\lambda) \models^\strong \X  \varphi  
-  & \Leftrightarrow  & \big( \M, \history(1) \big) \models^\strong \varphi ,\\
-  %
-  (\M,\lambda) \models^\strong \henceforth  \varphi  
-  & \Leftrightarrow  & \forall k \in \domain(\history), \text{ if }k>0\\
-&&\text{then }\big( \M, \history(k) \big) \models^\strong \varphi ,\\
-%
-(\M,\lambda)  \models^\strong   ( \varphi\U\psi    )
-     & \Leftrightarrow  & \exists k\in \domain(\history)  \text{ s.t. } k>0,\\
-     && \big(\M,\history(k) \big)  \models^\strong \psi,  \text{and }\\
-   && \forall h \in \domain(\history), \text{ if }0<h<k \\
-&&\text{then } \big(\M, \history(h)   \big) \models^\strong \varphi.
-\end{eqnarray*}
 The second interpretation is based on what we call the 
 \emph{weak satisfaction relation}, denoted by $\models^\weak$, 
 which is defined analogously to the strong one, 
@@ -970,29 +976,23 @@ is replaced by
 $\JsWB^\Coalition_\M(s,\GroupB)\cap \JsWH^\Coalition_\M(s,\GroupH)$.
 
 We conclude this section
-by defining a fragment:
+by defining two fragments of the language. The following syntaxs define the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$) of $\lang_{\atlBDlogic} $:
 $$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi \mid \atlbh{\Coalition}{\GroupB}{\GroupH} \G \varphi$$
-%the coalition logic ($\mathsf{CL}$) fragment of the language $\lang_{\atlBDlogic} $.
-%In this fragment, denoted by $\lang_{\clBDlogic} $,
-%only the temporal modality \emph{next} is allowed.
-%It is defined by the following grammar:
-%\begin{center}\begin{tabular}{lcl}
- %$\varphi, \psi$  & $\bnf$ & $p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi $
-%\end{tabular}\end{center}
-%where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range over $2^\AGT$. 
+and the \emph{coalition logic fragment} ($\lang_{\clBDlogic}$) of $\lang_{\atlBDlogic} $:
+$$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi $$
+where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range over $2^\AGT$. 
 
- $\lang_{\atlBDlogic} $ and its $\mathsf{CL}$-fragment $\lang_{\clBDlogic} $, in combination with the satisfaction relations $\models^\strong$ and $\models^\weak$, and with the different CGMP classes defined in Section~\ref{CGMPsect}, give rise to a rich family of logics.
+ $\lang_{\atlBDlogic} $ and its fragments in combination with the satisfaction relation $\models$, and with the different CGMP classes defined in Section~\ref{CGMPsect}, give rise to a rich family of logics.
 In this paper, we focus on two logics from this family:
-(i) the one based on the $\mathsf{CL}$-fragment, the satisfaction relation $\models^\strong$, and the general model class $\classcgspvar{\emptyset}$, which includes all CGMPs; and
-(ii) the one based on the $\mathsf{CL}$-fragment, the satisfaction relation $\models^\strong$, and the model class $\classcgspvar{\{\NFP\}}$, which includes all CGMPs with non-flat preferences.
-We call them  logics $\clSBDlogic$ 
-and $\clNFSBDlogic$.
-$\clSBDlogic$
-is the $\mathsf{CL}$ logic with strong coalition-affecting capability, while $\clNFSBDlogic$ is the $\mathsf{CL}$ logic with strong coalition-affecting capability under non-flat preferences. 
+(i) the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the general model class $\classcgspvar{\emptyset}$, which includes all CGMPs; and
+(ii) the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), the satisfaction relation $\models$, and the model class $\classcgspvar{\{\NFP\}}$, which includes all CGMPs with non-flat preferences.
+We call them logics $\safyatlSBDlogic$ 
+and $\safyatlNFSBDlogic$.
+
 
 We consider two notions of validity for formulas in the language $\lang_{\clBDlogic} $. 
-A formula $\varphi \in \lang_{\clBDlogic} $ is said to be \emph{valid}, denoted by $\models \varphi$, if it is satisfied in every pointed CGMP under the $\models^\strong$ interpretation. 
-Similarly, it is said to be \emph{$\NF$-valid}, denoted by $\models^{\NF} \varphi$, if it is satisfied in every pointed CGMP with non-flat preferences under the $\models^\strong$ interpretation.
+A formula $\varphi \in \lang_{\clBDlogic} $ is said to be \emph{valid}, denoted by $\models \varphi$, if it is satisfied in every pointed CGMP under the $\models$ interpretation. 
+Similarly, it is said to be \emph{$\NF$-valid}, denoted by $\models^{\NF} \varphi$, if it is satisfied in every pointed CGMP with non-flat preferences under the $\models$ interpretation.
 
 
 
@@ -1005,14 +1005,14 @@ Similarly, it is said to be \emph{$\NF$-valid}, denoted by $\models^{\NF} \varph
 \section{Axiomatization}
 \label{sec:axiom}
 
-In this section, we introduce the logics $\clSBDlogic$ and $\clNFSBDlogic$, and prove their completeness with respect to their corresponding semantics. 
-\subsection{Logic $\clSBDlogic$}\label{subsec: axiomatization for SCA-CL}
+In this section, we introduce the logics $\safyatlSBDlogic$ and $\safyatlNFSBDlogic$, and prove their completeness with respect to their corresponding semantics. 
+\subsection{Logic $\safyatlSBDlogic$}\label{subsec: axiomatization for SCA-CL}
 
 The following definition
-introduces the logic  $\clSBDlogic$.
-\begin{definition}[Logic $\clSBDlogic$]
+introduces the logic  $\safyatlSBDlogic$.
+\begin{definition}[axiomatic system $\safyatlSBDlogic$]
 \label{definition: axiomatic system for SCA-CL}
-$\clSBDlogic$ consists of the following axioms:
+$\safyatlSBDlogic$ consists of the following axioms:
 \begin{align*}
 & 
 \text{All tautologies of propositional logic} \tag{$\top$} \label{ax:taut} 
@@ -1037,6 +1037,18 @@ $\clSBDlogic$ consists of the following axioms:
 & 
 \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime (\phi\vee \psi)\to  (\atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi \vee \atlbh{\AGT}{\GroupB}{\GroupH}\nexttime \psi)
 \tag{$\mathtt{A}\text{-}\mathtt{Cro}$} \label{ax:Cro}
+\\
+& 
+\atlop{\Coalition}\G \phi \iff  \atlop{\Coalition}\nexttime (\phi \wedge \atlop{\Coalition}\G \phi)
+\tag{$\mathtt{A}\text{-}\mathtt{FP}_\G$}\label{ax:FP_G}
+\\
+& 
+\atlbh{\Coalition}{B}{H}\G \phi \to  \atlbh{\Coalition}{B}{H}\nexttime (\phi \wedge \atlop{\Coalition}\G \phi)
+\tag{$\mathtt{A}\text{-}\mathtt{FP}_\G$}\label{ax:WFP_G}
+\\
+& 
+\atlop{\emptyset}\G\big (\theta \to \atlop{\Coalition}\X(\phi \wedge \theta)\big ) \to  \atlop{\emptyset }\G (\theta \to \atlop{\Coalition}\G \phi)
+\tag{$\mathtt{A}\text{-}\mathtt{GFP}_\G$}\label{ax:GFP_G}
 \end{align*}
 and the following rules of inference:
 \begin{align}
@@ -1045,6 +1057,9 @@ and the following rules of inference:
 \\
 & \dfrac{\; \phi \iff \psi \;}{\; \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi \iff \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \psi\;} 
   \tag{$\mathtt{RE}$} \label{ir:RE}
+  \\
+& \dfrac{\; \phi \;}{\; \atlop{\Coalition}\G \phi \;} 
+  \tag{$\mathtt{Gen}$} \label{ir:Gen}
 \end{align}
 \end{definition}
 
@@ -1058,32 +1073,52 @@ capabilities are monotonic with respect to coalitions. Axiom \ref{ax:Ser} captur
 Axiom \ref{ax:Sup} captures \textit{superadditivity}.  Axiom \ref{ax:Cro} is the so-called \textit{crown}
 axiom: it was called this way  in 
 \cite{goranko_strategic_2013}
-since it corresponds to the fact that the effectivity function of a game is a crown. The inference rules are \textit{modus ponens} (\ref{ir:MP}) and \textit{replacement of equivalences} (\ref{ir:RE}).
+since it corresponds to the fact that the effectivity function of a game is a crown. The inference rules are \textit{modus ponens} (\ref{ir:MP}), \textit{replacement of equivalences} (\ref{ir:RE}) and \textit{generalization} (\ref{ir:Gen}).
 
 As usual, 
 for every  $\varphi \in \lang_{\clBDlogic} $,
 we write $\vdash
 \varphi$
 to mean that $\varphi $
-is derivable  in $\clSBDlogic$,
+is derivable  in $\safyatlSBDlogic$,
 that is,
 there is a sequence of formulas $(\varphi_1, \ldots, \varphi_m)$
 such that:
 \begin{itemize}
 \item $\varphi_m = \varphi$, and
 \item for every $1 \leq k \leq m$, either $\varphi_k$
-is  an instance of one of the  axiom schema of  $\clSBDlogic$
+is  an instance of one of the  axiom schema of  $\safyatlSBDlogic$
 or there are formulas $\varphi_{k_1}, \ldots ,\varphi_{k_t} $
 such that $k_1 , \ldots, k_t < k$  and $\frac{\varphi_{k_1}, \ldots ,\varphi_{k_t} }{\varphi_{k} }$
-is an instance of some inference  rule of $\clSBDlogic$.
+is an instance of some inference  rule of $\safyatlSBDlogic$.
 \end{itemize}
 
+In the axiomatic system $\safyatlSBDlogic$, the following formulas and inference rules are derivable.
+\begin{theorem}
+  The following are derivable in $\safyatlSBDlogic$:
+  %\tag{$\mathtt{A}\text{-}\mathtt{MC}1$} \label{ax:MC1}
+  \begin{align*}  
+    %No absurd rational actions
+    & \dfrac{\; \phi \;}{\; \atlop{\Coalition}\G^w \phi \;} 
+  \tag{$\mathtt{Gen}_{\G^w}$} \label{ir:Gen_Gw}
+  \\
+    & 
+     \atlop{\emptyset}\G^w\big (\theta \to \atlop{\Coalition}\X(\phi \wedge \theta)\big ) 
+     \to  \atlop{\emptyset }\G^w (\theta \to \atlop{\Coalition}\G \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_\G$} \label{th:GFP_G}
+     \\
+    & 
+     \atlop{\emptyset}\G^w\big (\theta \to (\phi \wedge \atlop{\Coalition}\X\theta)\big ) \to \atlop{\emptyset }\G^w (\theta \to \atlop{\Coalition}\G^w \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_{\G^w}$} \label{th:GFP_Gw}
+     \\
+    & 
+     \dfrac{\; \theta \to \atlop{\Coalition}\X(\phi \wedge \theta) \;}{\; \theta \to \atlop{\Coalition}\G \phi\;}  \tag{$\mathtt{In}_\G$} \label{ir:In_G}
+  \end{align*}
+  \end{theorem}  
 
  We are going
  to prove soundness
  and completeness
  of the logic 
- $\clSBDlogic$ 
+ $\safyatlSBDlogic$ 
  relative to the 
 notion of validity given
 at the end of Section \ref{sec:languages}.
@@ -1095,127 +1130,21 @@ at the end of Section \ref{sec:languages}.
  % of $\varphi $
  % relative to the 
  % semantics
- % $\models^\strong$. 
-Our  completeness proof 
-% for
-% $\clSBDlogic$ 
-% is similar to the one for $\clratlogic$ from \cite{DBLP:conf/ifaamas/LiLM25}. 
-% It 
-contains four parts: an induction on the
-modal degree of formulas, the normal form (Lemma \ref{lemma: normal-form}), the downward validity (Lemma \ref{lemma: downward validity}), and the upward derivability (Lemma \ref{lemma: upward derivability}). Before giving  them, we need to introduce some preliminary notions. 
-\begin{definition}[Literal]
-A propositional literal
-is either $p$
-or $\neg p $
- for any  $p \in \ATM $. 
- A modal
- $\clBDlogic$-literal
- is a formula of type 
- $\atlbh{\Coalition}{\GroupB}{\GroupH}\X \phi $ or $\neg \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \phi$,
- for any coalition $\Coalition$, $\GroupB$, $\GroupH$, and $\phi\in \lang_{\clBDlogic} $.
-\end{definition}
-
-The following definition introduces
-the notion of
-standard $\clBDlogic$ disjunction, which equals to a disjunction of literals.
-\begin{definition}[Standard $\clBDlogic$ disjunction]
-A formula of type 
-  \begin{align*}
-     \chi \vee \big(
-  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
-  \to  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }\big)
-  \end{align*}
-is called standard $\clBDlogic$ disjunction, where $\NI $, $\PI $ are finite and pairwise disjoint sets of indices, 
-$\chi $ is a disjunction of propositional literals, 
-$\Coalition_\nindex$, $\Coalition_\pindex$, $\GroupB_\nindex$, $\GroupH_\nindex$, $\GroupB_\pindex$ and $\GroupH_\pindex$ range over $\powerset{\AGT}$ and $\psi_\nindex\in \lang_{\clBDlogic} $ for each $\nindex\in \NI \cup \PI $.
-\end{definition}
-By propositional logic, we have 
-the following normal form
-lemma for the logic $\clSBDlogic$.
-\begin{lemma}[Normal form]\label{lemma: normal-form}
-  Any  formula
-  $\varphi \in \lang_{\clBDlogic} $
-  is equivalent to a conjunction of standard $\clBDlogic$ disjunctions whose modal degrees are not higher
-  than the modal
-  degree of $\varphi$.
-  This equivalence is both valid and derivable.
-\end{lemma} 
-
-The disjoint-ness condition of Axiom \textit{superadditivity} indicates the importance of the following definition for neat sets of indices. 
-\begin{definition}[Neatness]\label{definition: neatness}
-  For any  $X\subseteq \NI$,
-  we say $X$ is neat iff for all $\nindex,\nindex'\in X$, if $\nindex\neq \nindex'$, then $\Coalition_{\nindex}\cap \Coalition_{\nindex'}= \emptyset$.  
-\end{definition}
-
-The following is our downward validity
-lemma. 
-Its proof is in Appendix A.2 of the supplementary material.
-%\cite{ArxivAAMAS26}.
-%\ref{sec: proof of completeness for SCA-CL}  
-%in the supplementary material. 
-\begin{lemma}[Downward validity for $\clSBDlogic$]\label{lemma: downward validity}
-   Fix a standard 
-    $\clBDlogic$
-    disjunction $\phi = \chi \vee \big(
-  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
-  \to  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }\big)$.
-   If $\phi$ is valid, 
-  then the following 
-validity-reduction condition is satisfied:
-\begin{itemize}
-\item either $\chi $ is valid;
-\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
-  \begin{itemize}
-  \item $X$ is neat;
-  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$ and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
-  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
-  \item and $\bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$ is valid.
-  \end{itemize}
-\end{itemize}
-\end{lemma}
-
-The following is our upward derivability 
-lemma. 
-Its proof is in Appendix A.3 of the supplementary material.
-%\cite{ArxivAAMAS26}.
-%
-
-\begin{lemma}[Upward derivability for $\clSBDlogic$]\label{lemma: upward derivability}
-  Fix a standard 
-    $\clBDlogic$
-    disjunction $\phi = \chi \vee \big(
-  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex} 
-  \to  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }\big)$. We have
-   $\vdash \phi$ if the following 
-derivability-reduction condition is satisfied:
-\begin{itemize}
-\item either $\vdash \chi $, 
-\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
-  \begin{itemize}
-  \item $X$ is neat;
-  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$ and  $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
-  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
-  \item and $\vdash\bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
-  \end{itemize}
-\end{itemize}
-\end{lemma}
-
-Observe that the derivability-reduction condition is obtained from the validity-reduction condition by replacing validity with derivability. By induction on the modal degree of formulas, the inductive hypothesis guarantees
-that whenever the validity-reduction condition of a formula holds,
-its derivability-reduction condition also holds.
-Hence, by combining Lemmas~\ref{lemma: downward validity} and~\ref{lemma: upward derivability},
-we obtain the following completeness theorem.
+ % $\models$. 
+Our  completeness proof uses the technique of
+canonical models under formula contexts.
+  \footnote{add more details here or in the appendix?}
 
 \begin{theorem}[soundness and completeness]
 \label{thm:soundness and comleteness}
 A formula $\varphi \in \lang_{\clBDlogic} $ is  valid  if and only if $\vdash \varphi$. 
 \end{theorem}
 
-\subsection{Logic $\clNFSBDlogic$}
-The following definition introduces the logic $\clNFSBDlogic$.
-\begin{definition}[Logic $\clNFSBDlogic$]
+\subsection{Logic $\safyatlNFSBDlogic$}
+The following definition introduces the logic $\safyatlNFSBDlogic$.
+\begin{definition}[Logic $\safyatlNFSBDlogic$]
 \label{definition: axiomatic system for NFSCA-CL}
-$\clNFSBDlogic$ extends $\clSBDlogic$ 
+$\safyatlNFSBDlogic$ extends $\safyatlSBDlogic$ 
 of Definition \ref{definition: axiomatic system for SCA-CL}
 with the following additional axiom schema:
 \begin{align*}
@@ -1229,15 +1158,15 @@ Its underlying intuition is that a coalition cannot simultaneously help and harm
 
 The definition of derivability is analogous to the one given in 
 Section~\ref{subsec: axiomatization for SCA-CL}
-for the logic $\clSBDlogic$. 
-We use $\vdash^\NF$ to denote that $\phi $ is deducible in $\clNFSBDlogic$. 
-We now prove the soundness and completeness of the logic $\clNFSBDlogic$ with respect to the notion of $\NF$-validity defined at the end of Section~\ref{sec:languages}. 
-The proof closely follows that of the logic $\clSBDlogic$. 
-Since $\clNFSBDlogic$ is stronger than $\clSBDlogic$, we can rely on the result of Lemma~\ref{lemma: normal-form}. 
+for the logic $\safyatlSBDlogic$. 
+We use $\vdash^\NF$ to denote that $\phi $ is deducible in $\safyatlNFSBDlogic$. 
+We now prove the soundness and completeness of the logic $\safyatlNFSBDlogic$ with respect to the notion of $\NF$-validity defined at the end of Section~\ref{sec:languages}. 
+The proof closely follows that of the logic $\safyatlSBDlogic$. 
+Since $\safyatlNFSBDlogic$ is stronger than $\safyatlSBDlogic$, we can rely on the result of Lemma~\ref{lemma: normal-form}. 
 The inductive step on the modal degree of formulas is also analogous. 
-Therefore, it remains to prove the following downward validity and upward derivability lemma for $\clNFSBDlogic$. 
+Therefore, it remains to prove the following downward validity and upward derivability lemma for $\safyatlNFSBDlogic$. 
 Its proof is in Appendix B.2 of the supplementary material.
-\begin{lemma}[Downward validity for $\clNFSBDlogic$]\label{lemma: downward validity for NFSCA-CL}
+\begin{lemma}[Downward validity for $\safyatlNFSBDlogic$]\label{lemma: downward validity for NFSCA-CL}
   Given a standard $\clBDlogic$ disjunction 
   $$\phi = \chi \vee (
   \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
@@ -1260,13 +1189,13 @@ validity-reduction condition is satisfied:
 
 
 The following is the  upward derivability 
-lemma for $\clNFSBDlogic$. 
+lemma for $\safyatlNFSBDlogic$. 
 Its proof is in 
 Appendix B.3 in the supplementary material.
 %\cite{ArxivAAMAS26}.
 %in the supplementary material.
 
-\begin{lemma}[Upward derivability for $\clNFSBDlogic$]\label{lemma: upward derivability for NFSCA-CL}
+\begin{lemma}[Upward derivability for $\safyatlNFSBDlogic$]\label{lemma: upward derivability for NFSCA-CL}
   Given a standard $\clBDlogic$ disjunction 
   $$\phi = \chi \vee (
   \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
@@ -1291,7 +1220,7 @@ derivability-reduction condition is satisfied: \begin{itemize}
 
 \section{Tree-like  property and embedding}\label{sec: tree-like model property and embedding}
 
-In the completeness proofs for the logics $\clSBDlogic$ and $\clNFSBDlogic$, we construct a tree model for every satisfiable formula. 
+In the completeness proofs for the logics $\safyatlSBDlogic$ and $\safyatlNFSBDlogic$, we construct a tree model for every satisfiable formula. 
 In this section, we show that satisfiability for the language $\lang_{\atlBDlogic} $ satisfies the tree-like model property. 
 Based on this result, we provide polynomial embeddings of satisfiability for the language $\lang_{\atlBDlogic} $ into $\atllogic$-satisfiability, and of satisfiability for the language $\lang_{\clBDlogic} $ into $\cllogic$-satisfiability. 
 For the first embedding, we restrict to models with stable preferences. 
