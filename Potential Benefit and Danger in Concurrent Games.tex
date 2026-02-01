@@ -80,9 +80,9 @@
 % page charge instructions.
 % Put where the files are available in the appropriate places.
 %PDF Info Is REQUIRED.
-\pdfinfo{
-/TemplateVersion (KR.2026.0)
-}
+%\pdfinfo{
+%/TemplateVersion (KR.2026.0)
+%}
 
 
 
@@ -452,11 +452,12 @@ As usual, we write $\lambda \prec_{i,s} \lambda'$ if $\lambda \preceq_{i,s} \lam
 We respectively denote by $\succeq_{i,s}$ and $\succ_{i,s}$ the inverses of $\preceq_{i,s}$ and $\prec_{i,s}$.
           % The class of CGFPs is denoted
           % by $\classcgsp$.
-          
-          We say that the CGFP 
-          $(\F,\preceq)$ has stable preferences
+        \begingroup 
+        \color{red}  
+        Respectively, we say that the CGFP 
+          $(\F,\preceq)$ has stable, non-flat, well-founded, or converse-well-founded preferences
           if
-          the following condition holds
+          the following corresponding conditions hold:
           for all agents $i\in \AGT$:
           \begin{align*}
        (\mathbf{SP}) & \forall s,s' \in \St ,
@@ -468,20 +469,21 @@ We respectively denote by $\succeq_{i,s}$ and $\succ_{i,s}$ the inverses of $\pr
           \big(
         \lambda'   \preceq_{i,s'}\lambda  \text{ iff }
         s \lambda'   \preceq_{i,s } s\lambda 
-          \big). 
+          \big). \\
+          (\NFP)\  &\forall s\in \St, \exists \history ,\history' \in \historyset_{\F,s}\text{ such that } \history \prec_{i,s} \history' .\\
+          (\WFP)\  &\forall s\in \St, \exists \history \in \historyset_{\F,s}\text{ such that } \\
+          &\forall \in \historyset_{\F,s}:\history \preceq_{i,s} \history' .\\
+          (\CWFP)\  &\forall s\in \St, \exists \history \in \historyset_{\F,s}\text{ such that }\\
+          & \forall \in \historyset_{\F,s}:\history \succeq_{i,s} \history'.
           \end{align*}
-
-          We say that the CGFP 
-          $(\F,\preceq)$ has non-flat preferences if the following condition holds
-               for all agents $i\in \AGT$:
-          \begin{align*}
-        (\NFP)\    \forall s\in \St, \exists \history ,\history' \in \historyset_{\F,s}\text{ such that } \history \prec_{i,s} \history' .
-           \end{align*}
+        \endgroup
 \end{definition}
 Property $\mathbf{SP}$, expressing \emph{stable preferences}, captures the idea that an agent's preference remains consistent over time: an agent prefers a computation $\lambda$ to a computation $\lambda'$ starting at the same state $s'$ if and only if it prefers the precursor of $\lambda$ (i.e., $s\lambda$) to the precursor of $\lambda'$ (i.e., $s\lambda'$) at every predecessor $s$ of $s'$.
 Stability of preferences is in line with the notion of \emph{time consistency} of preferences studied in economics, as opposed to \emph{time inconsistency} \cite{Lowewenstein2002}.
 Property $\mathbf{NFP}$, expressing \emph{non-flat preferences}, captures the idea that agents are not indifferent among all outcomes.
-
+\begingroup\color{red}
+Property $\WFP$ and $\CWFP$, expressing \emph{well-founded preferences} and \emph{converse-well-founded preferences}, captures the idea that agents' preferences exist the worst and the best expects.
+\endgroup
 
 \subsection{Concurrent game models with preferences}\label{CGMPsect}
 
@@ -506,7 +508,7 @@ every state in the CGFP which propositions are true there.
 In Definition~\ref{def: CGFP}, we introduced two properties for CGFPs: 
 stability ($\mathbf{SP}$) and non-flatness ($\mathbf{NFP}$) of preferences. 
 These properties are inherited by CGMPs. 
-For $X \subseteq \{\mathbf{SP}, \mathbf{NFP}\}$, 
+For $X \subseteq \{\mathbf{SP}, \mathbf{NFP},\WFP,\CWFP\}$, 
 we denote by $\classcgspvar{X}$ the class of CGMPs satisfying all properties in $X$. 
 For example, $\classcgspvar{\{\NFP\}}$ denotes the class of CGMPs with non-flat preferences, 
 while $\classcgspvar{\emptyset}$ denotes the class of all CGMPs.
@@ -983,11 +985,14 @@ $$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Co
 where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range over $2^\AGT$. 
 
  $\lang_{\atlBDlogic} $ and its fragments in combination with the satisfaction relation $\models$, and with the different CGMP classes defined in Section~\ref{CGMPsect}, give rise to a rich family of logics.
-In this paper, we focus on two logics from this family:
-(i) the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the general model class $\classcgspvar{\emptyset}$, which includes all CGMPs; and
-(ii) the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), the satisfaction relation $\models$, and the model class $\classcgspvar{\{\NFP\}}$, which includes all CGMPs with non-flat preferences.
-We call them logics $\safyatlSBDlogic$ 
-and $\safyatlNFSBDlogic$.
+In this paper, we focus on three logics from this family:
+\begingroup\color{red}
+\begin{enumerate}
+  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\WFP,\CWFP\}}$, which includes all CGMPs with well-founded and converse-well founded preferences;
+  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\NFP,\WFP,\CWFP\}}$, which includes all CGMPs with non-flat, well-founded and converse-well founded preferences;
+  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\SP,\WFP,\CWFP\}}$, which includes all CGMPs with stable, well-founded and converse-well founded preferences.
+\end{enumerate}
+\endgroup
 
 
 We consider two notions of validity for formulas in the language $\lang_{\clBDlogic} $. 
