@@ -1,26 +1,26 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.8)  2 FEB 2026 05:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  2 FEB 2026 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/yinfeng/Desktop/kr/Potential Benefit and Danger in Concurrent Games"
-(c:/Users/yinfeng/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+**"c:/Users/yli/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex"
+(c:/Users/yli/Desktop/kr/Potential Benefit and Danger in Concurrent Games.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-04-11>
 KR2026 Instructions for Authors
-(c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
+(c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(c:/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+(c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count181
-\c@section=\count182
-\c@subsection=\count183
-\c@subsubsection=\count184
-\c@paragraph=\count185
-\c@subparagraph=\count186
-\c@figure=\count187
-\c@table=\count188
+\c@part=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
@@ -28,31 +28,31 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 Conference Style for KR for LaTeX 2e -- version 1.2 (27-Feb-2020)
 \titlepad=\skip50
 \titlebox=\skip51
-) (c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
-(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
 \ex@=\dimen141
-)) (c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen142
-) (c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count189
+\inf@bad=\count197
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count190
-\leftroot@=\count191
+\uproot@=\count198
+\leftroot@=\count199
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count192
-\DOTSCASE@=\count193
+\classnum@=\count266
+\DOTSCASE@=\count267
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -65,20 +65,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen143
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count194
+\macc@depth=\count268
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count195
+\c@MaxMatrixCols=\count269
 \dotsspace@=\muskip16
-\c@parentequation=\count196
-\dspbrk@lvl=\count197
+\c@parentequation=\count270
+\dspbrk@lvl=\count271
 \tag@help=\toks18
-\row@=\count198
-\column@=\count199
-\maxfields@=\count266
+\row@=\count272
+\column@=\count273
+\maxfields@=\count274
 \andhelp@=\toks19
 \eqnshift@=\dimen144
 \alignsep@=\dimen145
@@ -92,7 +92,7 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (c:/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks22
 \thm@bodyfont=\toks23
@@ -103,20 +103,20 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip56
 \thm@headsep=\skip57
 \dth@everypar=\toks27
-) (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (c:/texlive/2023/texmf-dist/tex/latex/psnfss/times.sty
+)) (c:/texlive/2024/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
-) (c:/texlive/2023/texmf-dist/tex/generic/soul/soul.sty
+) (c:/texlive/2024/texmf-dist/tex/generic/soul/soul.sty
 Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
- (c:/texlive/2023/texmf-dist/tex/generic/soul/soul-ori.sty
+ (c:/texlive/2024/texmf-dist/tex/generic/soul/soul-ori.sty
 Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
 \SOUL@word=\toks28
 \SOUL@lasttoken=\toks29
@@ -130,139 +130,132 @@ Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
 \SOUL@hyphkern=\dimen153
 \SOUL@dimen=\dimen154
 \SOUL@dimeni=\dimen155
-\SOUL@minus=\count267
-\SOUL@comma=\count268
-\SOUL@apo=\count269
-\SOUL@grave=\count270
+\SOUL@minus=\count275
+\SOUL@comma=\count276
+\SOUL@apo=\count277
+\SOUL@grave=\count278
 \SOUL@spaceskip=\skip58
 \SOUL@ttwidth=\dimen156
 \SOUL@uldp=\dimen157
 \SOUL@ulht=\dimen158
-) (c:/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+) (c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (c:/texlive/2023/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+) (c:/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
- (c:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+ (c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-))) (c:/texlive/2023/texmf-dist/tex/latex/url/url.sty
+))) (c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (c:/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
- (c:/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (c:/texlive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks34
+) (c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (c:/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (c:/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (c:/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode not found.
-) (c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks34
-) (c:/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (c:/texlive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (c:/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (c:/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (c:/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (c:/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (c:/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (c:/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-08-07 v2.53 Cross-referencing by name of section
- (c:/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (c:/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (c:/texlive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (c:/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (c:/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (c:/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count271
-) (c:/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+\c@section@level=\count279
+) (c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count272
+\etb@tempcnta=\count280
 )
 \@linkdim=\dimen159
-\Hy@linkcounter=\count273
-\Hy@pagecounter=\count274
- (c:/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
-) (c:/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
+\Hy@linkcounter=\count281
+\Hy@pagecounter=\count282
+ (c:/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (c:/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count275
- (c:/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count283
+ (c:/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4167.
-Package hyperref Info: Link nesting OFF on input line 4172.
-Package hyperref Info: Hyper index ON on input line 4175.
-Package hyperref Info: Plain pages OFF on input line 4182.
-Package hyperref Info: Backreferencing OFF on input line 4187.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count276
-LaTeX Info: Redefining \url on input line 4772.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count284
+LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen160
- (c:/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
+ (c:/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (c:/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+ (c:/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count277
+\Fld@menulength=\count285
 \Field@Width=\dimen161
 \Fld@charsize=\dimen162
-Package hyperref Info: Hyper figures OFF on input line 6051.
-Package hyperref Info: Link nesting OFF on input line 6056.
-Package hyperref Info: Hyper index ON on input line 6059.
-Package hyperref Info: backreferencing OFF on input line 6066.
-Package hyperref Info: Link coloring OFF on input line 6071.
-Package hyperref Info: Link coloring with OCG OFF on input line 6076.
-Package hyperref Info: PDF/A mode OFF on input line 6081.
- (c:/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (c:/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count278
-\c@Item=\count279
-\c@Hfootnote=\count280
+\Hy@abspage=\count286
+\c@Item=\count287
+\c@Hfootnote=\count288
 )
-Package hyperref Info: Driver (autodetected): hxetex.
- (c:/texlive/2023/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2023-07-08 v7.01b Hyperref driver for XeTeX
- (c:/texlive/2023/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
-)
-\pdfm@box=\box53
-\c@Hy@AnnotLevel=\count281
-\HyField@AnnotCount=\count282
-\Fld@listcount=\count283
-\c@bookmark@seq@number=\count284
- (c:/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
- (c:/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (c:/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (c:/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
-) (c:/texlive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+)
+\Fld@listcount=\count289
+\c@bookmark@seq@number=\count290
+ (c:/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (c:/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip59
-) (c:/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks35
 \inpenc@posthook=\toks36
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
-) (c:/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2023/07/31 v3.6n Customizing captions (AR)
- (c:/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen163
 \captionmargin=\dimen164
@@ -274,25 +267,25 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen170
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count285
-\c@continuedfloat=\count286
+\c@caption@flags=\count291
+\c@continuedfloat=\count292
 Package caption Info: hyperref package is loaded.
-) (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+ (c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (c:/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+ (c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: xetex.def on input line 107.
- (c:/texlive/2023/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen171
 \Gin@req@width=\dimen172
-) (c:/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen173
 \lightrulewidth=\dimen174
@@ -304,59 +297,57 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen180
 \cmidrulekern=\dimen181
 \defaultaddspace=\dimen182
-\@cmidla=\count287
-\@cmidlb=\count288
+\@cmidla=\count293
+\@cmidlb=\count294
 \@aboverulesep=\dimen183
 \@belowrulesep=\dimen184
-\@thisruleclass=\count289
-\@lastruleclass=\count290
+\@thisruleclass=\count295
+\@lastruleclass=\count296
 \@thisrulewidth=\dimen185
-) (c:/texlive/2023/texmf-dist/tex/latex/algorithms/algorithm.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+) (c:/texlive/2024/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
- (c:/texlive/2023/texmf-dist/tex/latex/float/float.sty
+ (c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count291
+\c@float@type=\count297
 \float@exts=\toks37
-\float@box=\box54
+\float@box=\box53
 \@float@everytoks=\toks38
-\@floatcapt=\box55
-) (c:/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+\@floatcapt=\box54
+) (c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks39
-\c@algorithm=\count292
-) (c:/texlive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+\c@algorithm=\count298
+) (c:/texlive/2024/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count293
-\c@ALC@line=\count294
-\c@ALC@rem=\count295
-\c@ALC@depth=\count296
+\c@ALC@unique=\count299
+\c@ALC@line=\count300
+\c@ALC@rem=\count301
+\c@ALC@depth=\count302
 \ALC@tlm=\skip60
 \algorithmicindent=\skip61
-) (c:/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count297
+\c@subfigure=\count303
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count298
-) (c:/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (c:/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\c@subtable=\count304
+) (c:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks40
 \pgfutil@tempdima=\dimen186
 \pgfutil@tempdimb=\dimen187
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box56
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (c:/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box55
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
- (c:/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+ (c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks41
 \pgfkeys@temptoks=\toks42
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks43
 ))
 \pgf@x=\dimen188
@@ -371,59 +362,56 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen197
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count299
-\c@pgf@countb=\count300
-\c@pgf@countc=\count301
-\c@pgf@countd=\count302
+\c@pgf@counta=\count305
+\c@pgf@countb=\count306
+\c@pgf@countc=\count307
+\c@pgf@countd=\count308
 \t@pgf@toka=\toks44
 \t@pgf@tokb=\toks45
 \t@pgf@tokc=\toks46
-\pgf@sys@id@count=\count303
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+\pgf@sys@id@count=\count309
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
-Driver file for pgf: pgfsys-xetex.def
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
-File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
-File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+Driver file for pgf: pgfsys-pdftex.def
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-)
-\pgfsys@objnum=\count304
-))) (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+))) (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count305
-\pgfsyssoftpath@bigbuffer@items=\count306
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+\pgfsyssoftpath@smallbuffer@items=\count310
+\pgfsyssoftpath@bigbuffer@items=\count311
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (c:/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
- (c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+)) (c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: xetex.def on input line 227.
- (c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen198
-\pgfmath@count=\count307
-\pgfmath@box=\box57
+\pgfmath@count=\count312
+\pgfmath@box=\box56
 \pgfmath@toks=\toks47
 \pgfmath@stack@operand=\toks48
 \pgfmath@stack@operation=\toks49
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count308
-)) (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count313
+)) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen199
 \pgf@picmaxx=\dimen256
@@ -439,77 +427,77 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yy=\dimen266
 \pgf@zx=\dimen267
 \pgf@zy=\dimen268
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen269
 \pgf@path@lasty=\dimen270
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen271
 \pgf@shorten@start@additional=\dimen272
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box58
-\pgf@hbox=\box59
-\pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count309
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+\pgfpic=\box57
+\pgf@hbox=\box58
+\pgf@layerbox@main=\box59
+\pgf@picture@serial@count=\count314
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen273
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen274
 \pgf@pt@y=\dimen275
 \pgf@pt@temp=\dimen276
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen277
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen278
-\pgf@sys@shading@range@num=\count310
-\pgf@shadingcount=\count311
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+\pgf@sys@shading@range@num=\count315
+\pgf@shadingcount=\count316
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box61
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+\pgfexternal@startupbox=\box60
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+))) (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box62
-) (c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+\pgfnodeparttextbox=\box61
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (c:/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen279
 \pgf@nodesepend=\dimen280
-) (c:/texlive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-)) (c:/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (c:/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (c:/texlive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty (c:/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (c:/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (c:/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen281
 \pgffor@skip=\dimen282
 \pgffor@stack=\toks50
 \pgffor@toks=\toks51
-)) (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+)) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count312
+\pgf@plot@mark@count=\count317
 \pgfplotmarksize=\dimen283
 )
 \tikz@lastx=\dimen284
@@ -520,50 +508,51 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lastmovetoy=\dimen289
 \tikzleveldistance=\dimen290
 \tikzsiblingdistance=\dimen291
-\tikz@figbox=\box63
-\tikz@figbox@bg=\box64
-\tikz@tempbox=\box65
-\tikz@tempbox@bg=\box66
-\tikztreelevel=\count313
-\tikznumberofchildren=\count314
-\tikznumberofcurrentchild=\count315
-\tikz@fig@count=\count316
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+\tikz@figbox=\box62
+\tikz@figbox@bg=\box63
+\tikz@tempbox=\box64
+\tikz@tempbox@bg=\box65
+\tikztreelevel=\count318
+\tikznumberofchildren=\count319
+\tikznumberofcurrentchild=\count320
+\tikz@fig@count=\count321
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count317
-\pgfmatrixcurrentcolumn=\count318
-\pgf@matrix@numberofcolumns=\count319
+\pgfmatrixcurrentrow=\count322
+\pgfmatrixcurrentcolumn=\count323
+\pgf@matrix@numberofcolumns=\count324
 )
-\tikz@expandcount=\count320
- (c:/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+\tikz@expandcount=\count325
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (c:/texlive/2023/texmf-dist/tex/latex/preprint/balance.sty
+))) (c:/texlive/2024/texmf-dist/tex/latex/preprint/balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
 \oldvsize=\dimen292
-) (c:/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
+) (c:/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count321
-\mult@box=\box67
+\c@tracingmulticols=\count326
+\mult@box=\box66
 \multicol@leftmargin=\dimen293
-\c@unbalance=\count322
-\c@collectmore=\count323
-\doublecol@number=\count324
-\multicoltolerance=\count325
-\multicolpretolerance=\count326
+\c@unbalance=\count327
+\c@collectmore=\count328
+\doublecol@number=\count329
+\multicoltolerance=\count330
+\multicolpretolerance=\count331
 \full@width=\dimen294
 \page@free=\dimen295
 \premulticols=\dimen296
 \postmulticols=\dimen297
 \multicolsep=\skip62
 \multicolbaselineskip=\skip63
-\partial@page=\box68
-\last@line=\box69
-\mc@boxedresult=\box70
+\partial@page=\box67
+\last@line=\box68
+\mc@boxedresult=\box69
 \maxbalancingoverflow=\dimen298
-\mult@rightbox=\box71
-\mult@grightbox=\box72
-\mult@firstbox=\box73
-\mult@gfirstbox=\box74
+\mult@rightbox=\box70
+\mult@grightbox=\box71
+\mult@firstbox=\box72
+\mult@gfirstbox=\box73
+\@tempa=\box74
 \@tempa=\box75
 \@tempa=\box76
 \@tempa=\box77
@@ -599,54 +588,58 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box107
 \@tempa=\box108
 \@tempa=\box109
-\@tempa=\box110
-\c@minrows=\count327
-\c@columnbadness=\count328
-\c@finalcolumnbadness=\count329
+\c@minrows=\count332
+\c@columnbadness=\count333
+\c@finalcolumnbadness=\count334
 \last@try=\dimen299
 \multicolovershoot=\dimen300
 \multicolundershoot=\dimen301
-\mult@nat@firstbox=\box111
-\colbreak@box=\box112
-\mc@col@check@num=\count330
-) (c:/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+\mult@nat@firstbox=\box110
+\colbreak@box=\box111
+\mc@col@check@num=\count335
+) (c:/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip64
 \enit@outerparindent=\dimen302
 \enit@toks=\toks52
-\enit@inbox=\box113
-\enit@count@id=\count331
-\enitdp@description=\count332
-) (c:/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
+\enit@inbox=\box112
+\enit@count@id=\count336
+\enitdp@description=\count337
+) (c:/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (./LogicYinfeng.sty) (./StrategicYinfeng.sty
-\itembox=\box114
-\c@countCondition=\count333
-\c@coherenceass=\count334
+\itembox=\box113
+\c@countCondition=\count338
+\c@coherenceass=\count339
 )
-\c@fact=\count335
-\c@definition=\count336
-\c@example=\count337
-\c@proposition=\count338
-\c@lemma=\count339
-\c@theorem=\count340
-\c@corollary=\count341
-LaTeX Font Info:    Trying to load font information for TU+ptm on input line 111.
-LaTeX Font Info:    No file TUptm.fd. on input line 111.
+\c@fact=\count340
+\c@definition=\count341
+\c@example=\count342
+\c@proposition=\count343
+\c@lemma=\count344
+\c@theorem=\count345
+\c@corollary=\count346
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 111.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count347
+\l__pdf_internal_box=\box114
+) (./Potential Benefit and Danger in Concurrent Games.aux
+
+LaTeX Warning: Label `ir:Gen_Gw' multiply defined.
 
 
-LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 111.
+LaTeX Warning: Label `th:GFP_G' multiply defined.
 
-(c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2023-04-19 L3 backend support: XeTeX
-\g__graphics_track_int=\count342
-\l__pdf_internal_box=\box115
-\g__pdf_backend_object_int=\count343
-\g__pdf_backend_annotation_int=\count344
-\g__pdf_backend_link_int=\count345
+
+LaTeX Warning: Label `th:GFP_Gw' multiply defined.
+
+
+LaTeX Warning: Label `ir:In_G' multiply defined.
+
 )
-No file "Potential Benefit and Danger in Concurrent Games".aux.
 \openout1 = `"Potential Benefit and Danger in Concurrent Games.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
@@ -658,12 +651,6 @@ LaTeX Font Info:    ... okay on input line 111.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
 LaTeX Font Info:    ... okay on input line 111.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 111.
-(c:/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 111.
 LaTeX Font Info:    ... okay on input line 111.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
 LaTeX Font Info:    ... okay on input line 111.
@@ -674,203 +661,86 @@ LaTeX Font Info:    ... okay on input line 111.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
 LaTeX Font Info:    ... okay on input line 111.
 Package hyperref Info: Link coloring OFF on input line 111.
+ (./Potential Benefit and Danger in Concurrent Games.out) (./Potential Benefit and Danger in Concurrent Games.out)
 \@outlinefile=\write4
 \openout4 = `"Potential Benefit and Danger in Concurrent Games.out"'.
-
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
+ (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count348
+\scratchdimen=\dimen303
+\scratchbox=\box115
+\nofMPsegments=\count349
+\nofMParguments=\count350
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count351
+\MPscratchDim=\dimen304
+\MPnumerator=\count352
+\makeMPintoPDFobject=\count353
+\everyMPtoPDFconversion=\toks54
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
 \titlearea=\box116
-
-LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 114.
-
 LaTeX Font Info:    Trying to load font information for U+msa on input line 114.
-(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 114.
- (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 114.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
 \actualheight=\skip65
 
+Underfull \hbox (badness 1527) in paragraph at lines 117--123
+[]\OT1/ptm/m/n/9 We ex-tend the lan-guages of Coali-tion Logic ($[]$) and
+ []
 
-LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 138.
-
-
-LaTeX Warning: Citation `Harman2009HarmingAsCausingHarm' on page 1 undefined on input line 165.
-
-
-LaTeX Warning: Citation `Bradley2012DoingAwayWithHarm' on page 1 undefined on input line 165.
-
-
-LaTeX Warning: Citation `Fassio2025OnDanger' on page 1 undefined on input line 166.
-
-
-LaTeX Warning: Citation `Garland2003RiseOfRisk' on page 1 undefined on input line 166.
-
-
-LaTeX Warning: Citation `Peschard2022PhilosophyRisk' on page 1 undefined on input line 166.
-
-
-LaTeX Warning: Citation `Williamson2009ProbabilityDanger' on page 1 undefined on input line 168.
-
-[1
+[1{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 
 ]
-
-LaTeX Warning: Reference `sec:relatedwork' on page 2 undefined on input line 188.
-
-
-LaTeX Warning: Reference `sec:semantics' on page 2 undefined on input line 189.
-
-
-LaTeX Warning: Reference `sec:benharm' on page 2 undefined on input line 190.
-
-
-LaTeX Warning: Reference `sec:languages' on page 2 undefined on input line 191.
-
-
-LaTeX Warning: Reference `sec:axiom' on page 2 undefined on input line 192.
-
-
-LaTeX Warning: Reference `sec: tree-like model property and embedding' on page 2 undefined on input line 193.
-
-
-LaTeX Warning: Reference `conclusion' on page 2 undefined on input line 194.
-
-
-LaTeX Warning: Citation `alur2002alternating' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `GorankoDrimmelenATL' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `DBLP:journals/logcom/Pauly02' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `GorankoTARK2021' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `MogaveroMPV14' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `DBLP:conf/concur/ChatterjeeHP07' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `DBLP:journals/logcom/BroersenHT06' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `DBLP:conf/atal/BoudouL18' on page 2 undefined on input line 216.
-
-
-LaTeX Warning: Citation `BenthemL07' on page 2 undefined on input line 217.
-
-
-LaTeX Warning: Citation `GrossiHK22' on page 2 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Lorini21' on page 2 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Naumov2023AnEL' on page 2 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Jiang2024-JIAALO' on page 2 undefined on input line 217.
-
-
-LaTeX Warning: Citation `DBLP:conf/ifaamas/LiLM25' on page 2 undefined on input line 221.
-
-
-LaTeX Warning: Citation `LiuEtAl2020' on page 2 undefined on input line 221.
-
-
-LaTeX Warning: Citation `HuangRuan2017' on page 2 undefined on input line 221.
-
-
-LaTeX Warning: Citation `DBLP:conf/ifaamas/LiLM25' on page 2 undefined on input line 222.
-
-
-LaTeX Warning: Citation `LiuEtAl2020' on page 2 undefined on input line 223.
-
-
-LaTeX Warning: Citation `HuangRuan2017' on page 2 undefined on input line 223.
-
-
-LaTeX Warning: Citation `HuangRuan2017' on page 2 undefined on input line 223.
-
-
-LaTeX Warning: Citation `LiuEtAl2020' on page 2 undefined on input line 223.
-
-
-LaTeX Warning: Citation `jamroga2024playing' on page 2 undefined on input line 224.
-
-
-LaTeX Warning: Citation `bouyer2023reasoning' on page 2 undefined on input line 224.
-
-
-LaTeX Warning: Citation `MittelmannMMP25' on page 2 undefined on input line 224.
-
-
-LaTeX Warning: Citation `DBLP:conf/ifaamas/LiLM25' on page 2 undefined on input line 226.
-
-
-LaTeX Warning: Citation `BeckersChocklerHalpern2024' on page 2 undefined on input line 231.
-
-
-LaTeX Warning: Citation `DBLP:conf/ifaamas/LiLM25' on page 2 undefined on input line 239.
-
-
-Underfull \hbox (badness 2073) in paragraph at lines 248--253
-\TU/ptm/m/it/10 (MATF) with respect to $[]$ is a tuple $\OT1/cmss/m/n/10 F \OT1/cmr/m/n/10 =
+Underfull \hbox (badness 1694) in paragraph at lines 248--253
+[][]\OT1/ptm/b/n/10 Definition 1 \OT1/ptm/m/n/10 (MATF)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 A multi agent tran-si-tion frame
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 253.
+(c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 353--357
+[][]\OT1/ptm/b/n/10 Definition 5 \OT1/ptm/m/n/10 (Gen-er-ated com-pu-ta-tions)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 Let $\OT1/cmss/m/n/10 F \OT1/cmr/m/n/10 =
  []
 
 
-LaTeX Warning: Reference `def: MATF' on page 2 undefined on input line 259.
-
-[2]
-
-LaTeX Warning: Reference `fact:one' on page 3 undefined on input line 335.
-
-
-Underfull \hbox (badness 1810) in paragraph at lines 353--357
-[][]\TU/ptm/m/it/10 Definition 5 (Generated computations). []Let $\OT1/cmss/m/n/10 F \OT1/cmr/m/n/10 =
- []
-
-
-Underfull \hbox (badness 2913) in paragraph at lines 416--421
-[]\TU/ptm/m/it/10 for all action profile
+Underfull \hbox (badness 1577) in paragraph at lines 359--362
+[]\OT1/ptm/m/it/10 for all $\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )$\OT1/ptm/m/it/10 , if $\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )$ \OT1/ptm/m/it/10 then
  []
 
 [3]
-Overfull \hbox (0.86581pt too wide) detected at line 478
-[]
+Underfull \hbox (badness 1237) in paragraph at lines 508--515
+\OT1/ptm/m/n/10 sta-bil-ity ($[]$) and non-flatness ($[]$) of pref-er-ences.
  []
 
-
-LaTeX Warning: Citation `Lowewenstein2002' on page 4 undefined on input line 482.
-
-
-LaTeX Warning: Reference `def: CGFP' on page 4 undefined on input line 508.
-
-
-LaTeX Warning: Reference `fig:spacefigure' on page 4 undefined on input line 527.
-
+<ImageSpace.pdf, id=244, 1371.39844pt x 867.85551pt>
 File: ImageSpace.pdf Graphic file (type pdf)
 <use ImageSpace.pdf>
-[4]
-
-LaTeX Warning: Reference `CGMPscenario' on page 5 undefined on input line 549.
-
-
+Package pdftex.def Info: ImageSpace.pdf  used on input line 531.
+(pdftex.def)             Requested size: 131.66763pt x 83.32112pt.
+[4 <./ImageSpace.pdf>]
 Overfull \hbox (13.55061pt too wide) in paragraph at lines 557--591
  [][] 
  []
@@ -886,7 +756,7 @@ Overfull \hbox (104.91977pt too wide) detected at line 643
  []
 
 
-Overfull \hbox (114.51733pt too wide) detected at line 643
+Overfull \hbox (113.95718pt too wide) detected at line 643
 []
  []
 
@@ -896,159 +766,117 @@ Overfull \hbox (111.14044pt too wide) detected at line 643
  []
 
 
-Overfull \hbox (30.25912pt too wide) in paragraph at lines 643--644
+Overfull \hbox (29.69897pt too wide) in paragraph at lines 643--644
  [][] 
  []
 
 
-LaTeX Warning: Reference `def: weak help and harm' on page 5 undefined on input line 722.
+Underfull \hbox (badness 2050) in paragraph at lines 687--689
+[]\OT1/ptm/m/n/10 The fol-low-ing def-i-ni-tion in-tro-duces the con-cepts of
+ []
 
 [5]
-
-LaTeX Warning: Reference `ex1' on page 6 undefined on input line 730.
-
-
-LaTeX Warning: Reference `CGMPsect' on page 6 undefined on input line 730.
+Underfull \hbox (badness 2205) in paragraph at lines 773--779
+[]\OT1/ptm/m/n/10 The fol-low-ing propo-si-tion high-lights the con-nec-tion
+ []
 
 
-Overfull \hbox (9.1852pt too wide) in paragraph at lines 838--844
+Underfull \hbox (badness 1038) in paragraph at lines 773--779
+\OT1/ptm/m/n/10 be-tween strongly ben-e-fi-cial/harmful and weakly ben-e-fi-
+ []
+
+
+Overfull \hbox (3.86432pt too wide) in paragraph at lines 838--844
  [] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 857--888
-[]\TU/ptm/m/it/10 Formulas $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 '$\TU/ptm/m/it/10 , $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 G\OML/cmm/m/it/10 '$\TU/ptm/m/it/10 , and
+[]\OT1/ptm/m/n/10 Formulas $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 '$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 G\OML/cmm/m/it/10 '$\OT1/ptm/m/n/10 , and
  []
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 857--888
-\TU/ptm/m/it/10 fact, where this fact is expressed by a temporal
+Underfull \hbox (badness 1496) in paragraph at lines 857--888
+\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OT1/cmss/m/n/10 U \OML/cmm/m/it/10  \OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 cap-ture the no-tion of a \OT1/ptm/m/it/10 coalition-
  []
-
-
-LaTeX Warning: Reference `sec:benharm' on page 6 undefined on input line 894.
 
 [6]
-
-LaTeX Warning: Reference `CGMPsect' on page 7 undefined on input line 987.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1014.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1014.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1014.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1014.
-
-
-Overfull \hbox (22.79251pt too wide) detected at line 1057
-[]
+Underfull \hbox (badness 7433) in paragraph at lines 972--979
+[]\OT1/ptm/m/n/10 The sec-ond in-ter-pre-ta-tion is based on what we
  []
 
 
-LaTeX Warning: Reference `ax:NAAA' on page 7 undefined on input line 1071.
+Underfull \hbox (badness 4096) in paragraph at lines 972--979
+\OT1/ptm/m/n/10 call the \OT1/ptm/m/it/10 weak sat-is-fac-tion re-la-tion\OT1/ptm/m/n/10 , de-noted by $\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =[]$\OT1/ptm/m/n/10 ,
+ []
 
 
-LaTeX Warning: Reference `ax:MG' on page 7 undefined on input line 1074.
+Underfull \hbox (badness 2443) in paragraph at lines 972--979
+\OT1/ptm/m/n/10 which is de-fined anal-o-gously to the strong one, ex-
+ []
 
 
-LaTeX Warning: Reference `ax:MC' on page 7 undefined on input line 1075.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1008.
 
 
-LaTeX Warning: Reference `ax:Ser' on page 7 undefined on input line 1076.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Lambda' on input line 1008.
 
 
-LaTeX Warning: Reference `ax:Sup' on page 7 undefined on input line 1078.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1008.
 
 
-LaTeX Warning: Reference `ax:Cro' on page 7 undefined on input line 1078.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1008.
 
 
-LaTeX Warning: Citation `goranko_strategic_2013' on page 7 undefined on input line 1080.
-
-
-LaTeX Warning: Reference `ir:MP' on page 7 undefined on input line 1081.
-
-
-LaTeX Warning: Reference `ir:RE' on page 7 undefined on input line 1081.
-
-
-LaTeX Warning: Reference `ir:Gen' on page 7 undefined on input line 1081.
+Overfull \hbox (23.62256pt too wide) detected at line 1047
+[]
+ []
 
 [7]
 
-LaTeX Warning: Reference `sec:languages' on page 8 undefined on input line 1129.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1148.
+(hyperref)                removing `\Lambda' on input line 1138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1148.
+(hyperref)                removing `subscript' on input line 1138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1148.
+(hyperref)                removing `math shift' on input line 1138.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1148.
+LaTeX Warning: Reference `lemma: normal-form' on page 8 undefined on input line 1160.
 
 
-LaTeX Warning: Reference `definition: axiomatic system for SCA-CL' on page 8 undefined on input line 1153.
+Underfull \hbox (badness 1365) in paragraph at lines 1180--1181
+[]\OT1/ptm/m/it/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \OT1/ptm/m/it/10 then $\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =[]
+ []
 
 
-LaTeX Warning: Reference `ax:BHC' on page 8 undefined on input line 1160.
+Underfull \hbox (badness 1735) in paragraph at lines 1207--1208
+[]\OT1/ptm/m/it/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \OT1/ptm/m/it/10 then $\OMS/cmsy/m/n/10 `[]
+ []
 
 
-LaTeX Warning: Reference `subsec: axiomatization for SCA-CL' on page 8 undefined on input line 1165.
-
-
-LaTeX Warning: Reference `sec:languages' on page 8 undefined on input line 1168.
-
-
-LaTeX Warning: Reference `lemma: normal-form' on page 8 undefined on input line 1170.
-
-[8]
-
-LaTeX Warning: Reference `def:propertiesCGF' on page 9 undefined on input line 1262.
-
-
-LaTeX Warning: Reference `CGMPsect' on page 9 undefined on input line 1264.
-
-
-Overfull \hbox (73.27934pt too wide) detected at line 1316
+Overfull \hbox (73.27934pt too wide) detected at line 1306
 []
  []
 
-
-LaTeX Warning: Reference `theo:embedding' on page 9 undefined on input line 1353.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/m/sc' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 1356.
-
-
-LaTeX Warning: Citation `DrimmelenLICS' on page 9 undefined on input line 1356.
-
-
-LaTeX Warning: Citation `DBLP:journals/logcom/Pauly02' on page 9 undefined on input line 1360.
-
-
-Underfull \hbox (badness 1394) in paragraph at lines 1362--1373
-[][]\TU/ptm/m/sc/10 Corollary 1. []Checking satisfiability of formulas in
+[8] (./Potential Benefit and Danger in Concurrent Games.bbl
+Underfull \hbox (badness 1043) in paragraph at lines 4--8
+\OT1/ptm/m/n/10 Alternating-time tem-po-ral logic.  \OT1/ptm/m/it/10 Jour-nal of the ACM
  []
 
-(./Potential Benefit and Danger in Concurrent Games.bbl [9]) [10] (./appendix.tex
+[9]) (./appendix.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
@@ -1071,218 +899,164 @@ Overfull \hbox (37.34137pt too wide) detected at line 27
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 66--68
-\TU/ptm/m/sc/10 fine $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 fh h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ^^_ \OMS/cmsy/m/n/10 2 [] j \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2
+Underfull \hbox (badness 1412) in paragraph at lines 52--53
+[][]\OT1/ptm/b/n/10 Definition 17 \OT1/ptm/m/n/10 (Canon-i-cal states)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 We say tu-ples $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 =
+ []
+
+[10]
+Underfull \hbox (badness 3557) in paragraph at lines 81--82
+\OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$\OT1/ptm/m/n/10 . Then there is an agent $\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 \
+ []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 81--82
+\OML/cmm/m/it/10 C[]$ \OT1/ptm/m/n/10 such that $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )) = \OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ^^_$ \OT1/ptm/m/n/10 and
+ []
+
+
+Underfull \hbox (badness 2680) in paragraph at lines 110--112
+\OT1/ptm/m/it/10 a for-mula $\OML/cmm/m/it/10  $\OT1/ptm/m/it/10 , de-fine the fol-low-ing struc-ture $\OT1/cmss/m/n/10 M[] \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 130--135
+\OT1/ptm/m/n/10 is con-sis-tent. We want to show $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j h h\OML/cmm/m/it/10 A\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2
  []
 
 [11]
 
-LaTeX Warning: Reference `ax:FP_G' on page 12 undefined on input line 137.
-
-
-LaTeX Warning: Reference `ir:In_G' on page 12 undefined on input line 143.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 152.
+(hyperref)                removing `\Lambda' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 152.
+(hyperref)                removing `subscript' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 152.
+(hyperref)                removing `math shift' on input line 156.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 152.
-
-
-LaTeX Warning: Reference `sec: proof of completeness for SCA-CL' on page 12 undefined on input line 153.
-
-
-Underfull \hbox (badness 2134) in paragraph at lines 158--161
-[][]\TU/ptm/m/sc/10 Definition 23 (Benefit-harm conflict blueprint). []A
- []
-
-
-Underfull \hbox (badness 1406) in paragraph at lines 174--175
-[][]$ \TU/ptm/m/sc/10 iff $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 )$\TU/ptm/m/sc/10 , and $\OMS/cmsy/m/n/10 o[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
- []
-
-[12]
-Overfull \hbox (75.76515pt too wide) detected at line 199
+Overfull \hbox (58.144pt too wide) detected at line 203
 []
  []
 
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 225.
+(hyperref)                removing `\Lambda' on input line 229.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 225.
+(hyperref)                removing `subscript' on input line 229.
 
 
-LaTeX Warning: Reference `lemma: downward validity for NFSCA-CL' on page 13 undefined on input line 226.
-
-
-Underfull \hbox (badness 2343) in paragraph at lines 228--231
-\TU/ptm/m/sc/10 reduction-condition is not met. Then it meets
+Underfull \hbox (badness 1668) in paragraph at lines 232--235
+[]\OT1/ptm/m/n/10 We prove its con-tra-pos-i-tive. As-sume validity-
  []
 
 
-LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 243.
+LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 247.
 
 
-LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 243.
+LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 247.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
-[]\TU/ptm/m/sc/10 The construction of $[] \OT1/cmr/m/n/10 =
+Underfull \hbox (badness 4205) in paragraph at lines 247--248
+[][] \OML/cmm/m/it/10 B$\OT1/ptm/m/n/10 , $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 H$\OT1/ptm/m/n/10 , and
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 243--244
-\OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/10 ; []; []; []\OT1/cmr/m/n/10 )$ \TU/ptm/m/sc/10 is the same with [].
- []
+LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 258.
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 243--244
-\TU/ptm/m/sc/10 to the proof in section [], $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 )$ \TU/ptm/m/sc/10 is $[]$-
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 243--244
-[][] \OML/cmm/m/it/10 B$\TU/ptm/m/sc/10 , $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = [][] \OML/cmm/m/it/10 H$\TU/ptm/m/sc/10 , and
- []
-
-
-Underfull \hbox (badness 3250) in paragraph at lines 243--244
-[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$\TU/ptm/m/sc/10 . Then
- []
-
-
-Underfull \hbox (badness 1297) in paragraph at lines 243--244
-[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 \ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ;$ \TU/ptm/m/sc/10 for all $\OML/cmm/m/it/10 ^^N \OMS/cmsy/m/n/10 2 [][]$\TU/ptm/m/sc/10 .
- []
-
-
-LaTeX Warning: Reference `theorem: non-flat realization' on page 13 undefined on input line 246.
-
-
-Underfull \hbox (badness 1406) in paragraph at lines 251--252
-[][]$ \TU/ptm/m/sc/10 iff $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 )$\TU/ptm/m/sc/10 , and $\OMS/cmsy/m/n/10 o[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2
- []
-
-
-LaTeX Warning: Reference `subsec: the proof of downward validity' on page 13 undefined on input line 254.
-
-
-Overfull \hbox (11.88899pt too wide) detected at line 257
+Overfull \hbox (11.88899pt too wide) detected at line 261
 \OT1/cmss/m/n/10 M\OML/cmm/m/it/10 ; s[] \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ^^_ \OMS/cmsy/m/n/10 ^ []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ^ [] :h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  []:
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 260.
+(hyperref)                removing `\Lambda' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 260.
+(hyperref)                removing `subscript' on input line 264.
 
-[13]
-Underfull \hbox (badness 3838) in paragraph at lines 264--266
-[]\TU/ptm/m/sc/10 Assume that derivability-reduction-condition
+
+Underfull \hbox (badness 3646) in paragraph at lines 273--274
+[]\OT1/ptm/m/n/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \OT1/ptm/m/n/10 then $\OMS/cmsy/m/n/10 `[]
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 269--270
-[]\TU/ptm/m/sc/10 and if $[][] \OML/cmm/m/it/10 B[] \OMS/cmsy/m/n/10 \ [][] \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$ \TU/ptm/m/sc/10 then $\OMS/cmsy/m/n/10 `[]
- []
+LaTeX Warning: Reference `section: proof of upward derivability' on page 13 undefined on input line 278.
 
 
-LaTeX Warning: Reference `section: proof of upward derivability' on page 14 undefined on input line 274.
+LaTeX Warning: Reference `section: proof of upward derivability' on page 13 undefined on input line 282.
 
 
-LaTeX Warning: Reference `section: proof of upward derivability' on page 14 undefined on input line 278.
-
-
-Overfull \hbox (59.45583pt too wide) detected at line 282
+Overfull \hbox (59.45583pt too wide) detected at line 286
 \OMS/cmsy/m/n/10 `[] []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ! h h[] \OML/cmm/m/it/10 C[][] [] B[][] [] H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X [] \OML/cmm/m/it/10  []
  []
 
 
-Overfull \hbox (35.32599pt too wide) detected at line 287
+Overfull \hbox (35.32599pt too wide) detected at line 291
 \OMS/cmsy/m/n/10 `[] []h h\OML/cmm/m/it/10 C[][]B[][]H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10  [] \OMS/cmsy/m/n/10 ! h h[] \OML/cmm/m/it/10 C[][] [] B[][] [] H[]\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OMS/cmsy/m/n/10 >
  []
 
 
-LaTeX Warning: Reference `ax:BHC' on page 14 undefined on input line 288.
-
-
-LaTeX Warning: Reference `lemma: tree-like property' on page 14 undefined on input line 308.
-
-
-Underfull \hbox (badness 5374) in paragraph at lines 335--345
-[]\TU/ptm/m/sc/10 for all $\OML/cmm/m/it/10 ^^Y \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 S[]$\TU/ptm/m/sc/10 , for all $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 []$\TU/ptm/m/sc/10 , for
+Underfull \hbox (badness 8132) in paragraph at lines 339--349
+[]\OT1/ptm/m/n/10 for all $\OML/cmm/m/it/10 ^^Y \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 S[]$\OT1/ptm/m/n/10 , for all $\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 []$\OT1/ptm/m/n/10 , for
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 335--345
-\TU/ptm/m/sc/10 all $\OML/cmm/m/it/10 ^^Y^^Y[]^^Y[] [] ; ^^Y^^Y[]^^Y[] [] \OMS/cmsy/m/n/10 2 [][]$\TU/ptm/m/sc/10 , we have
+Underfull \hbox (badness 4886) in paragraph at lines 339--349
+\OT1/ptm/m/n/10 all $\OML/cmm/m/it/10 ^^Y^^Y[]^^Y[] [] ; ^^Y^^Y[]^^Y[] [] \OMS/cmsy/m/n/10 2 [][]$\OT1/ptm/m/n/10 , we have
  []
 
 
-Overfull \hbox (8.601pt too wide) detected at line 348
+Overfull \hbox (8.601pt too wide) detected at line 352
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ) [] \OMS/cmsy/m/n/10 ^^V[] []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 )[](\OML/cmm/m/it/10 ^^Y[]\OT1/cmr/m/n/10 ) []
  []
 
-
-LaTeX Warning: Reference `theo:embedding' on page 14 undefined on input line 369.
-
-
-LaTeX Warning: Reference `lemma: tree-like property' on page 14 undefined on input line 378.
-
-
-Underfull \hbox (badness 1418) in paragraph at lines 373--386
-[]\TU/ptm/m/sc/10 We prove the first statement of the theo-
- []
-
-
-Overfull \hbox (12.81537pt too wide) detected at line 391
+[13]
+Overfull \hbox (13.61263pt too wide) detected at line 395
 []
  []
 
+) [14
 
-LaTeX Warning: Reference `prop:strat' on page 14 undefined on input line 409.
-
-) [14] (./Potential Benefit and Danger in Concurrent Games.aux)
+] (./Potential Benefit and Danger in Concurrent Games.aux)
  ***********
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-08-29>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-04-11>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Potential Benefit and Danger in Concurrent Games".out' has not changed.
-(rerunfilecheck)             Checksum: <no file>.
+(rerunfilecheck)             Checksum: 694F65440533367256DCFD750F681B78;4492.
  ) 
 Here is how much of TeX's memory you used:
- 23754 strings out of 475591
- 431024 string characters out of 5777375
- 1948432 words of memory out of 5000000
- 44671 multiletter control sequences out of 15000+600000
- 577264 words of font info for 116 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 84i,23n,89p,905b,1481s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 24190 strings out of 474049
+ 436740 string characters out of 5746277
+ 1963754 words of memory out of 5000000
+ 46033 multiletter control sequences out of 15000+600000
+ 599292 words of font info for 137 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,23n,93p,896b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (14 pages, 1651971 bytes).
+PDF statistics:
+ 583 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on Potential Benefit and Danger in Concurrent Games.pdf (14 pages).

@@ -36,17 +36,21 @@ Given an formula $\psi $, denote the set of all subformulas of $\psi $ by $\sub(
 \begin{definition}[Maximal consistent sets]\label{def: MCS}
   We say a set $s\subseteq \ecl(\psi)$ of formnulas is maximal consistent sets under $\psi $-context iff $s$ is consistent and for all $s^+\subseteq ecl(\psi )$ if $s\subset s^+$ then $s^+$ is inconsistent.
 \end{definition}
-Maximal consistent sets under $\psi $-context is called canonical states under $\psi $-context. The set of all maximal consistent sets under $\psi $-context by $\St^\psi $.
+Maximal consistent sets under $\psi $-context is called canonical pseudo states under $\psi $-context. The set of all maximal consistent sets under $\psi $-context by $\PSt^\psi $.
 
 \begin{definition}[Characteristic
 formula]\label{def: Characteristic
 formula}
-  Let $\Omega \subseteq \St^\psi$ and $\chi \in \ecl(\phi)$, we say $\chi$ is a characteristic formula of $\Omega$ iff for all $s\subseteq \St^\psi$ we have $s \vdash \chi $ iff $s\in \Omega$.
+  Let $\Omega \subseteq \PSt^\psi$ and $\chi \in \ecl(\phi)$, we say $\chi$ is a characteristic formula of $\Omega$ iff for all $ps\in \PSt^\psi$ we have $ps \vdash \chi $ iff $ps\in \Omega$.
 \end{definition}
 
 \begin{theorem}
-    Every $\Omega \subseteq \St^\psi$ has a characteristic formula.
+    Every $\Omega \subseteq \PSt^\psi$ has a characteristic formula.
 \end{theorem}
+
+\begin{definition}[Canonical states]\label{def: canonical states}
+  We say tuples $s=(\mathit{ps},B,H)\in \PSt^\psi\times \powerset{\AGT}\times \powerset{\AGT}$ canonical states under $\psi $-context. Denote the set of all canonical states under $\psi $-context by $\St^{\psi }$.
+\end{definition}
 
 \newcommand{\LocalPower}{\mathtt{LP}}
 \newcommand{\LP}{\mathtt{LP}}
@@ -79,10 +83,10 @@ For all aciton profile $\ja$, we have:
 \newcommand{\DLP}{\mathtt{DLP}}
 \newcommand{\CS}{\mathtt{CS}}
 \begin{definition}[Candidate successor]
-For every canonical states $s\in \St^\psi$ and every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $s' $ is a candidate successors of $\ja$ at $s$, iff:
+For every canonical states $s\in \St^\psi$ and every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $s'=(ps',B',H') $ is a candidate successors of $\ja$ at $s$, iff:
 \begin{itemize}
-    \item for all $\atlbh{\Coalition}{B}{H}\nexttime \chi\in \Consesus(\ja)$, if $s\vdash \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $s'\vdash \chi$;
-    \item for all $\chi\in \ecl(\psi)$, if $s\nvdash \atlbh{\AGT}{\emptyset}{\emptyset}\nexttime \chi$, then $s'\vdash \neg \chi$.
+    \item for all $\atlbh{\Coalition}{B}{H}\nexttime \chi\in \Consesus(\ja)$, if $s\vdash \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $s'\vdash \chi$, $B\subseteq B'$, and $H\subseteq H'$;
+    \item for all $\chi\in \ecl(\psi)$, if $s\nvdash \atlbh{\AGT}{B}{H}\nexttime \chi$, then $s'\vdash \neg \chi$, $B\nsubseteq B'$, or $H\nsubseteq H'$.
 \end{itemize}
 The set of all candidate successors of $\ja$ at $s$ is denoted by $\CS(s,\ja)$.
 \end{definition}
@@ -385,9 +389,9 @@ $\M=(\St,  \ACT,  \R, \preceq, \V)$
  such that for all $s\in \St$
   \begin{align*}
     \V'(s)= &\V(s)\cup \{\help_a\mid \exists r\in \R^-(s)
-     \exists \history \in \Best_{a,s}\text{ s.t. } = \history(1)\}\\
+     \exists \history \in \Best_{a,s}\text{ s.t. } s= \history(1)\}\\
      &\cup \{\harm_a\mid \exists r\in \R^-(s)
-     \exists \history \in \Worst_{a,s}\text{ s.t. } = \history(1)\}
+     \exists \history \in \Worst_{a,s}\text{ s.t. } s= \history(1)\}
   \end{align*}
 Clearly, $\M' \in \classcgspvar{\{ \mathbf{SP},\mathbf{TR}\}}$
 and the only difference between $\M'$

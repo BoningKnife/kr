@@ -80,9 +80,9 @@
 % page charge instructions.
 % Put where the files are available in the appropriate places.
 %PDF Info Is REQUIRED.
-%\pdfinfo{
-%/TemplateVersion (KR.2026.0)
-%}
+\pdfinfo{
+/TemplateVersion (KR.2026.0)
+}
 
 
 
@@ -988,17 +988,11 @@ where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range 
 In this paper, we focus on three logics from this family:
 \begingroup\color{red}
 \begin{enumerate}
-  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\WFP,\CWFP\}}$, which includes all CGMPs with well-founded and converse-well founded preferences;
-  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\NFP,\WFP,\CWFP\}}$, which includes all CGMPs with non-flat, well-founded and converse-well founded preferences;
-  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\SP,\WFP,\CWFP\}}$, which includes all CGMPs with stable, well-founded and converse-well founded preferences.
+  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\SP\}}$, which includes all CGMPs with stable preferences;
+  \item the one based on the  full language $\lang_{\atlBDlogic}$, and the model class $\classcgspvar{\{\SP\}}$, which includes all CGMPs with stable preferences;
 \end{enumerate}
+We offer axiomatizations for the first logic in Section~\ref{sec:axiom}, and proof of tree-like property and embedding results for the second logic in Section~\ref{sec: tree-like model property and embedding}. 
 \endgroup
-
-
-We consider two notions of validity for formulas in the language $\lang_{\clBDlogic} $. 
-A formula $\varphi \in \lang_{\clBDlogic} $ is said to be \emph{valid}, denoted by $\models \varphi$, if it is satisfied in every pointed CGMP under the $\models$ interpretation. 
-Similarly, it is said to be \emph{$\NF$-valid}, denoted by $\models^{\NF} \varphi$, if it is satisfied in every pointed CGMP with non-flat preferences under the $\models$ interpretation.
-
 
 
 
@@ -1044,15 +1038,11 @@ $\safyatlSBDlogic$ consists of the following axioms:
 \tag{$\mathtt{A}\text{-}\mathtt{Cro}$} \label{ax:Cro}
 \\
 & 
-\atlop{\Coalition}\G \phi \iff  \atlop{\Coalition}\nexttime (\phi \wedge \atlop{\Coalition}\G \phi)
+\atlbh{\Coalition}{B}{H}\G \phi \to  \atlbh{\Coalition}{B}{H}\nexttime (\phi \wedge \atlbh{\Coalition}{B}{H}\G \phi)
 \tag{$\mathtt{A}\text{-}\mathtt{FP}_\G$}\label{ax:FP_G}
 \\
 & 
-\atlbh{\Coalition}{B}{H}\G \phi \to  \atlbh{\Coalition}{B}{H}\nexttime (\phi \wedge \atlop{\Coalition}\G \phi)
-\tag{$\mathtt{A}\text{-}\mathtt{FP}_\G$}\label{ax:WFP_G}
-\\
-& 
-\atlop{\emptyset}\G\big (\theta \to \atlop{\Coalition}\X(\phi \wedge \theta)\big ) \to  \atlop{\emptyset }\G (\theta \to \atlop{\Coalition}\G \phi)
+\atlop{\emptyset}\G\big (\psi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \psi)\big ) \to  \atlop{\emptyset }\G (\psi \to \atlbh{\Coalition}{B}{H}\G \phi)
 \tag{$\mathtt{A}\text{-}\mathtt{GFP}_\G$}\label{ax:GFP_G}
 \end{align*}
 and the following rules of inference:
@@ -1286,7 +1276,7 @@ The tree-like model property is stated in the following lemma, whose proof is gi
       for the class $\classcgspvar{\{ \mathbf{SP},\mathbf{TR}\}}$. 
   \end{itemize}
 \end{lemma}
-\subsection{Embedding}
+\subsection{Embedding}\label{sec:embedding}
 
 
 
