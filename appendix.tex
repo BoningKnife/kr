@@ -38,8 +38,7 @@ Given an formula $\psi $, denote the set of all subformulas of $\psi $ by $\sub(
 \end{definition}
 Maximal consistent sets under $\psi $-context is called canonical pseudo states under $\psi $-context. The set of all maximal consistent sets under $\psi $-context by $\PSt^\psi $.
 
-\begin{definition}[Characteristic
-formula]\label{def: Characteristic
+\begin{definition}[Characteristic formula]\label{def: Characteristic
 formula}
   Let $\Omega \subseteq \PSt^\psi$ and $\chi \in \ecl(\phi)$, we say $\chi$ is a characteristic formula of $\Omega$ iff for all $ps\in \PSt^\psi$ we have $ps \vdash \chi $ iff $ps\in \Omega$.
 \end{definition}
@@ -49,7 +48,7 @@ formula}
 \end{theorem}
 
 \begin{definition}[Canonical states]\label{def: canonical states}
-  We say tuples $s=(\mathit{ps},B,H)\in \PSt^\psi\times \powerset{\AGT}\times \powerset{\AGT}$ canonical states under $\psi $-context. Denote the set of all canonical states under $\psi $-context by $\St^{\psi }$.
+  We say tuples $s=(\mathit{ps},B,H)\in \PSt^\psi\times \powerset{\AGT}\times \powerset{\AGT}$ canonical states under $\psi $-context iff $B\cap H =\emptyset$. Denote the set of all canonical states under $\psi $-context by $\St^{\psi }$.
 \end{definition}
 
 \newcommand{\LocalPower}{\mathtt{LP}}
@@ -106,12 +105,13 @@ For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \ch
 $$\de((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \choicef $$
 \end{definition}
 
-\begin{definition}[canonical model without preferences]\label{def: canonicalmodel}
-  Given a formula $\psi $, define the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \V^\psi)$:
+\begin{definition}[canonical model]\label{def: canonicalmodel}
+  Given a formula $\psi $, define the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi\V^\psi)$:
   \begin{itemize}
     \item $\St^{\psi }$ is the set of all canonical states under $\psi $-context;
     \item $\ACT^{\psi }$ is the set of all canonical deterministic actions under $\psi $-context;
     \item $\R^\psi $ assigns to every action profile a a transition relation on $\St$ such that for all $s,s'\in\St^\psi$ and $\ja : \AGT \to \ACT^{\psi }$, we have $s\R_\ja s'$ iff $s' = \de(\ja(a))(\CS(s,\ja))$, where $a = \te(\ja)$;
+    \item $\preceq^\psi $ assigns to every pair of state and agent  a total order on computations starting from the state such that  for all $s\in\St^\psi$, $a\in\AGT$ and $\history,\history'\in \historyset_{\M^\psi,s}$, we have $\history \preceq^\psi_{a,s} \history'$ iff there are $(ps,B,H),(ps',B',H')\in \St^\psi$ such that $(ps,B,H)=\history(1)$, $(ps',B',H')=\history'(1)$ and    either $a\notin B-B'$ or $a\notin H'-H$;
     \item $\V^\psi (p) = \{s\in \St^\psi \mid p\in s\}$ for all propositional variable $p$ in $ecl(\phi)$.
   \end{itemize} 
 \end{definition}
@@ -121,11 +121,18 @@ For all canonical state $s\in \St^\psi$, $\atlop{\Coalition_1}\X\chi_1,\ldots, \
 \end{lemma}
 
 \begin{theorem}[Local Realization lemma]
-For every coaltition $\Coalition$, canonical state $s\in \St^\psi$, and $\chi \in \ecl(\psi )$, we have: $s\vdash \atlop{\Coalition}\X\chi $ iff there is a joint action $\ja_C$ of $\Coalition$ such that $\js_\Coalition $ is available at $s$ and $\R_{\ja_C}(s)\subseteq |\chi |$.
+For every coaltition $\Coalition$, 
+canonical state $s\in \St^\psi$, 
+and $\chi \in \ecl(\psi )$, 
+we have: $s\vdash \atlbh{\Coalition}{B}{H}\X\chi $ iff 
+there is a joint action $\ja_C$ of $\Coalition$ such that 
+$\js_\Coalition $ is available at $s$ and 
+for all $(ps,B',H')\in \R_{\ja_C}(s)$ we have 
+$ps\vdash \chi $, $B\subseteq B'$ and $H\subseteq H'$.
 \end{theorem}
 \begin{proof}
-    Fix coaltition $\Coalition$, canonical state $s\in \St^\psi$,  and $\Omega\subseteq \St^\psi $. Let $\chi $ be a characteristic formula of $\Omega$. From left to right, assume $s\vdash \atlop{\Coalition}\X\chi $. Let $\ja_\Coalition: \Coalition \to \ACT^\psi$ such that $\Fsupport(\ja_\Coalition(a))=\atlop{\Coalition}\X\chi$. Then $\atlop{\Coalition}\X\chi\in\Consesus(\ja_\AGT)$ for all $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\Fsupport(\ja_\AGT (b))= \atlop{\emptyset}\X\top$ for all $b\in\AGT-\Coalition$ and $\ja_\AGT $ is available at $s$.    
-    Then $\ja_\Coalition$ is available at $s$. Let $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note $\atlop{\Coalition}\X\chi\in\Consesus(\ja_\AGT)$ and $s\vdash \atlop{\Coalition}\X\chi $. Then $s'\vdash \chi $ for all $s'\in \CS(s,\ja_\AGT )$. Then $s'\in \Omega $ for all $s'\in \R_{\ja_\Coalition }(s)$.
+    Fix coaltition $\Coalition$, canonical state $s\in \St^\psi$,  and $\Omega\subseteq \St^\psi $. Let $\chi $ be a characteristic formula of $\Omega$. From left to right, assume $s\vdash \atlbh{\Coalition}{B}{H}\X\chi $. Let $\ja_\Coalition: \Coalition \to \ACT^\psi$ such that $\Fsupport(\ja_\Coalition(a))=\atlbh{\Coalition}{B}{H}\X\chi $. Then $\atlbh{\Coalition}{B}{H}\X\chi \in\Consesus(\ja_\AGT)$ for all $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\Fsupport(\ja_\AGT (b))= \atlop{\emptyset}\X\top$ for all $b\in\AGT-\Coalition$ and $\ja_\AGT $ is available at $s$.    
+    Then $\ja_\Coalition$ is available at $s$. Let $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note $\atlbh{\Coalition}{B}{H}\X\chi \in\Consesus(\ja_\AGT)$ and $s\vdash \atlbh{\Coalition}{B}{H}\X\chi $. Then $s'\vdash \chi $ for all $s'\in \CS(s,\ja_\AGT )$. Then $s'\in \Omega $ for all $s'\in \R_{\ja_\Coalition }(s)$.
 
     From right to left, assume $s\nvdash \atlop{\Coalition}\X\chi $. Let $\ja_C$ be a joint action of $\Coalition$ such that $\ja_\Coalition $ is available at $s$.    
     Let $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\Fsupport(\ja_\AGT (b))= \atlop{\emptyset}\X\top$ for all $b \in \AGT -\Coalition $. Then $\Consesus(\ja_\AGT) = \Consesus(\ja_\Coalition)$. 
@@ -151,223 +158,6 @@ For $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$, we hav
 \end{proof}
 
 
-
- %
-\section{Proof of completeness for $\safyatlNFSBDlogic$}
-In this section, we show the proof of of completeness for $\safyatlNFSBDlogic$ in details. The approach is similar to section \ref{sec: proof of completeness for SCA-CL}. However, we need to construct models with non-flat preferences now. For convenience, we will simply write $\NF$-satisfiable for ``satisfiable on a non flat model''.
-
-\subsection{benefit-harm conflict blueprints and their non-flat realizations}
-To build the models with non-flat preferences, we need the blueprints satisfying the property ``benefit-harm conflict''.
-\begin{definition}[Benefit-harm conflict blueprint]
-A blueprint $\bp = (\ACT_0, \
-\clist, \Blist, \Hlist)$ is benefit-harm conflict, iff for all $\ja\in \ACT_0^\AGT$:
-\begin{itemize}
-    \item $\Blist(\ja)\cap\Hlist(\ja)=\emptyset$;
-    \item and $\clist(\ja)$ is $\NF$-satisfiable.
-\end{itemize}
-\end{definition}
-
-\begin{theorem}[Non-flat realization]\label{theorem: non-flat realization}
-  Given a benefit-harm conflict blueprint $\bp = (\ACT_0, 
-\allowbreak 
-\clist, \Blist, \Hlist)$ and a $\NF$-satisfiable conjunction of propositional literals $\chi$. Then there is a pointed non-flat model $(\M,s_0)$, called a non-flat realization of $\bp$ and $\chi$, where $\M=( \F, \preceq , \V)$, $\F=( \St, \ACT, \R)$, and $\R = (\relAct{\jactatm} )_{\jactatm \in \JACT}$ such that:
-\begin{itemize}
-    \item $\M,s_0\models \chi$;
-    \item $(\ACT_0\times \Z/\{0\})\subseteq \ACT$;
-    \item for all $\js_\AGT\in \Js_{M}^\AGT$ and $\ja: \AGT\to \ACT_0$, if for all $a\in \AGT $ there is $z\in \Z$ such that $\js(s_0)(a)=(\ja(a),z)$, then $(\M,\out_{\M}(s_0,\js_\AGT)(1))\models \clist(\ja)$;
-    \item for all $\js_\AGT\in \Js_{M}^\AGT$ and $\ja: \AGT\to \ACT_0$, if for all $a\in \AGT $ there is $z\in \Z$ such that $\js(s_0)(a)=(\ja(a),z)$, then for all $i\in \AGT$, $\out_{\M}(s_0,\js_\AGT)\in \Best_{i,s_0}$ iff $i\in \Blist(\ja)$, and $\out_{\M}(s_0,\js_\AGT)\in \Worst_{i,s_0}$ iff $i\in \Hlist(\ja)$.
-  \end{itemize}
-\end{theorem}
-\begin{proof}  
-  For all $\ja\in\ACT^{\AGT}_0$, let $(\M^{\ja }, s^{\ja })$ be a pointed model satisfies $\clist(\ja )$, where $\M=(\St^{\ja }, \ACT^{\ja }, \R^{\ja}, \preceq^{\ja }, \V^\ja)$, their domains are pairwise disjoint, and their set of actions are pairwise disjoint and disjoint with $\ACT_0$. Let $s_0$ be three states not in any of these models. 
-
-  Before constructing the model, we first define the pseudo-utility function $\PU: \{\ja: \AGT\to (\ACT_0\times \Z/\{0\})\}\to \Z/\{0\}$ satisfying for all $\ja: \AGT\to (\ACT_0\times \Z/\{0\})$:
-  $$\PU(\ja)=\sum_{a\in \AGT}\mathit{second}(\ja(a))$$
-  where $\mathit{second}(\ja(a))$ is the second element of the pair $\ja(a)$ for every $a\in \AGT$.
-  
-  Define the CGMP $\M=(\St, \ACT, \R, \preceq, \V)$ as the following:
-  \begin{itemize}
-    \item $\St=\{s_0\}\cup \bigcup_{\ja\in\ACT^{\AGT}_0}(\St^{\ja }\times \Z/\{0\})$;
-    \item $\ACT=(\ACT_0\times \Z/\{0\})\cup \bigcup_{\ja\in\ACT^{\AGT}_0}\ACT^{\ja }$;
-    \item for all $s,s'\in \St$ and $\ja: \AGT\to \ACT $: $s\R_\ja s'$ iff one of the following condition is satisfied:
-    \begin{itemize}
-        \item there is $\sigma\in\ACT^{\AGT}_0$, $z\in \Z/\{0\}$ and $u,v\in St^{\sigma}$ such that $s=(u,z)$, $s'=(v,z)$, $\ja: \AGT\to \ACT^{\sigma }$ and $u\R^{\sigma}_\ja v'$;
-        \item $s=s_0$ $\ja: \AGT\to (\ACT_0\times \Z/\{0\})$, there is $\sigma:\AGT \to \ACT_0$ such that $\mathit{first}(\ja(a))=\sigma(a)$ for all $a\in \AGT$ and $s'=(s^\sigma, \PU(\ja))$, where $\mathit{first}(\ja(a))$ is the first element of the pair $\ja(a)$ for every $a\in \AGT$;
-    \end{itemize}
-    \item for all $s \in \St$:
-    $$\Va{s}=$$
-    $$\begin{cases}
-      \valProp^{\ja }(u)&\text{ if there is }\ja\in\ACT^{\AGT}_0 \\
-      &\text{ and }z\in \Z/\{0\} \text{ such that }s=(u,z),\\
-      \{p\in \AP \mid p \text{ is a conjunct of }\chi \}&\text{ if }s=s_0\\
-    \end{cases}$$
-    \item for all $a\in\AGT$ and $s \in \St$:
-    $$\preceq_{a,s}=\begin{cases}
-        \preceq^{\ja }_{a,s}&\text{ if }s\in \St^{\ja } \text{ for some }\ja\in\ACT^{\AGT}_0\\
-        \preceq^0_a&\text{ if }s=s_0
-    \end{cases}$$
-    where $\preceq^0_a=\{(\history,\history')\in \historyset_{\M,s_0}\times \historyset_{\M,s_0} \mid \mathit{U}_{a}(\history)\leq \mathit{U}_{a}(\history')\}$, $\mathit{U}:\historyset_{\M,s_0}\to \Z$ is the utility function of $a$, such that for all $\history\in \historyset_{\M,s_0}$:
-    \begin{itemize}
-        \item if there is $\ja: \AGT \to (\ACT_0\times \Z)$ and $\sigma \in \ACT_0^{\AGT}$ such that $\mathit{first}(\ja(a))=\sigma(a)$, $a\notin \Blist(\sigma)$, $s_0\R_\ja\history(1)$ and $\PU(\ja)>0$, then $\mathit{U}_{a}(\history)=\PU(\ja)$;
-        \item if there is $\ja: \AGT \to (\ACT_0\times \Z)$ and $\sigma \in \ACT_0^{\AGT}$ such that $\mathit{first}(\ja(a))=\sigma(a)$, $a\notin \Hlist(\sigma)$, $s_0\R_\ja\history(1)$ and $\PU(\ja)<0$, then  $\mathit{U}_{a}(\history)=\PU(\ja)$;
-        \item if not the above case and $\mathit{U}_{a}(\history)>0$, then $\mathit{U}_{a}(\history)=1$;
-        \item otherwise $\mathit{U}_{a}(\history)=-1$.
-    \end{itemize}
-  \end{itemize}
-
-  It is clear that $\M,s_0\models \chi$ and $\ACT_0\subseteq \ACT$.
-  
-  Let $\js\in \Js_{M}^\AGT$ and $\ja: \AGT \to \ACT_0$ such that $\js(a)(s_0)=\ja(a)$ for all $a\in \AGT$. We want to show $M,\out_{M}(s_0,\js)(1)\models \clist(\ja)$. Note $\rel_\ja(s_0)=\{s^\ja\}$. Then $\out_{M}(s_0,\js)(1)=s^\ja$. Therefore, $$M,\out_{M}(s_0,\js)(1)\models \clist(\ja).$$
-
-  Let $\js_\AGT\in \Js_{M}^\AGT$ and $\ja: \AGT\to \ACT_0$ such that $a\in \AGT $ there is $z\in \Z$ such that $\js(s_0)(a)=(\ja(a),z)$. We want to show for all $i\in \AGT$, $\out_{\M}(s_0,\js_\AGT)\in \Best_{i,s_0}$ iff $i\in \Blist(\ja)$, and $\out_{\M}(s_0,\js_\AGT)\in \Worst_{i,s_0}$ iff $i\in \Hlist(\ja)$. Let $i\in \AGT$. We only show that $\out_{\M}(s_0,\js_\AGT)\in \Best_{i,s_0}$ iff $i\in \Blist(\ja)$ here. The proof for $\out_{\M}(s_0,\js_\AGT)\in \Worst_{i,s_0}$ iff $i\in \Hlist(\ja)$ is similar. 
-  
-  From left to right, assume $\out_{\M}(s_0,\js_\AGT)\in \Best_{i,s_0}$. Then there is no $\history\in \historyset_{\M,s_0}$ such that $\mathit{U}_{i}(\history)>\mathit{U}_{i}(\out_{\M}(s_0,\js_\AGT))$. Note for all $k\in \N$ there is always some $\sigma: \AGT \to (\ACT_0\times \Z)$ such that $\mathit{first}(\sigma(i))=\delta(i)$,, $s_0\R_\ja\history(1)$ and $\PU(\sigma)>0$. If $i\notin \Blist $ then there is always some $\history\in \historyset_{\M,s_0}$ such that $\mathit{U}_{i}(\history)>\mathit{U}_{i}(\out_{\M}(s_0,\js_\AGT))$. Therefore, $i\in \Blist(\ja)$.
-
-  From right to left, assume $i\in \Blist(\ja)$. Then $\mathit{U}_{i}(\history)\leq 1$ for all $\history\in \historyset_{\M,s_0}$. Note $\mathit{U}_{i}(\history)=1$ for all $\history\in \outset_{\M}(s_0,\js_\AGT)$. Therefore, $\out_{\M}(s_0,\js_\AGT)\in \Best_{i,s_0}$.
-\end{proof}
-
-\subsection{The proof of downward validity for \safyatlNFSBDlogic}
-Now we prove the downward validity for \safyatlNFSBDlogic (Lemma \ref{lemma: downward validity for NFSCA-CL}).
-\begin{proof}
-  We prove its contrapositive. Assume validity-reduction-condition is not met. Then it meets satisfiability-reduction-condition, that is:   
-  $\neg \chi $ is satisfiable and for all $X\subseteq \NI$ and $Y \subseteq \PI $, if
-\begin{itemize}
-  \item $X$ is neat;
-  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$, and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
-  \item and there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
-  \end{itemize}
-  then $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset $ and $\bigwedge_{\nindex\in X} \psi_\nindex \wedge \bigwedge_{\pindex\in Y}\neg \psi_{\pindex}$ is $\NF$-satisfiable.
-
-  We want to show that the following formula is satisfiable:
-  $$\neg \chi \wedge \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_\nindex}{\GroupB_\nindex}{\GroupH_\nindex}\nexttime \psi_\nindex 
-  \wedge
-  \bigwedge_{\pindex\in \PI}\neg \atlbh{\Coalition_\pindex}{\GroupB_\pindex}{\GroupH_\pindex}\nexttime \psi_\pindex$$
-  Note $\phi $ is satisfiable iff $\phi \wedge \neg \atlbh{\AGT}{\emptyset}{\emptyset }\nexttime \bot$ is satisfiable for all formula $\phi $. Therefore, for convenience, we can assume $\PI$ is a nonempty beginning segment of natural numbers.
-
-  The construction of $\bp = (\ACT_0, \clist, \Blist,\Hlist)$ is the same with \ref{subsec: the proof of downward validity}. We want to show $\bp $ is benefit-harm conflict. Similar to the proof in section \ref{subsec: the proof of downward validity}, $\clist(\ja)$ is $\NF$-satisfiable for all $\ja\in \ACT^{\AGT}_0$. Note $\Blist(\ja)=\bigcup_{\nindex\in\Fsupport(\ja)}\GroupB$, $\Hlist(\ja)=\bigcup_{\nindex\in\Fsupport(\ja)}\GroupH$, and $\bigcup_{\nindex\in \Fsupport(\ja)} \GroupB_\nindex\cap \bigcup_{\nindex\in \Fsupport(\ja)} \GroupH_\nindex = \emptyset $. Then $\Blist(\ja)\cap\Hlist(\ja)=\emptyset$ for all $\ja\in \ACT^{\AGT}_0$. Therefore, $\bp $ is a benefit-harm conflict blueprint.
-  
-  Let $\overline{\chi }$ be a conjunction of atomic propositions, %which is
- equivalent to $\neg \chi$. By non-flat realization theorem (theorem \ref{theorem: non-flat realization}), there is a pointed non-flat model $(\M,s_0)$, such that:
- \begin{itemize}
-   \item $\M,s_0\models \overline{\chi }$;
-    \item $(\ACT_0\times \Z)\subseteq \ACT$;
-    \item for all $\js_\AGT\in \Js_{M}^\AGT$ and $\ja: \AGT\to \ACT_0$, if for all $a\in \AGT $ there is $z\in \Z$ such that $\js(s_0)(a)=(\ja(a),z)$, then $(\M,\out_{\M}(s_0,\js_\AGT)(1))\models \clist(\ja)$;
-    \item for all $\js_\AGT\in \Js_{M}^\AGT$ and $\ja: \AGT\to \ACT_0$, if for all $a\in \AGT $ there is $z\in \Z$ such that $\js(s_0)(a)=(\ja(a),z)$, then for all $i\in \AGT$, $\out_{\M}(s_0,\js_\AGT)\in \Best_{i,s_0}$ iff $i\in \Blist(\ja)$, and $\out_{\M}(s_0,\js_\AGT)\in \Worst_{i,s_0}$ iff $i\in \Hlist(\ja)$.
-  \end{itemize}
-  
-  Similar to the proof in section \ref{subsec: the proof of downward validity}, it can be verified that
-  $$\M,s_0\models \neg \chi \wedge \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_\nindex}{\GroupB_\nindex}{\GroupH_\nindex}\nexttime \psi_\nindex 
-  \wedge
-  \bigwedge_{\pindex\in \PI}\neg \atlbh{\Coalition_\pindex}{\GroupB_\pindex}{\GroupH_\pindex}\nexttime \psi_\pindex.$$
-\end{proof}
-
-\subsection{The proof of upward derivability for \safyatlNFSBDlogic}
-\label{section: proof of upward derivability for NFSBD-CL}
-Now we can prove the upward derivability lemma for \safyatlNFSBDlogic.
-\begin{proof}
-  Assume that derivability-reduction-condition with respect to $\phi $ holds. If $\vdash^\NF \chi $, then $\vdash^\NF \phi $ clearly holds. Now  ssume there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
-  \begin{itemize}
-  \item $X$ is neat;
-  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$,  and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
-  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
-  \item and if $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$ then $\vdash^\NF\bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
-  \end{itemize}
-
-Consider whether $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$:
-\begin{itemize}
-    \item Assume $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$. Then $\vdash^\NF\bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$. Similar to the proof in section \ref{section: proof of upward derivability}, we have $$\vdash^\NF 
-    \bigwedge_{\nindex\in X}\atlbh{\Coalition_\nindex}{\GroupB_\nindex}{\GroupH_\nindex}\nexttime \psi_\nindex 
-    \to \bigvee_{\pindex\in Y} \atlbh{\Coalition_\pindex}{\GroupB_\pindex}{\GroupH_\pindex}
-    \nexttime \psi_{\pindex}.$$
-    \item Assume $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex \neq \emptyset$. Similar to the proof in section \ref{section: proof of upward derivability}, 
-    $$\vdash^\NF 
-    \bigwedge_{\nindex\in X}\atlbh{\Coalition_\nindex}{\GroupB_\nindex}{\GroupH_\nindex}\nexttime \psi_\nindex 
-    \to \atlbh{\bigcup_{\nindex\in X}\Coalition_\nindex}{\bigcup_{\nindex\in X}\GroupB_\nindex}{\bigcup_{\nindex\in X}\GroupH_\nindex}
-    \nexttime \bigwedge_{\nindex\in X} \psi_\nindex$$
-    Therefore,
-    $$\vdash^\NF 
-    \bigwedge_{\nindex\in X}\atlbh{\Coalition_\nindex}{\GroupB_\nindex}{\GroupH_\nindex}\nexttime \psi_\nindex 
-    \to \atlbh{\bigcup_{\nindex\in X}\Coalition_\nindex}{\bigcup_{\nindex\in X}\GroupB_\nindex}{\bigcup_{\nindex\in X}\GroupH_\nindex}
-    \nexttime \top $$
-    Note $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex \neq \emptyset$. By axiom \ref{ax:BHC},
-    $$\vdash^\NF 
-    \neg \atlbh{\bigcup_{\nindex\in X}\Coalition_\nindex}{\bigcup_{\nindex\in X}\GroupB_\nindex}{\bigcup_{\nindex\in X}\GroupH_\nindex}
-    \nexttime \top $$
-    Therefore,
-    $$\vdash^\NF 
-    \bigwedge_{\nindex\in X}\atlbh{\Coalition_\nindex}{\GroupB_\nindex}{\GroupH_\nindex}\nexttime \psi_\nindex 
-    \to \bigvee_{\pindex\in Y} \atlbh{\Coalition_\pindex}{\GroupB_\pindex}{\GroupH_\pindex}
-    \nexttime \psi_{\pindex}.$$    
-\end{itemize}
-  
-  \end{proof}
-
- 
- \
-
- 
-
-%
-\section{Proof of
-Theorem \ref{lemma: tree-like property}}\label{sec: Proof for tree-like property}
-
-\begin{proof}
-The proof is the routine of ``unfold'' method.  The right-to-left direction of the lemma is evident. We prove the left-to-right direction
-for the first item.  
-The proof for the second  item
-is analogous. 
-
-    Let 
-    $(\M,s_0 )\models \varphi $
-with 
- $\M = (\St,  \ACT, \R, \preceq,  \valProp  )$,
-  and $s_0 \in \St $. 
-
-  We are going to transform 
-  $\M = (\St,  \ACT, \R, \preceq,  \valProp  )$ into a new CGMP 
-  $\M' = (\St',  \ACT, \R', \preceq',  \valProp'  )$. 
-  The construction goes as follows: 
-     \begin{itemize}
-\item $\St' = \PPath_{\M}$, 
-
-\item for all $\history,\history'\in \St'$
-and for all $\ja \in \ACT^\AGT$,\\
-$\history\relAct{\ja}' \history'$
-iff $\last(\history)\R_{\jactatm} \last(\history')$, 
-
-\item 
-for all $\pi  \in \St'$,
-for all $i \in \AGT $, for all $\pi \pi_1
-\pi_2 \ldots ,
-\pi \pi_1'
-\pi_2' \ldots \in \historyset_{\M',\pi  }$, 
-we have 
-$\pi \pi_1
-\pi_2 \ldots \preceq_{i,\pi   }'  \pi \pi_1'
-\pi_2' \ldots $
-iff 
-$$
-\last(\pi) \last(\pi_1) \last(
-\pi_2) \ldots \preceq_{i,\pi }  \last(\pi ) \last(\pi_1') \last(
-\pi_2' )\ldots $$ %.
-
-\item for all $p \in \ATM$ and for all $\pi \in \St$,
-$p \in \valProp'( \pi )$
-iff $p \in \valProp'(\last(\pi))$.
-\end{itemize}
-
-It is routine to verify that $\M'$ is a tree-like model. The function $\last$
-mapping worlds in $\M'$
-into worlds in $\M$. Clearly, if $\M$ has stable preferences, then $\M'$ also has stable preferences
-
-  By induction on the structure of $\varphi$,
-  it is straightforward 
-  to show that
-$(\M', \pi)  \models \varphi$
-iff
-$(\M,\last(\pi))\models \varphi$
-for all $\pi  \in \St'$. 
- \end{proof}
 
 
 \section{Proof of Theorem \ref{theo:embedding} }

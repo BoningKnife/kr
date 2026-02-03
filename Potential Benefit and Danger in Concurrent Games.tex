@@ -449,7 +449,7 @@ This notion of preference over computations can be understood as a preference ov
  \end{itemize}
 For any agent $i$, state $s$, and computations $\lambda, \lambda'$, we write $\lambda \preceq_{i,s} \lambda'$ for $(\lambda,\lambda') \in {\preceq\!(i,s)}$. 
 As usual, we write $\lambda \prec_{i,s} \lambda'$ if $\lambda \preceq_{i,s} \lambda'$ and $\lambda' \not\preceq_{i,s} \lambda$. 
-We respectively denote by $\succeq_{i,s}$ and $\succ_{i,s}$ the inverses of $\preceq_{i,s}$ and $\prec_{i,s}$.
+% We respectively denote by $\succeq_{i,s}$ and $\succ_{i,s}$ the inverses of $\preceq_{i,s}$ and $\prec_{i,s}$.
           % The class of CGFPs is denoted
           % by $\classcgsp$.
         \begingroup 
@@ -472,9 +472,10 @@ We respectively denote by $\succeq_{i,s}$ and $\succ_{i,s}$ the inverses of $\pr
           \big). \\
           (\NFP)\  &\forall s\in \St, \exists \history ,\history' \in \historyset_{\F,s}\text{ such that } \history \prec_{i,s} \history' .\\
           (\WFP)\  &\forall s\in \St, \exists \history \in \historyset_{\F,s}\text{ such that } \\
-          &\forall \in \historyset_{\F,s}:\history \preceq_{i,s} \history' .\\
+          &\forall \in \history' \in  \historyset_{\F,s}:\history \preceq_{i,s} \history' .\\
           (\CWFP)\  &\forall s\in \St, \exists \history \in \historyset_{\F,s}\text{ such that }\\
-          & \forall \in \historyset_{\F,s}:\history \succeq_{i,s} \history'.
+          & \forall \in
+          \history' \in \historyset_{\F,s}:\history' \preceq_{i,s} \history.
           \end{align*}
         \endgroup
 \end{definition}
@@ -985,13 +986,13 @@ $$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Co
 where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range over $2^\AGT$. 
 
  $\lang_{\atlBDlogic} $ and its fragments in combination with the satisfaction relation $\models$, and with the different CGMP classes defined in Section~\ref{CGMPsect}, give rise to a rich family of logics.
-In this paper, we focus on three logics from this family:
+In this paper, we focus on two logics from this family:
 \begingroup\color{red}
 \begin{enumerate}
-  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\SP\}}$, which includes all CGMPs with stable preferences;
+  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\SP,\WFP,\CWFP,\NFP\}}$, which includes all CGMPs with stable, well-founded, converse-well-founded and non-flat preferences;
   \item the one based on the  full language $\lang_{\atlBDlogic}$, and the model class $\classcgspvar{\{\SP\}}$, which includes all CGMPs with stable preferences;
 \end{enumerate}
-We offer axiomatizations for the first logic in Section~\ref{sec:axiom}, and proof of tree-like property and embedding results for the second logic in Section~\ref{sec: tree-like model property and embedding}. 
+We offer axiomatization for the first logic in Section~\ref{sec:axiom}, and proof of tree-like property and embedding results for the second logic in Section~\ref{sec: tree-like model property and embedding}. 
 \endgroup
 
 
@@ -1044,6 +1045,18 @@ $\safyatlSBDlogic$ consists of the following axioms:
 & 
 \atlop{\emptyset}\G\big (\psi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \psi)\big ) \to  \atlop{\emptyset }\G (\psi \to \atlbh{\Coalition}{B}{H}\G \phi)
 \tag{$\mathtt{A}\text{-}\mathtt{GFP}_\G$}\label{ax:GFP_G}
+\\
+& 
+\atlbh{\Agt}{\emptyset}{\{a\}}\X\top 
+\tag{$\mathtt{A}\text{-}\mathtt{WFP}$}\label{ax:WFP}
+\\
+& 
+\atlbh{\Agt}{\{a\}}{\emptyset}\X\top
+\tag{$\mathtt{A}\text{-}\mathtt{CWFP}$}\label{ax:CWFP}
+\\
+& 
+\neg \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \top\text{ for }\GroupB\cap \GroupH\neq \emptyset
+\tag{$\mathtt{A}\text{-}\mathtt{BHC}$} \label{ax:BHC} 
 \end{align*}
 and the following rules of inference:
 \begin{align}
@@ -1134,84 +1147,6 @@ canonical models under formula contexts.
 \label{thm:soundness and comleteness}
 A formula $\varphi \in \lang_{\clBDlogic} $ is  valid  if and only if $\vdash \varphi$. 
 \end{theorem}
-
-\subsection{Logic $\safyatlNFSBDlogic$}
-The following definition introduces the logic $\safyatlNFSBDlogic$.
-\begin{definition}[Logic $\safyatlNFSBDlogic$]
-\label{definition: axiomatic system for NFSCA-CL}
-$\safyatlNFSBDlogic$ extends $\safyatlSBDlogic$ 
-of Definition \ref{definition: axiomatic system for SCA-CL}
-with the following additional axiom schema:
-\begin{align*}
-\neg \atlbh{\Coalition}{\GroupB}{\GroupH}\nexttime \top\text{ for }\GroupB\cap \GroupH\neq \emptyset
-\tag{$\mathtt{A}\text{-}\mathtt{BHC}$} \label{ax:BHC} 
-\end{align*}
-\end{definition}
-The additional axiom~\ref{ax:BHC} is called the \textit{benefit–harm conflict}. 
-Its underlying intuition is that a coalition cannot simultaneously help and harm the same agent.
-
-
-The definition of derivability is analogous to the one given in 
-Section~\ref{subsec: axiomatization for SCA-CL}
-for the logic $\safyatlSBDlogic$. 
-We use $\vdash^\NF$ to denote that $\phi $ is deducible in $\safyatlNFSBDlogic$. 
-We now prove the soundness and completeness of the logic $\safyatlNFSBDlogic$ with respect to the notion of $\NF$-validity defined at the end of Section~\ref{sec:languages}. 
-The proof closely follows that of the logic $\safyatlSBDlogic$. 
-Since $\safyatlNFSBDlogic$ is stronger than $\safyatlSBDlogic$, we can rely on the result of Lemma~\ref{lemma: normal-form}. 
-The inductive step on the modal degree of formulas is also analogous. 
-Therefore, it remains to prove the following downward validity and upward derivability lemma for $\safyatlNFSBDlogic$. 
-Its proof is in Appendix B.2 of the supplementary material.
-\begin{lemma}[Downward validity for $\safyatlNFSBDlogic$]\label{lemma: downward validity for NFSCA-CL}
-  Given a standard $\clBDlogic$ disjunction 
-  $$\phi = \chi \vee (
-  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
-  \to 
-  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }).$$
-   If $\models^\NF \phi$, 
-  then the following 
-validity-reduction condition is satisfied:
-\begin{itemize}
-\item either $\models^\NF\chi $;
-\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
-  \begin{itemize}
-  \item $X$ is neat;
-  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$,  and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
-  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
-  \item and if $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$ then $\models^\NF \bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
-  \end{itemize}
-\end{itemize}
-\end{lemma}
-
-
-The following is the  upward derivability 
-lemma for $\safyatlNFSBDlogic$. 
-Its proof is in 
-Appendix B.3 in the supplementary material.
-%\cite{ArxivAAMAS26}.
-%in the supplementary material.
-
-\begin{lemma}[Upward derivability for $\safyatlNFSBDlogic$]\label{lemma: upward derivability for NFSCA-CL}
-  Given a standard $\clBDlogic$ disjunction 
-  $$\phi = \chi \vee (
-  \bigwedge_{\nindex\in \NI}\atlbh{\Coalition_{\nindex}}{\GroupB_{\nindex}}{\GroupH_{\nindex}}\nexttime \psi_{\nindex}
-  \to 
-  \bigvee_{\pindex\in \PI}\atlbh{\Coalition_{\pindex}}{\GroupB_{\pindex}}{\GroupH_{\pindex}}\nexttime \psi_{\pindex }).$$ We have  
-   $\vdash^\NF \phi$ if the following 
-derivability-reduction condition is satisfied: \begin{itemize}
-\item either $\vdash \chi $, 
-\item or there is $X\subseteq \NI$ and $Y\subseteq \PI$ such that:
-  \begin{itemize}
-  \item $X$ is neat;
-  \item $\bigcup_{\nindex\in X} \Coalition_\nindex \subseteq \Coalition_\pindex$, $\bigcup_{\nindex\in X} \GroupB_\nindex \supseteq \GroupB_\pindex$,  and $\bigcup_{\nindex\in X} \GroupH_\nindex \supseteq \GroupH_\pindex$ for all $\pindex \in \PI$;
-  \item there is at most one $\pindex\in \PI$ such that $\Coalition_\pindex \neq \AGT$;
-  \item and if $\bigcup_{\nindex\in X} \GroupB_\nindex\cap \bigcup_{\nindex\in X} \GroupH_\nindex = \emptyset$ then $\vdash^\NF \bigwedge_{\nindex\in X} \psi_\nindex \to \bigvee_{\pindex\in Y}\psi_{\pindex}$.
-  \end{itemize}
-\end{itemize}
-\end{lemma}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Tree-like  property and embedding}\label{sec: tree-like model property and embedding}
 

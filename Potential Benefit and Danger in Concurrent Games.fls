@@ -393,11 +393,11 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./Potential Benefit and Danger in Concurrent Games.bbl
 INPUT ./Potential Benefit and Danger in Concurrent Games.bbl
 INPUT Potential Benefit and Danger in Concurrent Games.bbl
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmrc7t.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./appendix.tex
 INPUT ./appendix.tex
 INPUT ./appendix.tex
