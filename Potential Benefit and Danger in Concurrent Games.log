@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  3 FEB 2026 17:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  4 FEB 2026 18:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -628,16 +628,16 @@ File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box114
 ) (./Potential Benefit and Danger in Concurrent Games.aux
 
-LaTeX Warning: Label `ir:Gen_Gw' multiply defined.
+LaTeX Warning: Label `def: formula context' multiply defined.
 
 
-LaTeX Warning: Label `th:GFP_G' multiply defined.
+LaTeX Warning: Label `def: MCS' multiply defined.
 
 
-LaTeX Warning: Label `th:GFP_Gw' multiply defined.
+LaTeX Warning: Label `def: canonical states' multiply defined.
 
 
-LaTeX Warning: Label `ir:In_G' multiply defined.
+LaTeX Warning: Label `def: canonicalmodel' multiply defined.
 
 )
 \openout1 = `"Potential Benefit and Danger in Concurrent Games.aux"'.
@@ -731,114 +731,84 @@ Underfull \hbox (badness 1577) in paragraph at lines 359--362
  []
 
 [3]
-Underfull \hbox (badness 1237) in paragraph at lines 509--516
-\OT1/ptm/m/n/10 sta-bil-ity ($[]$) and non-flatness ($[]$) of pref-er-ences.
- []
-
-<ImageSpace.pdf, id=220, 1371.39844pt x 867.85551pt>
+<ImageSpace.pdf, id=224, 1371.39844pt x 867.85551pt>
 File: ImageSpace.pdf Graphic file (type pdf)
 <use ImageSpace.pdf>
-Package pdftex.def Info: ImageSpace.pdf  used on input line 532.
+Package pdftex.def Info: ImageSpace.pdf  used on input line 534.
 (pdftex.def)             Requested size: 131.66763pt x 83.32112pt.
-[4 <./ImageSpace.pdf>]
-Overfull \hbox (13.55061pt too wide) in paragraph at lines 558--592
+ [4 <./ImageSpace.pdf>]
+Overfull \hbox (13.55061pt too wide) in paragraph at lines 560--594
  [][] 
  []
 
 
-Overfull \hbox (1.94073pt too wide) detected at line 607
+Overfull \hbox (1.94073pt too wide) detected at line 609
 []
  []
 
 
-Overfull \hbox (104.91977pt too wide) detected at line 644
+Overfull \hbox (104.91977pt too wide) detected at line 646
 []
  []
 
 
-Overfull \hbox (113.95718pt too wide) detected at line 644
+Overfull \hbox (113.95718pt too wide) detected at line 646
 []
  []
 
 
-Overfull \hbox (111.14044pt too wide) detected at line 644
+Overfull \hbox (111.14044pt too wide) detected at line 646
 []
  []
 
 
-Overfull \hbox (29.69897pt too wide) in paragraph at lines 644--645
+Overfull \hbox (29.69897pt too wide) in paragraph at lines 646--647
  [][] 
  []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 688--690
+Underfull \hbox (badness 2050) in paragraph at lines 690--692
 []\OT1/ptm/m/n/10 The fol-low-ing def-i-ni-tion in-tro-duces the con-cepts of
  []
 
 [5]
-Underfull \hbox (badness 2205) in paragraph at lines 774--780
+Underfull \hbox (badness 2205) in paragraph at lines 776--782
 []\OT1/ptm/m/n/10 The fol-low-ing propo-si-tion high-lights the con-nec-tion
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 774--780
+Underfull \hbox (badness 1038) in paragraph at lines 776--782
 \OT1/ptm/m/n/10 be-tween strongly ben-e-fi-cial/harmful and weakly ben-e-fi-
  []
 
 
-Overfull \hbox (3.86432pt too wide) in paragraph at lines 839--845
+Overfull \hbox (3.86432pt too wide) in paragraph at lines 841--847
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 858--889
+Underfull \hbox (badness 10000) in paragraph at lines 860--891
 []\OT1/ptm/m/n/10 Formulas $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 '$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 G\OML/cmm/m/it/10 '$\OT1/ptm/m/n/10 , and
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 858--889
+Underfull \hbox (badness 1496) in paragraph at lines 860--891
 \OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OT1/cmss/m/n/10 U \OML/cmm/m/it/10  \OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 cap-ture the no-tion of a \OT1/ptm/m/it/10 coalition-
  []
 
 [6]
-Underfull \hbox (badness 7433) in paragraph at lines 973--980
-[]\OT1/ptm/m/n/10 The sec-ond in-ter-pre-ta-tion is based on what we
+Underfull \hbox (badness 1400) in paragraph at lines 996--997
+\OT1/ptm/m/n/10 which in-cludes all CGMPs with reg-u-lar (sta-ble, well-
  []
 
 
-Underfull \hbox (badness 4096) in paragraph at lines 973--980
-\OT1/ptm/m/n/10 call the \OT1/ptm/m/it/10 weak sat-is-fac-tion re-la-tion\OT1/ptm/m/n/10 , de-noted by $\OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 =[]$\OT1/ptm/m/n/10 ,
- []
-
-
-Underfull \hbox (badness 2443) in paragraph at lines 973--980
-\OT1/ptm/m/n/10 which is de-fined anal-o-gously to the strong one, ex-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1009.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1009.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1009.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1009.
-
-
-Overfull \hbox (23.62256pt too wide) detected at line 1060
+Overfull \hbox (23.62256pt too wide) detected at line 1049
 []
  []
 
 [7]
-Overfull \hbox (73.27934pt too wide) detected at line 1241
-[]
+Underfull \hbox (badness 1412) in paragraph at lines 1121--1122
+[][]\OT1/ptm/b/n/10 Definition 14 \OT1/ptm/m/n/10 (Canon-i-cal states)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 We say tu-ples $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 =
  []
 
 [8] (./Potential Benefit and Danger in Concurrent Games.bbl
@@ -846,7 +816,7 @@ Underfull \hbox (badness 1043) in paragraph at lines 4--8
 \OT1/ptm/m/n/10 Alternating-time tem-po-ral logic.  \OT1/ptm/m/it/10 Jour-nal of the ACM
  []
 
-[9]) (./appendix.tex
+[9]) [10] (./appendix.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
@@ -870,32 +840,30 @@ Overfull \hbox (37.34137pt too wide) detected at line 27
 
 
 Underfull \hbox (badness 1412) in paragraph at lines 51--52
-[][]\OT1/ptm/b/n/10 Definition 16 \OT1/ptm/m/n/10 (Canon-i-cal states)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 We say tu-ples $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 =
+[][]\OT1/ptm/b/n/10 Definition 25 \OT1/ptm/m/n/10 (Canon-i-cal states)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 We say tu-ples $\OML/cmm/m/it/10 s \OT1/cmr/m/n/10 =
  []
 
-[10]
-Underfull \hbox (badness 3557) in paragraph at lines 80--81
+
+Underfull \hbox (badness 3557) in paragraph at lines 74--75
 \OML/cmm/m/it/10 C[] \OMS/cmsy/m/n/10 6\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ;$\OT1/ptm/m/n/10 . Then there is an agent $\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 \
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 80--81
+Underfull \hbox (badness 3965) in paragraph at lines 74--75
 \OML/cmm/m/it/10 C[]$ \OT1/ptm/m/n/10 such that $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )) = \OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ^^_$ \OT1/ptm/m/n/10 and
  []
 
-
-Underfull \hbox (badness 1603) in paragraph at lines 137--142
+[11]
+Underfull \hbox (badness 1603) in paragraph at lines 127--132
 \OT1/ptm/m/n/10 is con-sis-tent. We want to show $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j h h\OML/cmm/m/it/10 A\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 2
  []
 
-[11]
-Overfull \hbox (13.61263pt too wide) detected at line 185
+
+Overfull \hbox (13.61263pt too wide) detected at line 175
 []
  []
 
-) [12
-
-] (./Potential Benefit and Danger in Concurrent Games.aux)
+) [12] (./Potential Benefit and Danger in Concurrent Games.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
@@ -905,21 +873,21 @@ L3 programming layer <2024-04-11>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Potential Benefit and Danger in Concurrent Games".out' has not changed.
-(rerunfilecheck)             Checksum: FBE53DE087B316E7688E1574E2410802;3139.
+(rerunfilecheck)             Checksum: B1CBD10D9E2599388454392240051FD1;3428.
  ) 
 Here is how much of TeX's memory you used:
- 24166 strings out of 474049
- 436202 string characters out of 5746277
- 1964754 words of memory out of 5000000
- 46020 multiletter control sequences out of 15000+600000
- 599292 words of font info for 137 fonts, out of 8000000 for 9000
+ 24155 strings out of 474049
+ 435982 string characters out of 5746277
+ 1962754 words of memory out of 5000000
+ 46007 multiletter control sequences out of 15000+600000
+ 596450 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,23n,93p,896b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (12 pages, 1624692 bytes).
+Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (12 pages, 1628574 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 447 compressed objects within 5 object streams
- 133 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 543 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 136 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

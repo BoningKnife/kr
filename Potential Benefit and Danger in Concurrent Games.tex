@@ -477,6 +477,8 @@ As usual, we write $\lambda \prec_{i,s} \lambda'$ if $\lambda \preceq_{i,s} \lam
           & \forall \in
           \history' \in \historyset_{\F,s}:\history' \preceq_{i,s} \history.
           \end{align*}
+        we say that the CGFP 
+          $(\F,\preceq)$ has regular preferences iff it has stable, non-flat, well-founded, and converse-well-founded preferences.
         \endgroup
 \end{definition}
 Property $\mathbf{SP}$, expressing \emph{stable preferences}, captures the idea that an agent's preference remains consistent over time: an agent prefers a computation $\lambda$ to a computation $\lambda'$ starting at the same state $s'$ if and only if it prefers the precursor of $\lambda$ (i.e., $s\lambda$) to the precursor of $\lambda'$ (i.e., $s\lambda'$) at every predecessor $s$ of $s'$.
@@ -506,13 +508,13 @@ every state in the CGFP which propositions are true there.
   \item $\V: \St \to 2^\AP$ is a valuation function. 
   \end{itemize}
 \end{definition}
-In Definition~\ref{def: CGFP}, we introduced two properties for CGFPs: 
-stability ($\mathbf{SP}$) and non-flatness ($\mathbf{NFP}$) of preferences. 
-These properties are inherited by CGMPs. 
-For $X \subseteq \{\mathbf{SP}, \mathbf{NFP},\WFP,\CWFP\}$, 
+\begingroup\color{red}
+In Definition~\ref{def: CGFP}, we introduced four properties for CGFPs. 
+These properties are inherited by CGMPs. The CGMPs with all four properties are called having \emph{regular preferences} ($\mathbf{RP}$).
 we denote by $\classcgspvar{X}$ the class of CGMPs satisfying all properties in $X$. 
-For example, $\classcgspvar{\{\NFP\}}$ denotes the class of CGMPs with non-flat preferences, 
-while $\classcgspvar{\emptyset}$ denotes the class of all CGMPs.
+For example, $\classcgspvar{\{\RP\}}$ denotes the class of CGMPs with regular preferences, 
+  while $\classcgspvar{\emptyset}$ denotes the class of all CGMPs. We will focus on the class $\classcgspvar{\{\RP\}}$ in later sections.
+\endgroup
 
 
 We  illustrate 
@@ -941,7 +943,7 @@ Analogously, a coalition $\Coalition$ is said to be a    danger  for another coa
 \end{align*}
 
   
-Notice we use the temporal operator $\G$ and $\U$ referring to the strict future, i.e., starting from the next state. But the temporal operators referring to the non-strict future can be defined as usual:
+Note we use the temporal operator $\G$ and $\U$ referring to the strict future, i.e., starting from the next state. But the temporal operators referring to the non-strict future can be defined as usual:
 \begin{align*}
     \atlbh{\Coalition}{B}{H}\G^\ns\varphi \eqdef&   \varphi\wedge\atlbh{\Coalition}{B}{H} \G\varphi,\\
  \atlbh{\Coalition}{B}{H}(\varphi \U^\ns \psi )\eqdef& \psi \vee (\varphi \wedge \atlbh{\Coalition}{B}{H} (\varphi \U \psi )) .   
@@ -969,15 +971,7 @@ of the language
 $\lang_{\atlBDlogic}$
 that only includes
 modalities of type $\atlbh{\Coalition}{\emptyset}{\emptyset  }$.
-
-The second interpretation is based on what we call the 
-\emph{weak satisfaction relation}, denoted by $\models^\weak$, 
-which is defined analogously to the strong one, 
-except that 
-$\JsSB^\Coalition_\M(s,\GroupB)\cap \JsSH^\Coalition_\M(s,\GroupH)$ 
-is replaced by 
-$\JsWB^\Coalition_\M(s,\GroupB)\cap \JsWH^\Coalition_\M(s,\GroupH)$.
-
+\begingroup\color{red}
 We conclude this section
 by defining two fragments of the language. The following syntaxs define the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$) of $\lang_{\atlBDlogic} $:
 $$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi \mid \atlbh{\Coalition}{\GroupB}{\GroupH} \G \varphi$$
@@ -985,14 +979,8 @@ and the \emph{coalition logic fragment} ($\lang_{\clBDlogic}$) of $\lang_{\atlBD
 $$\varphi, \psi \bnf p \mid \neg\varphi \mid \varphi \wedge \psi  \mid\atlbh{\Coalition}{\GroupB}{\GroupH} \nexttime \varphi $$
 where  $p$ ranges over  $\AP$ and $\Coalition $, $\GroupB$ and $\GroupH $ range over $2^\AGT$. 
 
- $\lang_{\atlBDlogic} $ and its fragments in combination with the satisfaction relation $\models$, and with the different CGMP classes defined in Section~\ref{CGMPsect}, give rise to a rich family of logics.
-In this paper, we focus on two logics from this family:
-\begingroup\color{red}
-\begin{enumerate}
-  \item the one based on the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$), and the model class $\classcgspvar{\{\SP,\WFP,\CWFP,\NFP\}}$, which includes all CGMPs with stable, well-founded, converse-well-founded and non-flat preferences;
-  \item the one based on the  full language $\lang_{\atlBDlogic}$, and the model class $\classcgspvar{\{\SP\}}$, which includes all CGMPs with stable preferences;
-\end{enumerate}
-We offer axiomatization for the first logic in Section~\ref{sec:axiom}, and proof of tree-like property and embedding results for the second logic in Section~\ref{sec: tree-like model property and embedding}. 
+ $\lang_{\atlBDlogic} $ and its fragments in combination with  with the different CGMP classes give rise to a rich family of logics.
+In this paper, we focus on the logics on the CGMP class $\classcgspvar{\{\RP\}}$.
 \endgroup
 
 
@@ -1005,14 +993,15 @@ We offer axiomatization for the first logic in Section~\ref{sec:axiom}, and proo
 \section{Axiomatization}
 \label{sec:axiom}
 
-In this section, we introduce the logics $\safyatlSBDlogic$ and $\safyatlNFSBDlogic$, and prove their completeness with respect to their corresponding semantics. 
-\subsection{Logic $\safyatlSBDlogic$}\label{subsec: axiomatization for SCA-CL}
+In this section, we offer axiomatization for the logic of the \emph{safety fragment} ($\lang_{\atlBDlogic^{-\U}}$) on the CGMP class $\classcgspvar{\{\RP\}}$, which includes all CGMPs with regular (stable, well-founded, converse-well-founded and non-flat) preferences.
+
+\subsection{axiomatization}\label{subsec: axiomatization}
 
 The following definition
-introduces the logic  $\safyatlSBDlogic$.
-\begin{definition}[axiomatic system $\safyatlSBDlogic$]
-\label{definition: axiomatic system for SCA-CL}
-$\safyatlSBDlogic$ consists of the following axioms:
+introduces the xiomatic system $\Lambda$.
+\begin{definition}[axiomatic system $\Lambda$]
+\label{definition: axiomatic system}
+$\Lambda$ consists of the following axioms:
 \begin{align*}
 & 
 \text{All tautologies of propositional logic} \tag{$\top$} \label{ax:taut} 
@@ -1081,55 +1070,35 @@ capabilities are monotonic with respect to coalitions. Axiom \ref{ax:Ser} captur
 Axiom \ref{ax:Sup} captures \textit{superadditivity}.  Axiom \ref{ax:Cro} is the so-called \textit{crown}
 axiom: it was called this way  in 
 \cite{goranko_strategic_2013}
-since it corresponds to the fact that the effectivity function of a game is a crown. The inference rules are \textit{modus ponens} (\ref{ir:MP}), \textit{replacement of equivalences} (\ref{ir:RE}) and \textit{generalization} (\ref{ir:Gen}).
+since it corresponds to the fact that the effectivity function of a game is a crown. 
+\begingroup\color{red}
+Axiom \ref{ax:FP_G} is the \textit{fixpoint axiom for $\G$}, which captures the fixpoint character of the operator $\G$. Axiom \ref{ax:GFP_G} is the \textit{greatest fixpoint axiom for $\G$}, which reflects the greatest post-fixpoint character of the operator $\G$. Axioms \ref{ax:WFP} and \ref{ax:CWFP} capture the \textit{well-foundedness} and \textit{converse well-foundedness} of preferences, respectively. Finally, Axiom \ref{ax:BHC} captures the \textit{benefit-harm consistency}: a coalition cannot have a strategy that is both beneficial and harmful for the same group at the same time, which is related to the property that the preferences of agents are non-flat.
+The inference rules are \textit{modus ponens} (\ref{ir:MP}), \textit{replacement of equivalences} (\ref{ir:RE}) and \textit{generalization} (\ref{ir:Gen}).
+\endgroup
 
 As usual, 
-for every  $\varphi \in \lang_{\clBDlogic} $,
+for every  $\varphi \in \lang_{\atlBDlogic^{-\U}}$,
 we write $\vdash
 \varphi$
 to mean that $\varphi $
-is derivable  in $\safyatlSBDlogic$,
+is derivable  in $\Lambda$,
 that is,
 there is a sequence of formulas $(\varphi_1, \ldots, \varphi_m)$
 such that:
 \begin{itemize}
 \item $\varphi_m = \varphi$, and
 \item for every $1 \leq k \leq m$, either $\varphi_k$
-is  an instance of one of the  axiom schema of  $\safyatlSBDlogic$
+is  an instance of one of the  axiom schema of  $\Lambda$
 or there are formulas $\varphi_{k_1}, \ldots ,\varphi_{k_t} $
 such that $k_1 , \ldots, k_t < k$  and $\frac{\varphi_{k_1}, \ldots ,\varphi_{k_t} }{\varphi_{k} }$
-is an instance of some inference  rule of $\safyatlSBDlogic$.
+is an instance of some inference  rule of $\Lambda$.
 \end{itemize}
 
-In the axiomatic system $\safyatlSBDlogic$, the following formulas and inference rules are derivable.
-\begin{theorem}
-  The following are derivable in $\safyatlSBDlogic$:
-  %\tag{$\mathtt{A}\text{-}\mathtt{MC}1$} \label{ax:MC1}
-  \begin{align*}  
-    %No absurd rational actions
-    & \dfrac{\; \phi \;}{\; \atlop{\Coalition}\G^w \phi \;} 
-  \tag{$\mathtt{Gen}_{\G^w}$} \label{ir:Gen_Gw}
-  \\
-    & 
-     \atlop{\emptyset}\G^w\big (\theta \to \atlop{\Coalition}\X(\phi \wedge \theta)\big ) 
-     \to  \atlop{\emptyset }\G^w (\theta \to \atlop{\Coalition}\G \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_\G$} \label{th:GFP_G}
-     \\
-    & 
-     \atlop{\emptyset}\G^w\big (\theta \to (\phi \wedge \atlop{\Coalition}\X\theta)\big ) \to \atlop{\emptyset }\G^w (\theta \to \atlop{\Coalition}\G^w \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_{\G^w}$} \label{th:GFP_Gw}
-     \\
-    & 
-     \dfrac{\; \theta \to \atlop{\Coalition}\X(\phi \wedge \theta) \;}{\; \theta \to \atlop{\Coalition}\G \phi\;}  \tag{$\mathtt{In}_\G$} \label{ir:In_G}
-  \end{align*}
-  \end{theorem}  
+It is straightforward to verify that all axioms of $\Lambda$ are valid and all inference rules of $\Lambda$ preserve validity in the class $\classcgspvar{\{\RP\}}$. So, soundness of $\Lambda$ follows. For completeness, we use a technique of canonical models under formula contexts.
 
+\subsection{canonical models under formula contexts}
  We are going
- to prove soundness
- and completeness
- of the logic 
- $\safyatlSBDlogic$ 
- relative to the 
-notion of validity given
-at the end of Section \ref{sec:languages}.
+ to prove completeness by canonical models under formula contexts.
  % So, in the rest of this section,
  % when talking about validity
  % of a formula 
@@ -1139,18 +1108,76 @@ at the end of Section \ref{sec:languages}.
  % relative to the 
  % semantics
  % $\models$. 
-Our  completeness proof uses the technique of
-canonical models under formula contexts.
-  \footnote{add more details here or in the appendix?}
+\begin{definition}[formula context]\label{def: formula context}
+Given an formula $\psi $, denote the set of all subformulas of $\psi $ by $\sub(\psi)$. Let $\sub^+(\psi ) = \{\top, \bot \}\cup \sub(\psi)\cup \{\neg \phi \mid \phi \in \sub(\psi )\}$, $\cl(\psi) = sub^+(\psi)\cup \{\atlbh{\Coalition}{B}{H} \X\phi \mid \Coalition\subseteq \AGT,B\subseteq \AGT,H\subseteq \AGT, \phi \in \sub^+(\psi )\}$, $\cl^+(\psi) = cl (\psi)\cup \{\neg \phi \mid \phi \in \cl+(\psi )\}$, and $\ecl(\psi) = \cl^+(\psi)\cup \{\bigvee_{s\in \Gamma} \bigwedge s\mid \Gamma\subseteq \powerset{\cl^+(\psi)} \}$
+\end{definition}
+
+\begin{definition}[Maximal consistent sets]\label{def: MCS}
+  We say a set $s\subseteq \ecl(\psi)$ of formnulas is maximal consistent sets under $\psi $-context iff $s$ is consistent and for all $s^+\subseteq ecl(\psi )$ if $s\subset s^+$ then $s^+$ is inconsistent.
+\end{definition}
+Maximal consistent sets under $\psi $-context is called canonical pseudo states under $\psi $-context. The set of all maximal consistent sets under $\psi $-context by $\PSt^\psi $.
+
+\begin{definition}[Canonical states]\label{def: canonical states}
+  We say tuples $s=(\mathit{ps},B,H)\in \PSt^\psi\times \powerset{\AGT}\times \powerset{\AGT}$ canonical states under $\psi $-context iff $B\cap H =\emptyset$. Denote the set of all canonical states under $\psi $-context by $\St^{\psi }$.
+\end{definition}
+
+\begin{definition}[canonical deterministic action]
+Given an formula $\psi $, define 
+$$\LocalPower = \{\atlbh{\Coalition}{B}{H}\nexttime \chi \mid \chi \in \ecl(\psi) \}$$
+$$\ChoiceFunction = \{ \choicef: \powerset{\St^{\psi }}/\{\emptyset \}\to \St^{\psi }\mid (\forall \Omega \in \powerset{\St^{\psi }}/\{\emptyset \})\choicef(\Omega)  \in \Omega \}$$
+$$\ACT^{\psi } = \LocalPower \times \AGT \times \ChoiceFunction $$
+where $\LocalPower $ is the set of local powers, $\ChoiceFunction$ the set of choice functions, and $\ACT^{\psi }$ is the set of canonical deterministic actions.
+\end{definition}
+
+\begin{definition}[support and consesus]
+For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define $\Fsupport((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \atlbh{\Coalition}{B}{H}\nexttime \chi $.
+For every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $\Consesus(\ja) = \{\atlbh{\Coalition}{B}{H}\nexttime \chi \in \LocalPower\mid (\forall a\in \Coalition )\Fsupport(\ja(a))=\atlbh{\Coalition}{B}{H}\nexttime \chi\}$. The set $\Consesus(\ja)$ is called consesus of agents on action profile $\ja$.
+\end{definition}
+
+\begin{definition}[Candidate successor]
+For every canonical states $s\in \St^\psi$ and every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $s'=(ps',B',H') $ is a candidate successors of $\ja$ at $s$, iff:
+\begin{itemize}
+    \item for all $\atlbh{\Coalition}{B}{H}\nexttime \chi\in \Consesus(\ja)$, if $s\vdash \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $s'\vdash \chi$, $B\subseteq B'$, and $H\subseteq H'$;
+    \item for all $\chi\in \ecl(\psi)$, if $s\nvdash \atlbh{\AGT}{B}{H}\nexttime \chi$, then $s'\vdash \neg \chi$, $B\nsubseteq B'$, or $H\nsubseteq H'$.
+\end{itemize}
+The set of all candidate successors of $\ja$ at $s$ is denoted by $\CS(s,\ja)$.
+\end{definition}
+The above definition hint that the transition relation in the canonical model is defined based on the candidate successors. Note $\atlop{\emptyset }\X \top \in s$ and $\atlop{\emptyset }\X \top\Consesus(\ja)$. Then $\CS(s,\ja)$ is non-empty andthe transition relation can be defined with seriality. However, the set of candidate successors may be not singleton. We need some mechanism to select a unique successor from the candidate successors. The tricky election defined below serves this purpose.
+
+\begin{definition}[voting and tricky election]
+For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define $\vote((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = a $.
+
+For every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $\te(\ja) = (\sum_{a\in\AGT}\vote(\ja(a)))\bmod n$, where $n=\|\AGT\|$. The agent $\te(\ja)$ is called the electee of tricky election on action profile $\ja$.
+\end{definition}
+
+\begin{definition}[decision]
+For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define 
+$$\de((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \choicef $$
+\end{definition}
+
+\begin{definition}[canonical model]\label{def: canonicalmodel}
+  Given a formula $\psi $, define the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi\V^\psi)$:
+  \begin{itemize}
+    \item $\St^{\psi }$ is the set of all canonical states under $\psi $-context;
+    \item $\ACT^{\psi }$ is the set of all canonical deterministic actions under $\psi $-context;
+    \item $\R^\psi $ assigns to every action profile a a transition relation on $\St$ such that for all $s,s'\in\St^\psi$ and $\ja : \AGT \to \ACT^{\psi }$, we have $s\R_\ja s'$ iff $s' = \de(\ja(a))(\CS(s,\ja))$, where $a = \te(\ja)$;
+    \item $\preceq^\psi $ assigns to every pair of state and agent  a total order on computations starting from the state such that  for all $s\in\St^\psi$, $a\in\AGT$ and $\history,\history'\in \historyset_{\M^\psi,s}$, we have $\history \preceq^\psi_{a,s} \history'$ iff there are $(ps,B,H),(ps',B',H')\in \St^\psi$ such that $(ps,B,H)=\history(1)$, $(ps',B',H')=\history'(1)$ and    either $a\notin B-B'$ or $a\notin H'-H$;
+    \item $\V^\psi (p) = \{s\in \St^\psi \mid p\in s\}$ for all propositional variable $p$ in $ecl(\phi)$.
+  \end{itemize} 
+\end{definition}
+
+\begin{theorem}
+Given a consistent formula $\psi \in \lang_{\atlBDlogic^{-\U}}$, there is a state $s\in \St^\psi$ in the canonical model $\M^\psi$ such that $\M^\psi,s \models \psi$.
+\end{theorem}
 
 \begin{theorem}[soundness and completeness]
 \label{thm:soundness and comleteness}
-A formula $\varphi \in \lang_{\clBDlogic} $ is  valid  if and only if $\vdash \varphi$. 
+A formula $\varphi \in \lang_{\atlBDlogic^{-\U}}$ is  valid  if and only if $\vdash \varphi$. 
 \end{theorem}
 
 \section{Tree-like  property and embedding}\label{sec: tree-like model property and embedding}
 
-In the completeness proofs for the logics $\safyatlSBDlogic$ and $\safyatlNFSBDlogic$, we construct a tree model for every satisfiable formula. 
+In the completeness proofs for the logics $\Lambda$ and $\safyatlNFSBDlogic$, we construct a tree model for every satisfiable formula. 
 In this section, we show that satisfiability for the language $\lang_{\atlBDlogic} $ satisfies the tree-like model property. 
 Based on this result, we provide polynomial embeddings of satisfiability for the language $\lang_{\atlBDlogic} $ into $\atllogic$-satisfiability, and of satisfiability for the language $\lang_{\clBDlogic} $ into $\cllogic$-satisfiability. 
 For the first embedding, we restrict to models with stable preferences. 
@@ -1237,7 +1264,8 @@ i \in \AGT
 \mathit{tr}( \atlbh{\Coalition}{\GroupB}{\GroupH}
 \henceforth \varphi ) &=  \atlop{\Coalition}\G\big(\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}( \varphi  ) \big) ,\\
 \mathit{tr}\big( \atlbh{\Coalition}{\GroupB}{\GroupH}
-(\varphi\U\psi)  \big) &=  \atlop{\Coalition} \big ((\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}(\varphi))\U(\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}(\psi))  \big), 
+(\varphi\U\psi)  \big) &=  \atlop{\Coalition} \big ((\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}(\varphi))\U\\
+&\qquad\qquad(\help \GroupB \wedge \harm \GroupH \wedge \mathit{tr}(\psi))  \big).
 \end{align*}
  with $\help \GroupB\eqdef \bigwedge_{i \in \GroupB} \help_i$ and $\harm \GroupH\eqdef \bigwedge_{i \in \GroupH} \harm_i$. The special atomic formula $\help_i$ is read as ``agent~$i$ is benefited,'' and $\harm_i$ as ``agent~$i$ is harmed''.  
 The idea behind the above translation is to label, at the language level, beneficial (resp.\ harmful) strategies of a coalition $\Coalition$ for another coalition $\GroupB$ (resp.\ $\GroupH$) with the special constructs $\help \GroupB$ (resp.\ $\harm \GroupH$).

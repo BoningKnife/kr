@@ -51,11 +51,6 @@ formula}
   We say tuples $s=(\mathit{ps},B,H)\in \PSt^\psi\times \powerset{\AGT}\times \powerset{\AGT}$ canonical states under $\psi $-context iff $B\cap H =\emptyset$. Denote the set of all canonical states under $\psi $-context by $\St^{\psi }$.
 \end{definition}
 
-\newcommand{\LocalPower}{\mathtt{LP}}
-\newcommand{\LP}{\mathtt{LP}}
-\newcommand{\ChoiceFunction}{\mathtt{CF}}
-\newcommand{\CF}{\mathtt{CF}}
-\newcommand{\choicef}{\mathtt{cf}}
 \begin{definition}[canonical deterministic action]
 Given an formula $\psi $, define 
 $$\LocalPower = \{\atlbh{\Coalition}{B}{H}\nexttime \chi \mid \chi \in \ecl(\psi) \}$$
@@ -63,8 +58,7 @@ $$\ChoiceFunction = \{ \choicef: \powerset{\St^{\psi }}/\{\emptyset \}\to \St^{\
 $$\ACT^{\psi } = \LocalPower \times \AGT \times \ChoiceFunction $$
 where $\LocalPower $ is the set of local powers, $\ChoiceFunction$ the set of choice functions, and $\ACT^{\psi }$ is the set of canonical deterministic actions.
 \end{definition}
-\newcommand{\Consesus}{\mathtt{CON}}
-\newcommand{\CON}{\mathtt{CON}}
+
 \begin{definition}[support and consesus]
 For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define $\Fsupport((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \atlbh{\Coalition}{B}{H}\nexttime \chi $.
 For every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $\Consesus(\ja) = \{\atlbh{\Coalition}{B}{H}\nexttime \chi \in \LocalPower\mid (\forall a\in \Coalition )\Fsupport(\ja(a))=\atlbh{\Coalition}{B}{H}\nexttime \chi\}$. The set $\Consesus(\ja)$ is called consesus of agents on action profile $\ja$.
@@ -79,8 +73,7 @@ For all aciton profile $\ja$, we have:
 \begin{proof}
   The first item is obvious. For the second item, suppose that there are $\atlbh{\Coalition}{B}{H}\X \chi , \atlbh{\Coalition'}{B'}{H'}\X \chi' \in \Consesus(\ja)$  with $\atlbh{\Coalition}{B}{H}\X \chi \neq \atlbh{\Coalition'}{B'}{H'}\X \chi' $ and $\Coalition \cap \Coalition' \neq \emptyset $. Then there is an agent $a\in \Coalition \cap \Coalition'$ such that $\Fsupport(\ja(a)) = \atlbh{\Coalition}{B}{H}\X \chi $ and $\Fsupport(\ja(a)) = \atlbh{\Coalition'}{B'}{H'}\X \chi' $, which contradicts to the fact that $\atlbh{\Coalition}{B}{H}\X \chi \neq \atlbh{\Coalition'}{B'}{H'}\X \chi'$.
 \end{proof}
-\newcommand{\DLP}{\mathtt{DLP}}
-\newcommand{\CS}{\mathtt{CS}}
+
 \begin{definition}[Candidate successor]
 For every canonical states $s\in \St^\psi$ and every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $s'=(ps',B',H') $ is a candidate successors of $\ja$ at $s$, iff:
 \begin{itemize}
@@ -91,15 +84,12 @@ The set of all candidate successors of $\ja$ at $s$ is denoted by $\CS(s,\ja)$.
 \end{definition}
 The above definition hint that the transition relation in the canonical model is defined based on the candidate successors. Note $\atlop{\emptyset }\X \top \in s$ and $\atlop{\emptyset }\X \top\Consesus(\ja)$. Then $\CS(s,\ja)$ is non-empty andthe transition relation can be defined with seriality. However, the set of candidate successors may be not singleton. We need some mechanism to select a unique successor from the candidate successors. The tricky election defined below serves this purpose.
 
-\newcommand{\vote}{\mathtt{vote}}
-\newcommand{\te}{\mathtt{te}}
 \begin{definition}[voting and tricky election]
 For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define $\vote((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = a $.
 
 For every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $\te(\ja) = (\sum_{a\in\AGT}\vote(\ja(a)))\bmod n$, where $n=\|\AGT\|$. The agent $\te(\ja)$ is called the electee of tricky election on action profile $\ja$.
 \end{definition}
 
-\newcommand{\de}{\mathtt{de}}
 \begin{definition}[decision]
 For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define 
 $$\de((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \choicef $$
