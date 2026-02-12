@@ -2,25 +2,38 @@
 \appendix
 
 \allowdisplaybreaks
-\section{Proof of completeness for $\safyatlSBDlogic$}\label{sec: proof of completeness for SCA-CL}
-In this section, we show the proof of completeness for $\safyatlSBDlogic$ in details. The key step is constructing a model for any satisfiable standard conjunction, which equals to the negation of a standard disjunction. We use a method called `blueprint' to achieve it.
+
+\section{Proof of Proposition \ref{prop:strat}}\label{sec: Proof of Proposition 1}
+\begin{proof}
+    Fix a CGMRP 
+    $\M = (\P, \V)$  with underlying CGFRP $\P = (\F, \preceq)$. Assume strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly beneficial for group $\GroupB\subseteq \AGT$ at state $s$. Then $\outset_\F(s,\js_\Coalition)\subseteq \Best_{i,s}$ for every $i\in \GroupB $. Let $i\in\GroupB$, $\history\in \outset_\F(s,\js_\Coalition)$ and $\history'\in \Comp_{\F,s}-\outset_\F(s,\js_\Coalition)$. Then $\history\in \Best_{i,s}$. Therefore, $\history' \not \succ_{i,s} \history$. Then $\js_\Coalition\in \JsWB_{\M }^C(s,\GroupB)$.
+
+    The proof for harmful strategies is similar.
+  \end{proof}
+  
+\section{Proof of completeness for $\ourlogic$}\label{sec: proof of completeness for SCA-CL}
+In this section, we show the proof of completeness for $\ourlogic$ in details. The key step is constructing a model for any satisfiable standard conjunction, which equals to the negation of a standard disjunction. We use a method called `blueprint' to achieve it.
+
+For convience, we use some notations in this section. For a structure $S$, we use $S.component$ to denote the component of $S$. For a tuple $t$, we use $t.i$ to denote the $i$-th element of $t$. 
 
 \subsection{Some derivabilities}\label{section: some derivabilities}
-Define $\atlbh{\Coalition}{B}{H}\G^w\phi = \phi \wedge \atlbh{\Coalition}{B}{H}\G\phi$
 \begin{theorem}
-  The following are derivable in $\safyatlSBDlogic$:
+  The following are derivable in $\ourlogic$:
   %\tag{$\mathtt{A}\text{-}\mathtt{MC}1$} \label{ax:MC1}
   \begin{align*}  
     %No absurd rational actions
-    & \dfrac{\; \phi \;}{\; \atlbh{\Coalition}{B}{H}\G^w \phi \;} 
-  \tag{$\mathtt{Gen}_{\G^w}$} \label{ir:Gen_Gw}
+    & \dfrac{\; \phi \;}{\; \atlbh{\Coalition}{B}{H}\G^\ns \phi \;} 
+  \tag{$\mathtt{Gen}_{\G^\ns}$} \label{ir:Gen_Gw}
   \\
     & 
-     \atlop{\emptyset}\G^w\big (\theta \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \theta)\big ) 
-     \to  \atlop{\emptyset }\G^w (\theta \to \atlbh{\Coalition}{B}{H}\G \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_\G$} \label{th:GFP_G}
+     \atlop{\emptyset}\G^\ns\big (\theta \rightarrow \atlbh{\Coalition}{B}{H}\X(\phi \wedge \theta)\big ) \\
+     &
+     \rightarrow \atlop{\emptyset }\G^\ns (\theta \rightarrow \atlbh{\Coalition}{B}{H}\G \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_\G$} \label{th:GFP_G}
      \\
     & 
-     \atlop{\emptyset}\G^w\big (\theta \to (\phi \wedge \atlbh{\Coalition}{B}{H}\X\theta)\big ) \to \atlop{\emptyset }\G^w (\theta \to \atlbh{\Coalition}{B}{H}\G^w \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_{\G^w}$} \label{th:GFP_Gw}
+     \atlop{\emptyset}\G^\ns\big (\theta \rightarrow (\phi \wedge \atlbh{\Coalition}{B}{H}\X\theta)\big ) \\
+     &
+     \rightarrow \atlop{\emptyset }\G^\ns (\theta \rightarrow \atlbh{\Coalition}{B}{H}\G^\ns \phi)  \tag{$\mathtt{th}\text{-}\mathtt{GFP}_{\G^\ns}$} \label{th:GFP_Gw}
      \\
     & 
      \dfrac{\; \theta \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \theta) \;}{\; \theta \to \atlbh{\Coalition}{B}{H}\G \phi\;}  \tag{$\mathtt{In}_\G$} \label{ir:In_G}
@@ -28,129 +41,98 @@ Define $\atlbh{\Coalition}{B}{H}\G^w\phi = \phi \wedge \atlbh{\Coalition}{B}{H}\
   \end{theorem}  
 
 
-\section{Canonical method}
-\begin{definition}[formula context]\label{def: formula context}
-Given an formula $\psi $, denote the set of all subformulas of $\psi $ by $\sub(\psi)$. Let $\sub^+(\psi ) = \{\top, \bot \}\cup \sub(\psi)\cup \{\neg \phi \mid \phi \in \sub(\psi )\}$, $\cl(\psi) = sub^+(\psi)\cup \{\atlbh{\Coalition}{B}{H} \X\phi \mid \Coalition\subseteq \AGT,B\subseteq \AGT,H\subseteq \AGT, \phi \in \sub^+(\psi )\}$, $\cl^+(\psi) = cl (\psi)\cup \{\neg \phi \mid \phi \in \cl+(\psi )\}$, and $\ecl(\psi) = \cl^+(\psi)\cup \{\bigvee_{s\in \Gamma} \bigwedge s\mid \Gamma\subseteq \powerset{\cl^+(\psi)} \}$
-\end{definition}
+\subsection{Canonical realization}\label{sec: canonical realization}
+In this section, for any canonical state $s\in \St^\psi$ and formula $\varphi$, we write $s\vdash \varphi $ if $s.1\vdash \varphi $, and denote $| \varphi | = \{s\in \St^\psi \mid s\vdash \varphi \}$.
 
-\begin{definition}[Maximal consistent sets]\label{def: MCS}
-  We say a set $s\subseteq \ecl(\psi)$ of formnulas is maximal consistent sets under $\psi $-context iff $s$ is consistent and for all $s^+\subseteq ecl(\psi )$ if $s\subset s^+$ then $s^+$ is inconsistent.
-\end{definition}
-Maximal consistent sets under $\psi $-context is called canonical pseudo states under $\psi $-context. The set of all maximal consistent sets under $\psi $-context by $\PSt^\psi $.
-
-\begin{definition}[Characteristic formula]\label{def: Characteristic
-formula}
-  Let $\Omega \subseteq \PSt^\psi$ and $\chi \in \ecl(\phi)$, we say $\chi$ is a characteristic formula of $\Omega$ iff for all $ps\in \PSt^\psi$ we have $ps \vdash \chi $ iff $ps\in \Omega$.
+\begin{definition}[Characteristic structure]\label{def: Characteristic
+structure}
+  Let $\Omega \subseteq \St^\psi$ and $(\chi ,\mathfrak{B},\mathfrak{H}) \in \ecl(\psi)\times \powerset{\powerset{\AGT}}\times \powerset{\powerset{\AGT}}$, we say $(\chi ,\mathfrak{B},\mathfrak{H})$ is a characteristic structure of $\Omega$ iff for all $(X ,B,H)\in \St^\psi$ we have $(X ,B,H)\in \Omega$ iff $X\vdash \chi $, $B \in \mathfrak{B}$ and $H \in \mathfrak{H}$.
 \end{definition}
 
 \begin{theorem}
-    Every $\Omega \subseteq \PSt^\psi$ has a characteristic formula.
+    Every $\Omega \subseteq \St^\psi$ has a characteristic structure.
 \end{theorem}
-
-\begin{definition}[Canonical states]\label{def: canonical states}
-  We say tuples $s=(\mathit{ps},B,H)\in \PSt^\psi\times \powerset{\AGT}\times \powerset{\AGT}$ canonical states under $\psi $-context iff $B\cap H =\emptyset$. Denote the set of all canonical states under $\psi $-context by $\St^{\psi }$.
-\end{definition}
-
-\begin{definition}[canonical deterministic action]
-Given an formula $\psi $, define 
-$$\LocalPower = \{\atlbh{\Coalition}{B}{H}\nexttime \chi \mid \chi \in \ecl(\psi) \}$$
-$$\ChoiceFunction = \{ \choicef: \powerset{\St^{\psi }}/\{\emptyset \}\to \St^{\psi }\mid (\forall \Omega \in \powerset{\St^{\psi }}/\{\emptyset \})\choicef(\Omega)  \in \Omega \}$$
-$$\ACT^{\psi } = \LocalPower \times \AGT \times \ChoiceFunction $$
-where $\LocalPower $ is the set of local powers, $\ChoiceFunction$ the set of choice functions, and $\ACT^{\psi }$ is the set of canonical deterministic actions.
-\end{definition}
-
-\begin{definition}[support and consesus]
-For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define $\Fsupport((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \atlbh{\Coalition}{B}{H}\nexttime \chi $.
-For every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $\Consesus(\ja) = \{\atlbh{\Coalition}{B}{H}\nexttime \chi \in \LocalPower\mid (\forall a\in \Coalition )\Fsupport(\ja(a))=\atlbh{\Coalition}{B}{H}\nexttime \chi\}$. The set $\Consesus(\ja)$ is called consesus of agents on action profile $\ja$.
-\end{definition}
-\begin{lemma}
-For all aciton profile $\ja$, we have:
-\begin{itemize}
-\item $\atlop{\emptyset }\X \top \in \Consesus(\ja)$.
-\item For all $\atlbh{\Coalition}{B}{H}\X \chi , \atlbh{\Coalition'}{B'}{H'}\X \chi' \in \Consesus(\ja)$  with $\atlbh{\Coalition}{B}{H}\X \chi \neq \atlbh{\Coalition'}{B'}{H'}\X \chi' $, then $\Coalition \cap \Coalition' = \emptyset $.
-\end{itemize}
-\end{lemma}
-\begin{proof}
-  The first item is obvious. For the second item, suppose that there are $\atlbh{\Coalition}{B}{H}\X \chi , \atlbh{\Coalition'}{B'}{H'}\X \chi' \in \Consesus(\ja)$  with $\atlbh{\Coalition}{B}{H}\X \chi \neq \atlbh{\Coalition'}{B'}{H'}\X \chi' $ and $\Coalition \cap \Coalition' \neq \emptyset $. Then there is an agent $a\in \Coalition \cap \Coalition'$ such that $\Fsupport(\ja(a)) = \atlbh{\Coalition}{B}{H}\X \chi $ and $\Fsupport(\ja(a)) = \atlbh{\Coalition'}{B'}{H'}\X \chi' $, which contradicts to the fact that $\atlbh{\Coalition}{B}{H}\X \chi \neq \atlbh{\Coalition'}{B'}{H'}\X \chi'$.
+\begin{proof} 
+  Let $\Omega \subseteq \St^\psi$. 
+  Let $\chi = \bigvee_{s\in \Omega}\bigwedge_{\varphi\in s.1}\varphi$, $\mathfrak{B} = \{B\subseteq \AGT\mid B=s.2 \text{ for some }s\in \Omega\}$, $\mathfrak{H} = \{H\subseteq \AGT\mid H=s.3 \text{ for some }s\in \Omega\}$. Note $\chi $ is a boolean combination of formulas in $\cl(\psi)$, then there is $\chi' \in \ecl(\psi)$ such that $\vdash \chi \leftrightarrow \chi'$. Then $(\chi',\mathfrak{B},\mathfrak{H})$ is a characteristic structure of $\Omega$.
 \end{proof}
-
-\begin{definition}[Candidate successor]
-For every canonical states $s\in \St^\psi$ and every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $s'=(ps',B',H') $ is a candidate successors of $\ja$ at $s$, iff:
-\begin{itemize}
-    \item for all $\atlbh{\Coalition}{B}{H}\nexttime \chi\in \Consesus(\ja)$, if $s\vdash \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $s'\vdash \chi$, $B\subseteq B'$, and $H\subseteq H'$;
-    \item for all $\chi\in \ecl(\psi)$, if $s\nvdash \atlbh{\AGT}{B}{H}\nexttime \chi$, then $s'\vdash \neg \chi$, $B\nsubseteq B'$, or $H\nsubseteq H'$.
-\end{itemize}
-The set of all candidate successors of $\ja$ at $s$ is denoted by $\CS(s,\ja)$.
-\end{definition}
-The above definition hint that the transition relation in the canonical model is defined based on the candidate successors. Note $\atlop{\emptyset }\X \top \in s$ and $\atlop{\emptyset }\X \top\Consesus(\ja)$. Then $\CS(s,\ja)$ is non-empty andthe transition relation can be defined with seriality. However, the set of candidate successors may be not singleton. We need some mechanism to select a unique successor from the candidate successors. The tricky election defined below serves this purpose.
-
-\begin{definition}[voting and tricky election]
-For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define $\vote((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = a $.
-
-For every aciton profile $\ja : \AGT \to \ACT^{\psi }$, define $\te(\ja) = (\sum_{a\in\AGT}\vote(\ja(a)))\bmod n$, where $n=\|\AGT\|$. The agent $\te(\ja)$ is called the electee of tricky election on action profile $\ja$.
-\end{definition}
-
-\begin{definition}[decision]
-For every canonical deterministic action $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$, define 
-$$\de((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) = \choicef $$
-\end{definition}
-
-\begin{definition}[canonical model]\label{def: canonicalmodel}
-  Given a formula $\psi $, define the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi\V^\psi)$:
-  \begin{itemize}
-    \item $\St^{\psi }$ is the set of all canonical states under $\psi $-context;
-    \item $\ACT^{\psi }$ is the set of all canonical deterministic actions under $\psi $-context;
-    \item $\R^\psi $ assigns to every action profile a a transition relation on $\St$ such that for all $s,s'\in\St^\psi$ and $\ja : \AGT \to \ACT^{\psi }$, we have $s\R_\ja s'$ iff $s' = \de(\ja(a))(\CS(s,\ja))$, where $a = \te(\ja)$;
-    \item $\preceq^\psi $ assigns to every pair of state and agent  a total order on computations starting from the state such that  for all $s\in\St^\psi$, $a\in\AGT$ and $\history,\history'\in \historyset_{\M^\psi,s}$, we have $\history \preceq^\psi_{a,s} \history'$ iff there are $(ps,B,H),(ps',B',H')\in \St^\psi$ such that $(ps,B,H)=\history(1)$, $(ps',B',H')=\history'(1)$ and    either $a\notin B-B'$ or $a\notin H'-H$;
-    \item $\V^\psi (p) = \{s\in \St^\psi \mid p\in s\}$ for all propositional variable $p$ in $ecl(\phi)$.
-  \end{itemize} 
-\end{definition}
 
 \begin{lemma}[Existence lemma]
 For all canonical state $s\in \St^\psi$, $\atlop{\Coalition_1}\X\chi_1,\ldots, \atlop{\Coalition_k}\X\chi_k\in \ecl(\psi)$ such that $s\vdash \atlop{\Coalition_x}\X \chi_x$ for all $1\leq x \leq k$, and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$ with $s\nvdash \atlop{\Coalition_x}\X \chi_x$, if $\Coalition_i\cap \Coalition_j = \emptyset $ for all $1\leq i\neq j\leq k$ and $\Coalition_i\subseteq \Coalition $ for all $1\leq i\leq k$, there is a action profile $\ja$ and a state $s'$ such that $s\R_\ja s'$ and $s'\vdash \chi_i$ for all $1\leq i\leq k$ and $s'\vdash \neg \chi $.
 \end{lemma}
 
-\begin{theorem}[Local Realization lemma]
-For every coaltition $\Coalition$, 
-canonical state $s\in \St^\psi$, 
-and $\chi \in \ecl(\psi )$, 
-we have: $s\vdash \atlbh{\Coalition}{B}{H}\X\chi $ iff 
-there is a joint action $\ja_C$ of $\Coalition$ such that 
-$\js_\Coalition $ is available at $s$ and 
-for all $(ps,B',H')\in \R_{\ja_C}(s)$ we have 
-$ps\vdash \chi $, $B\subseteq B'$ and $H\subseteq H'$.
-\end{theorem}
+\begin{lemma}[Existence lemma]
+For all canonical state $s\in \St^\psi$ and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$, if $s.1\nvdash \atlbh{\Coalition}{B}{H}\X \chi$, then for every available $\Coalition$-action$\ja_C$ there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+\end{lemma}
 \begin{proof}
-    Fix coaltition $\Coalition$, canonical state $s\in \St^\psi$,  and $\Omega\subseteq \St^\psi $. Let $\chi $ be a characteristic formula of $\Omega$. From left to right, assume $s\vdash \atlbh{\Coalition}{B}{H}\X\chi $. Let $\ja_\Coalition: \Coalition \to \ACT^\psi$ such that $\Fsupport(\ja_\Coalition(a))=\atlbh{\Coalition}{B}{H}\X\chi $. Then $\atlbh{\Coalition}{B}{H}\X\chi \in\Consesus(\ja_\AGT)$ for all $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\Fsupport(\ja_\AGT (b))= \atlop{\emptyset}\X\top$ for all $b\in\AGT-\Coalition$ and $\ja_\AGT $ is available at $s$.    
-    Then $\ja_\Coalition$ is available at $s$. Let $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note $\atlbh{\Coalition}{B}{H}\X\chi \in\Consesus(\ja_\AGT)$ and $s\vdash \atlbh{\Coalition}{B}{H}\X\chi $. Then $s'\vdash \chi $ for all $s'\in \CS(s,\ja_\AGT )$. Then $s'\in \Omega $ for all $s'\in \R_{\ja_\Coalition }(s)$.
-
-    From right to left, assume $s\nvdash \atlop{\Coalition}\X\chi $. Let $\ja_C$ be a joint action of $\Coalition$ such that $\ja_\Coalition $ is available at $s$.    
-    Let $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\Fsupport(\ja_\AGT (b))= \atlop{\emptyset}\X\top$ for all $b \in \AGT -\Coalition $. Then $\Consesus(\ja_\AGT) = \Consesus(\ja_\Coalition)$. 
-    Note $s\nvdash \atlop{\Coalition}\X\chi $. Then $\{\atlop{A}\X\phi\in \Consesus(\ja_\Coalition)\mid s\vdash \atlop{A}\X\phi\} \cup \{\neg \atlop{\Coalition}\X\chi \}$ is consistent. We want to show $\{\phi \mid \atlop{A}\X\phi\in \Consesus(\ja_\Coalition),s\vdash \atlop{A}\X\phi \}\cup \{\neg \chi \}$ is consistent. It suffices to show that if $\vdash \bigwedge_{\atlop{A}\X\phi\in \Consesus(\ja_\Coalition),s\vdash \atlop{\Coalition}\X\phi }\phi \to \chi $ then $\vdash \bigwedge_{\atlop{A}\X\phi\in \Consesus(\ja_\Coalition),s\vdash \atlop{\Coalition}\X\phi }\atlop{A}\X\phi \to \atlop{\Coalition}\X\chi $. It's clear by supperadditivity.
-    Therefore, there is $s'\in \St^\psi $ such that $\{\phi \mid \atlop{A}\X\phi\in \Consesus(\ja_\Coalition),s\vdash \atlop{A}\X\phi \}\cup \{\neg \chi \}\subseteq s'$ and $s\R_{\ja_\AGT }s'$. Note $\chi \notin s'$. Then $s'\in 
-    \Omega$.
+Fix a canonical state $s\in \St^\psi$ and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$ with $s.1\nvdash \atlbh{\Coalition}{B}{H}\X \chi$.
+Consider whether $C=\AGT $.
+\begin{itemize}
+  \item Assume $C=\AGT $. Then by the definition of candidate successor, for all $s'\in \CS(s,\ja_C)$ we have $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$. Therefore, there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+  %
+  \item Assume $C\neq \AGT $. Then there is $a\in \AGT\setminus \Coalition $. Therefore, there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\te(\ja_\AGT)=a$ and $\big((\ja_\AGT(a).3)(\Omega)\big).1\vdash \neg \chi $, $B\nsubseteq \big((\ja_\AGT(a).3)(\Omega)\big).2$, or $H\nsubseteq \big((\ja_\AGT(a).3)(\Omega)\big).3$.
+    Therefore, there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+\end{itemize}
 \end{proof}
 
-\begin{theorem}[$\G$-Realization Lemma]
-For $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$, we have $\atlbh{\Coalition}{B}{H}\G \phi\in s$ iff there is a $\Coalition$-strategy $\js_\Coalition $ such that for all $\history \in \outset(s,\js_\Coalition)$ and all $i>0$, we have $\phi \in \history[i]$.
+\begin{theorem}[Local Realization lemma]
+For every $\Coalition,B,H\in\powerset{\AGT}$, 
+canonical state $s\in \St^\psi$, 
+and $\chi \in \ecl(\psi )$, 
+we have: $s.1\vdash \atlbh{\Coalition}{B}{H}\X\chi $ iff 
+there is a joint action $\ja_C$ of $\Coalition$ such that 
+$\js_\Coalition $ is available at $s$ and 
+for all $s'\in \R_{\ja_C}(s)$ we have 
+$s'.1\vdash \chi $, $B\subseteq s'.2$ and $H\subseteq s'.3$.
 \end{theorem}
 \begin{proof}
- Fix $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$. From left to right, suppose that $\atlbh{\Coalition}{B}{H}\G \phi\in s$. By axiom \ref{ax:FP_G} and Local Realization lemma, for all $s'\in |\atlbh{\Coalition}{B}{H}\G \phi |$, there is a joint action $\ja_{\Coalition}$ such that $\R_{\ja_{\Coalition}}(s')\subseteq |\phi \wedge \atlbh{\Coalition}{B}{H}\G \phi |$. Let $\js_\Coalition $ be a $\Coalition$-strategy $\js_\C$ such that for all $s'\in |\atlbh{\Coalition}{B}{H}\G \phi |$ we have $\js_\C(s)$ is a joint action $\ja_{\Coalition}$ such that $\R_{\ja_{\Coalition}}(s')\subseteq |\phi \wedge \atlbh{\Coalition}{B}{H}\G \phi |$. Let $\history \in \outset(s,\js_\Coalition)$, by induction on $i>0$, we can show that $\phi \in \history[i]$. 
+    Fix coaltition $\Coalition,B,H\in\powerset{\AGT}$, 
+canonical state $s\in \St^\psi$, 
+and $\chi \in \ecl(\psi )$.  From left to right, assume $s.1\vdash \atlbh{\Coalition}{B}{H}\X\chi $. Let $\ja_\Coalition: \Coalition \to \ACT^\psi$ such that $\Fsupport(\ja_\Coalition(a))=\atlbh{\Coalition}{B}{H}\X\chi $. Then $\atlbh{\Coalition}{B}{H}\X\chi \in\Consesus(\ja_\AGT)$ for all $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\Fsupport(\ja_\AGT (b))= \atlop{\emptyset}\X\top$ for all $b\in\AGT-\Coalition$ and $\ja_\AGT $ is available at $s$.    
+    Then $\ja_\Coalition$ is available at $s$. Let $\ja_\AGT:\AGT\to \ACT^\psi$ with $\ja_\Coalition \subseteq \ja_\AGT $. Note $\atlbh{\Coalition}{B}{H}\X\chi \in\Consesus(\ja_\AGT)$ and $s.1\vdash \atlbh{\Coalition}{B}{H}\X\chi $. Then $s'.1\vdash \chi $, $B\subseteq s'.2$ and $H\subseteq s'.3$ for all $s'\in \CS(s,\ja_\AGT )$.
 
- From right to left, suppose that there is a $\Coalition$-strategy $\js_\Coalition $ such that $\phi \in \history[i]$ for all $\history \in \outset(s,\js_\Coalition)$ and all $i>0$. 
- Let $\Omega = \{s\}\cup \{\history[i]\mid \history \in \outset(s,\js_\Coalition), i>0\}$ and $\chi $ be the characteristic formula of $\Omega$. 
+    The deriction from right to left follows from existence lemma.
+  \end{proof}
+
+\begin{theorem}[$\G$-Realization Lemma]
+For $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$, we have $\atlbh{\Coalition}{B}{H}\G \phi\in s$ iff there is a $\Coalition$-strategy $\js_\Coalition $ such that for all $\history \in \outset(s,\js_\Coalition)$ and all $i>0$, we have $\phi \in \history(i).1$ and $B\subseteq \history(i).2$ and $H\subseteq \history(i).3$.
+\end{theorem}
+\begin{proof}
+ Fix $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$. From left to right, suppose that $\atlbh{\Coalition}{B}{H}\G \phi\in s$. By axiom \ref{ax:FP_G} and Local Realization lemma, for all $s'\in |\atlbh{\Coalition}{B}{H}\G \phi |$, there is a joint action $\ja_{\Coalition}$ such that $\R_{\ja_{\Coalition}}(s')\subseteq |\phi \wedge \atlbh{\Coalition}{B}{H}\G \phi |$. Let $\js_\Coalition $ be a $\Coalition$-strategy $\js_\C$ such that for all $s'\in |\atlbh{\Coalition}{B}{H}\G \phi |$ we have $\js_\C(s)$ is a joint action $\ja_{\Coalition}$ such that $\R_{\ja_{\Coalition}}(s')\subseteq |\phi \wedge \atlbh{\Coalition}{B}{H}\G \phi |$, $B\subseteq s''.2$ and $H\subseteq s''.3$. Let $\history \in \outset(s,\js_\Coalition)$, by induction on $i>0$, we can show that $\phi \in \history(i).1$, $B\subseteq \history(i).2$ and $H\subseteq \history(i).3$. 
+
+ From right to left, suppose that there is a $\Coalition$-strategy $\js_\Coalition $ such that $\phi \in \history(i).1$, $B\subseteq \history(i).2$ and $H\subseteq \history(i).3$ for all $\history \in \outset(s,\js_\Coalition)$ and all $i>0$. 
+ Let $\Omega = \{s\}\cup \{\history[i]\mid \history \in \outset(s,\js_\Coalition), i>0\}$ and $(\chi ,\mathfrak{B},\mathfrak{H})$ be the characteristic structure of $\Omega$. 
  Note $\R_{\js_\Coalition(s')}(s')\subseteq \Omega$ for all $s'\in \Omega $. Then $s'\vdash \atlbh{\Coalition}{B}{H}\X (\phi \wedge \chi )$ for all $s'\in \Omega $. 
- Note $\chi \in s$. It suffices to show that $\vdash \chi \to \atlbh{\Coalition}{B}{H}\G \phi $. 
+ Note $\chi \in s.1$. It suffices to show that $\vdash \chi \to \atlbh{\Coalition}{B}{H}\G \phi $. 
  By \ref{ir:In_G}, 
  it suffices to show that $\vdash \chi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. 
  Let $s^+$ be a maximal consistent set such that $\chi \in s^+$. Note $s^+\cap ecl(\phi )\in \St^\psi $. Then $s^+\cap ecl(\phi )\in \Omega$. 
- Therefore, $s^+\cap ecl(\phi )\vdash \atlbh{\Coalition}{B}{H}\X (\phi \wedge \chi )$. Therefore, $\vdash \chi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. Therefore, $\vdash \chi \to \atlbh{\Coalition}{B}{H}\G \phi $ and $\atlbh{\Coalition}{B}{H}\G \phi\in s$.
+ Therefore, $s^+\cap ecl(\phi )\vdash \atlbh{\Coalition}{B}{H}\X (\phi \wedge \chi )$. Therefore, $\vdash \chi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. Therefore, $\vdash \chi \to \atlbh{\Coalition}{B}{H}\G \phi $ and $\atlbh{\Coalition}{B}{H}\G \phi\in s.1$.
 \end{proof}
 
+\subsection{Completeness proof (proof for Lemma \ref{lem: realazation} and Theorem \ref{thm:soundness and completeness})}\label{sec: completeness proof}
+It clearly follows from the previous lemmas and theorems that every consistent formula has a witness state in the canonical model. Therefore, we have the completeness of $\ourlogic$.
 
 
 
-\section{Proof of Theorem \ref{theo:embedding} }
+\section{Proof of Tree-like property (Theorem \ref{theorem: tree-like property})}\label{sec: proof of tree-like property}
+In this section, we show the proof of tree-like property with unfolding. 
+\begin{proof}
+Let $\varphi \in \lang_{\atlBDlogic} $. From left to right, suppose $\varphi $ is satisfiable on pointed CGSRP $(\M,s)$ where $\M=(\St,  \ACT,  \R, \preceq, \V)$ and $s\in \St$. We construct a new model $\M'=(\St',  \ACT',  \R', \preceq', \V')$ as the following:
+\begin{itemize}
+  \item $\St' = \PPath_{\M}$ is the set of all partial path in $\M$;
+  \item $\ACT' = \ACT$;
+  \item $\R'_\ja = \{(\history, \history')\in \St'\mid \last(\history)\R_\ja \last(\history')\}$;
+  \item $\preceq'_{a,\history} = \{(\history',\history'')\in \Comp_{\M,,\history}\mid \last(\history')\preceq_{a,\last(\history)} \last(\history'')\}$;
+  \item $\V'(\history) = \V(\last(\history))$.
+  \end{itemize}
+  Note every strategy $\js_\Coalition$ in $\M$ corresponds to a strategy $\js'_\Coalition$ in $\M'$ with $\js'_\Coalition(\history) = \js_\Coalition(\last(\history))$ for all $\history \in \PPath_{\M,}$, and for all $\history' \in \outset_{\M'}(\history,\js'_\Coalition)$ we have $\last(\history')\in \outset_{\M}(\last(\history),\js_\Coalition)$. 
+  Then by induction on the structure of $\varphi$, we can show that $(\M,s)\models \varphi $ iff $(\M',\langle s\rangle)\models \varphi $, where $\langle s\rangle$ is the singleton path that only contains $s$. 
+
+  The direction from right to left is straightforward as a tree-like CGMRP is a CGMRP.
+\end{proof}
+
+\section{Proof of Theorem \ref{theo:embedding} }\label{sec: embeding perserve satifability}
 \label{sec: Proof for embedding}
 
 \begin{proof} 
@@ -158,8 +140,7 @@ We prove the
 first statement of the theorem. 
 Suppose $\varphi \in \lang_{\atlBDlogic} $
 is satisfiable for the class $\classcgspvar{\{\mathbf{SP} \}}$.
-Thus, by Lemma
-\ref{lemma: tree-like property},
+Thus, by Theorem \ref{theorem: tree-like property},
 there exists 
 $\M=(\St,  \ACT,  \R, \preceq, \V)$ 
   and $s_0 \in \St $
@@ -189,12 +170,5 @@ The proof of
 the second statement is based 
 on a straightforward adaptation of the above construction without requiring stable preferences.
 \end{proof}
-
-\section{Proof of Proposition \ref{prop:strat}}
-\begin{proof}
-    Fix a CGFP $\P = (\F, \preceq)$. Assume strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly beneficial for group $\GroupB\subseteq \AGT$ at state $s$. Then $\outset_\F(s,\js_\Coalition)\subseteq \Best_{i,s}$ for every $i\in \GroupB $. Let $i\in\GroupB$, $\history\in \outset_\F(s,\js_\Coalition)$ and $\history'\in \Comp_{\F,s}-\outset_\F(s,\js_\Coalition)$. Then $\history\in \Best_{i,s}$. Therefore, $\history' \not \succ_{i,s} \history$. Then $\js_\Coalition\in \JsWB_{\F}^C(s,\GroupB)$.
-
-    The proof for harmful strategies is similar.
-  \end{proof}
 
 

@@ -1,19 +1,25 @@
-\newcommand{\de}{\mathtt{de}}
-\newcommand{\vote}{\mathtt{vote}}
-\newcommand{\te}{\mathtt{te}}
+\renewcommand{\to}{\longrightarrow}
+
+
+\newcommand{\ourlogic}{\mathsf{LWASC}}
+
+
+\newcommand{\de}{\mathcal{PI}_3}
+\newcommand{\vote}{\mathcal{PI}_2}
+\newcommand{\te}{\mathcal {EL}}
 \newcommand{\DLP}{\mathtt{DLP}}
-\newcommand{\CS}{\mathtt{CS}}
-\newcommand{\Consesus}{\mathtt{CON}}
+\newcommand{\CS}{\mathcal{CS}}
+\newcommand{\Consesus}{\mathcal{CON}}
 \newcommand{\CON}{\mathtt{CON}}
-\newcommand{\LocalPower}{\mathtt{LP}}
+\newcommand{\LocalPower}{\mathbb{LP}}
 \newcommand{\LP}{\mathtt{LP}}
-\newcommand{\ChoiceFunction}{\mathtt{CF}}
-\newcommand{\CF}{\mathtt{CF}}
-\newcommand{\choicef}{\mathtt{cf}}
+\newcommand{\ChoiceFunction}{\mathbb{CF}}
+\newcommand{\CF}{\mathbb{CF}}
+\newcommand{\choicef}{\mathit{cf}}
 % heart symbols
 \newcommand{\heart}{\ensuremath{\heartsuit}} % outline-like
 \newcommand{\heartinv}{\rotatebox[origin=c]{180}{\heart}}
-\newcommand{\PSt}{\mathbb{PS}}%set of pseudo states
+\newcommand{\PSt}{\mathbb{MCS}}%set of pseudo states
 \newcommand{\help}{\mathbin{\heart}}
 \newcommand{\harm}{\mathbin{\heartinv}}
 \newcommand{\SP}{\mathbf{SP}}
@@ -25,7 +31,7 @@
 \newcommand{\PU}{\functor{PU}}
 % \newcommand{\putaway}[1]{}
   \newcommand{\ns}{\mathbf{ns}}
-  \newcommand{\ecl}{\mathit{ecl}}
+  \newcommand{\ecl}{\mathit{cxt}}
   \newcommand{\sub}{\mathit{sub}}
   \newcommand{\cl}{\mathit{cl}}
 \newcommand{\atllogic}{\ensuremath{\mathsf{ATL}}\xspace}
@@ -41,9 +47,9 @@
 \newcommand{\history}{\lambda}
 \renewcommand{\P}{\mathsf{P}}
 \newcommand{\atlphhlogic}{\ensuremath{\mathsf{PHH-ATL}\xspace}}
-\newcommand{\atlBDlogic}{\ensuremath{\mathsf{CA{-}ATL}\xspace}}
+\newcommand{\atlBDlogic}{\ensuremath{\mathsf{WA{-}ATL}\xspace}}
 \newcommand{\atlSBDlogic}{\ensuremath{\mathsf{SCA-ATL}\xspace}}
-\newcommand{\clBDlogic}{\ensuremath{\mathsf{CA{-}CL}\xspace}}
+\newcommand{\clBDlogic}{\ensuremath{\mathsf{WA{-}CL}\xspace}}
 \newcommand{\safyatlSBDlogic}{ \ensuremath{\Lambda_1\xspace}}
 \newcommand{\safyatlNFSBDlogic}{\ensuremath{\Lambda_2\xspace}}
 \newcommand{\Best}{\mathit{Best}}
@@ -481,7 +487,7 @@
 \newcommand{\scond} {\mathcal{SC}}                        %assert%
 \newcommand{\pcond} {\mathcal{PC}}                        %assert%
 
-\newcommand{\suchthat}{ : }
+\newcommand{\suchthat}{ \mid }
 \newcommand{\functor}[1]{\mathcal{#1}}
 \newcommand{\tagLabel}[2]{\tag{\textbf{#1}}\label{#2}}
 \renewcommand{\phi}{\varphi}
@@ -1171,7 +1177,7 @@
 \newcommand{\Blist}{\mathtt{Blist}}
 \newcommand{\Hlist}{\mathtt{Hlist}}
 \newcommand{\bp}{\mathtt{bp}}
-\newcommand{\Fsupport}{\mathtt{support}}
+\newcommand{\Fsupport}{\mathcal{PI}_1}
 \newcommand{\support}[1]{\Fsupport (#1)}
 \newcommand{\Fimpeach}{\mathtt{impeach}}
 \newcommand{\impeach}[1]{{\Fimpeach(#1)}}
