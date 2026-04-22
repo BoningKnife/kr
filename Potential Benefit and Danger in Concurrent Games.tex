@@ -62,6 +62,10 @@
 \allowdisplaybreaks
 
 
+\newcommand{\appsec}[2]{%
+  \ifarxiv Appendix~\ref{#1}\else Appendix, Section ``#2''\fi%
+}
+
 \newcommand{\elnote}[1] {  \footnote{\textbf{EL}: #1} }
 
 
@@ -93,7 +97,7 @@
 
 \title{Reasoning about Welfare-Affecting Capabilities in Concurrent Games}
 
-\author{Paper ID 209}
+%\author{Anonymous Authors}
 
 % % Single author syntax
 % \iffalse % (remove the multiple-author syntax below and \iffalse ... \fi here)
@@ -106,14 +110,14 @@
 % }
 % \fi
 % % Multiple author syntax
-% \author{%
-% Yinfeng Li$^1$\and
-% Emiliano Lorini$^1$\\
-% \affiliations
-% $^1$IRIT, CNRS, University of Toulouse, Toulouse, France\\
-% \emails
-% \{yinfeng.li, emiliano.lorini\}@irit.fr
-% }
+\author{
+Yinfeng Li$^1$\and
+Emiliano Lorini$^1$\\
+\affiliations
+$^1$IRIT, CNRS, University of Toulouse, Toulouse, France\\
+\emails
+\{yinfeng.li, emiliano.lorini\}@irit.fr
+}
 
 \begin{document}
 
@@ -203,6 +207,8 @@ is stable over time, non-flat, and both well-founded and conversely well-founded
 Second, we establish a polynomial embedding of the $\atlBDlogic$ language into standard $\atllogic$, under the regular preference assumption, as well as a polynomial embedding  of 
 its coalition logic ($\cllogic$)
 fragment into standard $\cllogic$. Thanks to these embeddings, we obtain tight complexity results for satisfiability checking.
+
+Although our semantics is game-theoretic, our contribution is not merely semantic: by introducing an explicit language and an axiomatization, we can state and \emph{reason about} welfare-affecting capabilities. This is especially important when such capabilities have a temporal content (e.g., guaranteeing that a harmful situation never occurs), since standard game-theoretic representations do not, by themselves, provide a logical vocabulary to express and manipulate the temporal claims that are part of a coalition's capability.
  
 
 
@@ -215,7 +221,7 @@ Section~\ref{sec:axiom} is devoted to the axiomatization of its
 until-free fragment. 
 Section~\ref{sec: tree-like model property and embedding} provides  the polynomial embeddings and
 the complexity results. 
-Finally, Section~\ref{conclusion} concludes the paper. Proofs are provided in a technical appendix included in the supplementary material.
+Finally, Section~\ref{conclusion} concludes the paper. Proofs are provided in a technical appendix included in the supplementary material. In particular, the supplementary material contains the proofs in \appsec{sec:app:prop_strat}{Proof of Proposition~\ref{prop:strat}}, \appsec{sec:app:completeness}{Proof of completeness for $\ourlogic$}, \appsec{sec:app:tree_like}{Proof of Theorem~\ref{theorem: tree-like property}}, and \appsec{sec:app:embedding}{Proof of Theorem~\ref{theo:embedding}}.
 
 
 
@@ -277,16 +283,15 @@ Concurrent game models can be defined from a more general class of structures, w
     \begin{itemize}
     \item $\St$ is a non-empty set of states,
     \item $\ACT$ is a set of actions,
-    \item $\R: \ACT^{\AGT}\to \powerset{\St\times \St}$ assign a transition relation on $\St$ to every action profile, where $\ACT^{\AGT}=\{\ja_{\AGT}
+    \item $\R: \ACT^{\AGT}\to \powerset{\St\times \St}$ assigns a transition relation on $\St$ to every action profile, where $\ACT^{\AGT}=\{\ja_{\AGT}
     \suchthat \ja_{\AGT}:
     \AGT \to \ACT\}$ is the set of action profiles.
     \end{itemize}
 \end{definition}
 
-Given an MATF as in Definition \ref{def: MATF}, for any coalition $C$, a \emph{joint action} of $C$ is a function $\ja_{C} : C \to \ACT$, and the set of all joint actions of $C$ is denoted by $\ACT^{C}$. Note that the empty coalition has a unique joint action, $\emptyset$ (also denoted $\ja_\emptyset$), and action profiles correspond to the joint actions of the grand coalition.
+Given an MATF as in Definition \ref{def: MATF}, we call \emph{coalitions} the subsets of $\AGT$, and we call $\AGT$ the \emph{grand coalition}. For any coalition $C$, a \emph{joint action} of $C$ is a function $\ja_{C} : C \to \ACT$, and the set of all joint actions of $C$ is denoted by $\ACT^{C}$. Note that the empty coalition has a unique joint action, $\emptyset$ (also denoted $\ja_\emptyset$), and action profiles correspond to the joint actions of the grand coalition.
 Joint actions of the grand
 coalition $\AGT$ are also  called \emph{action profiles}.
-
 
 For any joint action $\ja_{C}$, we define
 \begin{align*}
@@ -299,20 +304,15 @@ definition
 we write
 $\ja_{C} \subseteq \ja_{\AGT} $
 since in set theory
-a function is representable as a  set of ordered pairs.
-
-We write $(s,s') \in \relAct{\ja_{C}}$ as $s \relAct{\ja_{C}} s'$, and define
+a function is representable as a  set of ordered pairs. We write $(s,s') \in \relAct{\ja_{C}}$ as $s \relAct{\ja_{C}} s'$, and define
 \begin{align*}
 \relAct{\ja_{C}}(s) = \big\{ s'\in \St \mid s \relAct{\ja_{C}} s' \big\}.
 \end{align*}
-
 It can be verified that
-\begin{align*}
-&\relAct{\emptyset} = \bigcup_{\ja_{\AGT} \in \ACT^{\AGT}} \relAct{\ja_{\AGT}}. 
-% &\relAct{\emptyset}(s) = \bigcup_{\ja_{\AGT} \in \ACT^{\AGT}} \relAct{\ja_{\AGT}}(s) \quad \text{for all } s \in \St.
-\end{align*}
+$\relAct{\emptyset} = \bigcup_{\ja_{\AGT} \in \ACT^{\AGT}} \relAct{\ja_{\AGT}}.$
 
-
+In this paper, we treat structures and tuples as mathematical objects and use dot-notation to refer to their components or derived operations.
+For example, $\M.\St$ denotes the set of all states of structure $\M$, and $t.i$ denotes the $i$-th element of tuple $t$. 
 
 The following definition
 introduces the concept
@@ -469,7 +469,6 @@ According to \emph{independence of choices}, agents can never be deprived of ava
 Finally, \emph{collective choice  determinism} ensures
 that the outcome of an available joint action of the grand coalition is uniquely determined. In other words,
 once all agents have made their choices the next state is uniquely determined. 
-deterministic outcomes.
 
 
 
@@ -517,10 +516,9 @@ for every agent $a \in \AGT$:
           \big), \\
           (\NFP)\  &\forall s\in \St, \exists \history ,\history' \in \historyset_{\F,s}\text{ such that } \history \prec_{a,s} \history' ,\\
           (\WFP)\  &\forall s\in \St, \exists \history \in \historyset_{\F,s}\text{ such that } \\
-          &\forall \in \history' \in  \historyset_{\F,s}, \ \history \preceq_{a,s} \history' ,\\
+          &\forall \history' \in  \historyset_{\F,s}, \ \history \preceq_{a,s} \history' ,\\
           (\CWFP)\  &\forall s\in \St, \exists \history \in \historyset_{\F,s}\text{ such that }\\
-          & \forall \in
-          \history' \in \historyset_{\F,s}, \ \history' \preceq_{a,s} \history,
+          & \forall \history' \in \historyset_{\F,s}, \ \history' \preceq_{a,s} \history,
           \end{align*}
 where, for every $\history, \history' \in\historyset_{\F,s} $, 
 $\history \prec_{a,s} \history' $
@@ -555,20 +553,13 @@ $\history'\not  \preceq_{a,s} \history $.
 %           A CGFP is called a CGF with regular preferences (CGFRP) if it has stable, non-flat, well-founded, and converse well-founded preferences.
 %           \endgroup
 \end{definition}
-Property $\mathbf{SP}$, expressing \emph{stability} of preferences, captures the idea that an agent's preference remains consistent over time: an agent prefers a computation $\lambda$ to $\lambda'$ starting at the same state $s'$ if and only if it prefers the precursor of $\lambda$ (i.e., $s\lambda$) to the precursor of $\lambda'$ (i.e., $s\lambda'$) at every predecessor $s$ of $s'$. 
-Stability of preferences aligns with the notion of \emph{time consistency} studied in economics, as opposed to \emph{time inconsistency} \cite{Lowewenstein2002}.  
-Property $\mathbf{NFP}$, expressing \emph{non-flatness} of preferences, ensures that agents are not indifferent among all outcomes.  
-Properties $\mathbf{WFP}$ and $\mathbf{CWFP}$, expressing \emph{well-foundedness} and \emph{converse well-foundedness} of preferences, guarantee that agents' preferences have both a worst and a best outcome.
-
-
-In the remainder of the paper, we focus exclusively on CGFs with regular preferences. 
-
+Property $\mathbf{SP}$ expresses stability of preferences over time. Property $\mathbf{NFP}$ ensures agents are not indifferent among all outcomes. Properties $\mathbf{WFP}$ and $\mathbf{CWFP}$
 
 \subsection{From Frames to Models}\label{CGMRPsect}
 
 We conclude this section by moving from
 frames to models. In particular, we
-assume a set a countably infinite  set of atomic
+assume a countably infinite  set of atomic
 propositions $\AP$
 denoting atomic facts and supplement 
 a CGFRP  with a valuation function specifying for
@@ -602,6 +593,7 @@ The initial configuration is shown in Figure~\ref{fig:spacefigure}.
     \includegraphics[width=0.55\linewidth]{ImageSpace.pdf}
     \caption{Scenario}
     \label{fig:spacefigure}
+    \vspace{-1em}
 \end{figure}
 
 Robot~$0$ can move from its current room either to the right (action $\mathit{ri}$) or to the left (action $\mathit{le}$). 
@@ -623,11 +615,13 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
 
 \begin{figure}[h]
     \centering
+    \captionsetup{skip=2pt}
+    \captionsetup[subfigure]{skip=1pt}
 
     % --- Subfigure (a): TikZ diagram ---
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-        \fbox{\begin{minipage}{0.9\textwidth}
+        \fbox{\begin{minipage}{0.95\linewidth}
         \centering
         \begin{tikzpicture}[
             scale=0.8, transform shape,
@@ -660,12 +654,12 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
         \caption{State transition diagram.}
     \end{subfigure}
 
-    \vspace{1em}
+    \vspace{0.35em}
 
     % --- Subfigure (b): Delta table ---
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \fbox{\begin{minipage}{0.95\textwidth}
+        \fbox{\begin{minipage}{0.98\linewidth}\vspace{-1em}
         \[
         \begin{array}{ll}
         \delta_1 = (0{:}\mathit{le}, 1{:}\mathit{bl}, 2{:}\mathit{bl}) & \delta_5 = (0{:}\mathit{ri}, 1{:}\mathit{bl}, 2{:}\mathit{bl}) \\
@@ -675,23 +669,24 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
         \end{array}
         \]
         \end{minipage}}
-        \caption{Action profiles $\delta_1$–$\delta_8$.}
+        \caption{Action profiles $\delta_1$--$\delta_8$.}
     \end{subfigure}
 
-    \vspace{1em}
+    \vspace{0.35em}
 
     % --- Subfigure (c): Utility definition ---
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
         \fbox{\begin{minipage}{0.55\textwidth}
+          \vspace{-1em}
         \begin{align*}
-      \forall s\in\{s_0,s_1,s_2\},&
+      \forall s\in\{s_0,s_1,s_2\},&\,
      \forall\lambda, \lambda' \in 
       \historyset_{\F_{\mathit{rs}},s}, 
        \forall i \in \{0,1,2 \}, \\
       & \lambda \preceq_{i,s } \lambda  \text{ iff } U_0(\lambda' )  \leq U_0(\lambda)
-      \text{ with}
-        \end{align*}
+      \text{ with}\end{align*}
+        \vspace{-2em}
         \begin{align*}
         U_0(\lambda)=
         \begin{cases}
@@ -699,9 +694,7 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
    \{\mathit{inR}_0,\mathit{inL}_0\}  \cap \valProp(\lambda(k)) =  
       \emptyset,\\
         1 & \text{otherwise} ;
-        \end{cases}
-        \end{align*}
-                \begin{align*}
+        \end{cases}\\
         U_1(\lambda)=  U_2(\lambda)=
         \begin{cases}
         0 & \text{if } \exists   k \geq 0
@@ -719,6 +712,7 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
     $\M_{\mathit{rs}}$
     for the robots' scenario: (a) state transitions, (b) action profiles, (c) preference structure.  }
     \label{CGMRPscenario}
+    \vspace{-1em}
 \end{figure}
 
 
@@ -751,6 +745,8 @@ this function assigns a value of~$1$ to a computation that allows the robot to a
 
 In this section, we introduce the concepts of  beneficial  and  harmful  strategies. The intuition is straightforward: the strategy of a coalition is said to be beneficial (resp. harmful) for another coalition if the choice of that strategy by the first coalition guarantees a good (resp. bad) outcome for the second coalition. We further distinguish between \emph{strongly} and \emph{weakly} beneficial (or harmful) strategies, based on two different interpretations of what constitutes a good or bad outcome for a coalition.
 A strategy is \emph{strongly beneficial} (resp.\ \emph{strongly harmful}) for a coalition if it guarantees the best (resp. worst) outcome that the agents in the coalition could obtain. Conversely, a strategy is \emph{weakly beneficial} (resp.\ \emph{weakly harmful}) for a coalition if it guarantees an outcome that is better (resp.\ worse) for the agents in the coalition than the one they could obtain if the strategy were not played.
+
+The weak notions provide a natural baseline and allow us to relate alternative welfare-improvement criteria (in particular, strong benefit/harm implies weak benefit/harm). In the semantics of the welfare-affecting strategic capability modalities of $\lang_{\atlBDlogic}$, however, we quantify only over the \emph{strong} notions, since our axiomatization and embedding into standard $\atllogic$ rely on best/worst outcomes (whose existence is guaranteed by the regularity assumptions on preferences).
 
 
 
@@ -848,13 +844,12 @@ but not strongly harmful.
 
 \end{example}
 
- The following proposition 
+The following proposition 
  highlights the connection between
  strongly beneficial/harmful
  and 
   weakly beneficial/harmful. 
-The proof is in 
-Appendix \ref{sec: Proof of Proposition 1} of the supplementary material.
+The proof is given in section \ref{sec:app:prop_strat} of the supplementary material.
 
   \begin{proposition}\label{prop:strat}
   If 
@@ -919,7 +914,7 @@ State formula: &$\varphi $  & $\bnf p \mid \neg\varphi \mid \varphi \wedge \varp
 Path formula: &$\gamma $ & $\bnf \X \phi \mid 
 \henceforth  \varphi 
  \mid 
- (\until{\varphi}{\varphi } )$
+ (\until{\varphi}{\psi})$
 \end{tabular}\end{center}
 where  $p$
 ranges over $\AP$,
@@ -976,6 +971,7 @@ or a pair consisting of a CGMRP and one of its computations, in the case of inte
 In Section~\ref{sec:benharm}, we introduced two notions of beneficial and harmful strategies: strong and weak.  
 To interpret the welfare-affecting strategic capability modalities $\atlbh{\Coalition}{\GroupB}{\GroupH}$, we consider only the strong notion. 
 Specifically, the existential quantification ranges over strongly beneficial or harmful strategies of a coalition.
+This choice is motivated by our technical results: strong benefit/harm is tailored to best/worst outcomes and is the notion for which we provide an axiomatization and obtain the embedding into standard $\atllogic$ under regular preferences.
 
 The satisfaction relation, denoted by $\models$, between formulas of $\lang_{\atlBDlogic} $ and pointed models is defined inductively as follows. 
 (The cases for atomic propositions and Boolean connectives are omitted, as they are standard.)
@@ -1025,6 +1021,18 @@ Analogously, a coalition $\Coalition$ is said to be a    danger  for another coa
    \atlbh{\Coalition}{\emptyset}{\GroupH }
    \nexttime \top .
 \end{align*}
+
+Formulas with \emph{nested} welfare-affecting strategic modalities are useful to reason about \emph{danger-enabling} and \emph{danger-disabling} strategic choices in multi-agent settings. For instance, in the robots scenario, one can express that the coalition $\{0,1\}$ has a strategy that is strongly beneficial to robot~$0$ and guarantees that in the next state robot~$0$ becomes a danger to $\{1,2\}$, even though robot~$0$ is not a danger to $\{1,2\}$ in the current state:
+\begin{align*}
+&\atlbh{\{0,1\}}{\{0\}}{\emptyset}\nexttime \mathsf{Danger}(\{0\},\{1,2\})
+\ \wedge\ \neg \mathsf{Danger}(\{0\},\{1,2\}).
+\end{align*}
+Unfolding the abbreviation for $\mathsf{Danger}$, the first conjunct is equivalent to the nested formula
+$
+\atlbh{\{0,1\}}{\{0\}}{\emptyset}\nexttime
+\big(\atlbh{\{0\}}{\emptyset}{\{1,2\}}\nexttime \top\big)
+$.
+Intuitively, robot~$0$ is initially not a danger because robots~$1$ and~$2$ can coordinate to block access to their rooms; however, robot~$1$ may choose to leave its passage unguarded, allowing robot~$0$ to enter and then remain in the room indefinitely, thereby preventing robots~$1$ and~$2$ from achieving their objective.
 
 
 Let us go back 
@@ -1119,7 +1127,7 @@ where $p$ ranges over $\AP$, and $\Coalition$, $\GroupB$, and $\GroupH$ range ov
 In this section, 
 we introduce a new logic
 $\ourlogic$
-(Logic of Welfare-Affecting Strategic Capabiliy) 
+(Logic of Welfare-Affecting Strategic Capability) 
 defined relative to the  until-free fragment 
 $\lang_{\atlBDlogic^{-\U}}$
 and prove its its completeness. 
@@ -1256,7 +1264,7 @@ For completeness, we employ a technique based on canonical models under formula 
  % semantics
  % $\models$. 
 \begin{definition}[Formula context]\label{def: formula context}
-Given an formula $\psi $, we denote the set of all subformulas of $\psi $ by $\sub(\psi)$. Let $\sub^+(\psi ) = \{\top, \bot \}\cup \sub(\psi)\cup 
+Given a formula $\psi $, we denote the set of all subformulas of $\psi $ by $\sub(\psi)$. Let $\sub^+(\psi ) = \{\top, \bot \}\cup \sub(\psi)\cup 
 \big\{\neg \phi \mid \phi \in \sub(\psi ) \big\}$, $\cl(\psi) = sub^+(\psi)\cup \big\{\atlbh{\Coalition}{B}{H} \X\phi \suchthat  \Coalition\subseteq \AGT,B\subseteq \AGT,H\subseteq \AGT, \phi \in \sub^+(\psi ) \big\}$, and  $\cl^+(\psi) = cl (\psi)\cup \big\{\neg \phi \suchthat \phi \in \cl(\psi ) \big\}$. 
 We call 
 \begin{align*}
@@ -1308,26 +1316,12 @@ Given a formula $\psi $, we define
 $\LocalPower $ is the set of local powers, $\ChoiceFunction$ the set of choice functions, and $\ACT^{\psi }$ is the set of canonical actions.
 \end{definition}
 
-
-The following definition
-introduces
-the picking function for canonical actions. 
-\begin{definition}[Picking]
-  Given a canonical action   $(\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\in \ACT^{\psi }$,
-  we define 
-  \begin{align*}
-      \Fsupport\big((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef) \big) & = \atlbh{\Coalition}{B}{H}\nexttime \chi , \\
-      \vote\big((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)\big) & = a ,\\
-      \de((\atlbh{\Coalition}{B}{H}\nexttime \chi , a , \choicef)) & = \choicef.
-  \end{align*}
-\end{definition}
-
 The next
 definition introduces
 the notions of consensus. 
 \begin{definition}[Consensus]
 Given an action profile $\ja : \AGT \to \ACT^{\psi }$,
-we define $\Consesus(\ja) = \big\{\atlbh{\Coalition}{B}{H}\nexttime \chi \in \LocalPower\suchthat  \forall a\in \Coalition, \ \Fsupport\big(\ja(a) \big)=\atlbh{\Coalition}{B}{H}\nexttime \chi \big\}$. We call  $\Consesus(\ja)$ the  agents' consensus set
+we define $\Consesus(\ja) = \big\{\atlbh{\Coalition}{B}{H}\nexttime \chi \in \LocalPower\suchthat  \forall a\in \Coalition, \ \big(\ja(a) \big).1=\atlbh{\Coalition}{B}{H}\nexttime \chi \big\}$. We call  $\Consesus(\ja)$ the  agents' consensus set
 relative to  $\ja$.
 \end{definition}
 
@@ -1338,12 +1332,12 @@ set to define the notion
 of candidate successor. 
 
 \begin{definition}[Candidate successor]
-Given a canonical state $s=(X,B,H)$ and action profile $\ja : \AGT \to \ACT^{\psi }$,
-we call  $s'=(X',B',H') $ the candidate successors of $\ja$ at $s$, iff:
+Given a canonical state $s$ and action profile $\ja : \AGT \to \ACT^{\psi }$,
+we call a state $s'$ the candidate successors of $\ja$ at $s$, iff:
 \begin{itemize}
-    \item for all $\atlbh{\Coalition}{B''}{H''}\nexttime \chi\in \Consesus(\ja)$, if $
-    \vdash \bigwedge_{\phi \in X} \phi\rightarrow \atlbh{\Coalition}{B''}{H''}\nexttime \chi$, then $  \bigwedge_{\chi \in X' } \chi\vdash \chi$, $B''\subseteq B'$, and $H''\subseteq H'$;
-    \item for all $\chi\in \ecl(\psi)$ and $B'',H''\in \powerset{\AGT}$, if $ \nvdash \bigwedge_{\phi \in X} \phi \rightarrow \atlbh{\AGT}{B''}{H''}\nexttime \chi$, then $X'\vdash \neg \chi$, $B''\nsubseteq B'$, or $H''\nsubseteq H'$.
+    \item for all $\atlbh{\Coalition}{B}{H}\nexttime \chi\in \Consesus(\ja)$, if $
+    \vdash \bigwedge_{\phi \in X} \phi\rightarrow \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $  \vdash \bigwedge_{\chi \in s.1 } \chi \rightarrow \chi$, $B\subseteq s.2$, and $H\subseteq s.3$;
+    \item for all $\chi\in \ecl(\psi)$ and $B,H\in \powerset{\AGT}$, if $ \nvdash \bigwedge_{\phi \in s.1} \phi \rightarrow \atlbh{\AGT}{B}{H}\nexttime \chi$, then $\vdash \bigwedge_{\chi \in s.1 } \chi \rightarrow \neg \chi$, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
 \end{itemize}
 The set of all candidate successors of $\ja$ at $s$ is denoted by $\CS(s,\ja)$.
 \end{definition}
@@ -1359,43 +1353,65 @@ However, the set of candidate successors may be not singleton. We need some mech
 
 \begin{definition}[Election]
 Given a action profile $\ja : \AGT \to \ACT^{\psi }$, we define $\te(\ja) = 
-\Big ( \big(\sum_{a\in\AGT}\vote(\ja(a))\big)\bmod n\Big ) +1$, where $n=|\AGT|$. The agent $\te(\ja)$ is called the elected agent of
+\Big ( \big(\sum_{a\in\AGT}\ja(a).2\big)\bmod n\Big ) +1$, where $n=|\AGT|$. The agent $\te(\ja)$ is called the elected agent of
 the  election relative to the action profile $\ja$.
 \end{definition}
 
-
 We have now all elements
 to the define the notion
-of canonical model. 
+of canonical concurrent game model. 
 
-\begin{definition}[Canonical model]\label{def: canonicalmodel}
-  Given a formula $\psi $, define the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$:
+\begin{definition}[Canonical CGM]\label{def: canonicalCGM}
+  Given a formula $\psi $, define the canonical concurrent game model as the following structure $\CM^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \V^\psi)$:
   \begin{itemize}
     \item $\St^{\psi }$ is the set of all canonical states under the  $\psi $-context;
     \item $\ACT^{\psi }$ is the set of all canonical actions under $\psi $-context;
     \item $\R^\psi $ assigns to each  action profile 
     $\delta $
     a transition relation
-    $\R_\ja $ on $\St$ such that for all $s,s'\in\St^\psi$ and $\ja : \AGT \to \ACT^{\psi }$, we have $s\R_\ja s'$ iff $s' = \de\big(\ja(a) \big)\big(\CS(s,\ja) \big)$, with  $a = \te(\ja)$;
-    \item $\preceq^\psi $ assigns to
-    each agent-state pair
-    $(a,s)$ a total preorder on computations starting at  $s$
-    such that  for all  $\history,\history'\in \historyset_{\M^\psi,s}$, $\history \preceq^\psi_{a,s} \history'$ iff there are $(X,B,H),(X',B',H')\in \St^\psi$ such that $(X,B,H)=\history(1)$, $(X',B',H')=\history'(1)$ and either $a\notin (B\setminus B') $ or $a\notin (H'\setminus H)$;
+    $\R_\ja $ on $\St$ such that for all $s,s'\in\St^\psi$ and $\ja : \AGT \to \ACT^{\psi }$, we have $s\R_\ja s'$ iff $s' = \big(\ja(a).3 \big)\big(\CS(s,\ja) \big)$, with  $a = \te(\ja)$;
     \item $\V^\psi (p) = \{(X,B,H)\in \St^\psi \mid p\in X\}$ for each atomic proposition  $p$ in $ecl(\phi)$.
   \end{itemize} 
 \end{definition}
+
+To define the prefereces of agents in the canonical model, we need to define a utility function and the order on them
+\begin{definition}[Utility function in canonical model]
+  Given a canonical CGM $\CM^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$, for each agent $a$ and canonical state $s$, we define a utility function as $U_{a,s}: \Comp_{\M^\psi, s} \to \mathbb{Z}\cup \{-\omega,\omega\}$ such that for any computation $\history \in \Comp_{\M^\psi, s}$: 
+\[
+U_{a,s}(\history) = 
+\begin{cases} 
+\sup\{k\in \mathbb{N}\cup \{\omega\}&\mid  \forall k'<k: a\in \history(k').2\}\\
+&\text{if } a\in \history(1).2,\\
+-\sup\{k\in \mathbb{N}\cup \{\omega\}&\mid  \forall k'<k: a\in \history(k').3\} \\
+& \text{if } a\in \history(1).3,\\
+0 & \text{otherwise.}
+\end{cases}
+\]
+where $\sup$ is the supremum function. Note $s'.2\cap s'.3=\emptyset$ for every $s'\in \St^\psi$, so $\U_{a,s}$ is well-defined.
+\end{definition}
+Now we can define the canonical CGMRP
+\begin{definition}[Canonical CGMRP]\label{def: canonicalmodel}
+  Given a formula $\psi $, define the canonical CGMRP as the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$:
+  \begin{itemize}
+    \item $(\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$ is the canonical CGM defined in Definition \ref{def: canonicalCGM};
+    \item $\preceq^\psi $ assigns to
+    each agent-state pair
+    $(a,s)$ a total preorder on computations starting at $s$
+    such that for all $\history,\history'\in \historyset_{\M^\psi,s}$:\\
+     $\history \preceq^\psi_{a,s} \history'$ iff $U_{a,s}(\history) \geq U_{a,s}(\history')$.
+  \end{itemize} 
+\end{definition}
+
 The following  lemma
 guarantees that every 
 consistent formula
 has a witness state
-in the canonical model.
+in the canonical model. By the lemma, 
+we have the completeness. By the previous lemma, 
+we can state the following result. The proof is given in section \ref{sec:app:completeness} of the supplementary material.
 \begin{lemma}\label{lem: realazation}
 Let $\varphi \in \lang_{\atlBDlogic^{-\U}} $ be a consistent formula. Then,  there is a state $s\in \St^\varphi$ in the canonical model $\M^\varphi$ such that $\M^\varphi,s \models \varphi$.
 \end{lemma}
-By the previous lemma, 
-we can state the following result.
-% \elnote{Please check the new names
-% of Lemma/Theorems. Lemma 1 was previously Theorem 1. In the appendix please name each section with corresponding Proposition/Lemma/Theorem. }
 
 \begin{theorem}[Soundness and completeness]
 \label{thm:soundness and completeness}
@@ -1433,7 +1449,7 @@ The previous definition
 of tree-like CGF extends
 to tree-like CGFRP
 and tree-like CGMRP in a natural way.  
-The tree-like model property is stated in the following lemma.
+The tree-like model property is stated in the following lemma. Its proof is given in section \ref{sec:app:tree_like} of the supplementary material. 
 
      %\cite{ArxivAAMAS26} %in the supplementary material. 
      % The proof is similar to the proof of tree-like model property for $\atlratlogic$ in \cite{DBLP:conf/ifaamas/LiLM25}. 
@@ -1482,9 +1498,7 @@ The idea behind the above translation is to label, at the language level, benefi
 The key observation underlying the embedding for the full language $\lang_{\atlBDlogic}$ is that, in a tree-like model, whether a coalition’s strategy is beneficial or harmful for an agent depends only on whether the next state is the second element of a best (resp.\ worst) computation for that agent. 
 Stability of preferences ensures that the $\help \GroupB$/$\harm \GroupH$-labeling assigned at the current state remains consistent over time.
 
-As the following theorem shows, by using the translation $ \mathit{tr}$, satisfiability for the language $\lang_{\atlBDlogic}$ is reducible to $\atllogic$-satisfiability, and satisfiability for the fragment $\lang_{\clBDlogic}$ is reducible to $\cllogic$-satisfiability.
-     Its proof 
-     is given in Appendix \ref{sec: embeding perserve satifability} of the supplementary material. %\cite{ArxivAAMAS26}. %in the supplementary material.
+As the following theorem shows, by using the translation $ \mathit{tr}$, satisfiability for the language $\lang_{\atlBDlogic}$ is reducible to $\atllogic$-satisfiability, and satisfiability for the fragment $\lang_{\clBDlogic}$ is reducible to $\cllogic$-satisfiability. Its proof is given in section \ref{sec:app:embedding} of the supplementary material. %\cite{ArxivAAMAS26}. %in the supplementary material.
  \begin{theorem}\label{theo:embedding}
      Let $\varphi \in \lang_{\atlBDlogic} $
      and $\psi  \in \lang_{\clBDlogic} $. 
@@ -1541,6 +1555,9 @@ We have introduced a novel language based on $\mathsf{ATL}$ that enables reasoni
 The axiomatizability of the full language $\lang_{\atlBDlogic}$, including the `until' modality, remains open. We plan to address this issue in future work. We also intend to extend our analysis to a risk-based notion of danger, according to which a coalition is a danger to another coalition if it has a strategy that, if chosen, brings harm to the latter with high probability. This extension will require enriching CGMRPs with a probabilistic component.
 
 Finally, we plan to combine the notion of danger investigated in this paper with a game-theoretic notion of rationality in order to define the concept of \emph{strong danger}: a coalition $\Coalition$ is a strong danger to another coalition $\GroupH$ if it has a \emph{rational} strategy that, if chosen, brings harm to $\GroupH$. It is called strong because it is realistic to assume that the agents in $\Coalition$ may choose the harmful strategy, provided they act rationally.
+
+\section*{AI Declaration}
+We used generative AI tools (OpenAI Codex/ChatGPT) to help identify typos and improve readability (e.g., phrasing and grammar). All scientific content, definitions, proofs, and claims were produced and verified by the authors, who take full responsibility for the paper.
 
 
 

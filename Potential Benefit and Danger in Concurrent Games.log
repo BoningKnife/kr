@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  12 FEB 2026 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  22 APR 2026 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -619,7 +619,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@lemma=\count344
 \c@theorem=\count345
 \c@corollary=\count346
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 118.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 122.
  (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -629,25 +629,25 @@ File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
 ) (./Potential Benefit and Danger in Concurrent Games.aux)
 \openout1 = `"Potential Benefit and Danger in Concurrent Games.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-Package hyperref Info: Link coloring OFF on input line 118.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+Package hyperref Info: Link coloring OFF on input line 122.
  (./Potential Benefit and Danger in Concurrent Games.out) (./Potential Benefit and Danger in Concurrent Games.out)
 \@outlinefile=\write4
 \openout4 = `"Potential Benefit and Danger in Concurrent Games.out"'.
@@ -675,21 +675,28 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \titlearea=\box116
-\actualheight=\skip65
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 125.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 125.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 1527) in paragraph at lines 124--125
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 125.
+ (c:/texlive/2024/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
+\actualheight=\skip65
+
+Underfull \hbox (badness 1527) in paragraph at lines 128--129
 []\OT1/ptm/m/n/9 We ex-tend the lan-guages of Coali-tion Logic ($[]$) and
  []
 
 
-Underfull \hbox (badness 1454) in paragraph at lines 175--179
+Underfull \hbox (badness 1454) in paragraph at lines 179--183
 []\OT1/ptm/m/n/10 On the other hand, we share with the \OT1/ptm/m/it/10 modal non-
  []
 
@@ -697,15 +704,15 @@ Underfull \hbox (badness 1454) in paragraph at lines 175--179
 
 
 
-]
-Underfull \hbox (badness 1694) in paragraph at lines 273--278
+] [2]
+Underfull \hbox (badness 1694) in paragraph at lines 279--284
 [][]\OT1/ptm/b/n/10 Definition 1 \OT1/ptm/m/n/10 (MATF)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 A multi agent tran-si-tion frame
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 278.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 284.
 (c:/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2]
+)
 Underfull \hbox (badness 10000) in paragraph at lines 395--399
 [][]\OT1/ptm/b/n/10 Definition 5 \OT1/ptm/m/n/10 (Gen-er-ated com-pu-ta-tions)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 Let $\OT1/cmss/m/n/10 F \OT1/cmr/m/n/10 =
  []
@@ -715,156 +722,157 @@ Underfull \hbox (badness 1577) in paragraph at lines 401--404
 []\OT1/ptm/m/it/10 for all $\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )$\OT1/ptm/m/it/10 , if $\OML/cmm/m/it/10 k \OT1/cmr/m/n/10 + 1 \OMS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 )$ \OT1/ptm/m/it/10 then
  []
 
-
+[3]
 Underfull \hbox (badness 1983) in paragraph at lines 458--463
 []\OT1/ptm/m/it/10 for ev-ery ac-tion pro-file
  []
 
-[3]
-<ImageSpace.pdf, id=225, 1371.39844pt x 867.85551pt>
+<ImageSpace.pdf, id=221, 1371.39844pt x 867.85551pt>
 File: ImageSpace.pdf Graphic file (type pdf)
 <use ImageSpace.pdf>
-Package pdftex.def Info: ImageSpace.pdf  used on input line 602.
+Package pdftex.def Info: ImageSpace.pdf  used on input line 593.
 (pdftex.def)             Requested size: 131.66763pt x 83.32112pt.
- [4 <./ImageSpace.pdf>]
-Overfull \hbox (13.55061pt too wide) in paragraph at lines 628--662
+[4 <./ImageSpace.pdf>]
+Overfull \hbox (13.55061pt too wide) in paragraph at lines 622--656
  [][] 
  []
 
 
-Overfull \hbox (1.94073pt too wide) detected at line 677
-[]
- []
-
-
-Overfull \hbox (102.29773pt too wide) detected at line 714
-[]
- []
-
-
-Overfull \hbox (113.95718pt too wide) detected at line 714
-[]
- []
-
-
-Overfull \hbox (111.14044pt too wide) detected at line 714
-[]
- []
-
-
-Overfull \hbox (29.69897pt too wide) in paragraph at lines 714--715
+Overfull \hbox (2.75206pt too wide) in paragraph at lines 671--672
  [][] 
  []
 
 
-Underfull \vbox (badness 2556) has occurred while \output is active []
+Overfull \hbox (103.96436pt too wide) detected at line 707
+[]
+ []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 758--760
+Overfull \hbox (113.95718pt too wide) detected at line 707
+[]
+ []
+
+
+Overfull \hbox (29.69897pt too wide) in paragraph at lines 707--708
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 754--756
 []\OT1/ptm/m/n/10 The fol-low-ing def-i-ni-tion in-tro-duces the con-cepts of
  []
 
 [5]
-Underfull \hbox (badness 2205) in paragraph at lines 851--858
+Underfull \hbox (badness 2205) in paragraph at lines 847--853
 []\OT1/ptm/m/n/10 The fol-low-ing propo-si-tion high-lights the con-nec-tion
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 851--858
+Underfull \hbox (badness 1038) in paragraph at lines 847--853
 \OT1/ptm/m/n/10 be-tween strongly ben-e-fi-cial/harmful and weakly ben-e-fi-
  []
 
 
-Underfull \hbox (badness 2393) in paragraph at lines 916--917
+Underfull \hbox (badness 2393) in paragraph at lines 911--912
 []\OT1/ptm/m/n/10 The $[]$ lan-guage with \OT1/ptm/m/it/10 welfare-affecting ca-pa-bil-ity
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--967
+Underfull \hbox (badness 10000) in paragraph at lines 931--962
 []\OT1/ptm/m/n/10 Formulas $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 X\OML/cmm/m/it/10 '$\OT1/ptm/m/n/10 , $\OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmss/m/n/10 G\OML/cmm/m/it/10 '$\OT1/ptm/m/n/10 , and
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 936--967
+Underfull \hbox (badness 2591) in paragraph at lines 931--962
 \OMS/cmsy/m/n/10 h h\OML/cmm/m/it/10 C[]B[]H\OMS/cmsy/m/n/10 i i\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ' \OT1/cmss/m/n/10 U \OML/cmm/m/it/10  \OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 cap-ture the no-tion of a \OT1/ptm/m/it/10 welfare-
  []
 
 [6]
-Underfull \hbox (badness 4060) in paragraph at lines 1073--1078
-[]\OT1/ptm/m/n/10 Furthermore, the stan-dard $[]$ strate-gic ca-pa-bil-ity
- []
-
-
-Underfull \hbox (badness 1184) in paragraph at lines 1084--1085
-[]\OT1/ptm/m/n/10 For no-ta-tional con-ve-nience, we de-note by $\OMS/cmsy/m/n/10 L[]$ \OT1/ptm/m/n/10 the
- []
-
-[7]
-Overfull \hbox (7.05124pt too wide) detected at line 1307
+Overfull \hbox (18.77277pt too wide) detected at line 1029
 []
  []
 
 
-Underfull \hbox (badness 7981) in paragraph at lines 1316--1318
-[][]\OT1/ptm/b/n/10 Definition 16 \OT1/ptm/m/n/10 (Pick-ing)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 Given a canon-i-cal ac-tion
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1036
+\OT1/ptm/m/n/10 Unfolding the ab-bre-vi-a-tion for $[]$, the first
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1364
-[][]\OT1/ptm/b/n/10 Definition 19 \OT1/ptm/m/n/10 (Elec-tion)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 Given a ac-tion pro-
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1036
+\OT1/ptm/m/n/10 con-junct is equiv-a-lent to the nested for-mula
  []
 
 
-Underfull \hbox (badness 2564) in paragraph at lines 1361--1364
+Underfull \hbox (badness 4060) in paragraph at lines 1081--1086
+[]\OT1/ptm/m/n/10 Furthermore, the stan-dard $[]$ strate-gic ca-pa-bil-ity
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 1092--1093
+[]\OT1/ptm/m/n/10 For no-ta-tional con-ve-nience, we de-note by $\OMS/cmsy/m/n/10 L[]$ \OT1/ptm/m/n/10 the
+ []
+
+[7]
+Overfull \hbox (7.05124pt too wide) detected at line 1315
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1358
+[][]\OT1/ptm/b/n/10 Definition 18 \OT1/ptm/m/n/10 (Elec-tion)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 Given a ac-tion pro-
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 1355--1358
 \OT1/ptm/m/it/10 file $\OML/cmm/m/it/10 ^^N \OT1/cmr/m/n/10 : [] [][]\OMS/cmsy/m/n/10 ! [][]$\OT1/ptm/m/it/10 , we de-fine $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 ) =
  []
 
+
+Underfull \hbox (badness 1092) in paragraph at lines 1355--1358
+[][] [][] \OML/cmm/m/it/10 ^^N\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2[]  []  \OML/cmm/m/it/10 n[] \OT1/cmr/m/n/10 + 1$\OT1/ptm/m/it/10 , where $\OML/cmm/m/it/10 n \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 j[]j$\OT1/ptm/m/it/10 .
+ []
+
 [8]
-Underfull \hbox (badness 2103) in paragraph at lines 1380--1384
-[]$\OMS/cmsy/m/n/10 ^^V[]$ \OT1/ptm/m/it/10 as-signs to each agent-state pair $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a; s\OT1/cmr/m/n/10 )$ \OT1/ptm/m/it/10 a to-tal
+Overfull \hbox (6.46133pt too wide) detected at line 1389
+\OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 ) = []
  []
 
 
-Underfull \hbox (badness 1609) in paragraph at lines 1380--1384
-\OT1/ptm/m/it/10 all $\OML/cmm/m/it/10 ^^U; ^^U[] \OMS/cmsy/m/n/10 2 [][]$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10 ^^U \OMS/cmsy/m/n/10 ^^V[] \OML/cmm/m/it/10 ^^U[]$ \OT1/ptm/m/it/10 iff there are
- []
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 1407--1408
+Underfull \hbox (badness 1939) in paragraph at lines 1423--1424
 \OT1/ptm/m/n/10 guage $\OMS/cmsy/m/n/10 L[]$ \OT1/ptm/m/n/10 sat-is-fies the tree-like model prop-erty.
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 1407--1408
+Underfull \hbox (badness 1077) in paragraph at lines 1423--1424
 \OT1/ptm/m/n/10 of $\OMS/cmsy/m/n/10 L[]$\OT1/ptm/m/n/10 -satisfiability into $[]$-satisfiability, and of
  []
 
 
-Underfull \hbox (badness 3449) in paragraph at lines 1493--1501
+Underfull \hbox (badness 3449) in paragraph at lines 1507--1515
 []$\OML/cmm/m/it/10 '$ \OT1/ptm/m/it/10 is sat-is-fi-able iff $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^ [][]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 h h[]i i\OT1/cmss/m/n/10 X \OMS/cmsy/m/n/10 ~[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1493--1501
+Underfull \hbox (badness 10000) in paragraph at lines 1507--1515
 \OMS/cmsy/m/n/10 ^h h[]i i\OT1/cmss/m/n/10 X[][]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^ h h;i i\OT1/cmss/m/n/10 G[] [][]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 h h[]i i\OT1/cmss/m/n/10 X \OMS/cmsy/m/n/10 ~[]
  []
 
-
-Underfull \hbox (badness 2521) in paragraph at lines 1505--1510
+[9]
+Underfull \hbox (badness 2521) in paragraph at lines 1519--1524
 []$\OML/cmm/m/it/10  $ \OT1/ptm/m/it/10 is sat-is-fi-able iff $[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^ [][] []h h[]i i\OT1/cmss/m/n/10 X \OMS/cmsy/m/n/10 ~[]
  []
 
 
-Underfull \hbox (badness 7168) in paragraph at lines 1526--1532
+Underfull \hbox (badness 7168) in paragraph at lines 1540--1546
 [][]\OT1/ptm/b/n/10 Corollary 1. []\OT1/ptm/m/it/10 Check-ing sat-is-fi-a-bil-ity of for-mu-las in
  []
 
-[9] (./Potential Benefit and Danger in Concurrent Games.bbl
+(./Potential Benefit and Danger in Concurrent Games.bbl
 Underfull \hbox (badness 1043) in paragraph at lines 4--8
 \OT1/ptm/m/n/10 Alternating-time tem-po-ral logic.  \OT1/ptm/m/it/10 Jour-nal of the ACM
  []
 
-) [10] (./appendix.tex
+[10]) (./appendix.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 14.
@@ -876,13 +884,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 LaTeX Font Info:    Trying to load font information for U+euf on input line 49.
 (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 79--87
-[][]\OT1/ptm/b/n/10 Theorem 6 \OT1/ptm/m/n/10 (Lo-cal Re-al-iza-tion lemma)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 For ev-ery
+) [11]
+Underfull \hbox (badness 2617) in paragraph at lines 69--71
+\OMS/cmsy/m/n/10 :\OML/cmm/m/it/10 ^^_$\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 B \U/msb/m/n/10 * []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^N[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3)([](\OML/cmm/m/it/10 s; ^^N[]\OT1/cmr/m/n/10 ))[]\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2$\OT1/ptm/m/n/10 , or $\OML/cmm/m/it/10 H \U/msb/m/n/10 *
  []
 
-[11]
-Overfull \hbox (13.61263pt too wide) detected at line 156
+
+Underfull \hbox (badness 1194) in paragraph at lines 94--95
+[][]\OT1/ptm/b/n/10 Theorem 7 \OT1/ptm/m/n/10 ($\OT1/cmss/m/n/10 G$\OT1/ptm/m/n/10 -realization lemma)\OT1/ptm/b/n/10 . []\OT1/ptm/m/it/10 For $\OML/cmm/m/it/10 s \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 S[]$ \OT1/ptm/m/it/10 and
+ []
+
+
+Overfull \hbox (13.61263pt too wide) detected at line 152
 []
  []
 
@@ -892,21 +905,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
 Package rerunfilecheck Info: File `"Potential Benefit and Danger in Concurrent Games".out' has not changed.
-(rerunfilecheck)             Checksum: F37CBEADE85058D7E697F8743A659E3B;3698.
+(rerunfilecheck)             Checksum: 08DABFF30124E6A5A3A017CCAA8C871A;3589.
  ) 
 Here is how much of TeX's memory you used:
- 24147 strings out of 474049
- 435989 string characters out of 5746277
- 1967754 words of memory out of 5000000
- 46006 multiletter control sequences out of 15000+600000
- 594396 words of font info for 126 fonts, out of 8000000 for 9000
+ 24179 strings out of 474049
+ 436522 string characters out of 5746277
+ 1966754 words of memory out of 5000000
+ 46034 multiletter control sequences out of 15000+600000
+ 595474 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,23n,93p,1125b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (12 pages, 1631484 bytes).
+ 84i,23n,93p,1125b,1524s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "Potential Benefit and Danger in Concurrent Games.pdf" (12 pages, 1642314 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
+ 557 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
  128 named destinations out of 1000 (max. 500000)
  202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

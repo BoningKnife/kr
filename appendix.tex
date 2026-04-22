@@ -3,18 +3,18 @@
 
 \allowdisplaybreaks
 
-\section{Proof of Proposition \ref{prop:strat}}\label{sec: Proof of Proposition 1}
+\section{Proof of Proposition \ref{prop:strat}}\label{sec: Proof of Proposition 1}\label{sec:app:prop_strat}
 \begin{proof}
     Fix a CGMRP 
-    $\M = (\P, \V)$  with underlying CGFRP $\P = (\F, \preceq)$. Assume strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly beneficial for group $\GroupB\subseteq \AGT$ at state $s$. Then $\outset_\F(s,\js_\Coalition)\subseteq \Best_{i,s}$ for every $i\in \GroupB $. Let $i\in\GroupB$, $\history\in \outset_\F(s,\js_\Coalition)$ and $\history'\in \Comp_{\F,s}-\outset_\F(s,\js_\Coalition)$. Then $\history\in \Best_{i,s}$. Therefore, $\history' \not \succ_{i,s} \history$. Then $\js_\Coalition\in \JsWB_{\M }^C(s,\GroupB)$.
+    $\M = (\P, \V)$  with underlying CGFRP $\P = (\F, \preceq)$. Assume strategy $\js_\Coalition$ of coalition $\Coalition$ is strongly beneficial for group $\GroupB\subseteq \AGT$ at state $s$. Then $\outset_\F(s,\js_\Coalition)\subseteq \Best_{i,s}$ for every $i\in \GroupB $. Let $i\in\GroupB$, $\history\in \outset_\F(s,\js_\Coalition)$ and $\history'\in \Comp_{\F,s}-\outset_\F(s,\js_\Coalition)$. Then $\history\in \Best_{i,s}$. Therefore, $\history' \preceq_{i,s} \history$. Then $\js_\Coalition\in \JsWB_{\M }^C(s,\GroupB)$.
 
     The proof for harmful strategies is similar.
   \end{proof}
   
-\section{Proof of completeness for $\ourlogic$}\label{sec: proof of completeness for SCA-CL}
+\section{Proof of completeness for $\ourlogic$}\label{sec: proof of completeness for SCA-CL}\label{sec:app:completeness}
 In this section, we show the proof of completeness for $\ourlogic$ in details. The key step is constructing a model for any satisfiable standard conjunction, which equals to the negation of a standard disjunction. We use a method called `blueprint' to achieve it.
 
-For convience, we use some notations in this section. For a structure $S$, we use $S.component$ to denote the component of $S$. For a tuple $t$, we use $t.i$ to denote the $i$-th element of $t$. 
+For convenience, we use some notations in this section. For a structure $S$, we use $S.component$ to denote the component of $S$. For a tuple $t$, we use $t.i$ to denote the $i$-th element of $t$. 
 
 \subsection{Some derivabilities}\label{section: some derivabilities}
 \begin{theorem}
@@ -58,24 +58,20 @@ structure}
 \end{proof}
 
 \begin{lemma}[Existence lemma]
-For all canonical state $s\in \St^\psi$, $\atlop{\Coalition_1}\X\chi_1,\ldots, \atlop{\Coalition_k}\X\chi_k\in \ecl(\psi)$ such that $s\vdash \atlop{\Coalition_x}\X \chi_x$ for all $1\leq x \leq k$, and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$ with $s\nvdash \atlop{\Coalition_x}\X \chi_x$, if $\Coalition_i\cap \Coalition_j = \emptyset $ for all $1\leq i\neq j\leq k$ and $\Coalition_i\subseteq \Coalition $ for all $1\leq i\leq k$, there is a action profile $\ja$ and a state $s'$ such that $s\R_\ja s'$ and $s'\vdash \chi_i$ for all $1\leq i\leq k$ and $s'\vdash \neg \chi $.
-\end{lemma}
-
-\begin{lemma}[Existence lemma]
-For all canonical state $s\in \St^\psi$ and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$, if $s.1\nvdash \atlbh{\Coalition}{B}{H}\X \chi$, then for every available $\Coalition$-action$\ja_C$ there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+For all canonical state $s\in \St^\psi$ and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$, if $s.1\nvdash \atlbh{\Coalition}{B}{H}\X \chi$, then for every available $\Coalition$-action $\ja_C$ there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
 \end{lemma}
 \begin{proof}
 Fix a canonical state $s\in \St^\psi$ and $\atlbh{\Coalition}{B}{H}\X \chi\in \ecl(\psi)$ with $s.1\nvdash \atlbh{\Coalition}{B}{H}\X \chi$.
 Consider whether $C=\AGT $.
 \begin{itemize}
-  \item Assume $C=\AGT $. Then by the definition of candidate successor, for all $s'\in \CS(s,\ja_C)$ we have $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$. Therefore, there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+  \item Assume $C=\AGT $. Then by the definition of candidate successor, for all $s'\in \CS(s,\ja_C)$ we have $s'.1\vdash \neg \chi $, $B\nsubseteq s'.2$, or $H\nsubseteq s'.3$. Therefore, there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s'.2$, or $H\nsubseteq s'.3$.
   %
-  \item Assume $C\neq \AGT $. Then there is $a\in \AGT\setminus \Coalition $. Therefore, there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\te(\ja_\AGT)=a$ and $\big((\ja_\AGT(a).3)(\Omega)\big).1\vdash \neg \chi $, $B\nsubseteq \big((\ja_\AGT(a).3)(\Omega)\big).2$, or $H\nsubseteq \big((\ja_\AGT(a).3)(\Omega)\big).3$.
-    Therefore, there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+  \item Assume $C\neq \AGT $. Then there is $a\in \AGT\setminus \Coalition $. Therefore, there is $\ja_\AGT:\AGT\to \ACT^\psi $ such that $\ja_\Coalition \subseteq \ja_\AGT $, $\te(\ja_\AGT)=a$ and $\big((\ja_\AGT(a).3)(\CS(s,\ja_C))\big).1\vdash \neg \chi $, $B\nsubseteq \big((\ja_\AGT(a).3)(\CS(s,\ja_C))\big).2$, or $H\nsubseteq \big((\ja_\AGT(a).3)(\CS(s,\ja_C))\big).3$.
+    Therefore, there is a state $s'\in \R_{\ja_C}(s)$ such that $s'.1\vdash \neg \chi $, $B\nsubseteq s'.2$, or $H\nsubseteq s'.3$.
 \end{itemize}
 \end{proof}
 
-\begin{theorem}[Local Realization lemma]
+\begin{theorem}[Local realization lemma]
 For every $\Coalition,B,H\in\powerset{\AGT}$, 
 canonical state $s\in \St^\psi$, 
 and $\chi \in \ecl(\psi )$, 
@@ -94,7 +90,7 @@ and $\chi \in \ecl(\psi )$.  From left to right, assume $s.1\vdash \atlbh{\Coali
     The deriction from right to left follows from existence lemma.
   \end{proof}
 
-\begin{theorem}[$\G$-Realization Lemma]
+\begin{theorem}[$\G$-realization lemma]
 For $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$, we have $\atlbh{\Coalition}{B}{H}\G \phi\in s$ iff there is a $\Coalition$-strategy $\js_\Coalition $ such that for all $\history \in \outset(s,\js_\Coalition)$ and all $i>0$, we have $\phi \in \history(i).1$ and $B\subseteq \history(i).2$ and $H\subseteq \history(i).3$.
 \end{theorem}
 \begin{proof}
@@ -103,19 +99,19 @@ For $s\in \St^\psi $ and $\atlbh{\Coalition}{B}{H}\G \phi \in ecl(\phi)$, we hav
  From right to left, suppose that there is a $\Coalition$-strategy $\js_\Coalition $ such that $\phi \in \history(i).1$, $B\subseteq \history(i).2$ and $H\subseteq \history(i).3$ for all $\history \in \outset(s,\js_\Coalition)$ and all $i>0$. 
  Let $\Omega = \{s\}\cup \{\history[i]\mid \history \in \outset(s,\js_\Coalition), i>0\}$ and $(\chi ,\mathfrak{B},\mathfrak{H})$ be the characteristic structure of $\Omega$. 
  Note $\R_{\js_\Coalition(s')}(s')\subseteq \Omega$ for all $s'\in \Omega $. Then $s'\vdash \atlbh{\Coalition}{B}{H}\X (\phi \wedge \chi )$ for all $s'\in \Omega $. 
- Note $\chi \in s.1$. It suffices to show that $\vdash \chi \to \atlbh{\Coalition}{B}{H}\G \phi $. 
+ Note $\chi \in s.1$. It suffices to show that $\vdash \chi \rightarrow \atlbh{\Coalition}{B}{H}\G \phi $. 
  By \ref{ir:In_G}, 
- it suffices to show that $\vdash \chi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. 
+ it suffices to show that $\vdash \chi \rightarrow \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. 
  Let $s^+$ be a maximal consistent set such that $\chi \in s^+$. Note $s^+\cap ecl(\phi )\in \St^\psi $. Then $s^+\cap ecl(\phi )\in \Omega$. 
- Therefore, $s^+\cap ecl(\phi )\vdash \atlbh{\Coalition}{B}{H}\X (\phi \wedge \chi )$. Therefore, $\vdash \chi \to \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. Therefore, $\vdash \chi \to \atlbh{\Coalition}{B}{H}\G \phi $ and $\atlbh{\Coalition}{B}{H}\G \phi\in s.1$.
+ Therefore, $s^+\cap ecl(\phi )\vdash \atlbh{\Coalition}{B}{H}\X (\phi \wedge \chi )$. Therefore, $\vdash \chi \rightarrow \atlbh{\Coalition}{B}{H}\X(\phi \wedge \chi)$. Therefore, $\vdash \chi \rightarrow \atlbh{\Coalition}{B}{H}\G \phi $ and $\atlbh{\Coalition}{B}{H}\G \phi\in s.1$.
 \end{proof}
 
-\subsection{Completeness proof (proof for Lemma \ref{lem: realazation} and Theorem \ref{thm:soundness and completeness})}\label{sec: completeness proof}
+\subsection{Completeness proof (proof for Lemma \ref{lem: realazation} and Theorem \ref{thm:soundness and completeness})}\label{sec: completeness proof}\label{sec:app:completeness_proof}
 It clearly follows from the previous lemmas and theorems that every consistent formula has a witness state in the canonical model. Therefore, we have the completeness of $\ourlogic$.
 
 
 
-\section{Proof of Tree-like property (Theorem \ref{theorem: tree-like property})}\label{sec: proof of tree-like property}
+\section{Proof of  Theorem \ref{theorem: tree-like property} }\label{sec: proof of tree-like property}\label{sec:app:tree_like}
 In this section, we show the proof of tree-like property with unfolding. 
 \begin{proof}
 Let $\varphi \in \lang_{\atlBDlogic} $. From left to right, suppose $\varphi $ is satisfiable on pointed CGSRP $(\M,s)$ where $\M=(\St,  \ACT,  \R, \preceq, \V)$ and $s\in \St$. We construct a new model $\M'=(\St',  \ACT',  \R', \preceq', \V')$ as the following:
@@ -132,19 +128,19 @@ Let $\varphi \in \lang_{\atlBDlogic} $. From left to right, suppose $\varphi $ i
   The direction from right to left is straightforward as a tree-like CGMRP is a CGMRP.
 \end{proof}
 
-\section{Proof of Theorem \ref{theo:embedding} }\label{sec: embeding perserve satifability}
+\section{Proof of Theorem \ref{theo:embedding} }\label{sec: embeding perserve satifability}\label{sec:app:embedding}
 \label{sec: Proof for embedding}
 
 \begin{proof} 
 We prove the 
 first statement of the theorem. 
 Suppose $\varphi \in \lang_{\atlBDlogic} $
-is satisfiable for the class $\classcgspvar{\{\mathbf{SP} \}}$.
+is satisfiable.
 Thus, by Theorem \ref{theorem: tree-like property},
-there exists 
+there exists a CGSRP
 $\M=(\St,  \ACT,  \R, \preceq, \V)$ 
   and $s_0 \in \St $
-  such that $\M \in \classcgspvar{\{\mathbf{TR},\mathbf{SP}\}}$ and $(\M,s_0 )\models \varphi $. 
+  such that $(\M,s_0 )\models \varphi $. 
   Define a new structure
   $\M'=(\St,  \ACT,  \R, \preceq, \V')$
  such that for all $s\in \St$
@@ -154,7 +150,7 @@ $\M=(\St,  \ACT,  \R, \preceq, \V)$
      &\cup \{\harm_a\mid \exists r\in \R^-(s)
      \exists \history \in \Worst_{a,s}\text{ s.t. } s= \history(1)\}
   \end{align*}
-Clearly, $\M' \in \classcgspvar{\{ \mathbf{SP},\mathbf{TR}\}}$
+Clearly, $\M' $ is a CGSRP
 and the only difference between $\M'$
 and $\M$
 is in the valuation function 
@@ -170,5 +166,4 @@ The proof of
 the second statement is based 
 on a straightforward adaptation of the above construction without requiring stable preferences.
 \end{proof}
-
 

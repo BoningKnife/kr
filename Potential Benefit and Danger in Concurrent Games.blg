@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Potential Benefit and Danger in Concurrent Games.aux
 The style file: kr.bst
 Database file #1: bib-PHH.bib
-You've used 29 entries,
+You've used 28 entries,
             2568 wiz_defined-function locations,
-            789 strings with 10113 characters,
-and the built_in function-call counts, 13124 in all, are:
-= -- 1454
-> -- 454
+            782 strings with 9930 characters,
+and the built_in function-call counts, 12690 in all, are:
+= -- 1406
+> -- 436
 < -- 12
-+ -- 155
-- -- 148
-* -- 1022
-:= -- 2042
-add.period$ -- 160
-call.type$ -- 29
-change.case$ -- 187
-chr.to.int$ -- 29
-cite$ -- 29
-duplicate$ -- 535
-empty$ -- 949
-format.name$ -- 201
-if$ -- 2775
++ -- 149
+- -- 142
+* -- 981
+:= -- 1972
+add.period$ -- 155
+call.type$ -- 28
+change.case$ -- 180
+chr.to.int$ -- 28
+cite$ -- 28
+duplicate$ -- 521
+empty$ -- 920
+format.name$ -- 192
+if$ -- 2689
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 30
-newline$ -- 188
-num.names$ -- 91
-pop$ -- 141
+missing$ -- 29
+newline$ -- 182
+num.names$ -- 88
+pop$ -- 137
 preamble$ -- 1
-purify$ -- 217
+purify$ -- 209
 quote$ -- 0
-skip$ -- 447
+skip$ -- 436
 stack$ -- 0
-substring$ -- 837
-swap$ -- 167
+substring$ -- 807
+swap$ -- 165
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 228
+type$ -- 220
 warning$ -- 0
-while$ -- 120
-width$ -- 34
-write$ -- 429
+while$ -- 116
+width$ -- 33
+write$ -- 415
