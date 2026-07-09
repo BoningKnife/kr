@@ -1,0 +1,29 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.synctex.gz
+*.xdv
+*.run.xml
+*.vrb
+*.lof
+*.lot
+*.idx
+*.ilg
+*.ind
+*.maf
+*.mtc
+*.mtc0
+*.ptc
+
+# Temporary/editor files
+*~
+.DS_Store
