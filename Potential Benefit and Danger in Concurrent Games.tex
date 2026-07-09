@@ -1,6 +1,6 @@
 %%%% kr-instructions.tex -- version 1.3 (11-Jan-2021)
-\newif\ifarxiv
-\arxivtrue   
+  \newif\ifarxiv
+ \arxivfalse 
 
 \typeout{KR2026 Instructions for Authors}
 
@@ -30,6 +30,9 @@
 \usepackage{algorithmic}
 \urlstyle{same}
 
+\pdfinfo{
+/TemplateVersion (KR.2026.0)
+}
 
 \usepackage{subcaption}
 
@@ -67,7 +70,7 @@
 }
 
 \newcommand{\elnote}[1] {  \footnote{\textbf{EL}: #1} }
-
+\newcommand{\Ylnote}[1] { \footnote{\textcolor{red}{\textbf{YL}: #1} }}
 
 % Following comment is from ijcai97-submit.tex:
 % The preparation of these files was supported by Schlumberger Palo Alto
@@ -111,10 +114,10 @@
 % \fi
 % % Multiple author syntax
 \author{
-Yinfeng Li$^1$\and
-Emiliano Lorini$^1$\\
+Yinfeng Li \and
+Emiliano Lorini\\
 \affiliations
-$^1$IRIT, CNRS, University of Toulouse, Toulouse, France\\
+IRIT, CNRS, University of Toulouse,  France\\
 \emails
 \{yinfeng.li, emiliano.lorini\}@irit.fr
 }
@@ -122,7 +125,7 @@ $^1$IRIT, CNRS, University of Toulouse, Toulouse, France\\
 \begin{document}
 
 \maketitle
-
+ 
 \begin{abstract}
 
 We extend the languages of Coalition Logic ($\cllogic$) and Alternating-time Temporal Logic ($\atllogic$) with new modalities for welfare-affecting capabilities, capturing the benefit and harm that a coalition can bring to another coalition through its strategic choices. These languages are interpreted over concurrent games enriched with agents' preferences. On the conceptual side, we use these languages to formalize the notions of potential benefactor and danger. A potential benefactor corresponds to a coalition having the capability to confer a benefit on another coalition. Danger corresponds to a coalition having the capability to inflict harm on another coalition.  On the technical side, we present several results concerning their axiomatization, their relationships with standard $\cllogic$ and $\atllogic$, and their computational complexity.
@@ -189,7 +192,7 @@ on Alternating-time Temporal Logic ($\mathsf{ATL}$), which enables  reasoning ab
 We refer to these as the $\atlBDlogic$ language, denoting 
 the extension of $\atllogic$ with \emph{welfare-affecting capabilities}.
 It rests on the assumption that a coalition positively (resp.\ negatively) affects 
-the welfare another coalition when the former brings benefit (resp.\ harm) to the latter through the choice of a particular strategy. 
+the welfare of  another coalition when the former brings benefit (resp.\ harm) to the latter through the choice of a particular strategy. 
 Overall, this framework provides a rigorous basis for representing and reasoning about subtle inter-coalitional relationships, capturing the potentially beneficial or harmful influence that one coalition may exert over another.
 
 
@@ -208,7 +211,8 @@ Second, we establish a polynomial embedding of the $\atlBDlogic$ language into s
 its coalition logic ($\cllogic$)
 fragment into standard $\cllogic$. Thanks to these embeddings, we obtain tight complexity results for satisfiability checking.
 
-Although our semantics is game-theoretic, our contribution is not merely semantic: by introducing an explicit language and an axiomatization, we can state and \emph{reason about} welfare-affecting capabilities. This is especially important when such capabilities have a temporal content (e.g., guaranteeing that a harmful situation never occurs), since standard game-theoretic representations do not, by themselves, provide a logical vocabulary to express and manipulate the temporal claims that are part of a coalition's capability.
+The semantics we employ is game-theoretic, as it is based on the notion of concurrent games. However, a key limitation of the game-theoretic approach, compared to our logical framework, is that while it enables the representation of welfare-affecting strategic capabilities, it does not support reasoning about them. This limitation arises because game theory operates solely at the semantic level and does not distinguish between semantics and the level of a logical language. In contrast, our approach allows not only the representation of these concepts, through the semantics of concurrent game frames with regular preferences, but also reasoning about them via a logical language interpreted over this semantic structure.
+
  
 
 
@@ -221,7 +225,9 @@ Section~\ref{sec:axiom} is devoted to the axiomatization of its
 until-free fragment. 
 Section~\ref{sec: tree-like model property and embedding} provides  the polynomial embeddings and
 the complexity results. 
-Finally, Section~\ref{conclusion} concludes the paper. Proofs are provided in a technical appendix included in the supplementary material. In particular, the supplementary material contains the proofs in \appsec{sec:app:prop_strat}{Proof of Proposition~\ref{prop:strat}}, \appsec{sec:app:completeness}{Proof of completeness for $\ourlogic$}, \appsec{sec:app:tree_like}{Proof of Theorem~\ref{theorem: tree-like property}}, and \appsec{sec:app:embedding}{Proof of Theorem~\ref{theo:embedding}}.
+ Finally, Section~\ref{conclusion} concludes the paper. Proofs are provided in the
+ extended version of this paper available at \url{https://hal.science/hal-05609815}. 
+ % In particular, the supplementary material contains the proofs in \appsec{sec:app:prop_strat}{Proof of Proposition~\ref{prop:strat}}, \appsec{sec:app:completeness}{Proof of completeness for $\ourlogic$}, \appsec{sec:app:tree_like}{Proof of Theorem~\ref{theorem: tree-like property}}, and \appsec{sec:app:embedding}{Proof of Theorem~\ref{theo:embedding}}. 
 
 
 
@@ -250,7 +256,7 @@ However, these works do not address the strategic or temporal dimensions of pref
 
 
 The extension of concurrent games with preferences has recently attracted attention as a means to model agents’ rationality~\cite{DBLP:conf/ifaamas/LiLM25}, to capture the game-theoretic concept of iterated elimination of strictly dominated strategies (IESDS)~\cite{LiuEtAl2020}, and to establish connections between $\mathsf{ATL}$ strategic reasoning and correlated equilibrium~\cite{HuangRuan2017}. 
-In~\cite{DBLP:conf/ifaamas/LiLM25}, a new class of models---\emph{concurrent games with preferences}---was introduced, offering a sophisticated framework for representing agents’ preferences over outcomes in concurrent games, as well as their temporal dynamics. We adopt this class of models in the present work. 
+In~\cite{DBLP:conf/ifaamas/LiLM25}, a new class of models, \emph{concurrent games with preferences}, was introduced, offering a sophisticated framework for representing agents’ preferences over outcomes in concurrent games, as well as their temporal dynamics. We adopt this class of models in the present work. 
 In contrast,~\cite{LiuEtAl2020} and~\cite{HuangRuan2017} focus on a simpler notion of dichotomous preference induced by an agent's goal, where the goal is expressed either directly at the model level~\cite{HuangRuan2017} or as a parameter of the modalities capturing the outcomes of the IESDS procedure~\cite{LiuEtAl2020}.
 A quantitative notion of goals, based on a fuzzy interpretation, has recently been incorporated into $\mathsf{ATL}$ and $\mathsf{SL}$~\cite{jamroga2024playing,bouyer2023reasoning}, and has been used to represent agents’ utilities in the context of mechanism design~\cite{MittelmannMMP25}. 
 
@@ -312,7 +318,7 @@ It can be verified that
 $\relAct{\emptyset} = \bigcup_{\ja_{\AGT} \in \ACT^{\AGT}} \relAct{\ja_{\AGT}}.$
 
 In this paper, we treat structures and tuples as mathematical objects and use dot-notation to refer to their components or derived operations.
-For example, $\M.\St$ denotes the set of all states of structure $\M$, and $t.i$ denotes the $i$-th element of tuple $t$. 
+ For example, $\M.\St$ denotes the set of all states of structure $\M$, and $t.i$ denotes the $i$-th element of tuple $t$. 
 
 The following definition
 introduces the concept
@@ -553,7 +559,11 @@ $\history'\not  \preceq_{a,s} \history $.
 %           A CGFP is called a CGF with regular preferences (CGFRP) if it has stable, non-flat, well-founded, and converse well-founded preferences.
 %           \endgroup
 \end{definition}
-Property $\mathbf{SP}$ expresses stability of preferences over time. Property $\mathbf{NFP}$ ensures agents are not indifferent among all outcomes. Properties $\mathbf{WFP}$ and $\mathbf{CWFP}$
+Property $\mathbf{SP}$ expresses stability of preferences over time. 
+It captures the idea that an agent's preference remains consistent over time: an agent prefers a computation $\lambda$ to a computation $\lambda'$ starting at the same state $s'$ if and only if it prefers the precursor of $\lambda$ (i.e., $s\lambda$) to the precursor of $\lambda'$ (i.e., $s\lambda'$) at every predecessor $s$ of $s'$.
+It  is in line with the notion of \emph{time consistency} of preferences studied in economics, as opposed to \emph{time inconsistency} \cite{Lowewenstein2002}. 
+Property $\mathbf{NFP}$ ensures agents are not indifferent among all outcomes. Properties $\mathbf{WFP}$ and $\mathbf{CWFP}$ guarantee, respectively, the existence of worst and best outcomes. 
+
 
 \subsection{From Frames to Models}\label{CGMRPsect}
 
@@ -619,9 +629,9 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
     \captionsetup[subfigure]{skip=1pt}
 
     % --- Subfigure (a): TikZ diagram ---
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \fbox{\begin{minipage}{0.95\linewidth}
+        \fbox{\begin{minipage}{0.9\linewidth}
         \centering
         \begin{tikzpicture}[
             scale=0.8, transform shape,
@@ -657,9 +667,9 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
     \vspace{0.35em}
 
     % --- Subfigure (b): Delta table ---
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \fbox{\begin{minipage}{0.98\linewidth}\vspace{-1em}
+        \fbox{\begin{minipage}{0.9\linewidth}\vspace{-1em}
         \[
         \begin{array}{ll}
         \delta_1 = (0{:}\mathit{le}, 1{:}\mathit{bl}, 2{:}\mathit{bl}) & \delta_5 = (0{:}\mathit{ri}, 1{:}\mathit{bl}, 2{:}\mathit{bl}) \\
@@ -675,10 +685,9 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
     \vspace{0.35em}
 
     % --- Subfigure (c): Utility definition ---
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \fbox{\begin{minipage}{0.55\textwidth}
-          \vspace{-1em}
+        \fbox{\begin{minipage}{0.70\linewidth}\vspace{-1em}
         \begin{align*}
       \forall s\in\{s_0,s_1,s_2\},&\,
      \forall\lambda, \lambda' \in 
@@ -690,18 +699,18 @@ The CGMRP corresponding to this scenario is shown in Figure~\ref{CGMRPscenario}.
         \begin{align*}
         U_0(\lambda)=
         \begin{cases}
-        0 & \text{if } \forall  k \geq 0, 
-   \{\mathit{inR}_0,\mathit{inL}_0\}  \cap \valProp(\lambda(k)) =  
+        0 & \! \text{if } \forall  k \geq 0  , 
+   \{\mathit{inR}_0, \!\mathit{inL}_0\}  \!\cap \!\valProp(\lambda(k)) =  
       \emptyset,\\
-        1 & \text{otherwise} ;
+        1 & \! \text{otherwise} ;
         \end{cases}\\
         U_1(\lambda)=  U_2(\lambda)=
         \begin{cases}
-        0 & \text{if } \exists   k \geq 0
+        0 & \! \text{if } \exists   k \geq 0
         \text{ such that }\\
-&      \{\mathit{inR}_0,\mathit{inL}_0\}  \cap \valProp(\lambda(k)) \neq 
+&      \{\mathit{inR}_0,\!\mathit{inL}_0\}  \!\cap\! \valProp(\lambda(k)) \neq 
       \emptyset ,\\
-        1 & \text{otherwise} .
+        1 & \! \text{otherwise} .
         \end{cases}
         \end{align*}
         \end{minipage}}
@@ -746,7 +755,9 @@ this function assigns a value of~$1$ to a computation that allows the robot to a
 In this section, we introduce the concepts of  beneficial  and  harmful  strategies. The intuition is straightforward: the strategy of a coalition is said to be beneficial (resp. harmful) for another coalition if the choice of that strategy by the first coalition guarantees a good (resp. bad) outcome for the second coalition. We further distinguish between \emph{strongly} and \emph{weakly} beneficial (or harmful) strategies, based on two different interpretations of what constitutes a good or bad outcome for a coalition.
 A strategy is \emph{strongly beneficial} (resp.\ \emph{strongly harmful}) for a coalition if it guarantees the best (resp. worst) outcome that the agents in the coalition could obtain. Conversely, a strategy is \emph{weakly beneficial} (resp.\ \emph{weakly harmful}) for a coalition if it guarantees an outcome that is better (resp.\ worse) for the agents in the coalition than the one they could obtain if the strategy were not played.
 
-The weak notions provide a natural baseline and allow us to relate alternative welfare-improvement criteria (in particular, strong benefit/harm implies weak benefit/harm). In the semantics of the welfare-affecting strategic capability modalities of $\lang_{\atlBDlogic}$, however, we quantify only over the \emph{strong} notions, since our axiomatization and embedding into standard $\atllogic$ rely on best/worst outcomes (whose existence is guaranteed by the regularity assumptions on preferences).
+
+In the semantic interpretation of the welfare-affecting strategic capability modalities we will introduce in Section \ref{sec:languages}, we will only use the strong notions, since our axiomatization and embedding into standard $\atllogic$ rely on the notions of best and worst outcomes (whose existence is guaranteed by the regularity assumption on preferences). However, the weak notions are provided here for two reasons: to show that there is no unique way to define beneficial or harmful strategy, and to make the conceptual analysis of beneficial/harmful strategies richer. 
+
 
 
 
@@ -775,7 +786,7 @@ for coalition $\GroupH$ at state $s$
 of the CGMRP $\M$, respectively.
 \end{definition}
 
-Let us now turn to the notion of \emph{weakly} beneficial and harmful strategies.
+Let us now turn to the notion of  weakly beneficial and harmful strategies.
 \begin{definition}[Weakly beneficial and harmful strategy]\label{def: weak help and harm}
 Let $\M = (\P, \V)$ be a CGMRP with underlying CGFRP $\P = (\F, \preceq)$.
 We say a strategy $\js_\Coalition$ of coalition $\Coalition$ is weakly beneficial for coalition $\GroupB\subseteq \AGT$ at the state $s$
@@ -844,12 +855,8 @@ but not strongly harmful.
 
 \end{example}
 
-The following proposition 
- highlights the connection between
- strongly beneficial/harmful
- and 
-  weakly beneficial/harmful. 
-The proof is given in section \ref{sec:app:prop_strat} of the supplementary material.
+The following proposition highlights the connection between strongly beneficial/harmful and weakly beneficial/harmful strategies. 
+% The proof is given in section \ref{sec:app:prop_strat} of the supplementary material.
 
   \begin{proposition}\label{prop:strat}
   If 
@@ -910,14 +917,14 @@ In this section, we leverage the semantics presented above to interpret a novel 
 
 The $\atllogic$ language with \emph{welfare-affecting capability} modalities, denoted by $\lang_{\atlBDlogic} $, is defined by the following grammar:
 \begin{center}\begin{tabular}{lcl}
-State formula: &$\varphi $  & $\bnf p \mid \neg\varphi \mid \varphi \wedge \varphi   \mid \atlbh{\Coalition}{\GroupB}{\GroupH}\gamma $\\
+State formula: &$\varphi, \psi $  & $\bnf p \mid \neg\varphi \mid (\varphi \wedge \psi )   \mid \atlbh{\Coalition}{\GroupB}{\GroupH}\gamma $\\
 Path formula: &$\gamma $ & $\bnf \X \phi \mid 
 \henceforth  \varphi 
  \mid 
  (\until{\varphi}{\psi})$
 \end{tabular}\end{center}
 where  $p$
-ranges over $\AP$,
+ranges over $\AP$, 
 and $\Coalition$, $\GroupB$ and $\GroupH$ range over $\powerset{\AGT}$. 
 The other Boolean connectives
 and constructs 
@@ -964,14 +971,12 @@ harmful to group $\GroupH$, and guarantees that
 
 We can now define the semantic interpretation of formulas in $\lang_{\atlBDlogic}(\AGT, \AP)$.  
 As in $\mathsf{ATL}$, formulas are interpreted with respect to \emph{pointed models}. 
-A pointed model is:
-a pair consisting of a CGMRP and one of its states, in the case of interpreting a state formula,
-or a pair consisting of a CGMRP and one of its computations, in the case of interpreting a path formula.
+A pointed model is a pair consisting of a CGMRP and one of its states, when interpreting a state formula, or a pair consisting of a CGMRP and one of its computations, when interpreting a path formula. 
 
 In Section~\ref{sec:benharm}, we introduced two notions of beneficial and harmful strategies: strong and weak.  
 To interpret the welfare-affecting strategic capability modalities $\atlbh{\Coalition}{\GroupB}{\GroupH}$, we consider only the strong notion. 
 Specifically, the existential quantification ranges over strongly beneficial or harmful strategies of a coalition.
-This choice is motivated by our technical results: strong benefit/harm is tailored to best/worst outcomes and is the notion for which we provide an axiomatization and obtain the embedding into standard $\atllogic$ under regular preferences.
+This choice is motivated by our technical results: strong benefit and harm are tailored to best and worst outcomes, and they are the notions for which we provide an axiomatization and obtain an embedding into standard $\atllogic$ under regular preferences. 
 
 The satisfaction relation, denoted by $\models$, between formulas of $\lang_{\atlBDlogic} $ and pointed models is defined inductively as follows. 
 (The cases for atomic propositions and Boolean connectives are omitted, as they are standard.)
@@ -1022,17 +1027,7 @@ Analogously, a coalition $\Coalition$ is said to be a    danger  for another coa
    \nexttime \top .
 \end{align*}
 
-Formulas with \emph{nested} welfare-affecting strategic modalities are useful to reason about \emph{danger-enabling} and \emph{danger-disabling} strategic choices in multi-agent settings. For instance, in the robots scenario, one can express that the coalition $\{0,1\}$ has a strategy that is strongly beneficial to robot~$0$ and guarantees that in the next state robot~$0$ becomes a danger to $\{1,2\}$, even though robot~$0$ is not a danger to $\{1,2\}$ in the current state:
-\begin{align*}
-&\atlbh{\{0,1\}}{\{0\}}{\emptyset}\nexttime \mathsf{Danger}(\{0\},\{1,2\})
-\ \wedge\ \neg \mathsf{Danger}(\{0\},\{1,2\}).
-\end{align*}
-Unfolding the abbreviation for $\mathsf{Danger}$, the first conjunct is equivalent to the nested formula
-$
-\atlbh{\{0,1\}}{\{0\}}{\emptyset}\nexttime
-\big(\atlbh{\{0\}}{\emptyset}{\{1,2\}}\nexttime \top\big)
-$.
-Intuitively, robot~$0$ is initially not a danger because robots~$1$ and~$2$ can coordinate to block access to their rooms; however, robot~$1$ may choose to leave its passage unguarded, allowing robot~$0$ to enter and then remain in the room indefinitely, thereby preventing robots~$1$ and~$2$ from achieving their objective.
+
 
 
 Let us go back 
@@ -1063,9 +1058,13 @@ coalition $\{1,2\}$ is a potential benefactor for itself and a danger for robot 
 
 
 
-
-
-    
+Formulas with nested  welfare-affecting strategic modalities are useful to reason about danger-enabling and danger-disabling strategic choices in multi-agent settings. For instance, in the robots scenario, one can express that the coalition $\{0,1\}$ has a strategy that is strongly beneficial to robot~$0$ and guarantees that in the next state robot~$0$ becomes a danger to $\{1,2\}$, even though robot~$0$ is not a danger to $\{1,2\}$ in the current state:
+\begin{align*}
+(\M_{\mathit{rs}}, s_0)\models & \atlbh{\{0,1\}}{\{0\}}{\emptyset}\nexttime \ \mathsf{Danger}(\{0\},\{1,2\})
+\ \wedge \\
+& \neg \mathsf{Danger}(\{0\},\{1,2\}).
+\end{align*} 
+Intuitively, robot~$0$ is initially not a danger because robots~$1$ and~$2$ can coordinate to block access to their rooms; however, robot~$1$ may choose to leave its passage unguarded, allowing robot~$0$ to enter and then remain in the room indefinitely, thereby preventing robots~$1$ and~$2$ from achieving their objective.  
 \end{example}
 
 
@@ -1091,7 +1090,7 @@ are definable as special cases of $\atlBDlogic$ modalities:
 
 For notational convenience, we denote by $\lang_{\atllogic}$ the $\atllogic$-fragment of the language $\lang_{\atlBDlogic}$ that includes only modalities of the form $\atlbh{\Coalition}{\emptyset}{\emptyset}$.
 
-We conclude this section by defining two additional fragments of the language $\lang_{\atlBDlogic}$. 
+We conclude this section by defining two   fragments of the language $\lang_{\atlBDlogic}$. 
 The following grammar defines the
 until-free 
 \emph{safety} fragment 
@@ -1336,11 +1335,11 @@ Given a canonical state $s$ and action profile $\ja : \AGT \to \ACT^{\psi }$,
 we call a state $s'$ the candidate successors of $\ja$ at $s$, iff:
 \begin{itemize}
     \item for all $\atlbh{\Coalition}{B}{H}\nexttime \chi\in \Consesus(\ja)$, if $
-    \vdash \bigwedge_{\phi \in X} \phi\rightarrow \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $  \vdash \bigwedge_{\chi \in s.1 } \chi \rightarrow \chi$, $B\subseteq s.2$, and $H\subseteq s.3$;
-    \item for all $\chi\in \ecl(\psi)$ and $B,H\in \powerset{\AGT}$, if $ \nvdash \bigwedge_{\phi \in s.1} \phi \rightarrow \atlbh{\AGT}{B}{H}\nexttime \chi$, then $\vdash \bigwedge_{\chi \in s.1 } \chi \rightarrow \neg \chi$, $B\nsubseteq s.2$, or $H\nsubseteq s.3$.
+    \vdash \bigwedge_{\phi \in s.1} \phi\rightarrow \atlbh{\Coalition}{B}{H}\nexttime \chi$, then $  \vdash \bigwedge_{\phi \in s'.1 } \phi \rightarrow \chi$, $B\subseteq s'.2$, and $H\subseteq s'.3$;
+    \item for all $\chi\in \ecl(\psi)$ and $B,H\in \powerset{\AGT}$, if $ \nvdash \bigwedge_{\phi \in s.1} \phi \rightarrow \atlbh{\AGT}{B}{H}\nexttime \chi$, then $\vdash \bigwedge_{\phi \in s'.1 } \phi \rightarrow \neg \chi$, $B\nsubseteq s'.2$, or $H\nsubseteq s'.3$.
 \end{itemize}
 The set of all candidate successors of $\ja$ at $s$ is denoted by $\CS(s,\ja)$.
-\end{definition}
+\end{definition} 
 The  transition relation in the canonical model is definable through the previous notion
 of candidate successor.
 It can be verified that
@@ -1359,10 +1358,10 @@ the  election relative to the action profile $\ja$.
 
 We have now all elements
 to the define the notion
-of canonical concurrent game model. 
+of canonical concurrent game model.  
 
 \begin{definition}[Canonical CGM]\label{def: canonicalCGM}
-  Given a formula $\psi $, define the canonical concurrent game model as the following structure $\CM^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \V^\psi)$:
+  Given a formula $\psi $, define the canonical concurrent game model as the  structure $\CM^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \V^\psi)$ such that: 
   \begin{itemize}
     \item $\St^{\psi }$ is the set of all canonical states under the  $\psi $-context;
     \item $\ACT^{\psi }$ is the set of all canonical actions under $\psi $-context;
@@ -1374,31 +1373,29 @@ of canonical concurrent game model.
   \end{itemize} 
 \end{definition}
 
-To define the prefereces of agents in the canonical model, we need to define a utility function and the order on them
+To define the prefereces of agents in the canonical model, we need to define a utility function and the order on them. 
 \begin{definition}[Utility function in canonical model]
-  Given a canonical CGM $\CM^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$, for each agent $a$ and canonical state $s$, we define a utility function as $U_{a,s}: \Comp_{\M^\psi, s} \to \mathbb{Z}\cup \{-\omega,\omega\}$ such that for any computation $\history \in \Comp_{\M^\psi, s}$: 
+  Given a canonical CGM $\CM^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \V^\psi)$, for each agent $a$ and canonical state $s$, we define a utility function $U_{a,s}: \Comp_{\M^\psi, s} \to \mathbb{Z}\cup \{-\infty, +\infty\}$ such that for any computation $\history \in \Comp_{\CM^\psi, s}$: 
 \[
 U_{a,s}(\history) = 
 \begin{cases} 
-\sup\{k\in \mathbb{N}\cup \{\omega\}&\mid  \forall k'<k: a\in \history(k').2\}\\
-&\text{if } a\in \history(1).2,\\
--\sup\{k\in \mathbb{N}\cup \{\omega\}&\mid  \forall k'<k: a\in \history(k').3\} \\
-& \text{if } a\in \history(1).3,\\
++\sup(\mathbb{B}) & \text{if } a\in \history(1).2,\\
+-\sup(\mathbb{H}) & \text{if } a\in \history(1).3,\\
 0 & \text{otherwise.}
 \end{cases}
 \]
-where $\sup$ is the supremum function. Note $s'.2\cap s'.3=\emptyset$ for every $s'\in \St^\psi$, so $\U_{a,s}$ is well-defined.
+where $\sup$ is the supremum function, $\mathbb{B}=\{k\in \mathbb{N}\mid  \forall 0< k'\leq k: a\in \history(k').2\}$, and $\mathbb{H}=\{k\in \mathbb{N}\mid  \forall 0< k'\leq k: a\in \history(k').3\}$. Note $s'.2\cap s'.3=\emptyset$ for every $s'\in \St^\psi$, so $U_{a,s}$ is well-defined.
 \end{definition}
-Now we can define the canonical CGMRP
+Now we can define the canonical CGMRP. 
 \begin{definition}[Canonical CGMRP]\label{def: canonicalmodel}
-  Given a formula $\psi $, define the canonical CGMRP as the following structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$:
+  Given a formula $\psi $, define the canonical CGMRP as the structure $\M^\psi = (\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$ such that:
   \begin{itemize}
-    \item $(\St^{\psi }, \ACT^{\psi }, \R^\psi, \preceq^\psi, \V^\psi)$ is the canonical CGM defined in Definition \ref{def: canonicalCGM};
+    \item $(\St^{\psi }, \ACT^{\psi }, \R^\psi, \V^\psi)$ is the canonical CGM defined in Definition \ref{def: canonicalCGM};
     \item $\preceq^\psi $ assigns to
     each agent-state pair
     $(a,s)$ a total preorder on computations starting at $s$
     such that for all $\history,\history'\in \historyset_{\M^\psi,s}$:\\
-     $\history \preceq^\psi_{a,s} \history'$ iff $U_{a,s}(\history) \geq U_{a,s}(\history')$.
+     $\history \preceq^\psi_{a,s} \history'$ iff $U_{a,s}(\history) \leq U_{a,s}(\history')$.
   \end{itemize} 
 \end{definition}
 
@@ -1407,8 +1404,8 @@ guarantees that every
 consistent formula
 has a witness state
 in the canonical model. By the lemma, 
-we have the completeness. By the previous lemma, 
-we can state the following result. The proof is given in section \ref{sec:app:completeness} of the supplementary material.
+we have the completeness. 
+% The proof is given in section \ref{sec:app:completeness} of the supplementary material. 
 \begin{lemma}\label{lem: realazation}
 Let $\varphi \in \lang_{\atlBDlogic^{-\U}} $ be a consistent formula. Then,  there is a state $s\in \St^\varphi$ in the canonical model $\M^\varphi$ such that $\M^\varphi,s \models \varphi$.
 \end{lemma}
@@ -1423,7 +1420,7 @@ A formula $\varphi \in \lang_{\atlBDlogic^{-\U}}$ is  valid  if and only if $\vd
 In this section, we show that satisfiability for the language $\lang_{\atlBDlogic}$ satisfies the tree-like model property. Based on this result, we provide polynomial embeddings of $\lang_{\atlBDlogic}$-satisfiability into $\atllogic$-satisfiability, and of $\lang_{\clBDlogic}$-satisfiability into $\cllogic$-satisfiability.
  
 
-\subsection{Tree-like Model Property}
+\subsection{Tree-like Property}
 Let
  $\R^*$, $\R^-$ and $\R^+$
 be, respectively, the reflexive and  transitive closure,
@@ -1449,7 +1446,8 @@ The previous definition
 of tree-like CGF extends
 to tree-like CGFRP
 and tree-like CGMRP in a natural way.  
-The tree-like model property is stated in the following lemma. Its proof is given in section \ref{sec:app:tree_like} of the supplementary material. 
+The tree-like model property is stated in the following lemma. 
+% Its proof is given in section \ref{sec:app:tree_like} of the supplementary material. 
 
      %\cite{ArxivAAMAS26} %in the supplementary material. 
      % The proof is similar to the proof of tree-like model property for $\atlratlogic$ in \cite{DBLP:conf/ifaamas/LiLM25}. 
@@ -1498,7 +1496,8 @@ The idea behind the above translation is to label, at the language level, benefi
 The key observation underlying the embedding for the full language $\lang_{\atlBDlogic}$ is that, in a tree-like model, whether a coalition’s strategy is beneficial or harmful for an agent depends only on whether the next state is the second element of a best (resp.\ worst) computation for that agent. 
 Stability of preferences ensures that the $\help \GroupB$/$\harm \GroupH$-labeling assigned at the current state remains consistent over time.
 
-As the following theorem shows, by using the translation $ \mathit{tr}$, satisfiability for the language $\lang_{\atlBDlogic}$ is reducible to $\atllogic$-satisfiability, and satisfiability for the fragment $\lang_{\clBDlogic}$ is reducible to $\cllogic$-satisfiability. Its proof is given in section \ref{sec:app:embedding} of the supplementary material. %\cite{ArxivAAMAS26}. %in the supplementary material.
+As the following theorem shows, by using the translation $ \mathit{tr}$, satisfiability for the language $\lang_{\atlBDlogic}$ is reducible to $\atllogic$-satisfiability, and satisfiability for the fragment $\lang_{\clBDlogic}$ is reducible to $\cllogic$-satisfiability. 
+% Its proof is given in section \ref{sec:app:embedding} of the supplementary material. %\cite{ArxivAAMAS26}. %in the supplementary material.
  \begin{theorem}\label{theo:embedding}
      Let $\varphi \in \lang_{\atlBDlogic} $
      and $\psi  \in \lang_{\clBDlogic} $. 
@@ -1506,7 +1505,16 @@ As the following theorem shows, by using the translation $ \mathit{tr}$, satisfi
      \begin{itemize}
          \item $\varphi $
      is satisfiable 
-     iff $\mathit{tr}(\varphi) \wedge \bigwedge_{a\in\AGT}(\atlop{\AGT}\X\help_a\wedge\atlop{\AGT}\X\harm_a)\wedge \atlop{\emptyset }\G\big(\bigwedge_{a\in\AGT}(\atlop{\AGT}\X\help_a\wedge\atlop{\AGT}\X\harm_a \wedge \neg(\help_a\wedge\harm_a) )\big)$
+     iff
+     \begin{align*}
+         \mathit{tr}(\varphi) \wedge \bigwedge_{a\in\AGT}(\atlop{\AGT}\X \help_a\wedge
+     \atlop{\AGT}\X\harm_a)\wedge 
+      \\
+      \atlop{\emptyset }\G  \big(\bigwedge_{a\in\AGT}(\atlop{\AGT}\X  \help_a\wedge\atlop{\AGT}\X\harm_a \wedge \\
+       \neg(\help_a\wedge\harm_a) )\big)
+     \end{align*}
+     % $\mathit{tr}(\varphi) \wedge \bigwedge_{a\in\AGT}(\atlop{\AGT}\X \help_a\wedge
+     % \atlop{\AGT}\X\harm_a)\wedge \atlop{\emptyset }\G\big(\bigwedge_{a\in\AGT}(\atlop{\AGT}\X  \help_a\wedge\atlop{\AGT}\X\harm_a \wedge \neg(\help_a\wedge\harm_a) )\big)$
      is satisfiable;
      % \elnote{
      % I think there is problem
@@ -1518,8 +1526,14 @@ As the following theorem shows, by using the translation $ \mathit{tr}$, satisfi
      \item 
      $\psi $
      is satisfiable   
-     iff $\mathit{tr}(\psi) \wedge \bigwedge_{a\in\AGT}
-     \big(\atlop{\AGT}\X\help_a\wedge\atlop{\AGT}\X\harm_a\wedge\atlop{\emptyset }\X\neg(\help_a\wedge\harm_a) \big)$
+     iff 
+       \begin{align*}
+\mathit{tr}(\psi) \wedge \bigwedge_{a\in\AGT}
+     \big(\atlop{\AGT}\X  \help_a\wedge\atlop{\AGT}\X\harm_a\wedge\\
+     \atlop{\emptyset }\X\neg(\help_a\wedge\harm_a) \big)
+         \end{align*} 
+     % $\mathit{tr}(\psi) \wedge \bigwedge_{a\in\AGT}
+     % \big(\atlop{\AGT}\X  \help_a\wedge\atlop{\AGT}\X\harm_a\wedge\atlop{\emptyset }\X\neg(\help_a\wedge\harm_a) \big)$
      is satisfiable.
      
      \end{itemize}
@@ -1552,12 +1566,18 @@ restricting to the fragment $\lang_{\clBDlogic}$.
 
 We have introduced a novel language based on $\mathsf{ATL}$ that enables reasoning about beneficial and harmful strategies, as well as the related notions of potential benefactor and danger. Our analysis is supported by several results concerning the axiomatizability and computational complexity of the proposed language.
 
-The axiomatizability of the full language $\lang_{\atlBDlogic}$, including the `until' modality, remains open. We plan to address this issue in future work. We also intend to extend our analysis to a risk-based notion of danger, according to which a coalition is a danger to another coalition if it has a strategy that, if chosen, brings harm to the latter with high probability. This extension will require enriching CGMRPs with a probabilistic component.
-
+The axiomatizability of the full language $\lang_{\atlBDlogic}$, including the `until' modality, remains open. We plan to address this issue in future work. We also intend to extend our analysis to a risk-based notion of danger, according to which a coalition is a danger to another coalition if it has a strategy that, if chosen, brings harm to the latter with high probability. This extension will require enriching CGMRPs with a probabilistic component. 
 Finally, we plan to combine the notion of danger investigated in this paper with a game-theoretic notion of rationality in order to define the concept of \emph{strong danger}: a coalition $\Coalition$ is a strong danger to another coalition $\GroupH$ if it has a \emph{rational} strategy that, if chosen, brings harm to $\GroupH$. It is called strong because it is realistic to assume that the agents in $\Coalition$ may choose the harmful strategy, provided they act rationally.
 
+
+\section*{Acknowledgments}
+This work is   supported by the TIRIS project CaRe (Caring about Others: AI and Psychology Meet to Model and Automate Collective
+Reasoning) 
+and the ANR PRCE project DesiRes (Designing Artificial Reasoners for Communication). 
+
+
 \section*{AI Declaration}
-We used generative AI tools (OpenAI Codex/ChatGPT) to help identify typos and improve readability (e.g., phrasing and grammar). All scientific content, definitions, proofs, and claims were produced and verified by the authors, who take full responsibility for the paper.
+We used generative AI tools solely to identify typographical and grammatical errors. All text, scientific content, definitions, proofs, and claims were produced and verified by the authors, who take full responsibility for the paper. 
 
 
 
@@ -1568,6 +1588,6 @@ We used generative AI tools (OpenAI Codex/ChatGPT) to help identify typos and im
 
 
 \ifarxiv
-\newpage \input{appendix}
+\clearpage \input{appendix}
 \fi
 \end{document}
