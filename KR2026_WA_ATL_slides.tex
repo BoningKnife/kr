@@ -1,0 +1,512 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{LogicYinfeng,StrategicYinfeng}
+
+\definecolor{KRBlue}{RGB}{26,74,122}
+\definecolor{KRTeal}{RGB}{0,120,115}
+\definecolor{KRRust}{RGB}{156,78,42}
+\definecolor{KRGray}{RGB}{70,75,80}
+
+\setbeamercolor{title}{fg=KRBlue}
+\setbeamercolor{frametitle}{fg=KRBlue}
+\setbeamercolor{structure}{fg=KRTeal}
+\setbeamercolor{block title}{bg=KRBlue!10,fg=KRBlue}
+\setbeamercolor{block body}{bg=KRBlue!3,fg=black}
+\setbeamercolor{alerted text}{fg=KRRust}
+
+\newcommand{\WATL}{\ensuremath{\mathsf{WA{-}ATL}}\xspace}
+\newcommand{\WCL}{\ensuremath{\mathsf{WA{-}CL}}\xspace}
+\newcommand{\Benef}{\mathsf{Benef}}
+\newcommand{\Danger}{\mathsf{Danger}}
+\newcommand{\tr}{\mathit{tr}}
+\newcommand{\SB}{\mathit{StrSB}}
+\newcommand{\SH}{\mathit{StrSH}}
+
+\title[Welfare-Affecting Capabilities]{Reasoning about Welfare-Affecting Capabilities in Concurrent Games}
+\author[Y. Li and E. Lorini]{Yinfeng Li \and Emiliano Lorini}
+\institute[IRIT]{IRIT, CNRS, University of Toulouse}
+\date[KR 2026]{KR 2026}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{The Question}
+  \begin{block}{Strategic ability is not only about achieving goals}
+    In multi-agent systems, a coalition's choices may also affect the welfare of other agents.
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.49\textwidth}
+    \textbf{Classical ATL/CL asks}
+    \begin{itemize}
+      \item Can coalition $C$ ensure $\varphi$?
+      \item Can $C$ keep $\varphi$ true forever?
+    \end{itemize}
+
+    \column{0.49\textwidth}
+    \textbf{We also ask}
+    \begin{itemize}
+      \item Can $C$ benefit coalition $B$?
+      \item Can $C$ harm coalition $H$?
+      \item Can it do so while ensuring $\varphi$?
+    \end{itemize}
+  \end{columns}
+
+  \vspace{0.6em}
+  \centering
+  \alert{Who is a potential benefactor, and who is a danger?}
+\end{frame}
+
+\begin{frame}{Two Conceptual Ingredients}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{block}{Harm and benefit}
+      We follow a non-comparative intuition:
+      \begin{itemize}
+        \item harm: bringing about a bad outcome;
+        \item benefit: bringing about a good outcome.
+      \end{itemize}
+      Good and bad outcomes are represented through agents' preferences.
+    \end{block}
+
+    \column{0.48\textwidth}
+    \begin{block}{Danger}
+      We follow a modal, non-probabilistic intuition:
+      \begin{itemize}
+        \item a coalition is dangerous if it has the potential to harm;
+        \item potential means existence of a suitable strategy.
+      \end{itemize}
+    \end{block}
+  \end{columns}
+
+  \vspace{0.7em}
+  \centering
+  \large
+  \[
+    \text{strategic capability} + \text{preference over outcomes}
+    \quad \Rightarrow \quad
+    \text{welfare-affecting capability}
+  \]
+\end{frame}
+
+\begin{frame}{Main Contributions}
+  \begin{enumerate}
+    \item A semantics based on concurrent games enriched with agents' preferences over computations.
+    \item New ATL and CL modalities for welfare-affecting strategic capabilities:
+      \[
+        \atlbh{C}{B}{H}\gamma
+      \]
+      ``$C$ has a strategy that benefits $B$, harms $H$, and guarantees $\gamma$.''
+    \item Formal definitions of:
+      \[
+        \Benef(C,B), \qquad \Danger(C,H).
+      \]
+    \item Technical results:
+      \begin{itemize}
+        \item sound and complete axiomatization for the until-free fragment;
+        \item polynomial embedding into standard ATL/CL with special atoms marking benefited and harmed agents;
+        \item tight satisfiability complexity: \Exptime-complete for \WATL, \Pspace-complete for \WCL.
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Models: Concurrent Games with Preferences}
+  A model is a concurrent game model with regular preferences:
+  \[
+    \M = (\P,\V)
+  \]
+  where $\P$ contains:
+  \begin{itemize}
+    \item states and action profiles;
+    \item a transition relation induced by joint actions;
+    \item for each agent $i$ and state $s$, a preference order
+      \[
+        \preceq_{i,s}
+      \]
+      over computations starting at $s$.
+  \end{itemize}
+
+  \vspace{0.5em}
+  \begin{block}{Regular preferences}
+    We assume stability over time, non-flatness, and existence of best and worst computations.
+    These assumptions support the strong notions of benefit and harm.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Running Example: Robots and Charging Rooms}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.42\textwidth}
+    \includegraphics[width=\linewidth]{ImageSpace.pdf}
+
+    \column{0.56\textwidth}
+    \begin{itemize}
+      \item Robot $0$ starts in the middle room.
+      \item It wants to reach a charging station on the left or right.
+      \item Robots $1$ and $2$ guard the right and left passages.
+      \item Each guard can block or free its passage.
+    \end{itemize}
+
+    \vspace{0.4em}
+    \begin{block}{Preference profile}
+      Robot $0$ prefers computations where it eventually reaches a charging station.
+
+      Robots $1$ and $2$ prefer computations where robot $0$ never reaches one.
+    \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{The Game Structure}
+  \centering
+  \begin{tikzpicture}[
+      scale=0.92, transform shape,
+      semithick,
+      state/.style={circle, draw, minimum size=12mm, inner sep=0pt, font=\small},
+      labelbox/.style={rounded corners=2pt, inner sep=2pt, font=\scriptsize, fill=white, draw=none}
+    ]
+    \node[state,label=below:$s_2$] (L) at (0,0) {$\mathit{inL}_0$};
+    \node[state,label=below:$s_0$] (C) at (4,0) {$\mathit{inM}_0$};
+    \node[state,label=below:$s_1$] (R) at (8,0) {$\mathit{inR}_0$};
+
+    \path[->] (C) edge[loop above] node[above,labelbox] {$\delta_1,\delta_3,\delta_5,\delta_6$} ();
+    \path[->] (R) edge[loop above] node[above,labelbox,text width=30mm,align=center] {$\delta_1,\delta_2,\delta_5,\delta_6,\delta_7,\delta_8$} ();
+    \path[->] (L) edge[loop above] node[above,labelbox,text width=30mm,align=center] {$\delta_1,\delta_2,\delta_3,\delta_4,\delta_5,\delta_7$} ();
+
+    \draw[->,bend left=12] (C) to node[midway, above,labelbox] {$\delta_7,\delta_8$} (R);
+    \draw[->,bend left=12] (R) to node[midway, below,labelbox] {$\delta_3,\delta_4$} (C);
+    \draw[->,bend left=12] (C) to node[midway, below,labelbox] {$\delta_2,\delta_4$} (L);
+    \draw[->,bend left=12] (L) to node[midway, above,labelbox] {$\delta_6,\delta_8$} (C);
+  \end{tikzpicture}
+
+  \vspace{0.8em}
+  \begin{adjustbox}{max width=0.88\textwidth}
+  \begin{tabular}{llll}
+    $\delta_1=(0{:}\mathit{le},1{:}\mathit{bl},2{:}\mathit{bl})$ &
+    $\delta_2=(0{:}\mathit{le},1{:}\mathit{bl},2{:}\mathit{fr})$ &
+    $\delta_7=(0{:}\mathit{ri},1{:}\mathit{fr},2{:}\mathit{bl})$ &
+    $\delta_8=(0{:}\mathit{ri},1{:}\mathit{fr},2{:}\mathit{fr})$
+  \end{tabular}
+  \end{adjustbox}
+
+  \vspace{0.4em}
+  The relevant strategic tension is: guards can jointly keep robot $0$ in the middle.
+\end{frame}
+
+\begin{frame}{Strong Benefit and Strong Harm}
+  Let $\outset_\F(s,\js_C)$ be the computations compatible with strategy $\js_C$ from $s$.
+
+  \vspace{0.3em}
+  \begin{block}{Strongly beneficial for $B$}
+    \[
+      \js_C \in \SB^\Coalition_\M(s,B)
+      \quad \text{iff} \quad
+      \outset_\F(s,\js_C) \subseteq \Best_{i,s}
+      \text{ for every } i\in B.
+    \]
+  \end{block}
+
+  \begin{block}{Strongly harmful for $H$}
+    \[
+      \js_C \in \SH^\Coalition_\M(s,H)
+      \quad \text{iff} \quad
+      \outset_\F(s,\js_C) \subseteq \Worst_{i,s}
+      \text{ for every } i\in H.
+    \]
+  \end{block}
+
+  \vspace{0.2em}
+  \centering
+  Strong benefit/harm means guaranteeing best/worst outcomes for the affected coalition.
+\end{frame}
+
+\begin{frame}{Example: Blocking as Harm}
+  Consider the strategy of coalition $\{1,2\}$:
+  \[
+    \js_{\{1,2\}}(\lambda) = (1{:}\mathit{bl},2{:}\mathit{bl})
+    \quad\text{for every history }\lambda.
+  \]
+
+  \vspace{0.4em}
+  Then at the initial state $s_0$:
+  \[
+    \js_{\{1,2\}} \in
+    \SH_{\M_{\mathit{rs}}}^{\{1,2\}}(s_0,\{0\})
+    \quad\text{and}\quad
+    \js_{\{1,2\}} \in
+    \SB_{\M_{\mathit{rs}}}^{\{1,2\}}(s_0,\{1,2\}).
+  \]
+
+  \vspace{0.5em}
+  \begin{block}{Reading}
+    The same strategy is harmful to robot $0$ and beneficial to the guarding coalition.
+  \end{block}
+\end{frame}
+
+\begin{frame}{The Language \WATL}
+  \[
+  \begin{array}{rcl}
+    \varphi,\psi &::=& p \mid \neg\varphi \mid \varphi\wedge\psi
+      \mid \atlbh{C}{B}{H}\gamma \\[0.2em]
+    \gamma &::=& \X\varphi \mid \G\varphi \mid \varphi\U\psi
+  \end{array}
+  \]
+
+  \vspace{0.6em}
+  \begin{block}{Key modality}
+    \[
+      \atlbh{C}{B}{H}\gamma
+    \]
+    Coalition $C$ has a strategy which is beneficial for $B$, harmful to $H$, and guarantees temporal property $\gamma$.
+  \end{block}
+
+  \vspace{0.5em}
+  Standard ATL is recovered as the special case:
+  \[
+    \atlop{C}\gamma \;\equiv\; \atlbh{C}{\emptyset}{\emptyset}\gamma.
+  \]
+\end{frame}
+
+\begin{frame}{Semantics of the New Modality}
+  \[
+  (\M,s)\models \atlbh{C}{B}{H}\gamma
+  \]
+  iff there exists a strategy
+  \[
+    \js_C \in \SB^C_\M(s,B)\cap \SH^C_\M(s,H)
+  \]
+  such that every generated computation satisfies $\gamma$:
+  \[
+    \forall \lambda\in\outset_\F(s,\js_C),\quad
+    (\M,\lambda)\models \gamma.
+  \]
+
+  \vspace{0.8em}
+  \begin{block}{Three roles in one operator}
+    \begin{itemize}
+      \item $C$: the acting coalition;
+      \item $B$: the coalition benefited by the strategy;
+      \item $H$: the coalition harmed by the strategy.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Potential Benefactor and Danger}
+  The language gives compact definitions of the target notions.
+
+  \vspace{0.8em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+    \begin{block}{Potential benefactor}
+      \[
+        \Benef(C,B)
+        \;\equiv\;
+        \atlbh{C}{B}{\emptyset}\X\top.
+      \]
+      Coalition $C$ has a strategy beneficial for $B$.
+    \end{block}
+
+    \column{0.5\textwidth}
+    \begin{block}{Danger}
+      \[
+        \Danger(C,H)
+        \;\equiv\;
+        \atlbh{C}{\emptyset}{H}\X\top.
+      \]
+      Coalition $C$ has a strategy harmful to $H$.
+    \end{block}
+  \end{columns}
+
+  \vspace{1em}
+  In the robot model:
+  \[
+    (\M_{\mathit{rs}},s_0)\models
+    \Benef(\{1,2\},\{1,2\}) \wedge \Danger(\{1,2\},\{0\}).
+  \]
+\end{frame}
+
+\begin{frame}{Reasoning About Changing Danger}
+  Nested modalities let us express danger-enabling and danger-disabling choices.
+
+  \vspace{0.6em}
+  In the robot model:
+  \[
+  \begin{aligned}
+  (\M_{\mathit{rs}},s_0)\models\;&
+  \atlbh{\{0,1\}}{\{0\}}{\emptyset}\X\Danger(\{0\},\{1,2\})\\
+  &\wedge\ \neg\Danger(\{0\},\{1,2\}).
+  \end{aligned}
+  \]
+
+  \vspace{0.7em}
+  \begin{block}{Intuition}
+    Robot $0$ is not initially dangerous to the guards.
+    But coalition $\{0,1\}$ can choose a beneficial strategy for robot $0$ that makes robot $0$ dangerous at the next state.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Axiomatization}
+  We axiomatize the until-free, or safety, fragment:
+  \[
+  \varphi ::= p \mid \neg\varphi \mid \varphi\wedge\varphi
+  \mid \atlbh{C}{B}{H}\X\varphi
+  \mid \atlbh{C}{B}{H}\G\varphi.
+  \]
+
+  \vspace{0.6em}
+  \begin{block}{Theorem}
+    For every $\varphi\in\lang_{\atlBDlogic^{-\U}}$:
+    \[
+      \varphi \text{ is valid over CGMRPs}
+      \quad\text{iff}\quad
+      \vdash \varphi.
+    \]
+  \end{block}
+
+  \vspace{0.4em}
+  \begin{itemize}
+    \item The proof uses canonical models built under a formula context.
+    \item The context tracks the welfare-affecting modality currently being realized.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Why a Contextual Canonical Model?}
+  Standard ATL-style canonical constructions are not enough because:
+  \[
+    \atlbh{C}{B}{H}\gamma
+  \]
+  constrains both strategic outcomes and welfare status.
+
+  \vspace{0.6em}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+    \begin{block}{Strategic part}
+      The canonical action must realize the temporal guarantee $\gamma$.
+    \end{block}
+
+    \column{0.5\textwidth}
+    \begin{block}{Preference part}
+      The same action must generate best computations for $B$ and worst computations for $H$.
+    \end{block}
+  \end{columns}
+
+  \vspace{0.8em}
+  \centering
+  Formula contexts synchronize these two requirements in the canonical construction.
+\end{frame}
+
+\begin{frame}{Tree-Like Model Property}
+  \begin{block}{Theorem}
+    For every $\varphi\in\lang_{\atlBDlogic}$:
+    \[
+      \varphi \text{ is satisfiable}
+      \quad\text{iff}\quad
+      \varphi \text{ is satisfiable on a pointed tree-like CGMRP}.
+    \]
+  \end{block}
+
+  \vspace{0.7em}
+  \begin{itemize}
+    \item Tree-like models have a unique root, unique predecessors, and no cycles.
+    \item This lets us localize welfare labels along generated computations.
+    \item Stability of preferences keeps those labels coherent over time.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Embedding into Standard ATL}
+  Extend the atomic vocabulary with:
+  \[
+    \help_i \quad\text{and}\quad \harm_i
+  \]
+  read as ``agent $i$ is benefited'' and ``agent $i$ is harmed''.
+
+  \vspace{0.4em}
+  Translation:
+  \[
+  \tr(\atlbh{C}{B}{H}\X\varphi)
+  =
+  \atlop{C}\X
+  \bigl(\help B \wedge \harm H \wedge \tr(\varphi)\bigr),
+  \]
+  where
+  \[
+    \help B = \bigwedge_{i\in B}\help_i,
+    \qquad
+    \harm H = \bigwedge_{i\in H}\harm_i.
+  \]
+
+  \vspace{0.5em}
+  Similar clauses handle $\G$ and $\U$.
+\end{frame}
+
+\begin{frame}{Embedding Theorem and Complexity}
+  \begin{block}{Polynomial embedding}
+    Satisfiability for \WATL reduces polynomially to satisfiability for standard ATL, with additional constraints ensuring:
+    \[
+      \text{best labels exist, worst labels exist, and no state is both for the same agent.}
+    \]
+  \end{block}
+
+  \vspace{0.8em}
+  \begin{block}{Complexity}
+    \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      Language & Target & Satisfiability \\
+      \midrule
+      \WATL & ATL & \Exptime-complete \\
+      \WCL & CL & \Pspace-complete \\
+      \bottomrule
+    \end{tabular}
+    \end{center}
+  \end{block}
+
+  \vspace{0.3em}
+  The bounds are tight because ATL and CL are special cases.
+\end{frame}
+
+\begin{frame}{Take-Home Message}
+  \begin{itemize}
+    \item Strategic agency can be welfare-affecting: agents can benefit or endanger others through their strategies.
+    \item \WATL internalizes this idea in the object language:
+      \[
+        \atlbh{C}{B}{H}\gamma.
+      \]
+    \item Potential benefactor and danger become definable notions.
+    \item The logic remains technically well-behaved:
+      \begin{itemize}
+        \item complete axiomatization for the safety fragment;
+        \item polynomial embedding into standard ATL/CL with welfare-label atoms;
+        \item tight complexity bounds.
+      \end{itemize}
+  \end{itemize}
+
+  \vspace{0.8em}
+  \begin{block}{Next steps}
+    Full axiomatization with until; probabilistic risk-based danger; rational harmful strategies and strong danger.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge Thank you
+
+  \vspace{1em}
+  \large Questions?
+\end{frame}
+
+\end{document}
