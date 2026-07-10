@@ -359,7 +359,7 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Axiomatization}
+\begin{frame}[allowframebreaks]{Axiomatization}
   We axiomatize the until-free, or safety, fragment:
   \[
   \varphi ::= p \mid \neg\varphi \mid \varphi\wedge\varphi
@@ -367,7 +367,46 @@
   \mid \atlbh{C}{B}{H}\G\varphi.
   \]
 
-  \vspace{0.6em}
+  \vspace{0.5em}
+  \begin{block}{Inference rules}
+    \[
+    \frac{\phi \quad \phi\to\psi}{\psi} \quad (\text{MP})
+    \qquad
+    \frac{\phi\iff\psi}{\atlbh{C}{B}{H}\X\phi \iff \atlbh{C}{B}{H}\X\psi}
+    \quad (\text{RE})
+    \qquad
+    \frac{\phi}{\atlop{\Coalition}\G\phi}\quad (\text{Gen})
+    \]
+  \end{block}
+
+  \vspace{0.4em}
+  \begin{block}{Core axiom schemata}
+    \begin{small}
+    \[
+    \begin{aligned}
+    &\text{All tautologies of propositional logic} &&(\text{TAUT})\\
+    &\neg \atlbh{C}{B}{H}\X\bot &&(\text{NAAA})\\
+    &\atlbh{C}{B}{H}\X(\phi\wedge\psi) \to \atlbh{C}{B}{H}\X\phi &&(\text{MG})\\
+    &\atlbh{C}{B}{H}\X\phi \to \atlbh{C'}{B'}{H'}\X\phi
+      \quad\text{for } C\subseteq C',\; B\supseteq B',\; H\supseteq H' &&(\text{MC})\\
+    &\atlop{\emptyset}\X\top &&(\text{NEI})\\
+    &\bigl(\atlbh{C}{B}{H}\X\phi \wedge \atlbh{C'}{B'}{H'}\X\psi\bigr)
+      \to \atlbh{C\cup C'}{B\cup B'}{H\cup H'}\X(\phi\wedge\psi)
+      \quad\text{for } C\cap C'=\emptyset &&(\text{Sup})\\
+    &\atlbh{C}{B}{H}\X(\phi\vee\psi)
+      \to \bigl(\atlbh{C}{B}{H}\X\phi \vee \atlbh{\AGT}{B}{H}\X\psi\bigr) &&(\text{Cro})\\
+    &\atlbh{C}{B}{H}\G\phi \leftrightarrow \atlbh{C}{B}{H}\X\bigl(\phi\wedge\atlbh{C}{B}{H}\G\phi\bigr) &&(\text{FP}_\G)\\
+    &\atlop{\emptyset}\G\bigl(\psi\to\atlbh{C}{B}{H}\X(\phi\wedge\psi)\bigr)
+      \to \atlop{\emptyset}\G\bigl(\psi\to\atlbh{C}{B}{H}\G\phi\bigr) &&(\text{GFP}_\G)\\
+    &\atlbh{\AGT}{\emptyset}{\{a\}}\X\top &&(\text{WFP})\\
+    &\atlbh{\AGT}{\{a\}}{\emptyset}\X\top &&(\text{CWFP})\\
+    &\neg\atlbh{C}{B}{H}\X\top \quad \text{if } B\cap H\neq\emptyset &&(\text{BHC})
+    \end{aligned}
+    \]
+    \end{small}
+  \end{block}
+
+  \vspace{0.4em}
   \begin{block}{Theorem}
     For every $\varphi\in\lang_{\atlBDlogic^{-\U}}$:
     \[
