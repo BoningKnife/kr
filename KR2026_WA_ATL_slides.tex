@@ -6,12 +6,14 @@
 \setbeamertemplate{footline}[frame number]
 
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{xspace}
 \usepackage{graphicx}
 \usepackage{adjustbox}
+\usepackage{natbib}
 \usepackage{LogicYinfeng,StrategicYinfeng}
 
 \definecolor{KRBlue}{RGB}{26,74,122}
@@ -45,7 +47,7 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{The Question}
+\begin{frame}{The Motivation}
   \begin{block}{Strategic ability is not only about achieving goals}
     In multi-agent systems, a coalition's choices may also affect the welfare of other agents.
   \end{block}
@@ -77,17 +79,17 @@
   \begin{columns}[T,onlytextwidth]
     \column{0.48\textwidth}
     \begin{block}{Harm and benefit}
-      We follow a non-comparative intuition:
+      On the conceptual side, our notion of harm and benefit is closely related to the causal analysis in~\citep{BeckersChocklerHalpern2024}:
       \begin{itemize}
         \item harm: bringing about a bad outcome;
         \item benefit: bringing about a good outcome.
       \end{itemize}
-      Good and bad outcomes are represented through agents' preferences.
+      We adopt a consequentialist, non-comparative reading, where good and bad outcomes are represented through agents' preferences.
     \end{block}
 
     \column{0.48\textwidth}
     \begin{block}{Danger}
-      We follow a modal, non-probabilistic intuition:
+      We follow a modal, non-probabilistic intuition for danger~\citep{Fassio2025OnDanger,Garland2003RiseOfRisk,Peschard2022PhilosophyRisk}:
       \begin{itemize}
         \item a coalition is dangerous if it has the potential to harm;
         \item potential means existence of a suitable strategy.
@@ -98,11 +100,11 @@
   \vspace{0.7em}
   \centering
   \large
-  \[
-    \text{strategic capability} + \text{preference over outcomes}
-    \quad \Rightarrow \quad
-    \text{welfare-affecting capability}
-  \]
+  strategic capability~\citep{alur2002alternating,GorankoDrimmelenATL}\\
+  +\\
+  preference over outcomes~\citep{DBLP:conf/ifaamas/LiLM25}\\  
+    $\quad \Downarrow \quad$\\
+    welfare-affecting capability
 \end{frame}
 
 \begin{frame}{Main Contributions}
@@ -113,10 +115,6 @@
         \atlbh{C}{B}{H}\gamma
       \]
       ``$C$ has a strategy that benefits $B$, harms $H$, and guarantees $\gamma$.''
-    \item Formal definitions of:
-      \[
-        \Benef(C,B), \qquad \Danger(C,H).
-      \]
     \item Technical results:
       \begin{itemize}
         \item sound and complete axiomatization for the until-free fragment;
@@ -128,13 +126,14 @@
 
 \begin{frame}{Models: Concurrent Games with Preferences}
   A model is a concurrent game model with regular preferences:
+  We build on the recent framework of concurrent games with preferences.
   \[
     \M = (\P,\V)
   \]
   where $\P$ contains:
   \begin{itemize}
     \item states and action profiles;
-    \item a transition relation induced by joint actions;
+    \item a transition relation induced by action profiles;
     \item for each agent $i$ and state $s$, a preference order
       \[
         \preceq_{i,s}
@@ -171,42 +170,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{The Game Structure}
-  \centering
-  \begin{tikzpicture}[
-      scale=0.92, transform shape,
-      semithick,
-      state/.style={circle, draw, minimum size=12mm, inner sep=0pt, font=\small},
-      labelbox/.style={rounded corners=2pt, inner sep=2pt, font=\scriptsize, fill=white, draw=none}
-    ]
-    \node[state,label=below:$s_2$] (L) at (0,0) {$\mathit{inL}_0$};
-    \node[state,label=below:$s_0$] (C) at (4,0) {$\mathit{inM}_0$};
-    \node[state,label=below:$s_1$] (R) at (8,0) {$\mathit{inR}_0$};
-
-    \path[->] (C) edge[loop above] node[above,labelbox] {$\delta_1,\delta_3,\delta_5,\delta_6$} ();
-    \path[->] (R) edge[loop above] node[above,labelbox,text width=30mm,align=center] {$\delta_1,\delta_2,\delta_5,\delta_6,\delta_7,\delta_8$} ();
-    \path[->] (L) edge[loop above] node[above,labelbox,text width=30mm,align=center] {$\delta_1,\delta_2,\delta_3,\delta_4,\delta_5,\delta_7$} ();
-
-    \draw[->,bend left=12] (C) to node[midway, above,labelbox] {$\delta_7,\delta_8$} (R);
-    \draw[->,bend left=12] (R) to node[midway, below,labelbox] {$\delta_3,\delta_4$} (C);
-    \draw[->,bend left=12] (C) to node[midway, below,labelbox] {$\delta_2,\delta_4$} (L);
-    \draw[->,bend left=12] (L) to node[midway, above,labelbox] {$\delta_6,\delta_8$} (C);
-  \end{tikzpicture}
-
-  \vspace{0.8em}
-  \begin{adjustbox}{max width=0.88\textwidth}
-  \begin{tabular}{llll}
-    $\delta_1=(0{:}\mathit{le},1{:}\mathit{bl},2{:}\mathit{bl})$ &
-    $\delta_2=(0{:}\mathit{le},1{:}\mathit{bl},2{:}\mathit{fr})$ &
-    $\delta_7=(0{:}\mathit{ri},1{:}\mathit{fr},2{:}\mathit{bl})$ &
-    $\delta_8=(0{:}\mathit{ri},1{:}\mathit{fr},2{:}\mathit{fr})$
-  \end{tabular}
-  \end{adjustbox}
-
-  \vspace{0.4em}
-  The relevant strategic tension is: guards can jointly keep robot $0$ in the middle.
-\end{frame}
-
 \begin{frame}{Strong Benefit and Strong Harm}
   Let $\outset_\F(s,\js_C)$ be the computations compatible with strategy $\js_C$ from $s$.
 
@@ -232,28 +195,8 @@
   \vspace{0.2em}
   \centering
   Strong benefit/harm means guaranteeing best/worst outcomes for the affected coalition.
-\end{frame}
-
-\begin{frame}{Example: Blocking as Harm}
-  Consider the strategy of coalition $\{1,2\}$:
-  \[
-    \js_{\{1,2\}}(\lambda) = (1{:}\mathit{bl},2{:}\mathit{bl})
-    \quad\text{for every history }\lambda.
-  \]
-
-  \vspace{0.4em}
-  Then at the initial state $s_0$:
-  \[
-    \js_{\{1,2\}} \in
-    \SH_{\M_{\mathit{rs}}}^{\{1,2\}}(s_0,\{0\})
-    \quad\text{and}\quad
-    \js_{\{1,2\}} \in
-    \SB_{\M_{\mathit{rs}}}^{\{1,2\}}(s_0,\{1,2\}).
-  \]
-
-  \vspace{0.5em}
-  \begin{block}{Reading}
-    The same strategy is harmful to robot $0$ and beneficial to the guarding coalition.
+  \begin{block}{Fact}
+    The coalition of robots $\{1,2\}$ has a strategy that is harmful to robot $0$ and beneficial to the guarding coalition.
   \end{block}
 \end{frame}
 
@@ -310,7 +253,7 @@
 
   \vspace{0.8em}
   \begin{columns}[T,onlytextwidth]
-    \column{0.5\textwidth}
+    \column{0.48\textwidth}
     \begin{block}{Potential benefactor}
       \[
         \Benef(C,B)
@@ -320,7 +263,7 @@
       Coalition $C$ has a strategy beneficial for $B$.
     \end{block}
 
-    \column{0.5\textwidth}
+    \column{0.48\textwidth}
     \begin{block}{Danger}
       \[
         \Danger(C,H)
@@ -339,26 +282,6 @@
   \]
 \end{frame}
 
-\begin{frame}{Reasoning About Changing Danger}
-  Nested modalities let us express danger-enabling and danger-disabling choices.
-
-  \vspace{0.6em}
-  In the robot model:
-  \[
-  \begin{aligned}
-  (\M_{\mathit{rs}},s_0)\models\;&
-  \atlbh{\{0,1\}}{\{0\}}{\emptyset}\X\Danger(\{0\},\{1,2\})\\
-  &\wedge\ \neg\Danger(\{0\},\{1,2\}).
-  \end{aligned}
-  \]
-
-  \vspace{0.7em}
-  \begin{block}{Intuition}
-    Robot $0$ is not initially dangerous to the guards.
-    But coalition $\{0,1\}$ can choose a beneficial strategy for robot $0$ that makes robot $0$ dangerous at the next state.
-  \end{block}
-\end{frame}
-
 \begin{frame}[allowframebreaks]{Axiomatization}
   We axiomatize the until-free, or safety, fragment:
   \[
@@ -370,12 +293,12 @@
   \vspace{0.5em}
   \begin{block}{Inference rules}
     \[
-    \frac{\phi \quad \phi\to\psi}{\psi} \quad (\text{MP})
+    \frac{\;\phi, \quad \phi\to\psi\;}{\psi} \quad (\text{MP})
     \qquad
-    \frac{\phi\iff\psi}{\atlbh{C}{B}{H}\X\phi \iff \atlbh{C}{B}{H}\X\psi}
+    \frac{\phi\iff\psi}{\;\atlbh{C}{B}{H}\X\phi \iff \atlbh{C}{B}{H}\X\psi\;}
     \quad (\text{RE})
     \qquad
-    \frac{\phi}{\atlop{\Coalition}\G\phi}\quad (\text{Gen})
+    \frac{\phi}{\;\atlop{\Coalition}\G\phi\;}\quad (\text{Gen})
     \]
   \end{block}
 
@@ -400,7 +323,7 @@
       \to \atlop{\emptyset}\G\bigl(\psi\to\atlbh{C}{B}{H}\G\phi\bigr) &&(\text{GFP}_\G)\\
     &\atlbh{\AGT}{\emptyset}{\{a\}}\X\top &&(\text{WFP})\\
     &\atlbh{\AGT}{\{a\}}{\emptyset}\X\top &&(\text{CWFP})\\
-    &\neg\atlbh{C}{B}{H}\X\top \quad \text{if } B\cap H\neq\emptyset &&(\text{BHC})
+    &\neg\atlbh{C}{B}{H}\X\top \quad \text{for } B\cap H\neq\emptyset &&(\text{BHC})
     \end{aligned}
     \]
     \end{small}
@@ -419,7 +342,7 @@
   \vspace{0.4em}
   \begin{itemize}
     \item The proof uses canonical models built under a formula context.
-    \item The context tracks the welfare-affecting modality currently being realized.
+    \item The states in the canonical models are consist of (\emph{finite}) maximally consistent sets of formulas in the formula context, and the labels of benefited and harmed groups.
   \end{itemize}
 \end{frame}
 
@@ -493,7 +416,7 @@
   The bounds are tight because ATL and CL are special cases.
 \end{frame}
 
-\begin{frame}{Take-Home Message}
+\begin{frame}{Summary and Outlook}
   \begin{itemize}
     \item Strategic agency can be welfare-affecting: agents can benefit or endanger others through their strategies.
     \item \WATL internalizes this idea in the object language:
@@ -515,6 +438,10 @@
   \end{block}
 \end{frame}
 
+\begin{frame}[allowframebreaks]{References}
+  \bibliographystyle{plainnat}
+  \bibliography{bib-PHH}
+\end{frame}
 \begin{frame}
   \centering
   \Huge Thank you
