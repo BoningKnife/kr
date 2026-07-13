@@ -343,6 +343,7 @@
   \begin{itemize}
     \item The proof uses canonical models built under a formula context.
     \item The states in the canonical models are consist of (\emph{finite}) maximally consistent sets of formulas in the formula context, and the labels of benefited and harmed groups.
+    \item Stability of preferences keeps those labels coherent over time.
   \end{itemize}
 \end{frame}
 
@@ -360,7 +361,6 @@
   \begin{itemize}
     \item Tree-like models have a unique root, unique predecessors, and no cycles.
     \item This lets us localize welfare labels along generated computations.
-    \item Stability of preferences keeps those labels coherent over time.
   \end{itemize}
 \end{frame}
 
@@ -373,21 +373,26 @@
 
   \vspace{0.4em}
   Translation:
-  \[
+  \begin{align*}
   \tr(\atlbh{C}{B}{H}\X\varphi)
-  =
+  &=
   \atlop{C}\X
-  \bigl(\help B \wedge \harm H \wedge \tr(\varphi)\bigr),
-  \]
+  \bigl(\help B \wedge \harm H \wedge \tr(\varphi)\bigr),\\
+  \tr(\atlbh{C}{B}{H}\X\varphi)
+  &=
+  \atlop{C}\G
+  \bigl(\help B \wedge \harm H \wedge \tr(\varphi)\bigr),\\
+  \tr(\atlbh{C}{B}{H}(\varphi \U \psi))
+  &=
+  \atlop{C}
+  \bigl((\help B \wedge \harm H \wedge \tr(\varphi))\U (\help B \wedge \harm H \wedge \tr(\psi) )\bigr),
+  \end{align*}
   where
   \[
     \help B = \bigwedge_{i\in B}\help_i,
     \qquad
     \harm H = \bigwedge_{i\in H}\harm_i.
   \]
-
-  \vspace{0.5em}
-  Similar clauses handle $\G$ and $\U$.
 \end{frame}
 
 \begin{frame}{Embedding Theorem and Complexity}
