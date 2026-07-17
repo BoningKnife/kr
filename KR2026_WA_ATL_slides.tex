@@ -15,6 +15,8 @@
 \usepackage{adjustbox}
 \usepackage{natbib}
 \usepackage{LogicYinfeng,StrategicYinfeng}
+\usepackage{xcolor}
+\setbeamercovered{transparent}
 
 \definecolor{KRBlue}{RGB}{26,74,122}
 \definecolor{KRTeal}{RGB}{0,120,115}
@@ -75,16 +77,16 @@
   \alert{Who is a potential benefactor, and who is a danger?}
 \end{frame}
 
-\begin{frame}{Two Conceptual Ingredients}
+\begin{frame}{Conceptual Ingredients}
   \begin{columns}[T,onlytextwidth]
     \column{0.48\textwidth}
     \begin{block}{Harm and benefit}
-      On the conceptual side, our notion of harm and benefit is closely related to the causal analysis in~\citep{BeckersChocklerHalpern2024}:
+      We adopt a consequentialist, non-comparative reading, where good and bad outcomes are represented through agents' preferences:
       \begin{itemize}
         \item harm: bringing about a bad outcome;
         \item benefit: bringing about a good outcome.
       \end{itemize}
-      We adopt a consequentialist, non-comparative reading, where good and bad outcomes are represented through agents' preferences.
+      
     \end{block}
 
     \column{0.48\textwidth}
@@ -282,7 +284,7 @@
   \]
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Axiomatization}
+\begin{frame}{Axiomatization}
   We axiomatize the until-free, or safety, fragment:
   \[
   \varphi ::= p \mid \neg\varphi \mid \varphi\wedge\varphi
@@ -301,12 +303,14 @@
     \frac{\phi}{\;\atlop{\Coalition}\G\phi\;}\quad (\text{Gen})
     \]
   \end{block}
+\end{frame}
 
-  \vspace{0.4em}
+\begin{frame}{Axiomatization}
   \begin{block}{Axiom schemata}
     \begin{small}
     \[
     \begin{aligned}
+    \onslide<1,2>{\color{black}
     &\text{All tautologies of propositional logic} &&(\text{TAUT})\\
     &\neg \atlbh{C}{B}{H}\X\bot &&(\text{NAAA})\\
     &\atlbh{C}{B}{H}\X(\phi\wedge\psi) \rightarrow \atlbh{C}{B}{H}\X\phi &&(\text{MG})\\
@@ -317,19 +321,25 @@
       \rightarrow \atlbh{C\cup C'}{B\cup B'}{H\cup H'}\X(\phi\wedge\psi)
       \quad\text{for } C\cap C'=\emptyset &&(\text{Sup})\\
     &\atlbh{C}{B}{H}\X(\phi\vee\psi)
-      \rightarrow \bigl(\atlbh{C}{B}{H}\X\phi \vee \atlbh{\AGT}{B}{H}\X\psi\bigr) &&(\text{Cro})\\
+      \rightarrow \bigl(\atlbh{C}{B}{H}\X\phi \vee \atlbh{\AGT}{B}{H}\X\psi\bigr) &&(\text{Cro})
+      }\\
+    \onslide<1,3>{\color{black}
     &\atlbh{C}{B}{H}\G\phi \leftrightarrow \atlbh{C}{B}{H}\X\bigl(\phi\wedge\atlbh{C}{B}{H}\G\phi\bigr) &&(\text{FP}_\G)\\
     &\atlop{\emptyset}\G\bigl(\psi\rightarrow\atlbh{C}{B}{H}\X(\phi\wedge\psi)\bigr)
-      \rightarrow \atlop{\emptyset}\G\bigl(\psi\rightarrow\atlbh{C}{B}{H}\G\phi\bigr) &&(\text{GFP}_\G)\\
+      \rightarrow \atlop{\emptyset}\G\bigl(\psi\rightarrow\atlbh{C}{B}{H}\G\phi\bigr) &&(\text{GFP}_\G)
+      }\\
+    \onslide<1,4>{\color{black}
     &\atlbh{\AGT}{\emptyset}{\{a\}}\X\top &&(\text{WFP})\\
     &\atlbh{\AGT}{\{a\}}{\emptyset}\X\top &&(\text{CWFP})\\
     &\neg\atlbh{C}{B}{H}\X\top \quad \text{for } B\cap H\neq\emptyset &&(\text{BHC})
+    }
     \end{aligned}
     \]
     \end{small}
   \end{block}
+\end{frame}
 
-  \vspace{0.4em}
+\begin{frame}{Axiomatization}
   \begin{block}{Theorem}
     For every $\varphi\in\lang_{\atlBDlogic^{-\U}}$:
     \[
@@ -439,7 +449,7 @@
 
   \vspace{0.8em}
   \begin{block}{Next steps}
-    Full axiomatization with until; probabilistic risk-based danger; rational harmful strategies and strong danger.
+    Full axiomatization with until operators; probabilistic risk-based danger.
   \end{block}
 \end{frame}
 

@@ -36,7 +36,14 @@
       ]
     }
   ],
+
   "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
     {
       "name": "pdflatex -> bibtex -> pdflatex*2",
       "tools": [
@@ -56,6 +63,7 @@
       ]
     }
   ],
+
   "latex-workshop.latex.autoBuild.run": "onFileChange",
   "latex-workshop.view.pdf.viewer": "tab"
 }
