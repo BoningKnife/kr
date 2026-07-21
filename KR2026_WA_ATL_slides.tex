@@ -128,26 +128,40 @@
 
 \begin{frame}{Models: Concurrent Games with Preferences}
   A model is a concurrent game model with regular preferences:
-  We build on the recent framework of concurrent games with preferences.
   \[
-    \M = (\P,\V)
+    M = \big(\St,\ACT,(\relAct{\jactatm})_{\jactatm\in\JACT},\preceq,\valProp\big).
   \]
-  where $\P$ contains:
+
   \begin{itemize}
-    \item states and action profiles;
-    \item a transition relation induced by action profiles;
-    \item for each agent $i$ and state $s$, a preference order
+    \item $\St$: non-empty set of states.
+    \item $\ACT$: action names; $\JACT=\ACT^n$: action profiles.
+    \item $\relAct{\jactatm}\subseteq W\times W$: transition relation for action profile $\jactatm$.
+    \item for each agent $i$ and state $s$, a regular preference order
       \[
         \preceq_{i,s}
       \]
       over computations starting at $s$.
+    \item $\valProp:\St\to 2^\ATM$: valuation function.
   \end{itemize}
 
-  \vspace{0.5em}
-  \begin{block}{Regular preferences}
-    We assume stability over time, non-flatness, and existence of best and worst computations.
-    These assumptions support the strong notions of benefit and harm.
+  \begin{block}{Constraints for game structures}
+    Collective choice determinism, independence of choices, and seriality.
   \end{block}
+\end{frame}
+
+\begin{frame}{Regularity of preferences}
+  The preference order $\preceq_{i,s}$ is regular if it is a total preorder over computations starting at $s$ and:
+
+  \begin{itemize}
+    \onslide<1,4>{\item stable:\\
+     for all computations $\lambda,\lambda'$ starting at $s$, if $\lambda(1)=\lambda'(1)$ and $\lambda\preceq_{i,s}\lambda'$, then $\lambda_{\geq 1}\preceq_{i,s'}\lambda'_{\geq 1}$, where $s'=\lambda(1)$;}
+    \onslide<2,4>{\item well-founded:\\
+    the worst computation exists;
+    \item conversely well-founded:\\
+    the best computation exists;}
+    \onslide<3,4>{\item non-flat:\\
+    there is $\lambda,\lambda'$ starting at $s$ such that $\lambda \prec_{i,s} \lambda'$.}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Running Example: Robots and Charging Rooms}
